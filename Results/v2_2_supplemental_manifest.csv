@@ -1,0 +1,4 @@
+experiment,outline_section,status,runtime_s,summary_path
+Oversampling/off-grid ablation,"Section 6.5.13(a)",ok,9.7476456,Results/oversampling_offgrid_ablation/summary.md
+Kruskal identifiability ablation,"Section 6.5.13(b,c)",ok,3.3332662,Results/kruskal_identifiability_ablation/summary.md
+Off-grid mismatch lemma validation,"Section 5.1.1 / Phase 3",ok,2.8929218,Results/offgrid_mismatch_lemma/summary.md

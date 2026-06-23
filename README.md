@@ -20,6 +20,12 @@ From MATLAB:
 run('eval/run_oversampling_offgrid_ablation.m')
 ```
 
+To rerun all lightweight v2.2 supplemental experiments and regenerate the manifest:
+
+```matlab
+run('eval/run_all_v2_2_supplemental_experiments.m')
+```
+
 From PowerShell with the local MATLAB installation:
 
 ```powershell
@@ -61,6 +67,12 @@ It writes results to:
 
 ```text
 Results/offgrid_mismatch_lemma/
+```
+
+The combined evidence index is written to:
+
+```text
+Results/v2_2_supplemental_manifest.md
 ```
 
 ## Repository Layout

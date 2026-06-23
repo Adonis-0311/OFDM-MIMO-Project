@@ -57,6 +57,12 @@
 - 输出目录：`Results/offgrid_mismatch_lemma/`
 - 输出文件：summary CSV、sample CSV、PNG、PDF、Markdown summary。
 
+新增 `eval/run_all_v2_2_supplemental_experiments.m`：
+
+- 一键复跑当前三组 v2.2 轻量补充实验。
+- 生成 `Results/v2_2_supplemental_manifest.md` 与 `Results/v2_2_supplemental_manifest.csv`。
+- 汇总每组实验的目标章节、状态、耗时、summary 路径和关键证据。
+
 ## 下一批实验优先级
 
 | 优先级 | 实验 | 对应大纲 | 目的 |
