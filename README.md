@@ -39,6 +39,18 @@ The current outputs include:
 - `oversampling_offgrid_ablation.pdf`
 - `summary.md`
 
+The Kruskal/target-count degradation smoke experiment can be run with:
+
+```matlab
+run('eval/run_kruskal_identifiability_ablation.m')
+```
+
+It writes results to:
+
+```text
+Results/kruskal_identifiability_ablation/
+```
+
 ## Repository Layout
 
 ```text
@@ -56,4 +68,3 @@ Results/                 Regenerable experiment outputs
 ## Upload Policy
 
 The Git history should include source code, design Markdown, reproducible experiment scripts, and lightweight result artifacts. It should not include private graduation paperwork, contracts, compressed reference packages, downloaded datasets, or `.mat` model/data blobs.
-

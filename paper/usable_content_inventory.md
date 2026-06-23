@@ -40,6 +40,15 @@
 
 该脚本是轻量 smoke/ablation，不声称为最终 T-OMP-Net 训练结果。它隔离单个 angle-delay-Doppler 分量，比较 coarse grid matching 与 bounded local off-grid refinement。
 
+新增 `eval/run_kruskal_identifiability_ablation.m`：
+
+- 对应 v2.2 §6.5.13(b,c) 的 Kruskal 可辨识性与目标数退化实验。
+- 使用轻量 on-grid 多目标张量与 Tensor-OMP 风格逐次检测，扫描 `L={2,4,8,16,24,32}`。
+- 输出目录：`Results/kruskal_identifiability_ablation/`
+- 输出文件：CSV、MAT、PNG、PDF、Markdown summary。
+- 当前 smoke run 的本地张量尺寸为 `32 x 16 x 16`，本地 Kruskal 界为 31；v2.2 论文尺度 `128 x 16 x 32` 的理论界仍为 87。
+- 由于该 smoke run 是 on-grid 且 SNR=20 dB，`P_d` 不一定在接近界限时急剧下降；更适合作为“NMSE、精确支撑率、运行时间随 L 增长”的早期证据。最终论文版仍需补 off-grid、多目标间隔受限、低 SNR 等更强压力设置。
+
 ## 下一批实验优先级
 
 | 优先级 | 实验 | 对应大纲 | 目的 |
@@ -68,4 +77,3 @@
 - `2025刘雨辉毕设/` 中的个人材料、合同、评分表、论文 Word/PDF、外部参考压缩包。
 - `.mat` 模型/数据中间件。
 - 大型下载数据集。
-
