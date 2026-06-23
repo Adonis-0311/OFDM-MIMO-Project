@@ -49,14 +49,23 @@
 - 当前 smoke run 的本地张量尺寸为 `32 x 16 x 16`，本地 Kruskal 界为 31；v2.2 论文尺度 `128 x 16 x 32` 的理论界仍为 87。
 - 由于该 smoke run 是 on-grid 且 SNR=20 dB，`P_d` 不一定在接近界限时急剧下降；更适合作为“NMSE、精确支撑率、运行时间随 L 增长”的早期证据。最终论文版仍需补 off-grid、多目标间隔受限、低 SNR 等更强压力设置。
 
+新增 `eval/run_offgrid_mismatch_lemma_validation.m`：
+
+- 对应 v2.2 §5.1.1 Off-Grid Mismatch Lemma 与 Phase 3 的实证 Lemma 1。
+- 扫描 `Nv={16,32,64,128}` 与角度中心 `{-45,-20,0,20,45}`，拟合 `epsilon_grid ≈ beta * delta_theta^2`。
+- 对比拟合系数与 `(pi^2/12) * Nv^2 * cos(theta)^2` 的理论尺度，并验证残差修正后的系数约按残差比例平方下降。
+- 输出目录：`Results/offgrid_mismatch_lemma/`
+- 输出文件：summary CSV、sample CSV、PNG、PDF、Markdown summary。
+
 ## 下一批实验优先级
 
 | 优先级 | 实验 | 对应大纲 | 目的 |
 |---:|---|---|---|
 | P0 | 修复主 MATLAB pipeline，统一参数、信道、估计器接口 | §6.1-6.4 | 让 LS/OMP/CS-DL baseline 可批量复跑。 |
 | P0 | Tensor-OMP baseline | §4.1, §6.3 | 作为 T-OMP-Net 和 off-grid 的传统可解释 baseline。 |
-| P1 | 过采样比完整扫描：`rho_theta/rho_tau/rho_nu={1,2,4,8}` | §6.5.13(a) | 量化推荐 `rho=2` 的性能-复杂度折中。 |
-| P1 | Kruskal 可辨识性退化：`L={2,4,8,16,32,64}` | §6.5.13(b,c) | 回应“字典维度和目标数是否合理”。 |
+| P1 | 过采样比完整扫描：`rho_theta/rho_tau/rho_nu={1,2,4,8}` | §6.5.13(a) | 已有轻量版本；下一步扩到论文尺度并补 FLOPs。 |
+| P1 | Kruskal 可辨识性退化：`L={2,4,8,16,32,64}` | §6.5.13(b,c) | 已有轻量版本；下一步补低 SNR / off-grid 压力设置。 |
+| P1 | Off-grid mismatch lemma 验证 | §5.1.1, Phase 3 | 已有轻量版本；下一步合并进理论章节图表。 |
 | P1 | CDL-A/C/D 泛化 | §6.2 Set B-D | 通信侧泛化必做。 |
 | P2 | DeepMIMO O1/I3 接入 | §6.2 Set E | 外部数据集验证，速度 RMSE 不纳入。 |
 | P2 | CRLB 高 SNR 渐近紧致性 | §5.2, §6.5.5 | 支撑理论分析。 |

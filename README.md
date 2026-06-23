@@ -51,6 +51,18 @@ It writes results to:
 Results/kruskal_identifiability_ablation/
 ```
 
+The off-grid mismatch lemma validation can be run with:
+
+```matlab
+run('eval/run_offgrid_mismatch_lemma_validation.m')
+```
+
+It writes results to:
+
+```text
+Results/offgrid_mismatch_lemma/
+```
+
 ## Repository Layout
 
 ```text
