@@ -68,3 +68,14 @@ Results/                 Regenerable experiment outputs
 ## Upload Policy
 
 The Git history should include source code, design Markdown, reproducible experiment scripts, and lightweight result artifacts. It should not include private graduation paperwork, contracts, compressed reference packages, downloaded datasets, or `.mat` model/data blobs.
+
+## Publish To GitHub
+
+After authenticating GitHub CLI:
+
+```powershell
+gh auth login
+.\scripts\publish_to_github.ps1
+```
+
+The script creates a private `mmwave-isac-tompnet` repository when `origin` is missing, then pushes the current branch. Use `-RepoName` or `-Visibility public` if needed.
