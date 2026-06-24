@@ -32,7 +32,12 @@ experiments = {
     'CRLB delay asymptotic smoke', ...
     'Section 5.2 / Section 6.5.5', ...
     @run_crlb_delay_asymptotic_smoke, ...
-    fullfile(resultsDir, 'crlb_delay_asymptotic_smoke', 'summary.md')
+    fullfile(resultsDir, 'crlb_delay_asymptotic_smoke', 'summary.md');
+
+    'DeepMIMO Set E access audit', ...
+    'Section 6.2 Set E', ...
+    @run_deepmimo_set_e_access_audit, ...
+    fullfile(resultsDir, 'deepmimo_set_e_access_audit', 'summary.md')
 };
 
 runRows = cell(size(experiments, 1), 5);
@@ -89,10 +94,11 @@ write_kruskal_evidence(fid, resultsDir);
 write_mismatch_evidence(fid, resultsDir);
 write_cdl_evidence(fid, resultsDir);
 write_crlb_evidence(fid, resultsDir);
+write_deepmimo_evidence(fid, resultsDir);
 
 fprintf(fid, '\n## Remaining Gaps\n\n');
 fprintf(fid, '- Full-size Tensor-OMP/T-OMP-Net training and inference pipeline is still pending.\n');
-fprintf(fid, '- Standards-aligned CDL-A/C/D and DeepMIMO Set E cross-scene validation are still pending.\n');
+fprintf(fid, '- Standards-aligned CDL-A/C/D and DeepMIMO Set E cross-scene performance validation are still pending.\n');
 fprintf(fid, '- Full 5L joint ISAC CRLB is still pending; the current CRLB result is a single-delay smoke validation.\n');
 fprintf(fid, '- FLOPs/latency should be measured on the final implementation, not only the lightweight smoke scripts.\n');
 fprintf(fid, '- GitHub remote upload still requires an authenticated GitHub CLI session or a provided remote URL.\n');
@@ -167,6 +173,30 @@ highRows = T.snr_db >= 20;
 meanRatio = mean(T.rmse_to_crlb_ratio(highRows));
 fprintf(fid, '- CRLB delay smoke: for `SNR >= 20 dB`, mean RMSE/sqrt(CRLB) ratio is `%.3f`.\n', ...
     meanRatio);
+end
+
+function write_deepmimo_evidence(fid, resultsDir)
+csvPath = fullfile(resultsDir, 'deepmimo_set_e_access_audit', 'deepmimo_set_e_access_audit.csv');
+if ~exist(csvPath, 'file')
+    fprintf(fid, '- DeepMIMO Set E audit: CSV missing.\n');
+    return;
+end
+
+T = readtable(csvPath);
+datasetRow = strcmp(T.item, 'Dataset file count');
+o1ParamRow = strcmp(T.item, 'O1/O1_60 parameter references');
+i3ParamRow = strcmp(T.item, 'I3/I3_60 parameter references');
+fprintf(fid, '- DeepMIMO Set E audit: dataset files `%s`, O1 parameter refs `%s`, I3 parameter refs `%s`; readiness remains partial until O1/I3 scenario data are installed.\n', ...
+    first_table_value(T.value, datasetRow), first_table_value(T.value, o1ParamRow), first_table_value(T.value, i3ParamRow));
+end
+
+function value = first_table_value(column, mask)
+idx = find(mask, 1);
+if isempty(idx)
+    value = 'missing';
+    return;
+end
+value = char(string(column(idx)));
 end
 
 function rel = relative_path(rootDir, pathValue)

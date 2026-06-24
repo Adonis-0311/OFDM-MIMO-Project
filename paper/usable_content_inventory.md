@@ -73,9 +73,17 @@
 - 输出文件：CSV、PNG、PDF、Markdown summary。
 - 边界：该脚本不是完整 5L 联合 range-velocity-angle CRLB，只验证 CRLB 曲线与图表管线。
 
+新增 `eval/run_deepmimo_set_e_access_audit.m`：
+
+- 对应 v2.2 §6.2 Set E 的 DeepMIMO 外部数据接入审计。
+- 检查本地 DeepMIMO MATLAB/5GNR 代码包、参数文件、O1/I3 场景数据、MATLAB 5G Toolbox 许可与 `nrCDLChannel` 可用性。
+- 当前审计结论：代码包与 O1 参数模板存在，但 O1/I3 场景数据缺失，I3 参数引用缺失，5G Toolbox license test 未通过；Set E 性能实验仍为 partial/blocked 状态。
+- 输出目录：`Results/deepmimo_set_e_access_audit/`
+- 输出文件：CSV、Markdown summary。
+
 新增 `eval/run_all_v2_2_supplemental_experiments.m`：
 
-- 一键复跑当前五组 v2.2 轻量补充实验。
+- 一键复跑当前六组 v2.2 轻量补充实验/审计。
 - 生成 `Results/v2_2_supplemental_manifest.md` 与 `Results/v2_2_supplemental_manifest.csv`。
 - 汇总每组实验的目标章节、状态、耗时、summary 路径和关键证据。
 
@@ -89,7 +97,7 @@
 | P1 | Kruskal 可辨识性退化：`L={2,4,8,16,32,64}` | §6.5.13(b,c) | 已有轻量版本；下一步补低 SNR / off-grid 压力设置。 |
 | P1 | Off-grid mismatch lemma 验证 | §5.1.1, Phase 3 | 已有轻量版本；下一步合并进理论章节图表。 |
 | P1 | CDL-A/C/D 泛化 | §6.2 Set B-D | 已有轻量 CDL-like smoke；下一步替换为标准 3GPP CDL pipeline。 |
-| P2 | DeepMIMO O1/I3 接入 | §6.2 Set E | 外部数据集验证，速度 RMSE 不纳入。 |
+| P2 | DeepMIMO O1/I3 接入 | §6.2 Set E | 已有接入审计；需下载 O1/I3 场景数据并确认 5G Toolbox 许可后才能跑性能。 |
 | P2 | CRLB 高 SNR 渐近紧致性 | §5.2, §6.5.5 | 已有单延迟 smoke；下一步扩展为完整 5L 联合 CRLB。 |
 
 ## Git 上传策略

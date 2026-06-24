@@ -93,6 +93,18 @@ It writes results to:
 Results/crlb_delay_asymptotic_smoke/
 ```
 
+The DeepMIMO Set E access audit can be run with:
+
+```matlab
+run('eval/run_deepmimo_set_e_access_audit.m')
+```
+
+It writes results to:
+
+```text
+Results/deepmimo_set_e_access_audit/
+```
+
 The combined evidence index is written to:
 
 ```text
