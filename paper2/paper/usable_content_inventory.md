@@ -65,9 +65,17 @@
 - 输出文件：CSV、PNG、PDF、Markdown summary。
 - 边界：该脚本不是完整 3GPP TR 38.901 实现；最终论文版应替换为标准 CDL 或 MATLAB 5G Toolbox pipeline，并接入 T-OMP-Net inference。
 
+新增 `eval/run_crlb_delay_asymptotic_smoke.m`：
+
+- 对应 v2.2 §5.2 与 §6.5.5 的 CRLB 高 SNR 渐近紧致性 smoke 实验。
+- 使用单路径时延估计模型，在未知复增益 nuisance 参数下计算 CRLB，并用 ML/NLS 搜索估计 RMSE。
+- 输出目录：`Results/crlb_delay_asymptotic_smoke/`
+- 输出文件：CSV、PNG、PDF、Markdown summary。
+- 边界：该脚本不是完整 5L 联合 range-velocity-angle CRLB，只验证 CRLB 曲线与图表管线。
+
 新增 `eval/run_all_v2_2_supplemental_experiments.m`：
 
-- 一键复跑当前四组 v2.2 轻量补充实验。
+- 一键复跑当前五组 v2.2 轻量补充实验。
 - 生成 `Results/v2_2_supplemental_manifest.md` 与 `Results/v2_2_supplemental_manifest.csv`。
 - 汇总每组实验的目标章节、状态、耗时、summary 路径和关键证据。
 
@@ -82,7 +90,7 @@
 | P1 | Off-grid mismatch lemma 验证 | §5.1.1, Phase 3 | 已有轻量版本；下一步合并进理论章节图表。 |
 | P1 | CDL-A/C/D 泛化 | §6.2 Set B-D | 已有轻量 CDL-like smoke；下一步替换为标准 3GPP CDL pipeline。 |
 | P2 | DeepMIMO O1/I3 接入 | §6.2 Set E | 外部数据集验证，速度 RMSE 不纳入。 |
-| P2 | CRLB 高 SNR 渐近紧致性 | §5.2, §6.5.5 | 支撑理论分析。 |
+| P2 | CRLB 高 SNR 渐近紧致性 | §5.2, §6.5.5 | 已有单延迟 smoke；下一步扩展为完整 5L 联合 CRLB。 |
 
 ## Git 上传策略
 

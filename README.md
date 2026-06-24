@@ -81,6 +81,18 @@ It writes results to:
 Results/cdl_profile_generalization_smoke/
 ```
 
+The single-delay CRLB asymptotic smoke experiment can be run with:
+
+```matlab
+run('eval/run_crlb_delay_asymptotic_smoke.m')
+```
+
+It writes results to:
+
+```text
+Results/crlb_delay_asymptotic_smoke/
+```
+
 The combined evidence index is written to:
 
 ```text

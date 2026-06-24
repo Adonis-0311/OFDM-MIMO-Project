@@ -27,7 +27,12 @@ experiments = {
     'CDL profile generalization smoke', ...
     'Section 6.2 Set B-D', ...
     @run_cdl_profile_generalization_smoke, ...
-    fullfile(resultsDir, 'cdl_profile_generalization_smoke', 'summary.md')
+    fullfile(resultsDir, 'cdl_profile_generalization_smoke', 'summary.md');
+
+    'CRLB delay asymptotic smoke', ...
+    'Section 5.2 / Section 6.5.5', ...
+    @run_crlb_delay_asymptotic_smoke, ...
+    fullfile(resultsDir, 'crlb_delay_asymptotic_smoke', 'summary.md')
 };
 
 runRows = cell(size(experiments, 1), 5);
@@ -83,10 +88,12 @@ write_oversampling_evidence(fid, resultsDir);
 write_kruskal_evidence(fid, resultsDir);
 write_mismatch_evidence(fid, resultsDir);
 write_cdl_evidence(fid, resultsDir);
+write_crlb_evidence(fid, resultsDir);
 
 fprintf(fid, '\n## Remaining Gaps\n\n');
 fprintf(fid, '- Full-size Tensor-OMP/T-OMP-Net training and inference pipeline is still pending.\n');
 fprintf(fid, '- Standards-aligned CDL-A/C/D and DeepMIMO Set E cross-scene validation are still pending.\n');
+fprintf(fid, '- Full 5L joint ISAC CRLB is still pending; the current CRLB result is a single-delay smoke validation.\n');
 fprintf(fid, '- FLOPs/latency should be measured on the final implementation, not only the lightweight smoke scripts.\n');
 fprintf(fid, '- GitHub remote upload still requires an authenticated GitHub CLI session or a provided remote URL.\n');
 end
@@ -146,6 +153,20 @@ snrRows = T.snr_db == 10;
 meanGain = mean(T.improvement_db(snrRows));
 fprintf(fid, '- CDL profile smoke: at `10 dB`, delay-sparse denoising improves NMSE by a mean `%.2f dB` across CDL-A/C/D-like profiles.\n', ...
     meanGain);
+end
+
+function write_crlb_evidence(fid, resultsDir)
+csvPath = fullfile(resultsDir, 'crlb_delay_asymptotic_smoke', 'crlb_delay_asymptotic_smoke.csv');
+if ~exist(csvPath, 'file')
+    fprintf(fid, '- CRLB delay smoke: CSV missing.\n');
+    return;
+end
+
+T = readtable(csvPath);
+highRows = T.snr_db >= 20;
+meanRatio = mean(T.rmse_to_crlb_ratio(highRows));
+fprintf(fid, '- CRLB delay smoke: for `SNR >= 20 dB`, mean RMSE/sqrt(CRLB) ratio is `%.3f`.\n', ...
+    meanRatio);
 end
 
 function rel = relative_path(rootDir, pathValue)

@@ -7,8 +7,8 @@
 - `README.md` 与 `.gitignore`
 - `ISAC_DeepUnfolding_TechnicalDesign*.md` 技术大纲
 - `Config/`、`Modules/` 与现有 MATLAB 原型代码
-- `eval/` 四组 v2.2 轻量实验脚本与一键复现实验入口
-- `Results/` 四组实验结果、图表、CSV、summary 与总 manifest
+- `eval/` 五组 v2.2 轻量实验脚本与一键复现实验入口
+- `Results/` 五组实验结果、图表、CSV、summary 与总 manifest
 - `paper/usable_content_inventory.md` 可用内容与实验缺口梳理
 - `scripts/publish_to_github.ps1` GitHub 发布辅助脚本
 - `baseline/`、`tompnet/`、`train/`、`literature_2024_2025/` 规划目录
