@@ -1,0 +1,25 @@
+# MATLAB/runtime outputs
+*.asv
+*.m~
+*.mat
+*.fig
+*.mex*
+slprj/
+codegen/
+
+# Local experiment outputs that can be regenerated
+Data/
+Models/
+Results/**/*.mat
+
+# Large reference archives and personal/private graduation-material binaries
+*.rar
+*.zip
+2025刘雨辉毕设/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
