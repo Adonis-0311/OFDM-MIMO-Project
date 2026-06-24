@@ -22,7 +22,12 @@ experiments = {
     'Off-grid mismatch lemma validation', ...
     'Section 5.1.1 / Phase 3', ...
     @run_offgrid_mismatch_lemma_validation, ...
-    fullfile(resultsDir, 'offgrid_mismatch_lemma', 'summary.md')
+    fullfile(resultsDir, 'offgrid_mismatch_lemma', 'summary.md');
+
+    'CDL profile generalization smoke', ...
+    'Section 6.2 Set B-D', ...
+    @run_cdl_profile_generalization_smoke, ...
+    fullfile(resultsDir, 'cdl_profile_generalization_smoke', 'summary.md')
 };
 
 runRows = cell(size(experiments, 1), 5);
@@ -77,10 +82,11 @@ fprintf(fid, '\n## Key Evidence\n\n');
 write_oversampling_evidence(fid, resultsDir);
 write_kruskal_evidence(fid, resultsDir);
 write_mismatch_evidence(fid, resultsDir);
+write_cdl_evidence(fid, resultsDir);
 
 fprintf(fid, '\n## Remaining Gaps\n\n');
 fprintf(fid, '- Full-size Tensor-OMP/T-OMP-Net training and inference pipeline is still pending.\n');
-fprintf(fid, '- CDL-A/C/D and DeepMIMO Set E cross-scene validation are still pending.\n');
+fprintf(fid, '- Standards-aligned CDL-A/C/D and DeepMIMO Set E cross-scene validation are still pending.\n');
 fprintf(fid, '- FLOPs/latency should be measured on the final implementation, not only the lightweight smoke scripts.\n');
 fprintf(fid, '- GitHub remote upload still requires an authenticated GitHub CLI session or a provided remote URL.\n');
 end
@@ -126,6 +132,20 @@ end
 T = readtable(csvPath);
 fprintf(fid, '- Off-grid mismatch lemma: median fitted/reference beta ratio is `%.4g`; median corrected/grid beta ratio is `%.4g`.\n', ...
     median(T.grid_to_lemma_ratio), median(T.corrected_to_grid_ratio));
+end
+
+function write_cdl_evidence(fid, resultsDir)
+csvPath = fullfile(resultsDir, 'cdl_profile_generalization_smoke', 'cdl_profile_generalization_smoke.csv');
+if ~exist(csvPath, 'file')
+    fprintf(fid, '- CDL profile generalization: CSV missing.\n');
+    return;
+end
+
+T = readtable(csvPath);
+snrRows = T.snr_db == 10;
+meanGain = mean(T.improvement_db(snrRows));
+fprintf(fid, '- CDL profile smoke: at `10 dB`, delay-sparse denoising improves NMSE by a mean `%.2f dB` across CDL-A/C/D-like profiles.\n', ...
+    meanGain);
 end
 
 function rel = relative_path(rootDir, pathValue)

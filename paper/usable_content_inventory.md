@@ -57,9 +57,17 @@
 - 输出目录：`Results/offgrid_mismatch_lemma/`
 - 输出文件：summary CSV、sample CSV、PNG、PDF、Markdown summary。
 
+新增 `eval/run_cdl_profile_generalization_smoke.m`：
+
+- 对应 v2.2 §6.2 Set B-D 的 CDL-A/C/D 通信侧泛化 smoke 实验。
+- 使用 compact CDL-like 生成器区分 delay spread、路径数与 LOS K-factor，比较 full-pilot LS 与 delay-sparse denoising 的 NMSE。
+- 输出目录：`Results/cdl_profile_generalization_smoke/`
+- 输出文件：CSV、PNG、PDF、Markdown summary。
+- 边界：该脚本不是完整 3GPP TR 38.901 实现；最终论文版应替换为标准 CDL 或 MATLAB 5G Toolbox pipeline，并接入 T-OMP-Net inference。
+
 新增 `eval/run_all_v2_2_supplemental_experiments.m`：
 
-- 一键复跑当前三组 v2.2 轻量补充实验。
+- 一键复跑当前四组 v2.2 轻量补充实验。
 - 生成 `Results/v2_2_supplemental_manifest.md` 与 `Results/v2_2_supplemental_manifest.csv`。
 - 汇总每组实验的目标章节、状态、耗时、summary 路径和关键证据。
 
@@ -72,7 +80,7 @@
 | P1 | 过采样比完整扫描：`rho_theta/rho_tau/rho_nu={1,2,4,8}` | §6.5.13(a) | 已有轻量版本；下一步扩到论文尺度并补 FLOPs。 |
 | P1 | Kruskal 可辨识性退化：`L={2,4,8,16,32,64}` | §6.5.13(b,c) | 已有轻量版本；下一步补低 SNR / off-grid 压力设置。 |
 | P1 | Off-grid mismatch lemma 验证 | §5.1.1, Phase 3 | 已有轻量版本；下一步合并进理论章节图表。 |
-| P1 | CDL-A/C/D 泛化 | §6.2 Set B-D | 通信侧泛化必做。 |
+| P1 | CDL-A/C/D 泛化 | §6.2 Set B-D | 已有轻量 CDL-like smoke；下一步替换为标准 3GPP CDL pipeline。 |
 | P2 | DeepMIMO O1/I3 接入 | §6.2 Set E | 外部数据集验证，速度 RMSE 不纳入。 |
 | P2 | CRLB 高 SNR 渐近紧致性 | §5.2, §6.5.5 | 支撑理论分析。 |
 

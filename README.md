@@ -69,6 +69,18 @@ It writes results to:
 Results/offgrid_mismatch_lemma/
 ```
 
+The CDL-A/C/D-like communication generalization smoke experiment can be run with:
+
+```matlab
+run('eval/run_cdl_profile_generalization_smoke.m')
+```
+
+It writes results to:
+
+```text
+Results/cdl_profile_generalization_smoke/
+```
+
 The combined evidence index is written to:
 
 ```text
