@@ -1,0 +1,24 @@
+# v2.3R Sensors open-source experiment stack.
+# Generated for the Phase-Next E0 gate on 2026-06-26.
+#
+# The workspace default interpreter is Python 3.12.10. Sionna 0.18.0 cannot
+# resolve on Python 3.12 because it requires tensorflow<2.16. Use the Sionna
+# 2.x stack below for the current Python path. If reproducing the legacy
+# tr38901/TensorFlow API from the original plan, use Python 3.10/3.11 and pin:
+#   sionna==0.18.0
+#   tensorflow==2.15.*
+
+numpy==2.2.6
+scipy==1.18.0
+matplotlib==3.11.0
+h5py==3.16.0
+tqdm==4.68.3
+pytest>=8.0
+
+# DeepMIMO loaders. Keep both names available while the E2 loader is finalized:
+# DeepMIMOv3 matches the plan, DeepMIMO is the current PyPI package line.
+DeepMIMOv3==0.2.9
+DeepMIMO==4.0.3
+
+# Sionna 2.x is the current installable path for Python 3.12.
+sionna==2.0.1

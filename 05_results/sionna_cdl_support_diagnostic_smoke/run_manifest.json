@@ -1,0 +1,62 @@
+{
+  "command": "D:\\Python\\python.exe 04_experiments\\eval\\run_sionna_cdl_profile_generalization.py --profiles A C D --snrs 0 20 --l-values 4 16 --seeds 20260626 --samples-per-profile-seed 2 --num-subcarriers 128 --num-tx-antennas 16 --output-dir-name sionna_cdl_support_diagnostic_smoke",
+  "config": {
+    "carrier_frequency_hz": 60000000000.0,
+    "delay_spread_s": 1e-07,
+    "device": "cpu",
+    "l_values": [
+      4,
+      16
+    ],
+    "num_subcarriers": 128,
+    "num_tx_antennas": 16,
+    "profiles": [
+      "A",
+      "C",
+      "D"
+    ],
+    "samples_per_profile_seed": 2,
+    "seeds": [
+      20260626
+    ],
+    "snrs": [
+      0.0,
+      20.0
+    ],
+    "subcarrier_spacing_hz": 120000.0
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "best_mean_channel_nmse_db": -21.00695382974554,
+    "claim_update": "dev-chain-supported",
+    "elapsed_seconds": 0.05288730000029318,
+    "l_values": "4,16",
+    "mean_channel_nmse_db_all": -11.27374459420568,
+    "mean_dominant_energy_recall_all": 0.8894624700032551,
+    "mean_effective_support_95_all": 20.333333333333332,
+    "mean_effective_support_99_all": 90.66666666666667,
+    "mean_topk_energy_efficiency_all": 0.9975555356076834,
+    "min_mean_angle_support_recall": 0.28125,
+    "min_mean_delay_support_recall": 0.34375,
+    "min_mean_support_recall": 0.53125,
+    "min_mean_topk_energy_efficiency": 0.9888947015496935,
+    "profiles": "A,C,D",
+    "row_count": 12.0,
+    "sample_row_count": 24.0,
+    "samples_per_profile_seed": 2.0,
+    "seed_count": 1.0,
+    "snrs_db": "0.0,20.0",
+    "worst_mean_channel_nmse_db": -5.390618205778297
+  },
+  "notes": [
+    "Auxiliary/dev E1 run: validates Sionna CDL-A/C/D -> noisy frequency response -> FFT top-k Tensor-OMP proxy metrics.",
+    "Delay/angle metrics are grid-bin proxy RMSE values from dominant FFT bins, not final physical path RMSE.",
+    "Exact support recall is retained; top-k energy efficiency and axis-specific recall diagnose over-budgeted or unresolved support cells without replacing the canonical metric.",
+    "Scale seeds and samples before using this as paper-facing Sensors E1 evidence."
+  ],
+  "run_id": "sionna_cdl_profile_generalization_dev_1x2_n128_m16"
+}

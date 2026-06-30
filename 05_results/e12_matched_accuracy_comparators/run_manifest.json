@@ -1,0 +1,53 @@
+{
+  "command": "python 04_experiments/eval/run_e12_matched_accuracy_comparators.py",
+  "config": {
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "offset_radius": 0.35,
+    "output_dir_name": "e12_matched_accuracy_comparators",
+    "parafac_iterations": 10,
+    "samples_per_cell_seed": 20,
+    "seeds": [
+      20260630,
+      20260701,
+      20260702,
+      20260703,
+      20260704
+    ],
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ]
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "comparator_limitations": {
+      "complex_parafac_als_10_sweeps": "matched accuracy reported; factor columns provide cross-axis pairing, and LS reconstruction uses the inferred bins",
+      "separable_forward_backward_esprit": "timing-only: the implementation estimates an unordered marginal frequency set on each axis and has no cross-axis component pairing, so channel NMSE and joint target RMSE would not be matched fairly"
+    },
+    "parafac_failure_rate": 0.0,
+    "parafac_mean_joint_bin_rmse": 0.14947495017779971,
+    "parafac_mean_nmse_db": -16.854998484302712,
+    "row_count": 1200
+  },
+  "notes": [
+    "Samples replay the exact E12 seed/SNR/L/generator contract.",
+    "timing-only: the implementation estimates an unordered marginal frequency set on each axis and has no cross-axis component pairing, so channel NMSE and joint target RMSE would not be matched fairly",
+    "matched accuracy reported; factor columns provide cross-axis pairing, and LS reconstruction uses the inferred bins"
+  ],
+  "run_id": "e12_matched_accuracy_comparators_20260630"
+}

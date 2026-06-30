@@ -1,0 +1,38 @@
+\section{System Model and Problem Formulation}
+
+We consider a mmWave MIMO-OFDM ISAC setting in which the received measurements are represented over a separable angle-delay-Doppler tensor dictionary. Let $\mathcal{Y}$ denote the observed tensor and let the unknown scene be approximated by a sparse set of atoms indexed by angle, delay, and Doppler coordinates. The sparse-support view is useful because each selected atom has a physical interpretation, while the tensor representation avoids erasing separability across propagation and sensing dimensions.
+
+For tensor dimensions $N_a\times N_\tau\times N_\nu$, the executable synthetic model is
+\begin{equation}
+ \mathcal{Y}=\sum_{\ell=1}^{L}\beta_\ell\,
+ \mathbf{a}_{N_a}(b_{a,\ell})\circ
+ \mathbf{a}_{N_\tau}(b_{\tau,\ell})\circ
+ \mathbf{a}_{N_\nu}(b_{\nu,\ell})+\mathcal{W},
+ \label{eq:observation_model}
+\end{equation}
+where $\beta_\ell\in\mathbb{C}$ is the path coefficient, $\circ$ denotes the outer product, and
+\begin{equation}
+ [\mathbf{a}_{N}(b)]_n=N^{-1/2}\exp\!\left(j2\pi nb/N\right),
+ \quad n=0,\ldots,N-1.
+ \label{eq:steering_atom}
+\end{equation}
+Each continuous bin is $b_{d,\ell}=k_{d,\ell}+\delta_{d,\ell}$, with grid index $k_{d,\ell}$ and bounded offset $\delta_{d,\ell}$. Equations~\eqref{eq:observation_model}--\eqref{eq:steering_atom} are identical to the separable atoms used by the off-grid sample generator and least-squares reconstruction code.
+
+The paper focuses on the FDMA virtual-array regime used by the current evaluation package. Within this scope, a target or path is represented by a coarse grid location plus a possible off-grid offset. The coarse grid gives a discrete support for Tensor-OMP, and the off-grid offset captures the local mismatch between physical parameters and dictionary bins. The estimator therefore has two linked jobs: it must select a plausible sparse support and then refine the selected atoms without drifting away from physically meaningful coordinates.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{v2_3r_system_model.pdf}
+  \caption{FDMA MIMO-OFDM ISAC observation model. A small set of paths or targets couples the transmit subarrays and receive ULA. Matched filtering and stacking preserve a separable angle--delay--Doppler tensor whose sparse atoms retain physical meaning.}
+  \label{fig:system_model}
+\end{figure*}
+
+The main reconstruction metric is measurement-domain NMSE,
+\begin{equation}
+ \operatorname{NMSE}_{\mathrm{dB}}=10\log_{10}
+ \frac{\|\widehat{\mathcal{Y}}-\mathcal{Y}_0\|_F^2}{\|\mathcal{Y}_0\|_F^2},
+ \label{eq:nmse_metric}
+\end{equation}
+where $\mathcal{Y}_0$ is the noise-free tensor. Target-parameter errors use the minimum-cost Hungarian assignment between estimated and reference target sets; per-axis RMSE is then computed on the matched pairs with circular bin distance. The local regime uses a $128\times16\times32$ tensor. The standards-aligned CDL regime uses a $64\times4$ frequency/ULA observation, CIR delay truth, and the identifiable projected broadside angle.
+
+The controller is trained and validated on disjoint CDL-A/C seeds and frozen before held-out evaluation; CDL-D is reserved for zero-shot profile-shift testing. The standards-aligned channel generator follows the CDL family in 3GPP TR 38.901 and is executed through Sionna \cite{3gpp38901,hoydis2023sionna}. DeepMIMO O1/I3 scalar-transfer proxies are available but do not yet use the same trained physical delay/angle contract.

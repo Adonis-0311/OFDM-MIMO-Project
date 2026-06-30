@@ -1,0 +1,4 @@
+n_targets,mean_oracle_depth,mean_nmse_gap_vs_fixed_db,mean_depth_savings_percent,min_depth_savings_percent,max_depth_savings_percent,n_trials
+2.0,8.0,0.0,0.0,0.0,0.0,5.0
+8.0,6.6,0.19726372178110693,17.5,0.0,37.5,5.0
+32.0,5.8,0.34879118871544784,27.5,25.0,37.5,5.0

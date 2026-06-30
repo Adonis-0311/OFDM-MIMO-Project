@@ -1,0 +1,5 @@
+label,status,reader,path,bytes,variables
+O1_60 delay ray file,ok,scipy,D:\E\OFDM-MIMO_Radar_Estimation\90_archive\2025_thesis_materials\参考\DeepMIMO-5GNR\DeepMIMO_dataset\o1_60\delay_t003_tx000_r000.mat,35851224,"[{""name"": ""delay"", ""shape"": ""497931x18"", ""class"": ""single""}]"
+O1_60 power ray file,ok,scipy,D:\E\OFDM-MIMO_Radar_Estimation\90_archive\2025_thesis_materials\参考\DeepMIMO-5GNR\DeepMIMO_dataset\o1_60\power_t003_tx000_r000.mat,35851224,"[{""name"": ""power"", ""shape"": ""497931x18"", ""class"": ""single""}]"
+O1_60 phase ray file,ok,scipy,D:\E\OFDM-MIMO_Radar_Estimation\90_archive\2025_thesis_materials\参考\DeepMIMO-5GNR\DeepMIMO_dataset\o1_60\phase_t003_tx000_r000.mat,35851224,"[{""name"": ""phase"", ""shape"": ""497931x18"", ""class"": ""single""}]"
+I3_60 CIR file,ok,scipy,D:\E\OFDM-MIMO_Radar_Estimation\90_archive\2025_thesis_materials\参考\DeepMIMO-5GNR\DeepMIMO_dataset\I3_60_v1\I3_60.1.CIR.mat,18412953,"[{""name"": ""CIR_array_full"", ""shape"": ""1x6458767"", ""class"": ""single""}]"

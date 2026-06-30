@@ -1,0 +1,57 @@
+{
+  "command": "D:\\Python\\python.exe 04_experiments\\eval\\run_feature_controller_source_training.py --seeds 20260624 --n-train 2 --n-test 4 --epochs 20 --output-dir-name feature_controller_source_smoke",
+  "config": {
+    "epochs": 20,
+    "hidden_dim": 16,
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "lr": 0.02,
+    "n_test": 4,
+    "n_train": 2,
+    "offset_radius": 0.35,
+    "output_dir_name": "feature_controller_source_smoke",
+    "parameter_weight": 0.1,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "seeds": [
+      20260624
+    ],
+    "shape": [
+      64,
+      4
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ]
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "claim_update": "feature-controller-source-inconclusive",
+    "elapsed_seconds": 2.760236000000077,
+    "mean_angle_alpha": 0.8880566876208884,
+    "mean_angle_rmse_reduction_bins": 0.005041908027105133,
+    "mean_delay_alpha": 0.8015304991836508,
+    "mean_delay_rmse_reduction_bins": -0.011747824645253244,
+    "mean_nmse_gain_db": 4.905546404311146,
+    "mean_std_angle_alpha": 0.2007593334093567,
+    "mean_std_delay_alpha": 0.17861440721992036,
+    "seed_count": 1.0,
+    "shape": "64x4"
+  },
+  "notes": [
+    "Training and model selection use only geometry-matched synthetic samples.",
+    "Features are estimator-internal and available at deployment.",
+    "Hungarian matching is fixed per sample before differentiable optimization."
+  ],
+  "run_id": "feature_controller_source_1seed"
+}

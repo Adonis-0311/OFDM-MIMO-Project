@@ -1,0 +1,64 @@
+{
+  "command": "D:\\Python\\python.exe 04_experiments\\eval\\run_cdl_a_controller_training.py --train-seeds 20260620 --validation-seeds 20260623 --train-samples-per-seed 4 --validation-samples-per-seed 4 --epochs 20 --output-dir-name cdl_a_feature_controller_smoke",
+  "config": {
+    "epochs": 20,
+    "hidden_dim": 16,
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "lr": 0.02,
+    "output_dir_name": "cdl_a_feature_controller_smoke",
+    "parameter_weight": 1.0,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "shape": [
+      64,
+      4
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "subcarrier_spacing_hz": 120000.0,
+    "train_samples_per_seed": 4,
+    "train_seeds": [
+      20260620
+    ],
+    "validation_samples_per_seed": 4,
+    "validation_seeds": [
+      20260623
+    ]
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "claim_update": "cdl-a-training-inconclusive",
+    "elapsed_seconds": 4.559151800000109,
+    "mean_angle_alpha": 0.32886935398936396,
+    "mean_angle_rmse_reduction_bins": -0.00753183901658154,
+    "mean_delay_alpha": 0.7949481769510801,
+    "mean_delay_rmse_reduction_bins": 0.05510409672100208,
+    "mean_local_angle_rmse_reduction_bins": -0.01360495249573728,
+    "mean_local_delay_rmse_reduction_bins": 0.19609322946324195,
+    "mean_nmse_gain_db": 6.163276586151746,
+    "std_angle_alpha": 0.3002005739525207,
+    "std_delay_alpha": 0.2236073950739579,
+    "train_seed_count": 1.0,
+    "training_profile": "A",
+    "validation_profile": "A",
+    "validation_seed_count": 1.0
+  },
+  "notes": [
+    "Only CDL-A is used for training and validation.",
+    "Validation seeds are disjoint from training seeds.",
+    "CDL-C/D remain untouched zero-shot test profiles."
+  ],
+  "run_id": "cdl_a_controller_1train_seed"
+}

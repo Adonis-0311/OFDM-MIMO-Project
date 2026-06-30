@@ -1,0 +1,70 @@
+{
+  "command": "python 04_experiments/eval/run_e12_tensor_nomp_matched_pilot.py",
+  "config": {
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "nomp_cyclic_iterations": 2,
+    "nomp_cyclic_passes": 2,
+    "nomp_local_iterations": 5,
+    "nomp_oversampling_points": 5,
+    "offset_radius": 0.35,
+    "output_dir_name": "tensor_nomp3d_oversampled_paper_scale_5seed",
+    "samples_per_cell_seed": 2,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "seeds": [
+      20260630,
+      20260701,
+      20260702,
+      20260703,
+      20260704
+    ],
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snrs": [
+      20.0
+    ],
+    "source_alpha": 0.6419195571509573
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "claim_update": "oversampled-continuous-comparator-dominates-matched-synthetic-at-runtime-cost",
+    "nomp_max_normalized_joint_bin_rmse": 0.00012952758024112841,
+    "nomp_mean_gain_vs_grid_db": 53.18101802504613,
+    "nomp_mean_matched_fraction_within_half_bin": 1.0,
+    "nomp_mean_measurement_nmse_db": -58.592931545223685,
+    "nomp_mean_normalized_joint_bin_rmse": 3.9916914234277884e-05,
+    "nomp_median_wall_clock_ms": 2711.465799999587,
+    "nomp_min_advantage_vs_scalar_db": 41.48747477165459,
+    "nomp_min_gain_vs_grid_db": 47.18269620371279,
+    "nomp_min_within_half_bin": 1.0,
+    "nomp_nmse_delta_vs_scalar_db": 47.18721554114974,
+    "nomp_seed_mean_advantage_vs_scalar_ci95_high_db": 48.28092879238699,
+    "nomp_seed_mean_advantage_vs_scalar_ci95_low_db": 46.09350228991251,
+    "nomp_to_scalar_median_runtime_ratio": 7.583786797669451,
+    "row_count": 120,
+    "sample_count_per_method": 30,
+    "scalar_mean_gain_vs_grid_db": 5.993802483896371,
+    "scalar_mean_measurement_nmse_db": -11.405716004073946,
+    "scalar_mean_normalized_joint_bin_rmse": 0.15034855675440753,
+    "scalar_median_wall_clock_ms": 357.5345499998548
+  },
+  "notes": [
+    "All methods receive the same samples, known target count, and least-squares reconstruction contract.",
+    "The fixed scalar is the mean source-trained G2 alpha and is not tuned on pilot truth.",
+    "The 3-D cyclic NOMP-inspired comparator adapts detection/local-Newton/cyclic-feedback to a dense tensor; it is not an exact reproduction of the sparse-resource 2-D OFDM algorithm or CFAR stopping rule.",
+    "This is a baseline verification pilot, not yet a paper-scale matched-accuracy result.",
+    "Post-run paired verification accepts the comparator as trusted_with_caveats and refutes learned-scalar accuracy superiority in this matched synthetic regime."
+  ],
+  "run_id": "e12_tensor_nomp_matched_pilot_20260629"
+}

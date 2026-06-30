@@ -1,0 +1,47 @@
+\section{Conditional Analysis and Validation Boundaries}
+\label{sec:theory}
+
+The analysis below explains the local mechanism and the validation checks; it is not a global recovery or efficiency theorem. Its assumptions are separable differentiable atoms, a correct selected support for the local mismatch argument, and local differentiability within the bounded refinement neighborhood.
+
+\subsection{Support-Conditioned Mismatch}
+
+Let $\mathbf{a}(\mathbf{b})$ be a differentiable tensor atom and suppose the true component lies at $\mathbf{b}_0+\boldsymbol{\delta}$ near a selected grid point $\mathbf{b}_0$. Locally,
+\begin{equation}
+ \mathbf{a}(\mathbf{b}_0+\boldsymbol{\delta})
+ =\mathbf{a}(\mathbf{b}_0)
+ +\mathbf{J}(\mathbf{b}_0)\boldsymbol{\delta}
+ +\mathcal{O}(\|\boldsymbol{\delta}\|_2^2),
+ \label{eq:local_atom_expansion}
+\end{equation}
+where $\mathbf{J}$ is the atom Jacobian. If local search returns an offset candidate $\boldsymbol{\delta}_\star$, the first-order mismatch after bounded interpolation is proportional to
+\begin{equation}
+ \left\|\mathbf{J}(\mathbf{b}_0)
+   (\boldsymbol{\delta}-\boldsymbol{\alpha}\odot\boldsymbol{\delta}_\star)
+ \right\|_2.
+ \label{eq:local_mismatch}
+\end{equation}
+Learning the interpolation scale can therefore reduce quantization mismatch when the selected support and local candidate are informative. Equations~\eqref{eq:local_atom_expansion}--\eqref{eq:local_mismatch} do not guarantee improvement after a wrong support decision; the bound in~\eqref{eq:bounded_interpolation} only limits how far such an error can propagate.
+
+\subsection{Depth--Quality Diagnostic}
+
+For the repeated-refinement path, define the relative depth saving as
+\begin{equation}
+ s_K=100\left(1-\frac{\widehat K}{K}\right)\%,
+ \qquad
+ \Delta q=q_{\widehat K}-q_K.
+ \label{eq:depth_metrics}
+\end{equation}
+The gate is useful only when $s_K$ is positive and the quality gap $\Delta q$ stays within a chosen tolerance. The current A4 study uses this operational criterion; it does not establish that~\eqref{eq:plateau_gate} is optimal. Its failure across the SNR sweep further shows that small one-step improvement is not a sufficient SNR-invariant stopping statistic for the tested curves.
+
+\subsection{CRLB Implementation Check}
+
+For complex Gaussian observations with mean $\boldsymbol{\mu}(\boldsymbol{\eta})$ and covariance $\sigma^2\mathbf{I}$, the real-parameter Fisher information used in the audit is
+\begin{equation}
+ [\mathbf{F}(\boldsymbol{\eta})]_{ij}
+ =\frac{2}{\sigma^2}\operatorname{Re}\!\left\{
+ \left(\frac{\partial\boldsymbol{\mu}}{\partial\eta_i}\right)^{\!H}
+ \frac{\partial\boldsymbol{\mu}}{\partial\eta_j}
+ \right\}.
+ \label{eq:fim}
+\end{equation}
+Analytic derivatives agree with finite differences to relative error $5.73\times10^{-10}$ in the recorded audit. In the single-target pilot, the mean 30 dB RMSE-to-CRLB ratio is 1.0067 and the mean slope error is 0.0067. These values validate the derivative implementation and high-SNR trend only; they do not establish multi-target CRLB tightness for the learned estimators.

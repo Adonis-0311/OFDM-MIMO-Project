@@ -1,0 +1,35 @@
+{
+  "command": "python 04_experiments/eval/run_sionna_cdl_smoke.py",
+  "config": {
+    "batch_size": 2,
+    "bs_array": "1x4 single-polarized 38.901",
+    "carrier_frequency_hz": 60000000000.0,
+    "delay_spread_s": 1e-07,
+    "device": "cpu",
+    "direction": "downlink",
+    "num_subcarriers": 64,
+    "num_time_steps": 1,
+    "profile": "A",
+    "sampling_frequency_hz": 7680000.0,
+    "seed": 20260626,
+    "subcarrier_spacing_hz": 120000.0,
+    "ut_array": "1x1 single-polarized omni"
+  },
+  "metrics": {
+    "finite": true,
+    "h_cir_shape": "2x1x1x1x4x23x1",
+    "h_ofdm_shape": "2x1x1x1x4x1x64",
+    "max_abs": 1.7831734418869019,
+    "mean_power": 1.0,
+    "status": "ok",
+    "tau_shape": "2x1x1x23",
+    "tomp_tensor_shape": "2x64x4x1",
+    "torch_version": "2.12.1+cpu"
+  },
+  "notes": [
+    "Sionna 2.x API path is sionna.phy.channel.tr38901.cdl.CDL.",
+    "This smoke validates profile CDL-A generation and conversion from CIR to OFDM subcarrier response.",
+    "The smoke tensor is shaped for later adapter work, not yet a full E1 profile-generalization experiment."
+  ],
+  "run_id": "sionna_cdl_smoke_20260626"
+}

@@ -1,0 +1,418 @@
+{
+  "verification_verdict": "trusted_with_caveats",
+  "baseline_acceptance_target": "comparison_ready",
+  "paired_sample_count": 1200,
+  "nomp_min_gain_vs_grid_db": 24.642189186673093,
+  "nomp_max_normalized_joint_bin_rmse": 0.26321729316355874,
+  "nomp_min_within_half_bin": 0.625,
+  "nomp_to_scalar_median_runtime_ratio": 8.106414597915736,
+  "per_l": [
+    {
+      "n_targets": 2,
+      "sample_count": 400,
+      "mean_nmse_db": -56.5333386848531,
+      "median_nmse_db": -57.50172578443036,
+      "min_gain_vs_grid_db": 29.286715542266435,
+      "max_normalized_joint_bin_rmse": 0.0014164170947588584,
+      "mean_within_half_bin": 1.0,
+      "median_wall_clock_ms": 1164.4945000007283
+    },
+    {
+      "n_targets": 4,
+      "sample_count": 400,
+      "mean_nmse_db": -53.46563787242408,
+      "median_nmse_db": -53.55017856058271,
+      "min_gain_vs_grid_db": 26.393393224772588,
+      "max_normalized_joint_bin_rmse": 0.26321729316355874,
+      "mean_within_half_bin": 0.999375,
+      "median_wall_clock_ms": 3513.9876500034006
+    },
+    {
+      "n_targets": 8,
+      "sample_count": 400,
+      "mean_nmse_db": -50.171491417610135,
+      "median_nmse_db": -48.69523255542478,
+      "min_gain_vs_grid_db": 24.642189186673093,
+      "max_normalized_joint_bin_rmse": 0.18805297277860586,
+      "mean_within_half_bin": 0.998125,
+      "median_wall_clock_ms": 12042.206199999782
+    }
+  ],
+  "per_snr_l_comparisons": [
+    {
+      "snr_db": 0.0,
+      "n_targets": 2,
+      "comparator": "grid_fft_topk_plus_ls",
+      "seed_mean_nomp_advantage_db": 35.90879179924593,
+      "ci95_low_db": 34.77499569094083,
+      "ci95_high_db": 37.04258790755104,
+      "nomp_to_scalar_median_runtime_ratio": 5.770287448400807
+    },
+    {
+      "snr_db": 0.0,
+      "n_targets": 2,
+      "comparator": "deterministic_cartesian_local_refinement_plus_ls",
+      "seed_mean_nomp_advantage_db": 28.483937295511947,
+      "ci95_low_db": 27.129144346253128,
+      "ci95_high_db": 29.838730244770765,
+      "nomp_to_scalar_median_runtime_ratio": 5.770287448400807
+    },
+    {
+      "snr_db": 0.0,
+      "n_targets": 2,
+      "comparator": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "seed_mean_nomp_advantage_db": 29.947976447435344,
+      "ci95_low_db": 28.637801290749902,
+      "ci95_high_db": 31.258151604120787,
+      "nomp_to_scalar_median_runtime_ratio": 5.770287448400807
+    },
+    {
+      "snr_db": 0.0,
+      "n_targets": 4,
+      "comparator": "grid_fft_topk_plus_ls",
+      "seed_mean_nomp_advantage_db": 33.17460689535384,
+      "ci95_low_db": 32.587470457717735,
+      "ci95_high_db": 33.761743332989944,
+      "nomp_to_scalar_median_runtime_ratio": 7.919363162459465
+    },
+    {
+      "snr_db": 0.0,
+      "n_targets": 4,
+      "comparator": "deterministic_cartesian_local_refinement_plus_ls",
+      "seed_mean_nomp_advantage_db": 25.896170837912177,
+      "ci95_low_db": 25.040318281492265,
+      "ci95_high_db": 26.752023394332088,
+      "nomp_to_scalar_median_runtime_ratio": 7.919363162459465
+    },
+    {
+      "snr_db": 0.0,
+      "n_targets": 4,
+      "comparator": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "seed_mean_nomp_advantage_db": 27.444947190935686,
+      "ci95_low_db": 26.5870589421731,
+      "ci95_high_db": 28.30283543969827,
+      "nomp_to_scalar_median_runtime_ratio": 7.919363162459465
+    },
+    {
+      "snr_db": 0.0,
+      "n_targets": 8,
+      "comparator": "grid_fft_topk_plus_ls",
+      "seed_mean_nomp_advantage_db": 29.82772406387507,
+      "ci95_low_db": 29.014759515532162,
+      "ci95_high_db": 30.64068861221798,
+      "nomp_to_scalar_median_runtime_ratio": 13.507495046104678
+    },
+    {
+      "snr_db": 0.0,
+      "n_targets": 8,
+      "comparator": "deterministic_cartesian_local_refinement_plus_ls",
+      "seed_mean_nomp_advantage_db": 23.004406968069826,
+      "ci95_low_db": 22.263225126561487,
+      "ci95_high_db": 23.745588809578166,
+      "nomp_to_scalar_median_runtime_ratio": 13.507495046104678
+    },
+    {
+      "snr_db": 0.0,
+      "n_targets": 8,
+      "comparator": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "seed_mean_nomp_advantage_db": 24.27468127718906,
+      "ci95_low_db": 23.53636819384334,
+      "ci95_high_db": 25.01299436053478,
+      "nomp_to_scalar_median_runtime_ratio": 13.507495046104678
+    },
+    {
+      "snr_db": 10.0,
+      "n_targets": 2,
+      "comparator": "grid_fft_topk_plus_ls",
+      "seed_mean_nomp_advantage_db": 45.99248963982397,
+      "ci95_low_db": 44.91944061083266,
+      "ci95_high_db": 47.065538668815286,
+      "nomp_to_scalar_median_runtime_ratio": 5.298754614381857
+    },
+    {
+      "snr_db": 10.0,
+      "n_targets": 2,
+      "comparator": "deterministic_cartesian_local_refinement_plus_ls",
+      "seed_mean_nomp_advantage_db": 38.107574471823845,
+      "ci95_low_db": 37.35058174087936,
+      "ci95_high_db": 38.86456720276833,
+      "nomp_to_scalar_median_runtime_ratio": 5.298754614381857
+    },
+    {
+      "snr_db": 10.0,
+      "n_targets": 2,
+      "comparator": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "seed_mean_nomp_advantage_db": 39.93976523233789,
+      "ci95_low_db": 38.71211359963182,
+      "ci95_high_db": 41.16741686504396,
+      "nomp_to_scalar_median_runtime_ratio": 5.298754614381857
+    },
+    {
+      "snr_db": 10.0,
+      "n_targets": 4,
+      "comparator": "grid_fft_topk_plus_ls",
+      "seed_mean_nomp_advantage_db": 42.97729600900171,
+      "ci95_low_db": 42.61963312808224,
+      "ci95_high_db": 43.33495888992118,
+      "nomp_to_scalar_median_runtime_ratio": 7.86315893542967
+    },
+    {
+      "snr_db": 10.0,
+      "n_targets": 4,
+      "comparator": "deterministic_cartesian_local_refinement_plus_ls",
+      "seed_mean_nomp_advantage_db": 35.87030290497643,
+      "ci95_low_db": 35.38324929723333,
+      "ci95_high_db": 36.35735651271953,
+      "nomp_to_scalar_median_runtime_ratio": 7.86315893542967
+    },
+    {
+      "snr_db": 10.0,
+      "n_targets": 4,
+      "comparator": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "seed_mean_nomp_advantage_db": 37.1909311934269,
+      "ci95_low_db": 36.776981286650084,
+      "ci95_high_db": 37.60488110020371,
+      "nomp_to_scalar_median_runtime_ratio": 7.86315893542967
+    },
+    {
+      "snr_db": 10.0,
+      "n_targets": 8,
+      "comparator": "grid_fft_topk_plus_ls",
+      "seed_mean_nomp_advantage_db": 39.75748921027999,
+      "ci95_low_db": 39.314366389486935,
+      "ci95_high_db": 40.20061203107305,
+      "nomp_to_scalar_median_runtime_ratio": 13.745152714568244
+    },
+    {
+      "snr_db": 10.0,
+      "n_targets": 8,
+      "comparator": "deterministic_cartesian_local_refinement_plus_ls",
+      "seed_mean_nomp_advantage_db": 33.0753018002397,
+      "ci95_low_db": 32.23409343334032,
+      "ci95_high_db": 33.91651016713908,
+      "nomp_to_scalar_median_runtime_ratio": 13.745152714568244
+    },
+    {
+      "snr_db": 10.0,
+      "n_targets": 8,
+      "comparator": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "seed_mean_nomp_advantage_db": 34.241656867745064,
+      "ci95_low_db": 33.538917967593484,
+      "ci95_high_db": 34.944395767896644,
+      "nomp_to_scalar_median_runtime_ratio": 13.745152714568244
+    },
+    {
+      "snr_db": 20.0,
+      "n_targets": 2,
+      "comparator": "grid_fft_topk_plus_ls",
+      "seed_mean_nomp_advantage_db": 56.95713481834961,
+      "ci95_low_db": 56.247823895583664,
+      "ci95_high_db": 57.66644574111555,
+      "nomp_to_scalar_median_runtime_ratio": 5.500779384532583
+    },
+    {
+      "snr_db": 20.0,
+      "n_targets": 2,
+      "comparator": "deterministic_cartesian_local_refinement_plus_ls",
+      "seed_mean_nomp_advantage_db": 48.54836868180233,
+      "ci95_low_db": 48.381837594197236,
+      "ci95_high_db": 48.714899769407424,
+      "nomp_to_scalar_median_runtime_ratio": 5.500779384532583
+    },
+    {
+      "snr_db": 20.0,
+      "n_targets": 2,
+      "comparator": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "seed_mean_nomp_advantage_db": 50.92282794378248,
+      "ci95_low_db": 50.554314398587906,
+      "ci95_high_db": 51.291341488977054,
+      "nomp_to_scalar_median_runtime_ratio": 5.500779384532583
+    },
+    {
+      "snr_db": 20.0,
+      "n_targets": 4,
+      "comparator": "grid_fft_topk_plus_ls",
+      "seed_mean_nomp_advantage_db": 52.978536639439746,
+      "ci95_low_db": 52.32819449277726,
+      "ci95_high_db": 53.628878786102234,
+      "nomp_to_scalar_median_runtime_ratio": 8.123862980283045
+    },
+    {
+      "snr_db": 20.0,
+      "n_targets": 4,
+      "comparator": "deterministic_cartesian_local_refinement_plus_ls",
+      "seed_mean_nomp_advantage_db": 45.699230646475726,
+      "ci95_low_db": 45.29542553191485,
+      "ci95_high_db": 46.1030357610366,
+      "nomp_to_scalar_median_runtime_ratio": 8.123862980283045
+    },
+    {
+      "snr_db": 20.0,
+      "n_targets": 4,
+      "comparator": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "seed_mean_nomp_advantage_db": 47.35816619523943,
+      "ci95_low_db": 47.076808928255375,
+      "ci95_high_db": 47.63952346222348,
+      "nomp_to_scalar_median_runtime_ratio": 8.123862980283045
+    },
+    {
+      "snr_db": 20.0,
+      "n_targets": 8,
+      "comparator": "grid_fft_topk_plus_ls",
+      "seed_mean_nomp_advantage_db": 49.714175548822155,
+      "ci95_low_db": 49.49347345238664,
+      "ci95_high_db": 49.93487764525767,
+      "nomp_to_scalar_median_runtime_ratio": 13.817280760301925
+    },
+    {
+      "snr_db": 20.0,
+      "n_targets": 8,
+      "comparator": "deterministic_cartesian_local_refinement_plus_ls",
+      "seed_mean_nomp_advantage_db": 42.7998507345208,
+      "ci95_low_db": 42.50939242227866,
+      "ci95_high_db": 43.09030904676295,
+      "nomp_to_scalar_median_runtime_ratio": 13.817280760301925
+    },
+    {
+      "snr_db": 20.0,
+      "n_targets": 8,
+      "comparator": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "seed_mean_nomp_advantage_db": 44.03803187747005,
+      "ci95_low_db": 43.7503649962831,
+      "ci95_high_db": 44.32569875865699,
+      "nomp_to_scalar_median_runtime_ratio": 13.817280760301925
+    },
+    {
+      "snr_db": 30.0,
+      "n_targets": 2,
+      "comparator": "grid_fft_topk_plus_ls",
+      "seed_mean_nomp_advantage_db": 65.56766626287106,
+      "ci95_low_db": 64.68423660765795,
+      "ci95_high_db": 66.45109591808416,
+      "nomp_to_scalar_median_runtime_ratio": 5.593933270518801
+    },
+    {
+      "snr_db": 30.0,
+      "n_targets": 2,
+      "comparator": "deterministic_cartesian_local_refinement_plus_ls",
+      "seed_mean_nomp_advantage_db": 57.77560480627668,
+      "ci95_low_db": 56.6944926541166,
+      "ci95_high_db": 58.85671695843676,
+      "nomp_to_scalar_median_runtime_ratio": 5.593933270518801
+    },
+    {
+      "snr_db": 30.0,
+      "n_targets": 2,
+      "comparator": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "seed_mean_nomp_advantage_db": 59.40682011685993,
+      "ci95_low_db": 58.35430958830338,
+      "ci95_high_db": 60.459330645416486,
+      "nomp_to_scalar_median_runtime_ratio": 5.593933270518801
+    },
+    {
+      "snr_db": 30.0,
+      "n_targets": 4,
+      "comparator": "grid_fft_topk_plus_ls",
+      "seed_mean_nomp_advantage_db": 63.02335758864238,
+      "ci95_low_db": 62.55056179513902,
+      "ci95_high_db": 63.496153382145735,
+      "nomp_to_scalar_median_runtime_ratio": 7.9613993455677186
+    },
+    {
+      "snr_db": 30.0,
+      "n_targets": 4,
+      "comparator": "deterministic_cartesian_local_refinement_plus_ls",
+      "seed_mean_nomp_advantage_db": 55.95357346612544,
+      "ci95_low_db": 55.624598798726005,
+      "ci95_high_db": 56.28254813352488,
+      "nomp_to_scalar_median_runtime_ratio": 7.9613993455677186
+    },
+    {
+      "snr_db": 30.0,
+      "n_targets": 4,
+      "comparator": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "seed_mean_nomp_advantage_db": 57.339205877499715,
+      "ci95_low_db": 56.848071286640575,
+      "ci95_high_db": 57.830340468358855,
+      "nomp_to_scalar_median_runtime_ratio": 7.9613993455677186
+    },
+    {
+      "snr_db": 30.0,
+      "n_targets": 8,
+      "comparator": "grid_fft_topk_plus_ls",
+      "seed_mean_nomp_advantage_db": 59.64253430236896,
+      "ci95_low_db": 58.89447859534639,
+      "ci95_high_db": 60.39059000939152,
+      "nomp_to_scalar_median_runtime_ratio": 13.861003645728784
+    },
+    {
+      "snr_db": 30.0,
+      "n_targets": 8,
+      "comparator": "deterministic_cartesian_local_refinement_plus_ls",
+      "seed_mean_nomp_advantage_db": 52.65182132340224,
+      "ci95_low_db": 51.77367845772308,
+      "ci95_high_db": 53.5299641890814,
+      "nomp_to_scalar_median_runtime_ratio": 13.861003645728784
+    },
+    {
+      "snr_db": 30.0,
+      "n_targets": 8,
+      "comparator": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "seed_mean_nomp_advantage_db": 54.00254165333704,
+      "ci95_low_db": 53.227675960776644,
+      "ci95_high_db": 54.77740734589744,
+      "nomp_to_scalar_median_runtime_ratio": 13.861003645728784
+    }
+  ],
+  "paired_comparisons": {
+    "grid_fft_topk_plus_ls": {
+      "mean_nomp_advantage_db": 47.9601502315062,
+      "median_nomp_advantage_db": 48.26305659101955,
+      "min_nomp_advantage_db": 24.642189186673093,
+      "nomp_win_fraction": 1.0,
+      "seed_mean_advantage_db": 47.9601502315062,
+      "seed_mean_advantage_ci95_low_db": 47.80896846893684,
+      "seed_mean_advantage_ci95_high_db": 48.111331994075556,
+      "seed_means_db": [
+        47.90004771200058,
+        47.93169192558298,
+        47.967777944106246,
+        47.840080203821984,
+        48.16115337201919
+      ]
+    },
+    "deterministic_cartesian_local_refinement_plus_ls": {
+      "mean_nomp_advantage_db": 40.655511994761426,
+      "median_nomp_advantage_db": 41.01016291457543,
+      "min_nomp_advantage_db": 17.45736453967988,
+      "nomp_win_fraction": 1.0,
+      "seed_mean_advantage_db": 40.655511994761426,
+      "seed_mean_advantage_ci95_low_db": 40.517478369462495,
+      "seed_mean_advantage_ci95_high_db": 40.79354562006036,
+      "seed_means_db": [
+        40.564857397038246,
+        40.64610705646602,
+        40.74631680976436,
+        40.53200177455981,
+        40.788276935978715
+      ]
+    },
+    "fixed_source_trained_scalar_interpolation_plus_ls": {
+      "mean_nomp_advantage_db": 42.17562932277155,
+      "median_nomp_advantage_db": 42.65405627410287,
+      "min_nomp_advantage_db": 19.05383746841358,
+      "nomp_win_fraction": 1.0,
+      "seed_mean_advantage_db": 42.17562932277154,
+      "seed_mean_advantage_ci95_low_db": 42.01402691233846,
+      "seed_mean_advantage_ci95_high_db": 42.337231733204625,
+      "seed_means_db": [
+        42.08050176488133,
+        42.07001576390507,
+        42.26217023965625,
+        42.103225933335445,
+        42.36223291207965
+      ]
+    }
+  },
+  "claim_update": "oversampled-continuous-comparator-dominates-matched-synthetic-at-runtime-cost"
+}

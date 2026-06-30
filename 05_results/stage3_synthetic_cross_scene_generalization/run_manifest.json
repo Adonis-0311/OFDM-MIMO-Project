@@ -1,0 +1,93 @@
+{
+  "command": "python 04_experiments/eval/run_stage3_synthetic_cross_scene_generalization.py",
+  "config": {
+    "candidate_alphas": [
+      0.0,
+      0.19999999999999998,
+      0.39999999999999997,
+      0.6,
+      0.7999999999999999,
+      0.9999999999999999,
+      1.2
+    ],
+    "scenes": [
+      {
+        "n_oracle_train": 3,
+        "n_targets": 8,
+        "n_test": 3,
+        "name": "source_l8_snr20_offset035",
+        "offset_radius": 0.35,
+        "seed_offset": 100,
+        "snr_db": 20.0
+      },
+      {
+        "n_oracle_train": 3,
+        "n_targets": 8,
+        "n_test": 3,
+        "name": "target_l8_snr10_offset035",
+        "offset_radius": 0.35,
+        "seed_offset": 200,
+        "snr_db": 10.0
+      },
+      {
+        "n_oracle_train": 3,
+        "n_targets": 8,
+        "n_test": 3,
+        "name": "target_l8_snr20_offset045",
+        "offset_radius": 0.45,
+        "seed_offset": 300,
+        "snr_db": 20.0
+      },
+      {
+        "n_oracle_train": 2,
+        "n_targets": 16,
+        "n_test": 3,
+        "name": "target_l16_snr20_offset035",
+        "offset_radius": 0.35,
+        "seed_offset": 400,
+        "snr_db": 20.0
+      }
+    ],
+    "search_points": 5,
+    "search_radius": 0.45,
+    "seed": 20260624,
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "source_train_count": 3
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.9.13"
+  },
+  "metrics": {
+    "candidate_alphas": [
+      0.0,
+      0.19999999999999998,
+      0.39999999999999997,
+      0.6,
+      0.7999999999999999,
+      0.9999999999999999,
+      1.2
+    ],
+    "claim_update": "local-synthetic-pass",
+    "elapsed_seconds": 28.309090100000002,
+    "max_target_gap_vs_oracle_db": 0.4077002585556766,
+    "min_target_gain_vs_grid_db": 5.850359745018387,
+    "seed": 20260624,
+    "source_alpha": 0.7999999999999999,
+    "source_scene": "source_l8_snr20_offset035",
+    "source_train_count": 3,
+    "source_train_nmse_db": -12.090943419819704,
+    "tensor_shape": "128x16x32"
+  },
+  "notes": [
+    "Local synthetic cross-scene fallback only; not DeepMIMO or ray-traced channel evidence.",
+    "Source alpha is fitted once on the source scene and reused unchanged on all target scenes.",
+    "Target-oracle alpha is retuned on target train samples and reported only as a diagnostic upper bound."
+  ],
+  "run_id": "stage3_synthetic_cross_scene_generalization_20260624"
+}

@@ -1,0 +1,92 @@
+{
+  "verification_verdict": "trusted_with_caveats",
+  "baseline_acceptance_target": "comparison_ready",
+  "paired_sample_count": 30,
+  "nomp_min_gain_vs_grid_db": 47.18269620371279,
+  "nomp_max_normalized_joint_bin_rmse": 0.00012952758024112841,
+  "nomp_min_within_half_bin": 1.0,
+  "nomp_to_scalar_median_runtime_ratio": 7.583786797669451,
+  "per_l": [
+    {
+      "n_targets": 2,
+      "sample_count": 10,
+      "mean_nmse_db": -61.72729302148558,
+      "median_nmse_db": -62.74592796297921,
+      "min_gain_vs_grid_db": 51.09031858223764,
+      "max_normalized_joint_bin_rmse": 5.895854045610412e-05,
+      "mean_within_half_bin": 1.0,
+      "median_wall_clock_ms": 949.990550000166
+    },
+    {
+      "n_targets": 4,
+      "sample_count": 10,
+      "mean_nmse_db": -58.623799571208565,
+      "median_nmse_db": -58.529488381762704,
+      "min_gain_vs_grid_db": 48.6196957825592,
+      "max_normalized_joint_bin_rmse": 6.598883725146008e-05,
+      "mean_within_half_bin": 1.0,
+      "median_wall_clock_ms": 2711.465799999587
+    },
+    {
+      "n_targets": 8,
+      "sample_count": 10,
+      "mean_nmse_db": -55.42770204297693,
+      "median_nmse_db": -55.15249024776513,
+      "min_gain_vs_grid_db": 47.18269620371279,
+      "max_normalized_joint_bin_rmse": 0.00012952758024112841,
+      "mean_within_half_bin": 1.0,
+      "median_wall_clock_ms": 8996.639000000414
+    }
+  ],
+  "paired_comparisons": {
+    "grid_fft_topk_plus_ls": {
+      "mean_nomp_advantage_db": 53.18101802504613,
+      "median_nomp_advantage_db": 52.326586978370315,
+      "min_nomp_advantage_db": 47.18269620371279,
+      "nomp_win_fraction": 1.0,
+      "seed_mean_advantage_db": 53.181018025046114,
+      "seed_mean_advantage_ci95_low_db": 52.082230806454305,
+      "seed_mean_advantage_ci95_high_db": 54.279805243637924,
+      "seed_means_db": [
+        52.72659520724235,
+        54.4272326839361,
+        52.585667847508596,
+        52.37599970386041,
+        53.789594682683145
+      ]
+    },
+    "deterministic_cartesian_local_refinement_plus_ls": {
+      "mean_nomp_advantage_db": 46.087474760636546,
+      "median_nomp_advantage_db": 46.52374757623362,
+      "min_nomp_advantage_db": 38.299764722477974,
+      "nomp_win_fraction": 1.0,
+      "seed_mean_advantage_db": 46.08747476063655,
+      "seed_mean_advantage_ci95_low_db": 44.44964859181883,
+      "seed_mean_advantage_ci95_high_db": 47.72530092945428,
+      "seed_means_db": [
+        45.447145724806,
+        47.6788299003591,
+        45.87583805126207,
+        44.35780221077807,
+        47.077757915977536
+      ]
+    },
+    "fixed_source_trained_scalar_interpolation_plus_ls": {
+      "mean_nomp_advantage_db": 47.187215541149754,
+      "median_nomp_advantage_db": 47.062990794355045,
+      "min_nomp_advantage_db": 41.48747477165459,
+      "nomp_win_fraction": 1.0,
+      "seed_mean_advantage_db": 47.18721554114975,
+      "seed_mean_advantage_ci95_low_db": 46.09350228991251,
+      "seed_mean_advantage_ci95_high_db": 48.28092879238699,
+      "seed_means_db": [
+        46.01522782321724,
+        48.37937996287005,
+        47.34321895366943,
+        46.73246344210028,
+        47.46578752389175
+      ]
+    }
+  },
+  "claim_update": "oversampled-continuous-comparator-dominates-matched-synthetic-at-runtime-cost"
+}

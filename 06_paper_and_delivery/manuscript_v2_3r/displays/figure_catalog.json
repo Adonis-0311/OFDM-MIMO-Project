@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "generated_at": "2026-06-29",
+  "figures": [
+    {
+      "id": "fig_v2_3r_system_model",
+      "surface_class": "paper_main",
+      "claim": "The FDMA virtual-array observation preserves an interpretable sparse angle-delay-Doppler representation.",
+      "source_data": [
+        "01_design_and_plan/ISAC_DeepUnfolding_TechnicalDesign_v2.3R.md"
+      ],
+      "script": "06_paper_and_delivery/manuscript_v2_3r/displays/scripts/build_v2_3r_landing_figures.py",
+      "exports": {
+        "png": "06_paper_and_delivery/manuscript_v2_3r/displays/figures/v2_3r_system_model.png",
+        "pdf": "06_paper_and_delivery/manuscript_v2_3r/displays/figures/v2_3r_system_model.pdf"
+      },
+      "self_review_note": "Inspected at source resolution and after IEEE two-column PDF embedding; no text overflow, overlap, or clipped labels."
+    },
+    {
+      "id": "fig_v2_3r_refinement_paths",
+      "surface_class": "paper_main",
+      "claim": "The local scalar, CDL feature controller, and A4 depth diagnostic are distinct executable paths.",
+      "source_data": [
+        "03_active_modules/tompnet/torch_layer.py",
+        "03_active_modules/tompnet/feature_controller.py",
+        "04_experiments/eval/run_stage3_a4_cross_l_plateau_gate_seed_sweep.py"
+      ],
+      "script": "06_paper_and_delivery/manuscript_v2_3r/displays/scripts/build_v2_3r_landing_figures.py",
+      "exports": {
+        "png": "06_paper_and_delivery/manuscript_v2_3r/displays/figures/v2_3r_refinement_paths.png",
+        "pdf": "06_paper_and_delivery/manuscript_v2_3r/displays/figures/v2_3r_refinement_paths.pdf"
+      },
+      "self_review_note": "Inspected at source resolution and after IEEE two-column PDF embedding; no text overflow, overlap, or clipped labels."
+    },
+    {
+      "id": "fig_v2_3r_cdl_profile_evidence",
+      "surface_class": "paper_main",
+      "claim": "Held-out CDL-A/C gains coexist with a zero-shot CDL-D channel/delay failure boundary.",
+      "source_data": [
+        "05_results/sionna_cdl_ac_alias_lock_selected_scaled/",
+        "05_results/sionna_cdl_d_alias_lock_selected_zero_shot_scaled/"
+      ],
+      "script": "06_paper_and_delivery/manuscript_v2_3r/displays/scripts/build_v2_3r_landing_figures.py",
+      "exports": {
+        "png": "06_paper_and_delivery/manuscript_v2_3r/displays/figures/v2_3r_cdl_profile_evidence.png",
+        "pdf": "06_paper_and_delivery/manuscript_v2_3r/displays/figures/v2_3r_cdl_profile_evidence.pdf"
+      },
+      "self_review_note": "Inspected at source resolution and after IEEE two-column PDF embedding; no text overflow, overlap, or clipped labels."
+    },
+    {
+      "id": "fig_v2_3r_graphical_abstract",
+      "surface_class": "delivery",
+      "claim": "Learned bounded post-support refinement has positive held-out CDL-A/C evidence and a visible CDL-D boundary.",
+      "source_data": [
+        "05_results/sionna_cdl_ac_alias_lock_selected_scaled/",
+        "05_results/sionna_cdl_d_alias_lock_selected_zero_shot_scaled/"
+      ],
+      "script": "06_paper_and_delivery/manuscript_v2_3r/displays/scripts/build_v2_3r_landing_figures.py",
+      "exports": {
+        "png": "06_paper_and_delivery/manuscript_v2_3r/displays/figures/v2_3r_graphical_abstract.png",
+        "pdf": "06_paper_and_delivery/manuscript_v2_3r/displays/figures/v2_3r_graphical_abstract.pdf"
+      },
+      "self_review_note": "Inspected at source resolution and after IEEE two-column PDF embedding; no text overflow, overlap, or clipped labels."
+    },
+    {
+      "id": "fig_v2_3r_evidence_summary",
+      "surface_class": "paper_main_candidate",
+      "claim": "G2 is locally supported; A4 is positive only for high-L at the core SNR, while SNR sensitivity is boundary evidence.",
+      "source_data": [
+        "05_results/stage2_torch_locked_scale_g2_seed_sweep/stage2_torch_locked_scale_g2_seed_sweep_cells.csv",
+        "05_results/stage3_a4_cross_l_plateau_gate_seed_sweep/stage3_a4_cross_l_plateau_gate_seed_sweep_l_summary.csv",
+        "05_results/stage3_a4_snr_plateau_gate_seed_sweep/stage3_a4_snr_plateau_gate_seed_sweep_snr_summary.csv"
+      ],
+      "script": "06_paper_and_delivery/manuscript_v2_3r/displays/scripts/build_v2_3r_paper_displays.py",
+      "exports": {
+        "png": "06_paper_and_delivery/manuscript_v2_3r/displays/figures/v2_3r_evidence_summary.png",
+        "pdf": "06_paper_and_delivery/manuscript_v2_3r/displays/figures/v2_3r_evidence_summary.pdf"
+      },
+      "self_review_note": "Rendered figure was inspected and revised into a gate-centered trade-off plane with individual G2 seeds and no dual axes."
+    },
+    {
+      "id": "fig_v2_3r_pareto_compute_accuracy",
+      "surface_class": "paper_main_candidate",
+      "claim": "The learned scalar is a low-compute amortized point; NOMP-inspired refinement dominates matched-synthetic accuracy at higher runtime.",
+      "source_data": [
+        "05_results/tensor_nomp3d_matched_paper_5seed/matched_accuracy_rows.csv",
+        "05_results/e12_matched_accuracy_comparators/matched_accuracy_rows.csv"
+      ],
+      "script": "06_paper_and_delivery/manuscript_v2_3r/displays/scripts/build_v2_3r_paper_displays.py",
+      "exports": {
+        "png": "06_paper_and_delivery/manuscript_v2_3r/displays/figures/v2_3r_pareto_compute_accuracy.png",
+        "pdf": "06_paper_and_delivery/manuscript_v2_3r/displays/figures/v2_3r_pareto_compute_accuracy.pdf"
+      },
+      "self_review_note": "Single log-runtime axis, seed-mean 95% NMSE intervals, colorblind-safe colors, and no accuracy-win framing for the learned point."
+    }
+  ],
+  "tables": {
+    "main_result_table": "06_paper_and_delivery/manuscript_v2_3r/displays/tables/v2_3r_main_result_table.md",
+    "a4_snr_sensitivity_table": "06_paper_and_delivery/manuscript_v2_3r/displays/tables/v2_3r_a4_snr_sensitivity_table.md",
+    "a4_snr_threshold_frontier_table": "06_paper_and_delivery/manuscript_v2_3r/displays/tables/v2_3r_a4_snr_threshold_frontier_table.md",
+    "a4_snr_aware_gate_table": "06_paper_and_delivery/manuscript_v2_3r/displays/tables/v2_3r_a4_snr_aware_gate_table.md",
+    "e12_matched_accuracy_table": "06_paper_and_delivery/manuscript_v2_3r/displays/tables/v2_3r_e12_matched_accuracy_table.md"
+  }
+}

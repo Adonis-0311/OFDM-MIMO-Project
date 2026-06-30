@@ -1,0 +1,29 @@
+{
+  "baseline_id": "tensor_nomp3d_known_order_v1_oversampled",
+  "acceptance_target": "comparison_ready",
+  "verdict": "trusted_with_caveats",
+  "accepted_at": "2026-06-29",
+  "task": "Known-order continuous 3-D tensor frequency recovery",
+  "primary_metric": "measurement_nmse_db",
+  "metrics_summary": {
+    "paired_paper_scale_samples": 30,
+    "minimum_gain_over_grid_db": 47.18269620371279,
+    "minimum_advantage_over_fixed_scalar_db": 41.48747477165459,
+    "maximum_normalized_joint_bin_rmse": 0.00012952758024112841,
+    "minimum_all_axis_half_bin_hit_fraction": 1.0,
+    "median_runtime_ratio_vs_fixed_scalar": 7.583786797669451
+  },
+  "source_ref": [
+    "doi:10.1109/TSP.2016.2580523",
+    "arXiv:2411.03191",
+    "doi:10.1109/TVT.2025.3573165"
+  ],
+  "implementation": "03_active_modules/baseline/tensor_nomp.py",
+  "evaluation": "04_experiments/eval/run_e12_tensor_nomp_matched_pilot.py",
+  "verification": "05_results/tensor_nomp3d_oversampled_paper_scale_5seed/verification.md",
+  "caveats": [
+    "Known target count replaces CFAR termination.",
+    "Dense 3-D matched synthetic tensor replaces sparse 2-D OFDM resources.",
+    "The result establishes a strong continuous-optimization comparator and refutes learned-scalar accuracy superiority in this regime; it does not establish external-channel NOMP performance."
+  ]
+}

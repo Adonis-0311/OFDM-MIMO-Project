@@ -1,0 +1,9 @@
+# 8. Conclusion
+
+This work develops a physically constrained Tensor-OMP unfolding estimator for mmWave MIMO-OFDM ISAC sparse tensor recovery. The central idea is to keep the interpretability of Tensor-OMP while adding bounded local refinement for off-grid angle-delay-Doppler parameters. The resulting estimator remains tied to a sparse tensor support, uses permutation-invariant supervision for multi-target outputs, and exposes a layer-wise refinement process that can be evaluated for both accuracy and computation.
+
+The current evidence supports a narrowed but coherent paper claim. In local synthetic/off-grid evaluation at the locked tensor scale, bounded refinement improves measurement-domain NMSE over grid Tensor-OMP for L={2,4,8}. In standards-aligned held-out CDL-A/C evaluation, the frozen controller improves channel NMSE by 6.2286 dB, delay RMSE by 10.1241 ns, and projected-angle RMSE by 0.5277 degrees on average. The same package supports a restricted high-load early-stop mechanism at SNR=20 dB for L>=32, while the SNR diagnostics prevent a broad cross-SNR claim.
+
+The limitations are part of the contribution boundary. Zero-shot CDL-D degrades channel and delay metrics despite improving projected angle, so the external result is profile-scoped rather than universal. Trained DeepMIMO physical evaluation, instrumented-receiver validation, robust hardware-impairment training, unrestricted adaptive-depth optimality, and full multi-target CRLB tightness remain open.
+
+The resulting manuscript line is strongest when framed as an interpretable, claim-bounded ISAC estimator rather than as a completed system benchmark. Within that scope, the evidence supports the main lesson of the paper: physically bounded unfolding can improve local sparse tensor recovery while preserving enough structure to expose where the method works, where it saves computation, and where additional validation is still required.

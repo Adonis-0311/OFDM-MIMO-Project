@@ -1,0 +1,61 @@
+{
+  "contract_version": 1,
+  "baseline_id": "tensor_nomp3d_known_order_v1",
+  "acceptance_target": "comparison_ready",
+  "baseline_kind": "local_reimplementation_with_declared_deviation",
+  "task": "Known-order continuous angle-delay-Doppler recovery from a dense noisy third-order tensor",
+  "dataset": {
+    "generator": "03_active_modules/data/offgrid_tensor.py::generate_offgrid_tensor_sample",
+    "pilot_shape": [32, 8, 16],
+    "pilot_snr_db": [20.0],
+    "pilot_target_counts": [2, 4],
+    "pilot_offset_radius_bins": 0.35,
+    "pilot_seeds": [20260629, 20260630, 20260701],
+    "samples_per_cell_seed": 3,
+    "split": "evaluation-only baseline verification; no parameter tuning on pilot truth"
+  },
+  "evaluation_path": "04_experiments/eval/run_e12_tensor_nomp_matched_pilot.py",
+  "implementation_path": "03_active_modules/baseline/tensor_nomp.py",
+  "comparators": [
+    "grid_fft_topk_plus_ls",
+    "deterministic_cartesian_local_refinement_plus_ls",
+    "fixed_source_trained_scalar_interpolation_plus_ls",
+    "tensor_nomp3d_known_order_v1"
+  ],
+  "required_metrics": {
+    "measurement_nmse_db": "lower_is_better",
+    "gain_vs_grid_db": "higher_is_better",
+    "angle_bin_rmse": "lower_is_better",
+    "delay_bin_rmse": "lower_is_better",
+    "doppler_bin_rmse": "lower_is_better",
+    "normalized_joint_bin_rmse": "lower_is_better",
+    "matched_fraction_within_half_bin": "higher_is_better",
+    "wall_clock_ms": "lower_is_better"
+  },
+  "source": {
+    "mechanism_reference": "Mamandipoor, Ramasamy, and Madhow, Newtonized Orthogonal Matching Pursuit: Frequency Estimation Over the Continuum, IEEE TSP 2016, DOI 10.1109/TSP.2016.2580523",
+    "isac_reference": "Shah et al., Newtonized Orthogonal Matching Pursuit for High-Resolution Target Detection in Sparse OFDM ISAC Systems, arXiv:2411.03191 / IEEE TVT DOI 10.1109/TVT.2025.3573165",
+    "repository_head_at_implementation": "04273d4c883ef073d20654ee1d9c5ecba303cdaa"
+  },
+  "known_deviations": [
+    "The reference ISAC method is two-dimensional delay-Doppler recovery on sparse OFDM resources; this baseline extends the mechanism to a dense three-dimensional tensor.",
+    "The pilot uses known target count for an equal support budget instead of CFAR termination.",
+    "The implementation uses residual-domain local oversampling, safeguarded per-atom Newton steps, cyclic feedback, and joint LS, not the reference paper's full block-Hessian sparse-resource implementation.",
+    "Therefore manuscript text must use '3-D cyclic NOMP-inspired comparator', not 'reproduced NOMP-OFDM-ISAC'."
+  ],
+  "verification_status": "trusted_with_caveats",
+  "accepted_variant": {
+    "id": "tensor_nomp3d_known_order_v1_oversampled",
+    "local_newton_iterations": 5,
+    "cyclic_passes": 2,
+    "cyclic_iterations_per_atom": 2,
+    "detection_oversampling_points_per_axis": 5,
+    "detection_radius_bins": 0.5
+  },
+  "trusted_outputs": {
+    "paper_scale_rows": "05_results/tensor_nomp3d_oversampled_paper_scale_5seed/matched_accuracy_rows.csv",
+    "paper_scale_summary": "05_results/tensor_nomp3d_oversampled_paper_scale_5seed/matched_accuracy_summary.csv",
+    "paired_verification": "05_results/tensor_nomp3d_oversampled_paper_scale_5seed/verification.md",
+    "manifest": "05_results/tensor_nomp3d_oversampled_paper_scale_5seed/run_manifest.json"
+  }
+}

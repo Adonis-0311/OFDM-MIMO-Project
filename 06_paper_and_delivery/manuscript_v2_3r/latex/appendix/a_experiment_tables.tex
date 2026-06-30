@@ -1,0 +1,40 @@
+\section{Experiment Tables}
+
+\begin{table*}[t]
+\centering
+\caption{Paper-scale matched accuracy and runtime at tensor shape $128\times16\times32$. NMSE intervals are 95\% confidence intervals over five seed means.}
+\label{tab:matched_accuracy}
+\footnotesize
+\begin{tabular}{lrrrl}
+\toprule
+Method & NMSE (dB) & Median ms & Half-bin fraction & Availability \\
+\midrule
+Grid FFT top-$k$ + LS & $-5.430\;[-5.527,-5.333]$ & 20.20 & 0.719 & matched \\
+Deterministic local refinement & $-12.735\;[-12.814,-12.655]$ & 434.79 & 0.796 & matched \\
+Learned scalar refinement & $-11.215\;[-11.340,-11.089]$ & 433.48 & 0.791 & matched \\
+NOMP-inspired refinement & $-53.390\;[-53.472,-53.308]$ & 3513.99 & 0.999 & matched \\
+Complex PARAFAC-ALS & $-16.855\;[-17.900,-15.810]$ & 32.57 & 0.524 & matched \\
+Separable FB-ESPRIT & -- & see Table~\ref{tab:complexity} & -- & timing-only; no axis pairing \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Executable E4 complexity comparison at tensor shape $128\times16\times32$ and $L=8$. Operation counts are analytical proxies; timings are median CPU wall-clock over five repeats.}
+\label{tab:complexity}
+\footnotesize
+\begin{tabular}{lrrrp{0.25\linewidth}}
+\toprule
+Method & Parameters & Operation proxy & Time (ms) & Scope boundary \\
+\midrule
+Grid FFT top-$k$ & 0 & $5.24\times10^6$ & 7.42 & on-grid support selection \\
+Bounded refinement + LS & 0 & $5.63\times10^8$ & 832.34 & deterministic five-point local search \\
+Torch alpha forward & 1 & $3.77\times10^7$ & 10.41 & prepared-bin forward path \\
+Separable FB-ESPRIT & 0 & $1.07\times10^8$ & 34.44 & no cross-axis pairing; not full Unitary ESPRIT \\
+Complex PARAFAC-ALS & 0 & $6.34\times10^7$ & 41.62 & five fixed ALS sweeps \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The per-$L$ G2/A4 table, full A4 SNR sensitivity, scalar-threshold frontier, and SNR-aware gate tables are retained as generated supplementary artifacts in the manuscript display workspace. They are omitted here because Fig.~\ref{fig:evidence_summary} already carries the main local comparison and the three SNR tables are boundary diagnostics.

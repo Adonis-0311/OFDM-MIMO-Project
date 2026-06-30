@@ -1,0 +1,561 @@
+{
+  "gate_rows": [
+    {
+      "evidence": "stage3_a4_depth_presmoke",
+      "gate_item": "A4 IA-AUD has real adaptive-depth opportunity",
+      "metric": "saturation depths {2:8, 8:8, 32:5}; depth spread = 3",
+      "status": "pre-smoke-supported / mechanism-direction-revised"
+    },
+    {
+      "evidence": "stage3_a4_oracle_earlystop",
+      "gate_item": "A4 IA-AUD meets >=25% average FLOPs/depth reduction at similar NMSE",
+      "metric": "overall oracle savings = 15.0%; L=32 savings = 27.5%; mean NMSE gap = 0.1820 dB",
+      "status": "oracle-upper-bound-inconclusive / global-target-not-met"
+    },
+    {
+      "evidence": "stage3_a4_high_l_plateau_gate",
+      "gate_item": "A4 high-L/platform gate meets >=25% depth reduction at similar NMSE",
+      "metric": "held-out L=32 gate savings = 33.33%; NMSE gap = 0.3643 dB",
+      "status": "restricted-high-l-pass / global-claim-not-supported"
+    },
+    {
+      "evidence": "stage3_a5_hirjl_presmoke",
+      "gate_item": "A5 phase-noise-only HIR-JL has strong value",
+      "metric": "degradation at 1 deg = 0.0000 dB; degradation at 2 deg = 0.0000 dB",
+      "status": "pre-smoke-downgrade"
+    },
+    {
+      "evidence": "stage3_a5_combined_impairment_presmoke",
+      "gate_item": "A5 combined-impairment HIR-JL still needs one check",
+      "metric": "v2.3R combined degradation = 4.4395 dB; high-stress degradation = 6.6036 dB",
+      "status": "stress-only-supported / main-gate-downgrade"
+    }
+  ],
+  "runs": {
+    "stage3_a4_depth_presmoke": {
+      "command": "python 04_experiments/eval/run_stage3_a4_depth_presmoke.py",
+      "config": {
+        "l_values": [
+          2,
+          8,
+          32
+        ],
+        "n_trials": 2,
+        "offset_radius": 0.35,
+        "radii": [
+          0.45,
+          0.28,
+          0.18,
+          0.11,
+          0.07,
+          0.045,
+          0.03,
+          0.02
+        ],
+        "saturation_tolerance_db": 0.5,
+        "search_points": 3,
+        "seed": 20260624,
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "snr_db": 20.0
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "depth_spread": 3,
+        "depth_values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "elapsed_seconds": 16.787914,
+        "l_values": [
+          2,
+          8,
+          32
+        ],
+        "mean_gain_k8_by_l": {
+          "2": 25.130514912000727,
+          "32": 8.176434652575816,
+          "8": 19.586505839355617
+        },
+        "n_trials_per_l": 2,
+        "radii": [
+          0.45,
+          0.28,
+          0.18,
+          0.11,
+          0.07,
+          0.045,
+          0.03,
+          0.02
+        ],
+        "saturation_depth_by_l": {
+          "2": 8,
+          "32": 5,
+          "8": 8
+        },
+        "saturation_tolerance_db": 0.5,
+        "search_points": 3,
+        "seed": 20260624,
+        "snr_db": 20.0,
+        "tensor_shape": "128x16x32"
+      },
+      "notes": [
+        "A4 pre-smoke uses repeated bounded off-grid refinement as the fixed-depth proxy.",
+        "K=0 is grid Tensor-OMP support with LS amplitudes; K=1..8 applies progressively smaller local-search radii.",
+        "This checks whether IA-AUD has a real depth-allocation opportunity before implementing a gating network."
+      ],
+      "run_id": "stage3_a4_depth_presmoke_20260624"
+    },
+    "stage3_a4_high_l_plateau_gate": {
+      "command": "python 04_experiments/eval/run_stage3_a4_high_l_plateau_gate.py",
+      "config": {
+        "fixed_depth": 8,
+        "min_depth": 3,
+        "n_targets": 32,
+        "n_test": 6,
+        "n_train": 6,
+        "nmse_tolerance_db": 0.5,
+        "offset_radius": 0.35,
+        "radii": [
+          0.45,
+          0.28,
+          0.18,
+          0.11,
+          0.07,
+          0.045,
+          0.03,
+          0.02
+        ],
+        "search_points": 3,
+        "seed": 20260624,
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "snr_db": 20.0,
+        "threshold_candidates_db": [
+          0.05,
+          0.1,
+          0.2,
+          0.35,
+          0.5,
+          0.75,
+          1.0
+        ]
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "elapsed_seconds": 65.8615446,
+        "fixed_depth": 8,
+        "min_depth": 3,
+        "n_targets": 32,
+        "n_test": 6,
+        "n_train": 6,
+        "nmse_tolerance_db": 0.5,
+        "radii": [
+          0.45,
+          0.28,
+          0.18,
+          0.11,
+          0.07,
+          0.045,
+          0.03,
+          0.02
+        ],
+        "search_points": 3,
+        "seed": 20260624,
+        "selected_threshold_db": 0.75,
+        "snr_db": 20.0,
+        "tensor_shape": "128x16x32",
+        "test_metrics": {
+          "max_depth_savings_percent": 37.5,
+          "mean_depth": 5.333333333333333,
+          "mean_depth_savings_percent": 33.333333333333336,
+          "mean_nmse_gap_db": 0.3643202083828558,
+          "min_depth_savings_percent": 25.0
+        },
+        "threshold_candidates_db": [
+          0.05,
+          0.1,
+          0.2,
+          0.35,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "train_metrics": {
+          "max_depth_savings_percent": 37.5,
+          "mean_depth": 5.833333333333333,
+          "mean_depth_savings_percent": 27.083333333333332,
+          "mean_nmse_gap_db": 0.37201306988396016,
+          "min_depth_savings_percent": 12.5
+        }
+      },
+      "notes": [
+        "This is a narrowed high-L A4 gate test, not a global IA-AUD claim.",
+        "The gate stops when the incremental NMSE improvement falls below a trained scalar threshold after a minimum depth.",
+        "Depth is used as the FLOPs proxy because each refinement layer performs the same local-search kernel."
+      ],
+      "run_id": "stage3_a4_high_l_plateau_gate_20260624"
+    },
+    "stage3_a4_oracle_earlystop": {
+      "command": "python 04_experiments/eval/run_stage3_a4_oracle_earlystop.py",
+      "config": {
+        "fixed_depth": 8,
+        "l_values": [
+          2,
+          8,
+          32
+        ],
+        "n_trials": 5,
+        "nmse_tolerance_db": 0.5,
+        "offset_radius": 0.35,
+        "radii": [
+          0.45,
+          0.28,
+          0.18,
+          0.11,
+          0.07,
+          0.045,
+          0.03,
+          0.02
+        ],
+        "search_points": 3,
+        "seed": 20260624,
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "snr_db": 20.0
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "depth_values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "elapsed_seconds": 39.6044548,
+        "fixed_depth": 8,
+        "l_values": [
+          2,
+          8,
+          32
+        ],
+        "max_depth_savings_percent": 37.5,
+        "mean_depth_savings_percent": 15.0,
+        "mean_nmse_gap_vs_fixed_db": 0.1820183034988516,
+        "mean_oracle_depth": 6.8,
+        "min_depth_savings_percent": 0.0,
+        "n_trials_per_l": 5,
+        "nmse_tolerance_db": 0.5,
+        "radii": [
+          0.45,
+          0.28,
+          0.18,
+          0.11,
+          0.07,
+          0.045,
+          0.03,
+          0.02
+        ],
+        "search_points": 3,
+        "seed": 20260624,
+        "snr_db": 20.0,
+        "tensor_shape": "128x16x32"
+      },
+      "notes": [
+        "This is an oracle upper-bound run for IA-AUD early stopping, not a trained gating model.",
+        "Depth is used as the FLOPs proxy because each refinement layer performs the same local-search kernel.",
+        "The oracle stop chooses the earliest K within 0.5 dB of the fixed K=8 NMSE on the same sample."
+      ],
+      "run_id": "stage3_a4_oracle_earlystop_20260624"
+    },
+    "stage3_a5_combined_impairment_presmoke": {
+      "command": "python 04_experiments/eval/run_stage3_a5_combined_impairment_presmoke.py",
+      "config": {
+        "candidate_alphas": [
+          0.0,
+          0.19999999999999998,
+          0.39999999999999997,
+          0.6,
+          0.7999999999999999,
+          0.9999999999999999,
+          1.2
+        ],
+        "n_targets": 8,
+        "n_test": 5,
+        "n_train": 4,
+        "offset_radius": 0.35,
+        "profiles": [
+          {
+            "coupling_phi0_degrees": 0.0,
+            "coupling_rho": 0.0,
+            "iq_gain": 1.0,
+            "iq_phase_degrees": 0.0,
+            "name": "clean",
+            "sigma_phi_degrees": 0.0
+          },
+          {
+            "coupling_phi0_degrees": 0.0,
+            "coupling_rho": 0.0,
+            "iq_gain": 1.0,
+            "iq_phase_degrees": 0.0,
+            "name": "phase_only_2deg",
+            "sigma_phi_degrees": 2.0
+          },
+          {
+            "coupling_phi0_degrees": 5.0,
+            "coupling_rho": 0.2,
+            "iq_gain": 1.05,
+            "iq_phase_degrees": 3.0,
+            "name": "iq_coupling_medium",
+            "sigma_phi_degrees": 0.0
+          },
+          {
+            "coupling_phi0_degrees": 5.0,
+            "coupling_rho": 0.2,
+            "iq_gain": 1.05,
+            "iq_phase_degrees": 3.0,
+            "name": "combined_v23r",
+            "sigma_phi_degrees": 2.0
+          },
+          {
+            "coupling_phi0_degrees": 10.0,
+            "coupling_rho": 0.3,
+            "iq_gain": 1.1,
+            "iq_phase_degrees": 5.0,
+            "name": "combined_high",
+            "sigma_phi_degrees": 3.0
+          }
+        ],
+        "search_points": 5,
+        "search_radius": 0.45,
+        "seed": 20260624,
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "snr_db": 20.0
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "candidate_alphas": [
+          0.0,
+          0.19999999999999998,
+          0.39999999999999997,
+          0.6,
+          0.7999999999999999,
+          0.9999999999999999,
+          1.2
+        ],
+        "clean_train_nmse_db": -13.312861027941777,
+        "clean_trained_alpha": 0.7999999999999999,
+        "degradation_by_profile_db": {
+          "clean": 0.0,
+          "combined_high": 6.60364902305442,
+          "combined_v23r": 4.439537092767866,
+          "iq_coupling_medium": 4.443735345160793,
+          "phase_only_2deg": 3.619806600596576e-05
+        },
+        "elapsed_seconds": 28.1613157,
+        "n_targets": 8,
+        "n_test": 5,
+        "n_train": 4,
+        "oracle_alpha_by_profile": {
+          "clean": 0.7999999999999999,
+          "combined_high": 0.7999999999999999,
+          "combined_v23r": 0.7999999999999999,
+          "iq_coupling_medium": 0.7999999999999999,
+          "phase_only_2deg": 0.7999999999999999
+        },
+        "oracle_recovery_by_profile_db": {
+          "clean": 0.0,
+          "combined_high": 0.0,
+          "combined_v23r": 0.0,
+          "iq_coupling_medium": 0.0,
+          "phase_only_2deg": 0.0
+        },
+        "profiles": [
+          {
+            "coupling_phi0_degrees": 0.0,
+            "coupling_rho": 0.0,
+            "iq_gain": 1.0,
+            "iq_phase_degrees": 0.0,
+            "name": "clean",
+            "sigma_phi_degrees": 0.0
+          },
+          {
+            "coupling_phi0_degrees": 0.0,
+            "coupling_rho": 0.0,
+            "iq_gain": 1.0,
+            "iq_phase_degrees": 0.0,
+            "name": "phase_only_2deg",
+            "sigma_phi_degrees": 2.0
+          },
+          {
+            "coupling_phi0_degrees": 5.0,
+            "coupling_rho": 0.2,
+            "iq_gain": 1.05,
+            "iq_phase_degrees": 3.0,
+            "name": "iq_coupling_medium",
+            "sigma_phi_degrees": 0.0
+          },
+          {
+            "coupling_phi0_degrees": 5.0,
+            "coupling_rho": 0.2,
+            "iq_gain": 1.05,
+            "iq_phase_degrees": 3.0,
+            "name": "combined_v23r",
+            "sigma_phi_degrees": 2.0
+          },
+          {
+            "coupling_phi0_degrees": 10.0,
+            "coupling_rho": 0.3,
+            "iq_gain": 1.1,
+            "iq_phase_degrees": 5.0,
+            "name": "combined_high",
+            "sigma_phi_degrees": 3.0
+          }
+        ],
+        "seed": 20260624,
+        "snr_db": 20.0,
+        "tensor_shape": "128x16x32"
+      },
+      "notes": [
+        "Combined-impairment pre-smoke checks whether A5 remains valuable after phase-noise-only stress was weak.",
+        "Profiles apply phase noise, IQ imbalance, and physical mutual coupling directly to the measured tensor.",
+        "Oracle-retuned alpha per profile is diagnostic only; it is not a robust-training result."
+      ],
+      "run_id": "stage3_a5_combined_impairment_presmoke_20260624"
+    },
+    "stage3_a5_hirjl_presmoke": {
+      "command": "python 04_experiments/eval/run_stage3_a5_hirjl_presmoke.py",
+      "config": {
+        "candidate_alphas": [
+          0.0,
+          0.19999999999999998,
+          0.39999999999999997,
+          0.6,
+          0.7999999999999999,
+          0.9999999999999999,
+          1.2
+        ],
+        "n_targets": 8,
+        "n_test": 5,
+        "n_train": 4,
+        "offset_radius": 0.35,
+        "search_points": 5,
+        "search_radius": 0.45,
+        "seed": 20260624,
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "sigma_phi_degrees": [
+          0.0,
+          0.5,
+          1.0,
+          2.0,
+          3.0
+        ],
+        "snr_db": 20.0
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "candidate_alphas": [
+          0.0,
+          0.19999999999999998,
+          0.39999999999999997,
+          0.6,
+          0.7999999999999999,
+          0.9999999999999999,
+          1.2
+        ],
+        "clean_train_nmse_db": -13.312861027941777,
+        "clean_trained_alpha": 0.7999999999999999,
+        "degradation_by_sigma_db": {
+          "0.0": 0.0,
+          "0.5": -1.9049101585011385e-06,
+          "1.0": 3.7041473124332924e-06,
+          "2.0": 1.1683922428673554e-05,
+          "3.0": 0.000171920386792479
+        },
+        "elapsed_seconds": 27.8398827,
+        "n_targets": 8,
+        "n_test": 5,
+        "n_train": 4,
+        "oracle_alpha_by_sigma": {
+          "0.0": 0.7999999999999999,
+          "0.5": 0.7999999999999999,
+          "1.0": 0.7999999999999999,
+          "2.0": 0.7999999999999999,
+          "3.0": 0.7999999999999999
+        },
+        "oracle_recovery_by_sigma_db": {
+          "0.0": 0.0,
+          "0.5": 0.0,
+          "1.0": 0.0,
+          "2.0": 0.0,
+          "3.0": 0.0
+        },
+        "seed": 20260624,
+        "sigma_phi_degrees": [
+          0.0,
+          0.5,
+          1.0,
+          2.0,
+          3.0
+        ],
+        "snr_db": 20.0,
+        "tensor_shape": "128x16x32"
+      },
+      "notes": [
+        "A5 pre-smoke isolates phase-noise stress before full HIR-JL robust training.",
+        "Clean-trained alpha is fitted only at sigma_phi=0 and reused under all phase-noise levels.",
+        "Oracle-retuned alpha per sigma is reported as a diagnostic; it is not a deployable robust-training result."
+      ],
+      "run_id": "stage3_a5_hirjl_presmoke_20260624"
+    }
+  }
+}

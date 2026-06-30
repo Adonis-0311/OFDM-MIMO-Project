@@ -1,0 +1,146 @@
+{
+  "summary_rows": [
+    {
+      "method": "complex_parafac_als_10_sweeps",
+      "snr_db": 0.0,
+      "n_targets": 2,
+      "sample_count": 100,
+      "mean_measurement_nmse_db": -27.812930334566435,
+      "mean_normalized_joint_bin_rmse": 0.043865203561280264,
+      "mean_matched_fraction_within_half_bin": 0.89,
+      "median_wall_clock_ms": 22.048550003091805,
+      "failure_rate": 0.0
+    },
+    {
+      "method": "complex_parafac_als_10_sweeps",
+      "snr_db": 0.0,
+      "n_targets": 4,
+      "sample_count": 100,
+      "mean_measurement_nmse_db": -9.057774570209663,
+      "mean_normalized_joint_bin_rmse": 0.174148024176781,
+      "mean_matched_fraction_within_half_bin": 0.5,
+      "median_wall_clock_ms": 33.83219999523135,
+      "failure_rate": 0.0
+    },
+    {
+      "method": "complex_parafac_als_10_sweeps",
+      "snr_db": 0.0,
+      "n_targets": 8,
+      "sample_count": 100,
+      "mean_measurement_nmse_db": -3.2972467660750118,
+      "mean_normalized_joint_bin_rmse": 0.21952837815416654,
+      "mean_matched_fraction_within_half_bin": 0.31,
+      "median_wall_clock_ms": 62.317000003531575,
+      "failure_rate": 0.0
+    },
+    {
+      "method": "complex_parafac_als_10_sweeps",
+      "snr_db": 10.0,
+      "n_targets": 2,
+      "sample_count": 100,
+      "mean_measurement_nmse_db": -36.82856394605099,
+      "mean_normalized_joint_bin_rmse": 0.03916911382074766,
+      "mean_matched_fraction_within_half_bin": 0.87,
+      "median_wall_clock_ms": 21.913750002568122,
+      "failure_rate": 0.0
+    },
+    {
+      "method": "complex_parafac_als_10_sweeps",
+      "snr_db": 10.0,
+      "n_targets": 4,
+      "sample_count": 100,
+      "mean_measurement_nmse_db": -8.011453578395713,
+      "mean_normalized_joint_bin_rmse": 0.18163405044148997,
+      "mean_matched_fraction_within_half_bin": 0.4175,
+      "median_wall_clock_ms": 32.28999999555526,
+      "failure_rate": 0.0
+    },
+    {
+      "method": "complex_parafac_als_10_sweeps",
+      "snr_db": 10.0,
+      "n_targets": 8,
+      "sample_count": 100,
+      "mean_measurement_nmse_db": -2.843047380201327,
+      "mean_normalized_joint_bin_rmse": 0.2172484622952508,
+      "mean_matched_fraction_within_half_bin": 0.3025,
+      "median_wall_clock_ms": 62.38149999262532,
+      "failure_rate": 0.0
+    },
+    {
+      "method": "complex_parafac_als_10_sweeps",
+      "snr_db": 20.0,
+      "n_targets": 2,
+      "sample_count": 100,
+      "mean_measurement_nmse_db": -46.767849408808026,
+      "mean_normalized_joint_bin_rmse": 0.02641226395183233,
+      "mean_matched_fraction_within_half_bin": 0.9,
+      "median_wall_clock_ms": 20.499849997577257,
+      "failure_rate": 0.0
+    },
+    {
+      "method": "complex_parafac_als_10_sweeps",
+      "snr_db": 20.0,
+      "n_targets": 4,
+      "sample_count": 100,
+      "mean_measurement_nmse_db": -8.834245914999133,
+      "mean_normalized_joint_bin_rmse": 0.20133891347488525,
+      "mean_matched_fraction_within_half_bin": 0.385,
+      "median_wall_clock_ms": 31.700999999884516,
+      "failure_rate": 0.0
+    },
+    {
+      "method": "complex_parafac_als_10_sweeps",
+      "snr_db": 20.0,
+      "n_targets": 8,
+      "sample_count": 100,
+      "mean_measurement_nmse_db": -2.4722532851285415,
+      "mean_normalized_joint_bin_rmse": 0.2285485472121617,
+      "mean_matched_fraction_within_half_bin": 0.2625,
+      "median_wall_clock_ms": 59.85489999875426,
+      "failure_rate": 0.0
+    },
+    {
+      "method": "complex_parafac_als_10_sweeps",
+      "snr_db": 30.0,
+      "n_targets": 2,
+      "sample_count": 100,
+      "mean_measurement_nmse_db": -47.42465897295279,
+      "mean_normalized_joint_bin_rmse": 0.0339668186155197,
+      "mean_matched_fraction_within_half_bin": 0.815,
+      "median_wall_clock_ms": 20.67640000313986,
+      "failure_rate": 0.0
+    },
+    {
+      "method": "complex_parafac_als_10_sweeps",
+      "snr_db": 30.0,
+      "n_targets": 4,
+      "sample_count": 100,
+      "mean_measurement_nmse_db": -6.5913307596873425,
+      "mean_normalized_joint_bin_rmse": 0.20371673047209146,
+      "mean_matched_fraction_within_half_bin": 0.3575,
+      "median_wall_clock_ms": 32.23499999876367,
+      "failure_rate": 0.0
+    },
+    {
+      "method": "complex_parafac_als_10_sweeps",
+      "snr_db": 30.0,
+      "n_targets": 8,
+      "sample_count": 100,
+      "mean_measurement_nmse_db": -2.318626894557537,
+      "mean_normalized_joint_bin_rmse": 0.2241228959573899,
+      "mean_matched_fraction_within_half_bin": 0.27625,
+      "median_wall_clock_ms": 59.52205000357935,
+      "failure_rate": 0.0
+    }
+  ],
+  "metrics": {
+    "row_count": 1200,
+    "parafac_mean_nmse_db": -16.854998484302712,
+    "parafac_mean_joint_bin_rmse": 0.14947495017779971,
+    "parafac_failure_rate": 0.0,
+    "comparator_limitations": {
+      "separable_forward_backward_esprit": "timing-only: the implementation estimates an unordered marginal frequency set on each axis and has no cross-axis component pairing, so channel NMSE and joint target RMSE would not be matched fairly",
+      "complex_parafac_als_10_sweeps": "matched accuracy reported; factor columns provide cross-axis pairing, and LS reconstruction uses the inferred bins"
+    }
+  }
+}

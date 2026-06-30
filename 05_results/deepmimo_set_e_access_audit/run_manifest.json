@@ -1,0 +1,14 @@
+{
+  "dataset_files": 4188,
+  "dataset_root": "D:\\E\\OFDM-MIMO_Radar_Estimation\\90_archive\\2025_thesis_materials\\\u53c2\u8003\\DeepMIMO-5GNR\\DeepMIMO_dataset",
+  "i3_60_files": 27,
+  "o1_60_files": 4161,
+  "packages": {
+    "deepmimo": true,
+    "h5py": true,
+    "scipy": true,
+    "sionna": true
+  },
+  "readiness": "ready_open_source",
+  "reference_root": "D:\\E\\OFDM-MIMO_Radar_Estimation\\90_archive\\2025_thesis_materials\\\u53c2\u8003"
+}

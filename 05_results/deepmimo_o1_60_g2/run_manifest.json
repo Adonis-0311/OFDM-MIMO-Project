@@ -1,0 +1,112 @@
+{
+  "command": "python 04_experiments/eval/run_deepmimo_o1_60_g2.py",
+  "config": {
+    "candidate_alphas": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0,
+      1.2
+    ],
+    "dataset_root": "D:\\E\\OFDM-MIMO_Radar_Estimation\\90_archive\\2025_thesis_materials\\\u53c2\u8003\\DeepMIMO-5GNR\\DeepMIMO_dataset\\o1_60",
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "n_users": 16,
+    "num_subcarriers": 64,
+    "rx_tag": "r000",
+    "search_points": 5,
+    "search_radius": 0.45,
+    "seed": 20260626,
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "source_alpha": 0.6419195571509573,
+    "source_alpha_source": "05_results\\stage2_torch_locked_scale_g2_seed_sweep\\stage2_torch_locked_scale_g2_seed_sweep_seeds.csv",
+    "subcarrier_spacing_hz": 120000.0,
+    "tx_tags": [
+      "t003",
+      "t004",
+      "t005",
+      "t006",
+      "t007",
+      "t008",
+      "t009",
+      "t010"
+    ],
+    "user_indices": [
+      31614,
+      63229,
+      142265,
+      173880,
+      189687,
+      229205,
+      276627,
+      292435,
+      339856,
+      371471,
+      403086,
+      410989,
+      426797,
+      450508,
+      458411,
+      466315
+    ]
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "best_mean_grid_channel_nmse_db": -6.778740156962842,
+    "candidate_alphas": "0.0,0.2,0.4,0.6,0.8,1.0,1.2",
+    "claim_update": "dev-source-alpha-transfer-supported",
+    "dataset": "DeepMIMO O1_60 raw ray files",
+    "elapsed_seconds": 5.391756899999564,
+    "finite_delay_truth_fraction": 1.0,
+    "finite_power_truth_fraction": 1.0,
+    "l_values": "4,8,16",
+    "mean_bounded_gain_vs_grid_db": 1.378767108335782,
+    "mean_bounded_refine_channel_nmse_db_all": -5.7039632910156515,
+    "mean_dominant_energy_recall_all": 0.5855774136421698,
+    "mean_grid_channel_nmse_db_all": -4.325196182679869,
+    "mean_oracle_alpha": 0.7875,
+    "mean_oracle_alpha_channel_nmse_db_all": -5.890817035342685,
+    "mean_oracle_alpha_gain_vs_grid_db": 1.5656208526628161,
+    "mean_source_alpha_channel_nmse_db_all": -5.705648065259358,
+    "mean_source_alpha_gain_vs_grid_db": 1.3804518825794883,
+    "mean_source_alpha_gap_vs_oracle_db": 0.18516897008332808,
+    "min_bounded_gain_vs_grid_db": 0.9134563118643297,
+    "min_mean_support_recall": 0.80859375,
+    "min_source_alpha_gain_vs_grid_db": 0.9244131838502408,
+    "n_tx": 8.0,
+    "n_users": 16.0,
+    "num_subcarriers": 64.0,
+    "row_count": 12.0,
+    "rx_tag": "r000",
+    "rx_x_span_m": 24.199996948242188,
+    "rx_y_span_m": 480.39996337890625,
+    "sample_row_count": 192.0,
+    "snrs_db": "0.0,10.0,20.0,30.0",
+    "source_alpha": 0.6419195571509573,
+    "source_alpha_source": "05_results\\stage2_torch_locked_scale_g2_seed_sweep\\stage2_torch_locked_scale_g2_seed_sweep_seeds.csv",
+    "transfer_proxy_classification": "weak",
+    "tx_tags": "t003,t004,t005,t006,t007,t008,t009,t010",
+    "worst_mean_grid_channel_nmse_db": -2.3373747462308794
+  },
+  "notes": [
+    "Auxiliary/dev E2 run: raw DeepMIMO O1_60 ray MAT files are converted to normalized OFDM frequency-response tensors.",
+    "The deployment comparator is the Stage-2 source-trained scalar alpha applied directly to O1_60; full bounded refinement and oracle-alpha are diagnostic comparators.",
+    "Delay/TX metrics are dominant-bin proxy RMSE values and must not be presented as final physical angle/delay RMSE.",
+    "This is still not a full trained T-OMP-Net/G2 evaluation because only the scalar alpha path transfers from Stage 2."
+  ],
+  "run_id": "deepmimo_o1_60_g2_dev_20260626"
+}

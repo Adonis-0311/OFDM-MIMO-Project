@@ -1,0 +1,9 @@
+\section{Conclusion}
+
+This work studies learned bounded refinement after Tensor-OMP support selection for mmWave MIMO-OFDM ISAC. The central idea is to interpolate between an interpretable grid support and a deterministic local candidate, then recompute the least-squares reconstruction. The evaluated learned paths are a one-parameter local scalar and a separate feature-conditioned CDL controller; the repeated-refinement depth study is a deterministic diagnostic rather than an integrated network.
+
+The evidence supports a narrowed but coherent claim. Local synthetic evaluation shows consistent gains for $L\in\{2,4,8\}$. In scaled held-out CDL-A/C evaluation, the frozen controller improves channel NMSE by 6.2286 dB, delay RMSE by 10.1241 ns, and projected-angle RMSE by $0.5277^\circ$ on average. The high-load early-stop result remains restricted to the core SNR condition.
+
+The limitations are part of the contribution boundary. Zero-shot CDL-D degrades channel and delay metrics despite improving projected angle, so the external result is not profile-universal. Trained DeepMIMO physical evaluation, instrumented-receiver validation, robust hardware-impairment training, unrestricted adaptive-depth optimality, and full multi-target CRLB tightness remain open.
+
+The result is strongest when framed as interpretable, claim-bounded post-support learning rather than as a completed deep-unfolding system. Within that scope, bounded interpolation improves local sparse tensor recovery and held-out CDL-A/C metrics while preserving enough structure to expose profile shift, sample-size limits, and the failure of the tested stopping statistic across SNR.

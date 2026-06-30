@@ -1,0 +1,38 @@
+{
+  "command": "python 04_experiments/eval/run_paper_scale_offgrid_stress_g1.py",
+  "config": {
+    "n_trials": 4,
+    "offset_radius": 0.35,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "seed": 20260624,
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snr_db": 20.0
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.9.13"
+  },
+  "metrics": {
+    "mean_grid_nmse_db": -5.4307969373355816,
+    "mean_refined_nmse_db": -12.967620892742936,
+    "mean_refinement_gain_db": 7.536823955407354,
+    "min_refinement_gain_db": 6.994642855689063,
+    "n_trials_per_l": 4,
+    "offset_radius_bins": 0.35,
+    "snr_db": 20.0,
+    "tensor_shape": "128x16x32",
+    "wall_seconds": 9.5936261
+  },
+  "notes": [
+    "Paper-scale off-grid stress uses continuous angle-delay-Doppler bins on shape 128x16x32.",
+    "Metric is measurement-domain NMSE against the noiseless off-grid tensor, so it is not a sparse-grid coefficient NMSE.",
+    "Bounded local refinement is a deterministic oracle-free search around Tensor-OMP grid picks and supports the v2.3R off-grid mechanism gate."
+  ],
+  "run_id": "paper_scale_offgrid_stress_g1_20260624"
+}

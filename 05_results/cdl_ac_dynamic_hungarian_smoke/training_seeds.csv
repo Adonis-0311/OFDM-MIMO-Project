@@ -1,0 +1,2 @@
+seed,mean_delay_alpha,std_delay_alpha,mean_angle_alpha,std_angle_alpha,mean_nmse_gain_db,mean_delay_rmse_reduction_bins,mean_angle_rmse_reduction_bins,mean_local_delay_rmse_reduction_bins,mean_local_angle_rmse_reduction_bins,train_loss_reduction
+20260620.0,0.9408159856675183,0.22714155236811315,0.07237128709380164,0.06793526930769903,5.987057390409433,0.06334380903610913,0.007094747027259092,0.20278890663243218,-0.017267900153954116,0.09131291171092393

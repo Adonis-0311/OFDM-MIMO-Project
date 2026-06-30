@@ -1,0 +1,77 @@
+{
+  "command": "D:\\Python\\python.exe 04_experiments\\eval\\run_sionna_cdl_profile_generalization.py --profiles A C D --snrs 0 20 --l-values 4 16 --seeds 20260626 --samples-per-profile-seed 2 --num-subcarriers 128 --num-tx-antennas 16 --spatial-truth-oversampling 4096 --output-dir-name sionna_cdl_physical_metric_smoke",
+  "config": {
+    "carrier_frequency_hz": 60000000000.0,
+    "delay_spread_s": 1e-07,
+    "device": "cpu",
+    "l_values": [
+      4,
+      16
+    ],
+    "num_subcarriers": 128,
+    "num_tx_antennas": 16,
+    "profiles": [
+      "A",
+      "C",
+      "D"
+    ],
+    "samples_per_profile_seed": 2,
+    "seeds": [
+      20260626
+    ],
+    "snrs": [
+      0.0,
+      20.0
+    ],
+    "spatial_truth_oversampling": 4096,
+    "subcarrier_spacing_hz": 120000.0
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "best_mean_channel_nmse_db": -21.00695382974554,
+    "claim_update": "dev-chain-supported",
+    "delay_resolution_ns": 65.10416666666667,
+    "elapsed_seconds": 0.08171630000015284,
+    "l_values": "4,16",
+    "max_mean_physical_delay_rmse_ns": 431.9753780861149,
+    "max_mean_projected_broadside_angle_rmse_deg": 51.574185474625565,
+    "mean_channel_nmse_db_all": -11.27374459420568,
+    "mean_clean_grid_physical_delay_rmse_ns_all": 125.37761649824893,
+    "mean_clean_grid_projected_broadside_angle_rmse_deg_all": 27.914877611384398,
+    "mean_dominant_energy_recall_all": 0.8894624700032551,
+    "mean_effective_support_95_all": 20.333333333333332,
+    "mean_effective_support_99_all": 90.66666666666667,
+    "mean_physical_delay_rmse_gap_vs_clean_grid_ns_all": 27.772041106041115,
+    "mean_physical_delay_rmse_ns_all": 153.14965760429004,
+    "mean_physical_delay_rmse_ns_snr_ge_20": 134.465174522592,
+    "mean_projected_angle_rmse_gap_vs_clean_grid_deg_all": -0.30074409128002877,
+    "mean_projected_broadside_angle_rmse_deg_all": 27.61413352010437,
+    "mean_projected_broadside_angle_rmse_deg_snr_ge_20": 28.552373309363286,
+    "mean_topk_energy_efficiency_all": 0.9975555356076834,
+    "min_mean_angle_support_recall": 0.59375,
+    "min_mean_delay_support_recall": 0.625,
+    "min_mean_support_recall": 0.53125,
+    "min_mean_topk_energy_efficiency": 0.9888947015496935,
+    "physical_metric_status": "cir-grounded-grid-baseline-and-clean-floor-recorded",
+    "profiles": "A,C,D",
+    "projected_angle_definition": "effective ULA broadside angle from oversampled clean per-cluster CIR; endfire alias handled in spatial-frequency matching",
+    "row_count": 12.0,
+    "sample_row_count": 24.0,
+    "samples_per_profile_seed": 2.0,
+    "seed_count": 1.0,
+    "snrs_db": "0.0,20.0",
+    "worst_mean_channel_nmse_db": -5.390618205778297
+  },
+  "notes": [
+    "Auxiliary/dev E1 run: validates Sionna CDL-A/C/D -> noisy frequency response -> FFT top-k Tensor-OMP proxy metrics.",
+    "Physical delay truth comes directly from Sionna CIR tau; effective projected broadside angle truth comes from an oversampled clean per-cluster CIR antenna response.",
+    "The projected broadside metric is the identifiable 1-D ULA angle, not separate azimuth/zenith AoD.",
+    "Exact support recall is retained; top-k energy efficiency and axis-specific recall diagnose over-budgeted or unresolved support cells without replacing the canonical metric.",
+    "The manifest records whether the selected seed/sample configuration reaches the planned five-seed x 50-sample E1 scale."
+  ],
+  "run_id": "sionna_cdl_profile_generalization_dev_1x2_n128_m16_physical"
+}

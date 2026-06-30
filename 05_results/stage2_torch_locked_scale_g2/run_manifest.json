@@ -1,0 +1,53 @@
+{
+  "command": "python 04_experiments/eval/run_stage2_torch_locked_scale_g2.py",
+  "config": {
+    "epochs": 6,
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "lr": 0.08,
+    "n_test": 2,
+    "n_train": 2,
+    "offset_radius": 0.35,
+    "seed": 20260624,
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snr_db": 20.0
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.9.13"
+  },
+  "metrics": {
+    "alpha": 0.6418605915836005,
+    "elapsed_seconds": 8.026893399999999,
+    "epochs": 6,
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "lr": 0.08,
+    "mean_test_gain_vs_grid_db": 6.364623685613691,
+    "mean_train_improvement_db": 1.0862614086091185,
+    "min_test_gain_vs_grid_db": 5.16242217427673,
+    "n_test_per_l": 2,
+    "n_train_per_l": 2,
+    "seed": 20260624,
+    "snr_db": 20.0,
+    "tensor_shape": "128x16x32",
+    "torch_version": "2.8.0+cpu"
+  },
+  "notes": [
+    "Locked-scale PyTorch run uses nn.Module + Adam at 128x16x32 across L={2,4,8}.",
+    "The fast loss is algebraically equivalent to the LS reconstruction loss but solves LxL normal equations instead of a tall 65536xL least-squares problem.",
+    "This run addresses the previous PyTorch locked-scale CPU blocker; sample count remains deliberately small for a bounded local G2 gate run."
+  ],
+  "run_id": "stage2_torch_locked_scale_g2_20260624"
+}

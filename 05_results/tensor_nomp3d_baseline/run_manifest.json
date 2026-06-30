@@ -1,0 +1,58 @@
+{
+  "command": "python 04_experiments/eval/run_e12_tensor_nomp_matched_pilot.py",
+  "config": {
+    "l_values": [
+      2,
+      4
+    ],
+    "nomp_cyclic_iterations": 2,
+    "nomp_cyclic_passes": 2,
+    "nomp_local_iterations": 5,
+    "offset_radius": 0.35,
+    "output_dir_name": "tensor_nomp3d_baseline",
+    "samples_per_cell_seed": 3,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "seeds": [
+      20260629,
+      20260630,
+      20260701
+    ],
+    "shape": [
+      32,
+      8,
+      16
+    ],
+    "snrs": [
+      20.0
+    ],
+    "source_alpha": 0.6419195571509573
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "claim_update": "comparison-ready-pilot-pending-verification",
+    "nomp_mean_gain_vs_grid_db": 15.751464004255663,
+    "nomp_mean_matched_fraction_within_half_bin": 0.8333333333333334,
+    "nomp_mean_measurement_nmse_db": -21.489512807734073,
+    "nomp_mean_normalized_joint_bin_rmse": 0.1139050665083465,
+    "nomp_median_wall_clock_ms": 29.871499999899243,
+    "nomp_nmse_delta_vs_scalar_db": 10.5116422338981,
+    "row_count": 72,
+    "sample_count_per_method": 18,
+    "scalar_mean_gain_vs_grid_db": 5.239821770357565,
+    "scalar_mean_measurement_nmse_db": -10.977870573835974,
+    "scalar_mean_normalized_joint_bin_rmse": 0.18082609629091867,
+    "scalar_median_wall_clock_ms": 14.04080000020258
+  },
+  "notes": [
+    "All methods receive the same samples, known target count, and least-squares reconstruction contract.",
+    "The fixed scalar is the mean source-trained G2 alpha and is not tuned on pilot truth.",
+    "The 3-D cyclic NOMP-inspired comparator adapts detection/local-Newton/cyclic-feedback to a dense tensor; it is not an exact reproduction of the sparse-resource 2-D OFDM algorithm or CFAR stopping rule.",
+    "This is a baseline verification pilot, not yet a paper-scale matched-accuracy result."
+  ],
+  "run_id": "e12_tensor_nomp_matched_pilot_20260629"
+}

@@ -10,16 +10,30 @@ codegen/
 # Local experiment outputs that can be regenerated
 Data/
 Models/
-Results/**/*.mat
+05_results/**/*.mat
 
 # Large reference archives and personal/private graduation-material binaries
 *.rar
 *.zip
-2025刘雨辉毕设/
+90_archive/2025_thesis_materials/
 
 # OS/editor noise
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+__pycache__/
+*.py[cod]
 
+# Local review/render scratch
+tmp/
+
+# LaTeX intermediates (keep source and final PDF)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz

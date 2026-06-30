@@ -1,0 +1,41 @@
+{
+  "command": "python 04_experiments/eval/run_5l_crlb_fim_validation.py",
+  "config": {
+    "params": [
+      37.25,
+      5.4,
+      11.7,
+      0.9,
+      -0.35
+    ],
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snr_db": [
+      0,
+      10,
+      20,
+      30
+    ]
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.9.13"
+  },
+  "metrics": {
+    "angle_std_drop_0db_to_30db": 31.622776601683757,
+    "max_relative_fim_error": 5.730369293417129e-10,
+    "mean_relative_fim_error": 5.730369081316953e-10,
+    "snr_points": "0,10,20,30",
+    "tensor_shape": "128x16x32"
+  },
+  "notes": [
+    "5L parameter vector is [angle_bin, delay_bin, doppler_bin, gain_real, gain_imag].",
+    "Complex Gaussian FIM uses 2/sigma^2 Re{dmu_i^H dmu_j}.",
+    "This validates analytic derivatives against central finite differences; it is the Stage-1 FIM/CRLB implementation gate, not a Monte Carlo estimator-efficiency claim."
+  ],
+  "run_id": "crlb_5l_fim_validation_20260624"
+}
