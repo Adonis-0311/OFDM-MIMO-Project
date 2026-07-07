@@ -132,33 +132,3 @@ python 04_experiments/eval/aggregate_v2_3r_paper_evidence_table.py
 
 v2.2 论文产出全部在 `01_-07_` 编号目录内组织。
 
-## 上传策略
-
-建议纳入 Git 历史的内容：
-
-- 技术设计 Markdown。
-- MATLAB 源码与可复现实验脚本。
-- 轻量实验结果、图表、CSV 和 summary。
-- 论文素材清单与项目说明文档。
-
-默认不上传的内容：
-
-- 私有毕设材料、合同、评分表、Word/PDF 原稿。
-- 外部参考压缩包、下载数据集和大型中间文件。
-- `.mat` 模型、数据或可再生成的运行中间件。
-
-## 发布到 GitHub
-
-先完成 GitHub CLI 登录：
-
-```powershell
-gh auth login
-```
-
-然后运行发布脚本：
-
-```powershell
-.\07_ops\scripts\publish_to_github.ps1
-```
-
-当 `origin` 不存在时，脚本会创建私有仓库 `mmwave-isac-tompnet` 并推送当前分支。可按需使用 `-RepoName` 指定仓库名，或用 `-Visibility public` 改为公开仓库。
