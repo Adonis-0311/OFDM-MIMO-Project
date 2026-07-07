@@ -24,6 +24,7 @@ Thumbs.db
 .idea/
 __pycache__/
 *.py[cod]
+*.egg-info/
 
 # Local review/render scratch
 tmp/

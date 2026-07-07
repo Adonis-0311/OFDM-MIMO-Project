@@ -1,0 +1,6 @@
+method,mean_flops,seed_mean_nmse_db
+Grid,2.23701e+07,-5.4300
+Local,4.0454e+07,-12.7346
+Learned,5.75813e+07,-11.2145
+PARAFAC,7.81608e+07,-16.8550
+NOMP-inspired,2.87289e+08,-53.3902

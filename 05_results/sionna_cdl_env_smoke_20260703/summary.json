@@ -1,0 +1,42 @@
+{
+  "config": {
+    "profile": "A",
+    "fc": 60000000000.0,
+    "ds": 1e-07,
+    "scs": 120000.0,
+    "nsc": 64,
+    "nrx": 4,
+    "snr_db": 20.0,
+    "L": 4,
+    "seeds": [
+      101,
+      102,
+      103
+    ]
+  },
+  "rows": [
+    {
+      "seed": 101,
+      "grid": -5.14494795188903,
+      "deterministic": -7.108130961391104,
+      "shared_alpha": -7.310667836155363,
+      "wall_s": 0.007
+    },
+    {
+      "seed": 102,
+      "grid": -4.883588786560522,
+      "deterministic": -7.538504938821486,
+      "shared_alpha": -7.690871413488711,
+      "wall_s": 0.008
+    },
+    {
+      "seed": 103,
+      "grid": -4.948201161904508,
+      "deterministic": -7.449288660646491,
+      "shared_alpha": -7.562159810644989,
+      "wall_s": 0.008
+    }
+  ],
+  "mean_gain_det_vs_grid_db": 2.3730622201683405,
+  "note": "environment-revalidation smoke; sionna 1.1.0 / tf-cpu 2.15.1 sandbox install; grid FFT top-k vs deterministic bounded local refinement vs shared alpha=0.64 on CDL-A 64x4, 20 dB"
+}
