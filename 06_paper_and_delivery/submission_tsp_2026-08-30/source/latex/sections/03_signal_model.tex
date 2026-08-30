@@ -41,10 +41,12 @@ atom contributes
 \end{equation}
 Coordinate differences are interpreted periodically.
 
+Figure~\ref{fig:system_model} places this separable model in the complete estimator. The same orthonormal FFT supplies both the top-$L$ neighborhoods and the axis triplets; the final fitted-energy comparison returns one set of coordinates, gains, and reconstruction.
+
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=0.96\textwidth]{tsp_system_model.pdf}
-  \caption{Executed tensor-estimation interface. An orthonormal FFT selects $L$ neighborhoods; $3DL$ center/neighbor samples drive the axis-wise Candan update, and fitted-subspace energies select between the grid and Candan joint-LS outputs. The CDL experiment specializes the interface to frequency and the BS transmit-ULA dimension.}
+  \includegraphics[width=0.96\textwidth]{tsp_estimator_overview.pdf}
+  \caption{End-to-end projection-selected tensor estimator. The separable observation is transformed once; top-$L$ FFT neighborhoods provide $3DL$ center/neighbor samples for axis-wise Candan correction, joint LS estimates the gains, and the higher fitted-subspace energy returns either the refined or grid coordinates with the corresponding reconstruction.}
   \label{fig:system_model}
 \end{figure*}
 
@@ -69,6 +71,8 @@ The main reconstruction metric is measurement-domain normalized mean-square erro
 For method $m$, the reported reconstruction gain is $G_m=\operatorname{NMSE}_{\rm grid,dB}-\operatorname{NMSE}_{m,\rm dB}$, so a positive value favors $m$. Parameter errors use minimum-cost Hungarian assignment and circular distance on every active FFT axis. The all-axis $q$-bin accuracy is the fraction of matched components whose absolute circular error is at most $q$ bin on every active axis; we report $q\in\{0.1,0.25,0.5\}$ as tenth-, quarter-, and half-bin accuracy.
 
 For CDL physical metrics, the reference set retains the $\min(L,L_{\rm CIR})$ CIR components with largest summed array power as individual paths. Delay truth is $\tau_p$. A half-wavelength one-dimensional ULA identifies projected spatial frequency, whose reference is the peak of a 4096-point FFT of each clean per-component array response. Estimated bins are converted to delay and projected spatial frequency, then assigned by squared errors normalized to the delay and spatial bin resolutions. The reported projected-angle error is the minimum broadside-angle error over valid ULA aliases. This fixes reference selection, weighting, assignment, and alias handling before evaluation.
+
+Table~\ref{tab:system_params} collects the synthetic and CDL settings used by every reported comparison.
 
 \begin{table}[t]
 \centering

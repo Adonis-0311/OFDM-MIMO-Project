@@ -13,12 +13,12 @@ A second 1200-scene campaign expands each fractional coordinate to $[-0.49,0.49]
 
 FFT top-$L$ plus joint LS averages $-5.43$ dB. Quadratic interpolation reaches $-6.04$ dB, one fixed-support Newton step reaches $-7.71$ dB, and the $125L$ Cartesian search reaches $-12.73$ dB. The local Candan stage reaches $-29.69$ dB, corresponding to a 24.26 dB gain over grid; projection selection returns the same reconstruction throughout this campaign. Its per-component all-axis half-bin rate is 0.796, compared with 0.719 for grid and 0.717 for Newton.
 
-Figure~\ref{fig:local_family} combines accuracy with runtime. Median end-to-end times are 8.93 ms for grid, 10.58 ms for quadratic interpolation, 33.55 ms for Newton, and 10.04 ms for Cartesian refinement in the common local-family evaluation. The dedicated projection implementation measures Candan at 11.07 ms and projection-selected Candan at 11.24 ms, a 0.17 ms or 1.57\% increment.
+Figure~\ref{fig:local_family} separates the matched-scene evidence into paired reconstruction gain, operating-condition coverage, and runtime. Median end-to-end times are 8.93 ms for grid, 10.58 ms for quadratic interpolation, 33.55 ms for Newton, and 10.04 ms for Cartesian refinement in the common local-family evaluation. The dedicated projection implementation measures Candan at 11.07 ms and projection-selected Candan at 11.24 ms, a 0.17 ms or 1.57\% increment.
 
 \begin{figure*}[t]
   \centering
   \includegraphics[width=0.96\textwidth]{tsp_local_family.pdf}
-  \caption{Matched-scene comparison on 1200 identical tensors. The projection-selected Candan point includes the fitted-energy decision. Error bars are 95\% intervals over five seed means.}
+  \caption{Matched-scene evidence on the common 1200-tensor campaign. (a) Paired measurement-NMSE gain over FFT top-$L$ plus joint LS for four local refinements; dots and bars are the mean and 95\% interval over five seed means (higher is better). (b) Candan gain across SNR and target count; every displayed condition is positive. (c) Common-ledger median end-to-end runtime, with a separate dedicated-implementation inset showing that fitted-energy selection adds 0.17 ms (1.57\%) to local Candan.}
   \label{fig:local_family}
 \end{figure*}
 
@@ -48,6 +48,6 @@ The $L=4$ campaign inserts one controlled pair at 0.25, 0.5, 1, or 2 bins, cycle
 \begin{figure*}[t]
   \centering
   \includegraphics[width=0.88\textwidth]{tsp_stress_mechanism.pdf}
-  \caption{Controlled separation/near--far results averaged over four SNRs. (a) Grid and (b) Candan per-component all-axis half-bin rates, (c) Candan designated-pair joint-hit rate, and (d) Candan measurement-NMSE gain. Each displayed cell contains 100 test scenes across five seeds.}
+  \caption{Controlled separation/near--far evidence averaged over four SNRs, with 100 test scenes and five seed means per displayed cell. Panels (a) and (b) share a 0--100\% scale for direct comparison of grid and Candan per-component all-axis half-bin rates; (c) reports designated-pair joint recovery; and (d) reports measurement-NMSE gain over grid. All displayed reconstruction gains are positive.}
   \label{fig:stress}
 \end{figure*}

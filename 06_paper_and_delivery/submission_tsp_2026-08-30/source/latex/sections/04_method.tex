@@ -1,13 +1,6 @@
 \section{Projection-Selected Multidimensional Candan Refinement}
 
-The proposed estimator preserves the $L$ neighborhoods selected by \eqref{eq:fft_top_l}. It applies a closed-form complex three-sample correction along every active axis, forms one joint-LS reconstruction, and selects between the grid and Candan fitted subspaces. Figure~\ref{fig:architecture} summarizes the executed path.
-
-\begin{figure*}[t]
-  \centering
-  \includegraphics[width=0.96\textwidth]{tsp_method_flow.pdf}
-  \caption{Projection-selected multidimensional Candan refinement. One FFT supplies $3DL$ triplet samples. The grid energy comes directly from the selected orthonormal FFT coefficients, while the refined energy is obtained from the Candan design QR factor.}
-  \label{fig:architecture}
-\end{figure*}
+The proposed estimator preserves the $L$ neighborhoods selected by \eqref{eq:fft_top_l}. It applies a closed-form complex three-sample correction along every active axis, forms one joint-LS reconstruction, and selects between the grid and Candan fitted subspaces. Figure~\ref{fig:system_model} shows the complete data path and its two return branches.
 
 \subsection{Axis-Wise Complex Three-Sample Update}
 

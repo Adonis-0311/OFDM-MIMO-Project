@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 tsp_estimator_overview.svg Projection-selected Candan estimator -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="7.16in" height="3.3in" viewBox="0 0 515.52 237.6"
+		xml:space="preserve" color-interpolation-filters="sRGB" class="st29">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#172033;font-family:Arial;font-size:0.716675em;font-weight:bold}
+		.st3 {fill:#5d6574;font-family:Arial;font-size:0.608322em;font-weight:bold}
+		.st4 {fill:#e8f0f8;stroke:#0b5cad;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st5 {fill:#172033;font-family:Arial;font-size:0.599991em}
+		.st6 {font-size:1em}
+		.st7 {font-family:Cambria Math;font-size:1em}
+		.st8 {fill:#e8f0f8;stroke:#00786b;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st9 {font-family:宋体;font-size:1em}
+		.st10 {fill:#e8f0f8;stroke:#a36814;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st11 {fill:#172033;font-family:Arial;font-size:0.608322em}
+		.st12 {fill:#172033;font-family:Arial;font-size:0.633339em}
+		.st13 {fill:#e5f3ef;stroke:#00786b;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st14 {fill:#172033;font-family:Arial;font-size:0.625008em}
+		.st15 {marker-end:url(#mrkr4-50);stroke:#172033;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st16 {fill:#172033;fill-opacity:1;stroke:#172033;stroke-opacity:1;stroke-width:0.28409090909091}
+		.st17 {fill:#fcf3d9;stroke:#a36814;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st18 {fill:#172033;font-family:Arial;font-size:0.64167em}
+		.st19 {fill:#faebe0;stroke:#d55e00;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st20 {stroke:#00786b;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.15}
+		.st21 {marker-end:url(#mrkr4-118);stroke:#00786b;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.15}
+		.st22 {fill:#00786b;fill-opacity:1;stroke:#00786b;stroke-opacity:1;stroke-width:0.3133514986376}
+		.st23 {fill:#00786b;font-family:Arial;font-size:0.599991em;font-weight:bold}
+		.st24 {stroke:#d55e00;stroke-dasharray:8.05,5.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.15}
+		.st25 {marker-end:url(#mrkr4-130);stroke:#d55e00;stroke-dasharray:8.05,5.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.15}
+		.st26 {fill:#d55e00;fill-opacity:1;stroke:#d55e00;stroke-opacity:1;stroke-width:0.3133514986376}
+		.st27 {fill:#d55e00;font-family:Arial;font-size:0.599991em;font-weight:bold}
+		.st28 {fill:#5d6574;font-family:Arial;font-size:0.599991em}
+		.st29 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend4">
+			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr4-50" class="st16" v:arrowType="4" v:arrowSize="2" v:setback="7.04" refX="-7.04" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-3.52,-3.52) "/>
+		</marker>
+		<marker id="mrkr4-118" class="st22" v:arrowType="4" v:arrowSize="2" v:setback="6.38261" refX="-6.3826086956522"
+				orient="auto" markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-3.1913043478261,-3.1913043478261) "/>
+		</marker>
+		<marker id="mrkr4-130" class="st26" v:arrowType="4" v:arrowSize="2" v:setback="6.38261" refX="-6.3826086956522"
+				orient="auto" markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-3.1913043478261,-3.1913043478261) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Projection-selected Candan estimator</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(14.4,-221.76)">
+			<title>工作表.1</title>
+			<desc>Projection-selected multidimensional Candan estimator</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5197"/>
+			<v:textRect cx="243.36" cy="230.76" width="486.72" height="13.68"/>
+			<rect x="0" y="223.92" width="486.72" height="13.68" class="st1"/>
+			<text x="129.62" y="233.34" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Projection-selected multidimensional Candan estimator</text>		</g>
+		<g id="shape2-4" v:mID="2" v:groupContext="shape" transform="translate(14.4,-204.48)">
+			<title>工作表.2</title>
+			<desc>Observation and closed-form coordinate refinement</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5197"/>
+			<v:textRect cx="243.36" cy="231.48" width="486.72" height="12.24"/>
+			<rect x="0" y="225.36" width="486.72" height="12.24" class="st1"/>
+			<text x="153.31" y="233.67" class="st3" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Observation and closed-form coordinate refinement</text>		</g>
+		<g id="shape3-7" v:mID="3" v:groupContext="shape" transform="translate(12.96,-175.68)">
+			<title>工作表.3</title>
+			<desc>Spatial ULA Nₐ</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="28.08" cy="227.52" width="56.16" height="20.16"/>
+			<rect x="0" y="217.44" width="56.16" height="20.16" class="st4"/>
+			<text x="9.07" y="225.35" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Spatial ULA<v:newlineChar/><tspan
+						x="24.16" dy="1.202em" class="st6">N</tspan><tspan class="st7">ₐ</tspan></text>		</g>
+		<g id="shape4-12" v:mID="4" v:groupContext="shape" transform="translate(12.96,-152.64)">
+			<title>工作表.4</title>
+			<desc>Frequency Nτ</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="28.08" cy="227.52" width="56.16" height="20.16"/>
+			<rect x="0" y="217.44" width="56.16" height="20.16" class="st8"/>
+			<text x="11.07" y="225" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Frequency<v:newlineChar/><tspan
+						x="21.88" dy="1.275em" class="st6">N</tspan><tspan class="st9">τ</tspan></text>		</g>
+		<g id="shape5-17" v:mID="5" v:groupContext="shape" transform="translate(12.96,-129.6)">
+			<title>工作表.5</title>
+			<desc>Slow time Nν</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="28.08" cy="227.52" width="56.16" height="20.16"/>
+			<rect x="0" y="217.44" width="56.16" height="20.16" class="st10"/>
+			<text x="12.48" y="225" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Slow time<v:newlineChar/><tspan
+						x="21.88" dy="1.275em" class="st6">N</tspan><tspan class="st9">ν</tspan></text>		</g>
+		<g id="shape6-22" v:mID="6" v:groupContext="shape" transform="translate(90.72,-131.04)">
+			<title>工作表.6</title>
+			<desc>Rank-L separable tensor observation spatial × frequency × slo...</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="38.16" cy="206.64" width="76.33" height="61.92"/>
+			<rect x="0" y="175.68" width="76.32" height="61.92" class="st4"/>
+			<text x="9.35" y="195.69" class="st11" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Rank-L separable<v:newlineChar/><tspan
+						x="8.13" dy="1.2em" class="st6">tensor observation<v:newlineChar/></tspan><tspan x="7.42" dy="1.2em"
+						class="st6">spatial × frequency </tspan><tspan x="19.8" dy="1.2em" class="st6">× slow time</tspan></text>		</g>
+		<g id="shape7-28" v:mID="7" v:groupContext="shape" transform="translate(189.36,-131.04)">
+			<title>工作表.7</title>
+			<desc>Orthonormal 3-D FFT Top-L coarse bins</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="35.28" cy="206.64" width="70.56" height="61.92"/>
+			<rect x="0" y="175.68" width="70.56" height="61.92" class="st4"/>
+			<text x="14.16" y="199.8" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Orthonormal<v:newlineChar/><tspan
+						x="21.14" dy="1.2em" class="st6">3</tspan>-D FFT<v:newlineChar/><tspan x="4.86" dy="1.2em" class="st6">Top</tspan>-L coarse bins</text>		</g>
+		<g id="shape8-33" v:mID="8" v:groupContext="shape" transform="translate(282.24,-131.04)">
+			<title>工作表.8</title>
+			<desc>Per-axis neighborhoods 3DL complex triplets</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="39.96" cy="206.64" width="79.92" height="61.92"/>
+			<rect x="0" y="175.68" width="79.92" height="61.92" class="st13"/>
+			<text x="26.21" y="199.89" class="st14" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Per-axis <tspan
+						x="15.15" dy="1.2em" class="st6">neighborhoods<v:newlineChar/></tspan><tspan x="5.99" dy="1.2em"
+						class="st6">3DL complex triplets</tspan></text>		</g>
+		<g id="shape9-38" v:mID="9" v:groupContext="shape" transform="translate(384.48,-131.04)">
+			<title>工作表.9</title>
+			<desc>Closed-form Candan corrections (δa, δτ, δν) for each target</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="59.04" cy="206.64" width="118.08" height="61.92"/>
+			<rect x="0" y="175.68" width="118.08" height="61.92" class="st13"/>
+			<text x="5.06" y="204.01" class="st14" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Closed-form Candan corrections<v:newlineChar/><tspan
+						x="6.32" dy="1.275em" class="st6">(</tspan><tspan class="st9">δ</tspan>a, <tspan class="st9">δτ</tspan>, <tspan
+						class="st9">δν</tspan>) for each target</text>		</g>
+		<g id="shape10-45" v:mID="10" v:groupContext="shape" transform="translate(163.592,-166.171) rotate(23.4287)">
+			<title>工作表.10</title>
+			<path d="M0 237.6 L16.5 237.6" class="st15"/>
+		</g>
+		<g id="shape11-51" v:mID="11" v:groupContext="shape" transform="translate(77.0356,-162.588) rotate(1.90915)">
+			<title>工作表.11</title>
+			<path d="M0 237.6 L14.57 237.6" class="st15"/>
+		</g>
+		<g id="shape12-56" v:mID="12" v:groupContext="shape" transform="translate(-12.6749,-125.157) rotate(-20.1363)">
+			<title>工作表.12</title>
+			<path d="M0 237.6 L15.97 237.6" class="st15"/>
+		</g>
+		<g id="shape13-61" v:mID="13" v:groupContext="shape" transform="translate(167.04,-162)">
+			<title>工作表.13</title>
+			<path d="M0 237.6 L15.28 237.6" class="st15"/>
+		</g>
+		<g id="shape14-66" v:mID="14" v:groupContext="shape" transform="translate(259.92,-162)">
+			<title>工作表.14</title>
+			<path d="M0 237.6 L15.28 237.6" class="st15"/>
+		</g>
+		<g id="shape15-71" v:mID="15" v:groupContext="shape" transform="translate(362.16,-162)">
+			<title>工作表.15</title>
+			<path d="M0 237.6 L15.28 237.6" class="st15"/>
+		</g>
+		<g id="shape16-76" v:mID="16" v:groupContext="shape" transform="translate(14.4,-110.88)">
+			<title>工作表.16</title>
+			<desc>Joint fitting, fitted-subspace selection, and full estimate</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5197"/>
+			<v:textRect cx="243.36" cy="231.48" width="486.72" height="12.24"/>
+			<rect x="0" y="225.36" width="486.72" height="12.24" class="st1"/>
+			<text x="146.83" y="233.67" class="st3" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Joint fitting, fitted-subspace selection, and full estimate</text>		</g>
+		<g id="shape17-79" v:mID="17" v:groupContext="shape" transform="translate(384.48,-41.76)">
+			<title>工作表.17</title>
+			<desc>Joint least-squares gain estimate at refined coordinates</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="59.04" cy="209.88" width="118.08" height="55.44"/>
+			<rect x="0" y="182.16" width="118.08" height="55.44" class="st13"/>
+			<text x="18.91" y="203.04" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Joint least-squares gain <tspan
+						x="44.68" dy="1.2em" class="st6">estimate<v:newlineChar/></tspan><tspan x="22.49" dy="1.2em" class="st6">at refined coordinates</tspan></text>		</g>
+		<g id="shape18-84" v:mID="18" v:groupContext="shape" transform="translate(268.56,-41.76)">
+			<title>工作表.18</title>
+			<desc>Fitted-subspace energy selector Δρ ≥ 0?</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="46.8" cy="209.88" width="93.6" height="55.44"/>
+			<rect x="0" y="182.16" width="93.6" height="55.44" class="st17"/>
+			<text x="19.41" y="202.56" class="st18" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Fitted-subspace<v:newlineChar/><tspan
+						x="20.48" dy="1.2em" class="st6">energy selector<v:newlineChar/></tspan><tspan x="28.83" dy="1.275em"
+						class="st9">Δρ</tspan> <tspan class="st9">≥</tspan> 0?</text>		</g>
+		<g id="shape19-90" v:mID="19" v:groupContext="shape" transform="translate(135.36,-67.68)">
+			<title>工作表.19</title>
+			<desc>Full refined estimate coordinates, gains, reconstruction</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="52.92" cy="221.76" width="105.84" height="31.68"/>
+			<rect x="0" y="205.92" width="105.84" height="31.68" class="st13"/>
+			<text x="20.06" y="215.19" class="st11" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Full refined estimate<v:newlineChar/><tspan
+						x="22.28" dy="1.2em" class="st6">coordinates, gains, </tspan><tspan x="30" dy="1.2em" class="st6">reconstruction</tspan></text>		</g>
+		<g id="shape20-95" v:mID="20" v:groupContext="shape" transform="translate(135.36,-28.8)">
+			<title>工作表.20</title>
+			<desc>Full grid estimate coordinates, gains, reconstruction</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="52.92" cy="221.76" width="105.84" height="31.68"/>
+			<rect x="0" y="205.92" width="105.84" height="31.68" class="st19"/>
+			<text x="25.13" y="215.19" class="st11" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Full grid estimate<v:newlineChar/><tspan
+						x="22.28" dy="1.2em" class="st6">coordinates, gains, </tspan><tspan x="30" dy="1.2em" class="st6">reconstruction</tspan></text>		</g>
+		<g id="shape21-100" v:mID="21" v:groupContext="shape" transform="translate(681.12,106.56) rotate(90)">
+			<title>工作表.21</title>
+			<path d="M0 237.6 L26.8 237.6" class="st15"/>
+		</g>
+		<g id="shape22-105" v:mID="22" v:groupContext="shape" transform="translate(384.48,405.36) rotate(180)">
+			<title>工作表.22</title>
+			<path d="M0 237.6 L15.28 237.6" class="st15"/>
+		</g>
+		<g id="shape23-110" v:mID="23" v:groupContext="shape" transform="translate(217.017,388.902) rotate(-167.471)">
+			<title>工作表.23</title>
+			<path d="M0 237.6 L13.28 237.6" class="st20"/>
+		</g>
+		<g id="shape24-113" v:mID="24" v:groupContext="shape" transform="translate(255.6,391.68) rotate(180)">
+			<title>工作表.24</title>
+			<path d="M0 237.6 L7.06 237.6" class="st21"/>
+		</g>
+		<g id="shape25-119" v:mID="25" v:groupContext="shape" transform="translate(243.36,-91.44)">
+			<title>工作表.25</title>
+			<desc>yes</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5197"/>
+			<v:textRect cx="10.8" cy="231.84" width="21.6" height="11.52"/>
+			<rect x="0" y="226.08" width="21.6" height="11.52" class="st1"/>
+			<text x="4.79" y="234" class="st23" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>yes</text>		</g>
+		<g id="shape26-122" v:mID="26" v:groupContext="shape" transform="translate(426.413,359.024) rotate(138.366)">
+			<title>工作表.26</title>
+			<path d="M0 237.6 L17.34 237.6" class="st24"/>
+		</g>
+		<g id="shape27-125" v:mID="27" v:groupContext="shape" transform="translate(255.6,430.56) rotate(180)">
+			<title>工作表.27</title>
+			<path d="M0 237.6 L7.06 237.6" class="st25"/>
+		</g>
+		<g id="shape28-131" v:mID="28" v:groupContext="shape" transform="translate(243.36,-28.8)">
+			<title>工作表.28</title>
+			<desc>no</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5197"/>
+			<v:textRect cx="10.8" cy="231.84" width="21.6" height="11.52"/>
+			<rect x="0" y="226.08" width="21.6" height="11.52" class="st1"/>
+			<text x="6.4" y="234" class="st27" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>no</text>		</g>
+		<g id="shape29-134" v:mID="29" v:groupContext="shape" transform="translate(14.4,-8.64)">
+			<title>工作表.29</title>
+			<desc>Projection score = (refined fitted energy − grid fitted energ...</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5197"/>
+			<v:textRect cx="243.36" cy="230.76" width="486.72" height="13.68"/>
+			<rect x="0" y="223.92" width="486.72" height="13.68" class="st1"/>
+			<text x="119.11" y="232.92" class="st28" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Projection score = (refined fitted energy <tspan
+						class="st7">−</tspan> grid fitted energy) / received energy</text>		</g>
+	</g>
+</svg>

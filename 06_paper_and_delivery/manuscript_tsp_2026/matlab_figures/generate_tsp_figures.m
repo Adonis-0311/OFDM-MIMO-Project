@@ -25,11 +25,12 @@ p.gateProtocol = fullfile(workspaceRoot, '05_results', 'tsp_candan_gate_protocol
 p.projectionRuntime = fullfile(workspaceRoot, '05_results', 'tsp_projection_gate_runtime_seventh_round');
 
 tsp_figure_setup();
-% The two page-wide workflow diagrams are maintained as editable Visio
-% sources in ../visio_figures to provide text-safe routing at IEEE scale.
+% The page-wide estimator overview is maintained as an editable Visio
+% source in ../visio_figures; quantitative and mechanism panels are MATLAB.
+make_triplet_mechanism(outDir);
 make_local_family(p, outDir);
 make_full_offset_support(p, outDir);
 make_stress_mechanism(p, outDir);
 make_candan_gate_profiles(p, outDir);
-fprintf('Generated six active MATLAB figure bundles in %s\n', outDir);
+fprintf('Generated five MATLAB figure bundles in %s\n', outDir);
 end

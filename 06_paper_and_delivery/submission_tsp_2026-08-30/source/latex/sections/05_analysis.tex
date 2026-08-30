@@ -1,7 +1,14 @@
 \section{Separable Triplet Reduction and Probabilistic Error Propagation}
 \label{sec:analysis}
 
-The tensor structure reduces each isolated multidimensional triplet exactly to the scalar Candan problem. Interference and noise then enter as explicit perturbations controlled by Fourier coherence, dynamic range, and SNR.
+The tensor structure reduces each isolated multidimensional triplet exactly to the scalar Candan problem. Interference and noise then enter as explicit perturbations controlled by Fourier coherence, dynamic range, and SNR. Figure~\ref{fig:triplet_mechanism} visualizes the common-factor cancellation and the resulting path from triplet perturbation to joint-fit error.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.96\textwidth]{tsp_triplet_mechanism.pdf}
+  \caption{Mechanism linking separable FFT triplets to the joint fit. (a) The center and two periodic neighbors sample the finite-length Dirichlet response around one selected bin. (b) Factors from the non-updated tensor axes are common to all three samples and cancel in the Candan quotient, leaving the fractional coordinate on the active axis. (c) Triplet perturbations determine coordinate error, atom perturbation, and the final joint-LS reconstruction error.}
+  \label{fig:triplet_mechanism}
+\end{figure*}
 
 \textbf{Proposition 1 (isolated separable triplet reduction):}
 For component $\ell$, let $b_{r,\ell}=k_{r,\ell}+\delta_{r,\ell}$ with $\delta_{r,\ell}\in[-1/2,1/2]$. Without other components or noise, for axis $d$ and $q\in\{-1,0,1\}$,

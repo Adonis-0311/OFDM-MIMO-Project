@@ -78,11 +78,13 @@ function Add-Arrow {
         [double]$X1, [double]$Y1, [double]$X2, [double]$Y2,
         [string]$Color = 'RGB(23,32,51)',
         [double]$Weight = 1.0,
-        [bool]$ArrowHead = $true
+        [bool]$ArrowHead = $true,
+        [int]$Pattern = 1
     )
     $line = $Page.DrawLine($X1, $Y1, $X2, $Y2)
     Set-CellFormula $line 'LineColor' $Color
     Set-CellFormula $line 'LineWeight' "$Weight pt"
+    Set-CellFormula $line 'LinePattern' "$Pattern"
     Set-CellFormula $line 'BeginArrow' '0'
     Set-CellFormula $line 'EndArrow' $(if ($ArrowHead) { '4' } else { '0' })
     Set-CellFormula $line 'EndArrowSize' '2'
@@ -101,93 +103,74 @@ function Export-Diagram {
     $Document.ExportAsFixedFormat(1, $pdf, 1, 0, 1, 1, $false, $true, $true, $true, $false)
 }
 
-function Build-SystemModel {
+function Build-EstimatorOverview {
     param($Application)
     $doc = $Application.Documents.Add('')
     try {
         $page = $doc.Pages.Item(1)
-        $page.Name = 'Tensor estimation interface'
-        Set-PageSize $page 10.0 3.00
+        $page.Name = 'Projection-selected Candan estimator'
+
+        # IEEE two-column text width.  Drawing at final size keeps all labels at
+        # their intended 7.2--8.6 pt size instead of relying on later scaling.
+        Set-PageSize $page 7.16 3.30
 
         $text = 'RGB(23,32,51)'
         $blue = 'RGB(11,92,173)'
-        $green = 'RGB(15,118,110)'
-        $gold = 'RGB(183,121,31)'
+        $teal = 'RGB(0,120,107)'
+        $gold = 'RGB(163,104,20)'
+        $orange = 'RGB(213,94,0)'
+        $muted = 'RGB(93,101,116)'
         $lightBlue = 'RGB(232,240,248)'
-        $lightGreen = 'RGB(230,243,239)'
-        $lightGold = 'RGB(252,243,217)'
-        $outputFill = 'RGB(249,241,224)'
-
-        Add-Text $page 2.40 2.30 9.30 2.54 'Rank-L separable observation model' $text 8.2 'Arial' 1 | Out-Null
-
-        Add-Box $page 0.18 2.18 1.42 2.72 "Spatial ULA`nN_a" $lightBlue $blue 8.5 | Out-Null
-        Add-Box $page 0.18 1.40 1.42 1.94 "Frequency`nN_τ" $lightGreen $green 8.5 | Out-Null
-        Add-Box $page 0.18 0.62 1.42 1.16 "Slow time`nN_ν" $lightGold $gold 8.5 | Out-Null
-
-        Add-Box $page 1.82 1.15 3.30 2.17 "Separable tensor`n𝒴: N_a × N_τ × N_ν" $lightBlue $text 8.2 | Out-Null
-        Add-Box $page 3.66 1.15 4.92 2.17 "Orthonormal FFT`n+ top-L bins" $lightBlue $text 8.2 | Out-Null
-        Add-Box $page 5.28 1.15 6.62 2.17 "3DL triplet samples`n+ axis-wise Candan" $lightGreen $text 8.2 | Out-Null
-        Add-Box $page 6.98 1.15 8.28 2.17 "Candan joint LS`n+ FFT/grid energy" $lightGold $text 8.2 | Out-Null
-        Add-Box $page 8.66 1.15 9.84 2.17 "Coordinates`nGains`nReconstruction" $outputFill $text 8.0 | Out-Null
-
-        Add-Arrow $page 1.42 2.45 1.82 1.82 $text 1.0 | Out-Null
-        Add-Arrow $page 1.42 1.67 1.82 1.67 $text 1.0 | Out-Null
-        Add-Arrow $page 1.42 0.89 1.82 1.52 $text 1.0 | Out-Null
-        Add-Arrow $page 3.30 1.66 3.66 1.66 $text 1.0 | Out-Null
-        Add-Arrow $page 4.92 1.66 5.28 1.66 $text 1.0 | Out-Null
-        Add-Arrow $page 6.62 1.66 6.98 1.66 $text 1.0 | Out-Null
-        Add-Arrow $page 8.28 1.66 8.66 1.66 $text 1.0 | Out-Null
-
-        Add-Text $page 1.82 0.18 9.84 0.48 'Projection score: normalized fitted-subspace energy gain (refined − grid)' 'RGB(107,114,128)' 8.0 'Arial' | Out-Null
-        Export-Diagram $doc $page 'tsp_system_model'
-    }
-    finally {
-        $doc.Close()
-        [Runtime.InteropServices.Marshal]::FinalReleaseComObject($doc) | Out-Null
-    }
-}
-
-function Build-MethodFlow {
-    param($Application)
-    $doc = $Application.Documents.Add('')
-    try {
-        $page = $doc.Pages.Item(1)
-        $page.Name = 'Projection-selected Candan flow'
-        Set-PageSize $page 10.0 2.55
-
-        $text = 'RGB(23,32,51)'
-        $green = 'RGB(0,145,102)'
-        $orange = 'RGB(205,92,8)'
-        $lightBlue = 'RGB(232,240,248)'
-        $lightGreen = 'RGB(230,243,239)'
+        $lightTeal = 'RGB(229,243,239)'
         $lightGold = 'RGB(252,243,217)'
         $lightOrange = 'RGB(250,235,224)'
 
-        Add-Text $page 2.25 2.04 7.50 2.28 'Closed-form complex three-sample correction on each active axis' $text 8.2 'Arial' 1 | Out-Null
+        # The title is close to the diagram and centered on the final page.
+        Add-Text $page 0.20 3.08 6.96 3.27 'Projection-selected multidimensional Candan estimator' $text 8.6 'Arial' 1 | Out-Null
+        Add-Text $page 0.20 2.84 6.96 3.01 'Observation and closed-form coordinate refinement' $muted 7.3 'Arial' 1 | Out-Null
 
-        Add-Box $page 0.18 0.95 1.34 1.92 "Dense observation`ny" $lightBlue $text 8.5 | Out-Null
-        Add-Box $page 1.70 0.95 3.00 1.92 "FFT top-L`ncoarse support" $lightBlue $text 8.5 | Out-Null
-        Add-Box $page 3.36 0.95 5.06 1.92 "Axis-wise Candan`n3DL complex samples" $lightBlue $text 8.3 | Out-Null
-        Add-Box $page 5.42 0.95 6.68 1.92 "Joint LS`nCandan estimate" $lightGreen $text 8.5 | Out-Null
-        Add-Box $page 7.04 0.95 8.30 1.92 "Projection selection`nΔρ ≥ 0?" $lightGold $text 8.5 | Out-Null
-        Add-Box $page 8.86 1.72 9.84 2.34 "Return local`ncoordinates" $lightGreen $text 8.2 | Out-Null
-        Add-Box $page 8.86 0.52 9.84 1.14 "Return grid`ncoordinates" $lightOrange $text 8.2 | Out-Null
+        # Three physical sampling axes.  Their distinct borders remain separable
+        # in gray scale, while the shared pale fill identifies them as inputs.
+        Add-Box $page 0.18 2.44 0.96 2.72 "Spatial ULA`nNₐ" $lightBlue $blue 7.2 | Out-Null
+        Add-Box $page 0.18 2.12 0.96 2.40 "Frequency`nNτ" $lightBlue $teal 7.2 | Out-Null
+        Add-Box $page 0.18 1.80 0.96 2.08 "Slow time`nNν" $lightBlue $gold 7.2 | Out-Null
 
-        Add-Arrow $page 1.34 1.44 1.70 1.44 $text 1.0 | Out-Null
-        Add-Arrow $page 3.00 1.44 3.36 1.44 $text 1.0 | Out-Null
-        Add-Arrow $page 5.06 1.44 5.42 1.44 $text 1.0 | Out-Null
-        Add-Arrow $page 6.68 1.44 7.04 1.44 $text 1.0 | Out-Null
+        Add-Box $page 1.26 1.82 2.32 2.68 "Rank-L separable`ntensor observation`nspatial × frequency × slow time" $lightBlue $blue 7.3 | Out-Null
+        Add-Box $page 2.63 1.82 3.61 2.68 "Orthonormal`n3-D FFT`nTop-L coarse bins" $lightBlue $blue 7.6 | Out-Null
+        Add-Box $page 3.92 1.82 5.03 2.68 "Per-axis neighborhoods`n3DL complex triplets" $lightTeal $teal 7.5 | Out-Null
+        Add-Box $page 5.34 1.82 6.98 2.68 "Closed-form Candan corrections`n(δa, δτ, δν) for each target" $lightTeal $teal 7.5 | Out-Null
 
-        Add-Arrow $page 8.30 1.60 8.54 2.03 $green 1.1 $false | Out-Null
-        Add-Arrow $page 8.54 2.03 8.86 2.03 $green 1.1 $true | Out-Null
-        Add-Text $page 8.31 2.09 8.60 2.31 'yes' $green 7.8 'Arial' 1 | Out-Null
+        Add-Arrow $page 0.96 2.58 1.26 2.45 $text 1.0 | Out-Null
+        Add-Arrow $page 0.96 2.26 1.26 2.25 $text 1.0 | Out-Null
+        Add-Arrow $page 0.96 1.94 1.26 2.05 $text 1.0 | Out-Null
+        Add-Arrow $page 2.32 2.25 2.63 2.25 $text 1.0 | Out-Null
+        Add-Arrow $page 3.61 2.25 3.92 2.25 $text 1.0 | Out-Null
+        Add-Arrow $page 5.03 2.25 5.34 2.25 $text 1.0 | Out-Null
 
-        Add-Arrow $page 8.30 1.28 8.54 0.83 $orange 1.1 $false | Out-Null
-        Add-Arrow $page 8.54 0.83 8.86 0.83 $orange 1.1 $true | Out-Null
-        Add-Text $page 8.31 0.55 8.60 0.77 'no' $orange 7.8 'Arial' 1 | Out-Null
+        Add-Text $page 0.20 1.54 6.96 1.71 'Joint fitting, fitted-subspace selection, and full estimate' $muted 7.3 'Arial' 1 | Out-Null
 
-        Add-Text $page 1.70 0.14 8.30 0.40 'Projection score: normalized fitted-subspace energy gain (refined − grid)' 'RGB(107,114,128)' 8.0 'Arial' | Out-Null
-        Export-Diagram $doc $page 'tsp_method_flow'
+        # The second lane continues from right to left.  The vertical hand-off
+        # makes the reading order explicit without a long return connector.
+        Add-Box $page 5.34 0.58 6.98 1.35 "Joint least-squares gain estimate`nat refined coordinates" $lightTeal $teal 7.6 | Out-Null
+        Add-Box $page 3.73 0.58 5.03 1.35 "Fitted-subspace`nenergy selector`nΔρ ≥ 0?" $lightGold $gold 7.7 | Out-Null
+        Add-Box $page 1.88 0.94 3.35 1.38 "Full refined estimate`ncoordinates, gains, reconstruction" $lightTeal $teal 7.3 | Out-Null
+        Add-Box $page 1.88 0.40 3.35 0.84 "Full grid estimate`ncoordinates, gains, reconstruction" $lightOrange $orange 7.3 | Out-Null
+
+        Add-Arrow $page 6.16 1.82 6.16 1.35 $text 1.0 | Out-Null
+        Add-Arrow $page 5.34 0.97 5.03 0.97 $text 1.0 | Out-Null
+
+        # Refined branch: solid teal.  Grid fallback: dashed vermillion.  Labels
+        # sit in dedicated whitespace and never intersect the connectors.
+        Add-Arrow $page 3.73 1.12 3.55 1.16 $teal 1.15 $false 1 | Out-Null
+        Add-Arrow $page 3.55 1.16 3.35 1.16 $teal 1.15 $true 1 | Out-Null
+        Add-Text $page 3.38 1.27 3.68 1.43 'yes' $teal 7.2 'Arial' 1 | Out-Null
+
+        Add-Arrow $page 3.73 0.78 3.55 0.62 $orange 1.15 $false 2 | Out-Null
+        Add-Arrow $page 3.55 0.62 3.35 0.62 $orange 1.15 $true 2 | Out-Null
+        Add-Text $page 3.38 0.40 3.68 0.56 'no' $orange 7.2 'Arial' 1 | Out-Null
+
+        Add-Text $page 0.20 0.12 6.96 0.31 'Projection score = (refined fitted energy − grid fitted energy) / received energy' $muted 7.2 'Arial' | Out-Null
+        Export-Diagram $doc $page 'tsp_estimator_overview'
     }
     finally {
         $doc.Close()
@@ -208,8 +191,7 @@ try {
     $visio = New-Object -ComObject Visio.Application
     $visio.Visible = $false
     $visio.AlertResponse = 7
-    Build-SystemModel $visio
-    Build-MethodFlow $visio
+    Build-EstimatorOverview $visio
 }
 finally {
     if ($visio) {

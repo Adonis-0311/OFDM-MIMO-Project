@@ -2,6 +2,18 @@
 
 Target placement: IEEE two-column `figure*` at 0.96 text width.
 
+## `tsp_estimator_overview`
+
+- Consolidated the former system-model and method-flow diagrams into one end-to-end estimator overview.
+- Preserved the three tensor axes, FFT top-$L$ support, $3DL$ triplets, axis-wise Candan correction, joint LS, and fitted-energy return decision.
+- Separated the refined and grid return paths with solid teal and dashed orange connectors so the branch remains legible in grayscale.
+- Gave branch labels dedicated whitespace, widened output blocks, and kept every label inside its shape.
+- Replaced editor-style underscore notation in the footer with a plain-language projection-score definition; exact mathematics remains in the adjacent manuscript equation.
+
+No plotted values, metric definitions, algorithm steps, or manuscript claims were changed manually.
+
+## Superseded editable sources
+
 ## `tsp_system_model`
 
 - Redrew the diagram in Microsoft Visio.
@@ -20,4 +32,4 @@ Target placement: IEEE two-column `figure*` at 0.96 text width.
 - Reduced and lowered the descriptor title to form a compact visual group with the processing blocks.
 - Preserved the Candan correction, projection decision, and local/grid outputs.
 
-No experimental values, metric definitions, algorithm steps, or manuscript claims were changed manually.
+The older `tsp_system_model.vsdx` and `tsp_method_flow.vsdx` remain for provenance but are no longer included in the manuscript.

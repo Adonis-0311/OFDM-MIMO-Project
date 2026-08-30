@@ -11,10 +11,10 @@ Run from MATLAB R2025a:
 
 The palette is color-vision-friendly, comparisons use distinct markers,
 PDF/SVG exports are vector, and raster companions use 300/600 dpi.
-The active MATLAB generator rebuilds the four quantitative/evidence figures:
-local-family comparison, full-offset evidence, the pure-Candan 48-cell stress
-map, and calibration-free projection selection. The page-wide system-model
-and method-flow diagrams are maintained as editable Microsoft Visio sources
-in `../visio_figures` so that labels and connectors remain text-safe at IEEE
-two-column scale. Legacy exploratory sources remain for provenance but are
-not called by the active entry point.
+The active generator rebuilds five MATLAB bundles: the analytic triplet
+mechanism, matched-scene headline evidence, full-offset evidence, the
+pure-Candan 48-cell stress map, and calibration-free projection selection.
+The page-wide estimator overview is maintained as an editable Microsoft
+Visio source in `../visio_figures` so that labels and connectors remain
+text-safe at IEEE two-column scale. Legacy exploratory sources remain for
+provenance but are not called by the active entry point.
