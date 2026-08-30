@@ -25,8 +25,8 @@ p.gateProtocol = fullfile(workspaceRoot, '05_results', 'tsp_candan_gate_protocol
 p.projectionRuntime = fullfile(workspaceRoot, '05_results', 'tsp_projection_gate_runtime_seventh_round');
 
 tsp_figure_setup();
-make_system_model(outDir);
-make_method_flow(outDir);
+% The two page-wide workflow diagrams are maintained as editable Visio
+% sources in ../visio_figures to provide text-safe routing at IEEE scale.
 make_local_family(p, outDir);
 make_full_offset_support(p, outDir);
 make_stress_mechanism(p, outDir);

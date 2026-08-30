@@ -4,16 +4,18 @@ Date: 2026-08-30
 
 ## Deliverables
 
-- Main manuscript: `latex/main.pdf` (8 pages, 504366 bytes).
+- Main manuscript: `latex/main.pdf` (8 pages, 633237 bytes).
 - Supplementary material: `latex/supplement_tsp.pdf` (6 pages, 249156 bytes).
 - Formal upload package: `../submission_tsp_2026-08-30/`.
 - Self-contained source archive: `../submission_tsp_2026-08-30/TSP_source.zip`.
-- MATLAB figure entry point: `matlab_figures/generate_tsp_figures.m`.
+- MATLAB evidence-figure entry point: `matlab_figures/generate_tsp_figures.m`.
+- Visio workflow-diagram entry point: `visio_figures/build_visio_diagrams.ps1`.
 
 ## Verification
 
 - Python test suite: 47 passed.
 - MATLAB Code Analyzer: zero findings across all 19 manuscript figure source files.
+- Microsoft Visio 16.0 redraw: editable VSDX plus PDF/SVG/PNG exports generated successfully for the two page-wide workflow diagrams.
 - Working and standalone-source LaTeX builds: successful with `latexmk`.
 - Log audit: no overfull boxes, undefined citations/references, or LaTeX errors.
 - PDF audit: Letter format and all fonts embedded in the manuscript, supplementary material, cover letter, and prior-submission disclosure.
@@ -32,3 +34,4 @@ Date: 2026-08-30
 - Framed the theory as triplet-perturbation analysis after FFT neighborhood selection and used the controlled campaign as complementary support evidence.
 - Reordered the experiment narrative and retained four nonredundant figures in the main paper; all figures now appear before the references.
 - Moved the profile visualization to the supplementary material while preserving the exact profile table in the self-contained main paper.
+- Rebalanced the system-model output block and rerouted the projection-selection branches in Visio; final-size page inspection shows no text overflow or connector-label overlap.

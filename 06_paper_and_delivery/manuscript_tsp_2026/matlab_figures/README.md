@@ -11,8 +11,10 @@ Run from MATLAB R2025a:
 
 The palette is color-vision-friendly, comparisons use distinct markers,
 PDF/SVG exports are vector, and raster companions use 300/600 dpi.
-The active generator rebuilds six paper figures: system model, method flow,
+The active MATLAB generator rebuilds the four quantitative/evidence figures:
 local-family comparison, full-offset evidence, the pure-Candan 48-cell stress
-map, and calibration-free projection selection. The last two read the
-seventh-round registered CSV artifacts directly. Legacy exploratory sources
-remain for provenance but are not called by the active entry point.
+map, and calibration-free projection selection. The page-wide system-model
+and method-flow diagrams are maintained as editable Microsoft Visio sources
+in `../visio_figures` so that labels and connectors remain text-safe at IEEE
+two-column scale. Legacy exploratory sources remain for provenance but are
+not called by the active entry point.
