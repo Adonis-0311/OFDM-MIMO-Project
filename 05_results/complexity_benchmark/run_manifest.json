@@ -1,0 +1,47 @@
+{
+  "command": "python 04_experiments/eval/run_complexity_benchmark.py",
+  "config": {
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "offset_radius": 0.35,
+    "parafac_iterations": 5,
+    "repeats": 5,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "seed": 20260626,
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snr_db": 20.0
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "claim_update": "complexity-comparator-table-ready",
+    "implemented_rows": 15.0,
+    "l_values": "4,8,16",
+    "max_median_wall_clock_ms": 1678.3921999995073,
+    "max_parameter_count": 1.0,
+    "max_python_peak_alloc_mb": 33.0064697265625,
+    "min_median_wall_clock_ms": 4.379299996799091,
+    "not_implemented_rows": 0.0,
+    "repeats": 5.0,
+    "snr_db": 20.0,
+    "tensor_shape": "128x16x32"
+  },
+  "notes": [
+    "Operation proxy is an order-of-growth arithmetic proxy, not hardware FLOPs from a profiler.",
+    "Wall-clock timings are CPU local timings on the current workstation.",
+    "The ESPRIT row is separable forward-backward ESPRIT, not full Unitary ESPRIT, and does not perform cross-axis pairing.",
+    "The PARAFAC row uses five fixed ALS sweeps; neither comparator receives an accuracy claim from this timing run."
+  ],
+  "run_id": "complexity_benchmark_dev_20260627"
+}

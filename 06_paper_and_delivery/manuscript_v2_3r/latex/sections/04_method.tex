@@ -1,0 +1,75 @@
+\section{Learned Bounded Refinement}
+
+The method keeps Tensor-OMP support selection and least-squares reconstruction explicit. Learning controls only how far the estimate moves from a selected grid atom toward a deterministic local-search candidate. Figure~\ref{fig:architecture} separates the two learned implementations from the repeated-refinement depth diagnostic; they share a bounded interpolation principle but are not one integrated network.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{v2_3r_refinement_paths.pdf}
+  \caption{Implemented refinement paths and evidence scope. The local three-dimensional experiment learns one scalar interpolation parameter. The CDL experiment uses a separate 10--16--2 feature controller. A4 repeats deterministic local searches and applies a scalar plateau gate; it is a depth diagnostic, not the depth of the CDL controller.}
+  \label{fig:architecture}
+\end{figure*}
+
+\subsection{Tensor-OMP Support and Bounded Interpolation}
+
+Let $\mathbf{b}_{0,\ell}$ denote the coarse tensor-grid coordinates selected for component $\ell$, and let $\mathbf{b}_{\star,\ell}$ be the candidate returned by deterministic bounded local search around that support. The learned coordinates are
+\begin{equation}
+  \widehat{\mathbf{b}}_{\ell}
+  =\mathbf{b}_{0,\ell}
+  +\boldsymbol{\alpha}\odot
+   (\mathbf{b}_{\star,\ell}-\mathbf{b}_{0,\ell}),
+  \qquad 0<\alpha_d<1.2,
+  \label{eq:bounded_interpolation}
+\end{equation}
+where a scalar $\alpha$ is broadcast over axes in the local implementation and axis-specific scales are used in the CDL implementation. Given the design matrix $\mathbf{A}(\widehat{\mathbf{B}})$ formed from all refined atoms, coefficients and reconstruction are recomputed as
+\begin{equation}
+  \widehat{\boldsymbol{\beta}}
+  =\arg\min_{\boldsymbol{\beta}}
+   \|\mathbf{y}-\mathbf{A}(\widehat{\mathbf{B}})\boldsymbol{\beta}\|_2^2,
+  \qquad
+  \widehat{\mathbf{y}}=\mathbf{A}(\widehat{\mathbf{B}})\widehat{\boldsymbol{\beta}}.
+  \label{eq:ls_reconstruction}
+\end{equation}
+Thus the learned output remains an inspectable physical support followed by an LS estimate.
+
+\subsection{Local Three-Dimensional Scalar Model}
+
+For the $128\times16\times32$ angle--delay--Doppler experiment, the trainable model contains one unconstrained scalar $a$. Its bounded interpolation scale is
+\begin{equation}
+  \alpha=1.2\,\sigma(a),
+  \label{eq:scalar_alpha}
+\end{equation}
+and $a$ is optimized through the differentiable LS reconstruction to minimize linear-scale measurement NMSE. The coarse support and local candidate are prepared before this optimization. Consequently, the G2 result tests whether a learned global step length improves a deterministic local candidate; it does not test a deep stack of trainable Tensor-OMP layers.
+
+\subsection{Feature-Conditioned CDL Controller}
+
+The CDL path uses a separate controller because a single shared delay--angle scale produced strong axis coupling. A standardized feature vector $\mathbf{z}\in\mathbb{R}^{10}$ records support density, selected spectral energy, grid residual energy, delay/angle displacement statistics, support uniqueness, and design-matrix conditioning. The controller is
+\begin{equation}
+  \begin{bmatrix}\alpha_\tau\\ \alpha_\theta\end{bmatrix}
+  =1.2\,\sigma\!\left(
+    \mathbf{W}_2\tanh(\mathbf{W}_1\mathbf{z}+\mathbf{b}_1)+\mathbf{b}_2
+  \right),
+  \label{eq:feature_controller}
+\end{equation}
+with dimensions $10\!\rightarrow\!16\!\rightarrow\!2$, for 210 trainable parameters. At the four-element ULA Nyquist bin, the angle coordinate is locked to its coarse value to avoid changing a valid endfire representation through an aliased continuous update.
+
+For each training sample, the current predicted set is matched to the reference set with Hungarian assignment. The optimized objective is
+\begin{equation}
+  \mathcal{L}
+  =\operatorname{NMSE}(\widehat{\mathbf{y}},\mathbf{y}_{\rm clean})
+  +\lambda_p\bigl[
+      \operatorname{SL1}_{0.5}(\widehat{\boldsymbol{\tau}},\boldsymbol{\tau})
+      +\operatorname{SL1}_{0.25}(\mathbf{e}_\theta/30)
+    \bigr],
+  \label{eq:training_loss}
+\end{equation}
+where $\mathbf{e}_\theta$ is the minimum valid projected-angle error over the ULA alias candidates. Assignment and the alias-aware angle calculation are recomputed from the current prediction. This makes supervision permutation-invariant while keeping the physical objective aligned with test-time metrics.
+
+\subsection{Separate Repeated-Refinement Diagnostic}
+
+A4 studies a different executable path. Starting from the same grid support, it repeats deterministic local searches with radii
+$\{0.45,0.28,0.18,0.11,0.07,0.045,0.03,0.02\}$ and recomputes LS at each depth up to $K=8$. If $q_k$ is NMSE in dB after depth $k$, the plateau gate stops at
+\begin{equation}
+  \widehat K=\min\{k\geq K_{\min}: q_{k-1}-q_k<\gamma\},
+  \label{eq:plateau_gate}
+\end{equation}
+or at $K$ if the set is empty. This path has no trained CDL feature controller and should not be read as network depth. Its evidence supports only a high-load, 20 dB computation--quality trade-off under the tested schedule.

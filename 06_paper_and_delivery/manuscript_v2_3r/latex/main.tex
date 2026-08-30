@@ -1,0 +1,44 @@
+\documentclass[journal]{IEEEtran}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xurl}
+
+\graphicspath{{../displays/figures/}}
+\emergencystretch=2em
+
+\title{Learned Bounded Off-Grid Refinement for Sparse Tensor-OMP in mmWave MIMO-OFDM ISAC}
+\author{Anonymous Authors}
+
+\begin{document}
+\maketitle
+\bstctlcite{BSTcontrol}
+
+\begin{abstract}
+Sparse tensor recovery is a natural model for mmWave MIMO-OFDM integrated sensing and communication, but dictionary quantization limits physically interpretable parameter estimates. We study learned, bounded interpolation between Tensor-OMP grid supports and deterministic local-refinement candidates. The local three-dimensional implementation learns one scalar and improves measurement-domain NMSE over grid Tensor-OMP by 5.8956 dB on average across $L\in\{2,4,8\}$ in a five-seed, 450-scene synthetic study (seed-mean 95\% CI $[5.7830,6.0083]$ dB). A separate 210-parameter feature controller for two-dimensional CDL measurements predicts delay and angle interpolation scales and is trained with permutation-invariant, alias-aware physical supervision. On frozen held-out CDL-A/C evaluation it yields gains of 6.2286 dB in channel NMSE, 10.1241 ns in delay RMSE, and $0.5277^\circ$ in projected-angle RMSE. Zero-shot CDL-D degrades channel and delay estimates, bounding the profile-generalization claim. A matched dense-tensor comparison further shows that the NOMP-inspired path is the accuracy-oriented point whereas the learned scalar is a lower-compute amortized alternative. A separate deterministic repeated-refinement diagnostic tests a restricted high-load computation--quality trade-off but does not support an SNR-robust early-stop claim. These results support a compute--accuracy and external-robustness view of bounded post-support refinement, not accuracy supremacy or a fully integrated deep-unfolded network.
+\end{abstract}
+\begin{IEEEkeywords}
+Integrated sensing and communication, model-driven learning, Tensor-OMP, off-grid estimation, MIMO-OFDM, CDL channel.
+\end{IEEEkeywords}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_system_model}
+\input{sections/04_method}
+\input{sections/05_theory}
+\input{sections/06_experiments}
+\input{sections/07_limitations}
+\input{sections/08_conclusion}
+
+\section*{Acknowledgment}
+An AI-assisted coding and language tool was used for code review, manuscript editing, and reproducibility checks. The authors verified the resulting code, analyses, citations, and scientific claims. Funding and contributor acknowledgments will be completed with the author metadata before submission.
+
+\appendices
+\input{appendix/a_experiment_tables}
+\input{appendix/b_reproducibility}
+
+\bibliographystyle{IEEEtran}
+\bibliography{../../../02_literature_and_refs/v2_3r_references}
+
+\end{document}

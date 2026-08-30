@@ -1,0 +1,33 @@
+# Feature-conditioned E1 estimator checklist
+
+- [x] Implement and test static axiswise parameterization.
+- [x] Run 3-D static-axis smoke (collapsed to shared alpha).
+- [x] Run 64x4 geometry-matched static-axis smoke (collapsed again).
+- [x] Record static-global model-family rejection.
+- [x] Define estimator-internal feature and Hungarian target contracts.
+- [x] Implement bounded feature-conditioned delay/angle controller.
+- [x] Add collapse, permutation, gradient, and inference tests.
+- [x] Run source smoke; held-out NMSE and both-axis local parameter gates pass.
+- [x] Run multi-seed CDL-A/C training and disjoint-seed validation.
+- [x] Freeze validation-selected model and execute unchanged Sionna CDL dev contract.
+- [x] Scale supported A/C result to 5 seeds x 50 samples/profile/seed.
+- [x] Preserve D at matching scale as a zero-shot failure/boundary result.
+- [x] Synchronize result into paper evidence and current board.
+- [x] Switch manuscript to IEEEtran and compile a 7-page two-column PDF.
+- [x] Render and visually inspect all PDF pages.
+- [x] Implement separable forward-backward ESPRIT and complex PARAFAC-ALS comparators.
+- [x] Run the 15-row E4 operation/memory/CPU wall-clock benchmark.
+- [x] Preserve the E4 boundary: complexity-only, analytical operation proxy, no comparator-accuracy claim.
+- [x] Complete and visually inspect the system, architecture, CDL, and graphical-abstract figures.
+- [x] Expand the cited bibliography from 26 to 42 verified entries.
+- [x] Add the DDA-Net/NOMP/unified-tensor/PLAIN nearest-neighbor comparison table.
+- [x] Compile and visually inspect the final eight-page IEEEtran draft with 0 unresolved citations and 0 overfull boxes.
+- [x] Run independent skeptical manuscript/evidence audit.
+- [x] Correct scalar G2, deterministic A4, and CDL controller attribution throughout the paper.
+- [x] Replace the misleading integrated architecture figure.
+- [x] Replace the compressed dual-axis evidence figure.
+- [x] Add implemented equations and conditional theory statements.
+- [x] Run paper-scale matched NOMP-inspired comparison and Pareto display.
+- [x] Strengthen G2 and A4 sample counts with confidence intervals.
+- [x] Synchronize claim ledger and experiment matrix after review.
+- [ ] Publish a validated review branch and Draft PR when GitHub authentication is available.

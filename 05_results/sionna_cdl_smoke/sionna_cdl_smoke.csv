@@ -1,0 +1,2 @@
+status,h_cir_shape,tau_shape,h_ofdm_shape,tomp_tensor_shape,finite,mean_power,max_abs,torch_version
+ok,2x1x1x1x4x23x1,2x1x1x23,2x1x1x1x4x1x64,2x64x4x1,True,1.0,1.7831734418869019,2.12.1+cpu

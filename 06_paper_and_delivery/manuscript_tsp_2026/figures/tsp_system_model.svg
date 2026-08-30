@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 tsp_system_model.svg Tensor estimation interface -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="10in" height="3in" viewBox="0 0 720 216"
+		xml:space="preserve" color-interpolation-filters="sRGB" class="st19">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#172033;font-family:Arial;font-size:0.683327em;font-weight:bold}
+		.st3 {fill:#e8f0f8;stroke:#0b5cad;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st4 {fill:#172033;font-family:Arial;font-size:0.708344em}
+		.st5 {font-size:1em}
+		.st6 {fill:#e6f3ef;stroke:#0f766e;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st7 {font-family:宋体;font-size:1em}
+		.st8 {fill:#fcf3d9;stroke:#b7791f;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st9 {fill:#e8f0f8;stroke:#172033;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st10 {fill:#172033;font-family:Arial;font-size:0.683327em}
+		.st11 {font-family:Cambria Math;font-size:1em}
+		.st12 {fill:#e6f3ef;stroke:#172033;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st13 {fill:#fcf3d9;stroke:#172033;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st14 {fill:#f9f1e0;stroke:#172033;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
+		.st15 {fill:#172033;font-family:Arial;font-size:0.666664em}
+		.st16 {marker-end:url(#mrkr4-46);stroke:#172033;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st17 {fill:#172033;fill-opacity:1;stroke:#172033;stroke-opacity:1;stroke-width:0.28409090909091}
+		.st18 {fill:#6b7280;font-family:Arial;font-size:0.666664em}
+		.st19 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend4">
+			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr4-46" class="st17" v:arrowType="4" v:arrowSize="2" v:setback="7.04" refX="-7.04" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-3.52,-3.52) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Tensor estimation interface</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(172.8,-165.6)">
+			<title>工作表.1</title>
+			<desc>Rank-L separable observation model</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5197"/>
+			<v:textRect cx="248.4" cy="207.36" width="496.8" height="17.28"/>
+			<rect x="0" y="198.72" width="496.8" height="17.28" class="st1"/>
+			<text x="176.63" y="209.82" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Rank-L separable observation model</text>		</g>
+		<g id="shape2-4" v:mID="2" v:groupContext="shape" transform="translate(12.96,-156.96)">
+			<title>工作表.2</title>
+			<desc>Spatial ULA N_a</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="44.64" cy="196.56" width="89.28" height="38.88"/>
+			<rect x="0" y="177.12" width="89.28" height="38.88" class="st3"/>
+			<text x="22.2" y="194.01" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Spatial ULA<v:newlineChar/><tspan
+						x="36.84" dy="1.2em" class="st5">N_a</tspan></text>		</g>
+		<g id="shape3-8" v:mID="3" v:groupContext="shape" transform="translate(12.96,-100.8)">
+			<title>工作表.3</title>
+			<desc>Frequency N_τ</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="44.64" cy="196.56" width="89.28" height="38.88"/>
+			<rect x="0" y="177.12" width="89.28" height="38.88" class="st6"/>
+			<text x="24.56" y="193.58" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Frequency<v:newlineChar/><tspan
+						x="34.96" dy="1.275em" class="st5">N_</tspan><tspan class="st7">τ</tspan></text>		</g>
+		<g id="shape4-13" v:mID="4" v:groupContext="shape" transform="translate(12.96,-44.64)">
+			<title>工作表.4</title>
+			<desc>Slow time N_ν</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="44.64" cy="196.56" width="89.28" height="38.88"/>
+			<rect x="0" y="177.12" width="89.28" height="38.88" class="st8"/>
+			<text x="26.22" y="193.58" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Slow time<v:newlineChar/><tspan
+						x="34.96" dy="1.275em" class="st5">N_</tspan><tspan class="st7">ν</tspan></text>		</g>
+		<g id="shape5-18" v:mID="5" v:groupContext="shape" transform="translate(131.04,-82.8)">
+			<title>工作表.5</title>
+			<desc>Separable tensor 𝒴: N_a × N_τ × N_ν</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="53.28" cy="179.28" width="106.56" height="73.44"/>
+			<rect x="0" y="142.56" width="106.56" height="73.44" class="st9"/>
+			<text x="22.05" y="176.41" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Separable tensor<v:newlineChar/><tspan
+						x="12.43" dy="1.275em" class="st11">𝒴</tspan>: N_a × N_<tspan class="st7">τ</tspan> × N_<tspan class="st7">ν</tspan></text>		</g>
+		<g id="shape6-24" v:mID="6" v:groupContext="shape" transform="translate(263.52,-82.8)">
+			<title>工作表.6</title>
+			<desc>Orthonormal FFT + top-L bins</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="45.36" cy="179.28" width="90.72" height="73.44"/>
+			<rect x="0" y="142.56" width="90.72" height="73.44" class="st9"/>
+			<text x="13.92" y="176.82" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Orthonormal FFT<v:newlineChar/><tspan
+						x="23.82" dy="1.2em" class="st5">+ top</tspan>-L bins</text>		</g>
+		<g id="shape7-28" v:mID="7" v:groupContext="shape" transform="translate(380.16,-82.8)">
+			<title>工作表.7</title>
+			<desc>3DL triplet samples + axis-wise Candan</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="48.24" cy="179.28" width="96.48" height="73.44"/>
+			<rect x="0" y="142.56" width="96.48" height="73.44" class="st12"/>
+			<text x="13.15" y="176.82" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>3DL triplet samples<v:newlineChar/><tspan
+						x="12.35" dy="1.2em" class="st5">+ axis</tspan>-wise Candan</text>		</g>
+		<g id="shape8-32" v:mID="8" v:groupContext="shape" transform="translate(502.56,-82.8)">
+			<title>工作表.8</title>
+			<desc>Candan joint LS + FFT/grid energy</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="46.8" cy="179.28" width="93.6" height="73.44"/>
+			<rect x="0" y="142.56" width="93.6" height="73.44" class="st13"/>
+			<text x="17.62" y="176.82" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Candan joint LS<v:newlineChar/><tspan
+						x="14.1" dy="1.2em" class="st5">+ FFT/grid energy</tspan></text>		</g>
+		<g id="shape9-36" v:mID="9" v:groupContext="shape" transform="translate(623.52,-82.8)">
+			<title>工作表.9</title>
+			<desc>Coordinates Gains Reconstruction</desc>
+			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
+			<v:textRect cx="42.48" cy="179.28" width="84.96" height="73.44"/>
+			<rect x="0" y="142.56" width="84.96" height="73.44" class="st14"/>
+			<text x="20.91" y="172.08" class="st15" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Coordinates<v:newlineChar/><tspan
+						x="32.03" dy="1.2em" class="st5">Gains<v:newlineChar/></tspan><tspan x="15.8" dy="1.2em" class="st5">Reconstruction</tspan></text>		</g>
+		<g id="shape10-41" v:mID="10" v:groupContext="shape" transform="translate(284.59,-76.1778) rotate(57.5877)">
+			<title>工作表.10</title>
+			<path d="M0 216 L46.69 216" class="st16"/>
+		</g>
+		<g id="shape11-47" v:mID="11" v:groupContext="shape" transform="translate(102.24,-120.24)">
+			<title>工作表.11</title>
+			<path d="M0 216 L21.76 216" class="st16"/>
+		</g>
+		<g id="shape12-52" v:mID="12" v:groupContext="shape" transform="translate(-80.11,36.1422) rotate(-57.5877)">
+			<title>工作表.12</title>
+			<path d="M0 216 L46.69 216" class="st16"/>
+		</g>
+		<g id="shape13-57" v:mID="13" v:groupContext="shape" transform="translate(237.6,-119.52)">
+			<title>工作表.13</title>
+			<path d="M0 216 L18.88 216" class="st16"/>
+		</g>
+		<g id="shape14-62" v:mID="14" v:groupContext="shape" transform="translate(354.24,-119.52)">
+			<title>工作表.14</title>
+			<path d="M0 216 L18.88 216" class="st16"/>
+		</g>
+		<g id="shape15-67" v:mID="15" v:groupContext="shape" transform="translate(476.64,-119.52)">
+			<title>工作表.15</title>
+			<path d="M0 216 L18.88 216" class="st16"/>
+		</g>
+		<g id="shape16-72" v:mID="16" v:groupContext="shape" transform="translate(596.16,-119.52)">
+			<title>工作表.16</title>
+			<path d="M0 216 L20.32 216" class="st16"/>
+		</g>
+		<g id="shape17-77" v:mID="17" v:groupContext="shape" transform="translate(131.04,-12.96)">
+			<title>工作表.17</title>
+			<desc>Projection score: normalized fitted-subspace energy gain (ref...</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5197"/>
+			<v:textRect cx="288.72" cy="205.2" width="577.44" height="21.6"/>
+			<rect x="0" y="194.4" width="577.44" height="21.6" class="st1"/>
+			<text x="160.11" y="207.61" class="st18" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Projection score: normalized fitted-subspace energy gain (refined <tspan
+						class="st11">−</tspan> grid)</text>		</g>
+	</g>
+</svg>

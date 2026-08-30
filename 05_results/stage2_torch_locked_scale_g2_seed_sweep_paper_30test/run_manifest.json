@@ -1,0 +1,69 @@
+{
+  "command": "python 04_experiments/eval/run_stage2_torch_locked_scale_g2_seed_sweep.py",
+  "config": {
+    "epochs": 6,
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "lr": 0.08,
+    "n_test": 30,
+    "n_train": 2,
+    "offset_radius": 0.35,
+    "seeds": [
+      20260624,
+      20260625,
+      20260626,
+      20260627,
+      20260628
+    ],
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snr_db": 20.0
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "elapsed_seconds": 229.7308086999983,
+    "epochs": 6,
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "lr": 0.08,
+    "max_l_cell_gain_vs_grid_db": 6.827721837726025,
+    "mean_l_cell_gain_vs_grid_db": 5.895627671225818,
+    "mean_train_improvement_db": 1.1870567132777345,
+    "min_l_cell_gain_vs_grid_db": 5.386348782073301,
+    "min_seed_mean_gain_vs_grid_db": 5.811260548399484,
+    "n_test_per_l": 30,
+    "n_train_per_l": 2,
+    "seed_mean_gain_ci95_high_db": 6.008285708645864,
+    "seed_mean_gain_ci95_low_db": 5.782969633805769,
+    "seeds": [
+      20260624,
+      20260625,
+      20260626,
+      20260627,
+      20260628
+    ],
+    "snr_db": 20.0,
+    "std_l_cell_gain_vs_grid_db": 0.35950949895376716,
+    "tensor_shape": "128x16x32",
+    "torch_version": "2.12.1+cpu"
+  },
+  "notes": [
+    "Multi-seed strengthening for the bounded local G2 gate; it does not replace external-channel validation.",
+    "The baseline remains grid Tensor-OMP on the same held-out samples for every seed and L cell.",
+    "The paper-scale strengthening uses 30 held-out scenes per L and seed (450 held-out scenes total)."
+  ],
+  "run_id": "stage2_torch_locked_scale_g2_seed_sweep_paper_30test_20260630"
+}

@@ -1,0 +1,163 @@
+{
+  "command": "python 04_experiments/eval/run_stage3_a5_combined_impairment_presmoke.py",
+  "config": {
+    "candidate_alphas": [
+      0.0,
+      0.19999999999999998,
+      0.39999999999999997,
+      0.6,
+      0.7999999999999999,
+      0.9999999999999999,
+      1.2
+    ],
+    "n_targets": 8,
+    "n_test": 5,
+    "n_train": 4,
+    "offset_radius": 0.35,
+    "profiles": [
+      {
+        "coupling_phi0_degrees": 0.0,
+        "coupling_rho": 0.0,
+        "iq_gain": 1.0,
+        "iq_phase_degrees": 0.0,
+        "name": "clean",
+        "sigma_phi_degrees": 0.0
+      },
+      {
+        "coupling_phi0_degrees": 0.0,
+        "coupling_rho": 0.0,
+        "iq_gain": 1.0,
+        "iq_phase_degrees": 0.0,
+        "name": "phase_only_2deg",
+        "sigma_phi_degrees": 2.0
+      },
+      {
+        "coupling_phi0_degrees": 5.0,
+        "coupling_rho": 0.2,
+        "iq_gain": 1.05,
+        "iq_phase_degrees": 3.0,
+        "name": "iq_coupling_medium",
+        "sigma_phi_degrees": 0.0
+      },
+      {
+        "coupling_phi0_degrees": 5.0,
+        "coupling_rho": 0.2,
+        "iq_gain": 1.05,
+        "iq_phase_degrees": 3.0,
+        "name": "combined_v23r",
+        "sigma_phi_degrees": 2.0
+      },
+      {
+        "coupling_phi0_degrees": 10.0,
+        "coupling_rho": 0.3,
+        "iq_gain": 1.1,
+        "iq_phase_degrees": 5.0,
+        "name": "combined_high",
+        "sigma_phi_degrees": 3.0
+      }
+    ],
+    "search_points": 5,
+    "search_radius": 0.45,
+    "seed": 20260624,
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snr_db": 20.0
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.9.13"
+  },
+  "metrics": {
+    "candidate_alphas": [
+      0.0,
+      0.19999999999999998,
+      0.39999999999999997,
+      0.6,
+      0.7999999999999999,
+      0.9999999999999999,
+      1.2
+    ],
+    "clean_train_nmse_db": -13.312861027941777,
+    "clean_trained_alpha": 0.7999999999999999,
+    "degradation_by_profile_db": {
+      "clean": 0.0,
+      "combined_high": 6.60364902305442,
+      "combined_v23r": 4.439537092767866,
+      "iq_coupling_medium": 4.443735345160793,
+      "phase_only_2deg": 3.619806600596576e-05
+    },
+    "elapsed_seconds": 28.1613157,
+    "n_targets": 8,
+    "n_test": 5,
+    "n_train": 4,
+    "oracle_alpha_by_profile": {
+      "clean": 0.7999999999999999,
+      "combined_high": 0.7999999999999999,
+      "combined_v23r": 0.7999999999999999,
+      "iq_coupling_medium": 0.7999999999999999,
+      "phase_only_2deg": 0.7999999999999999
+    },
+    "oracle_recovery_by_profile_db": {
+      "clean": 0.0,
+      "combined_high": 0.0,
+      "combined_v23r": 0.0,
+      "iq_coupling_medium": 0.0,
+      "phase_only_2deg": 0.0
+    },
+    "profiles": [
+      {
+        "coupling_phi0_degrees": 0.0,
+        "coupling_rho": 0.0,
+        "iq_gain": 1.0,
+        "iq_phase_degrees": 0.0,
+        "name": "clean",
+        "sigma_phi_degrees": 0.0
+      },
+      {
+        "coupling_phi0_degrees": 0.0,
+        "coupling_rho": 0.0,
+        "iq_gain": 1.0,
+        "iq_phase_degrees": 0.0,
+        "name": "phase_only_2deg",
+        "sigma_phi_degrees": 2.0
+      },
+      {
+        "coupling_phi0_degrees": 5.0,
+        "coupling_rho": 0.2,
+        "iq_gain": 1.05,
+        "iq_phase_degrees": 3.0,
+        "name": "iq_coupling_medium",
+        "sigma_phi_degrees": 0.0
+      },
+      {
+        "coupling_phi0_degrees": 5.0,
+        "coupling_rho": 0.2,
+        "iq_gain": 1.05,
+        "iq_phase_degrees": 3.0,
+        "name": "combined_v23r",
+        "sigma_phi_degrees": 2.0
+      },
+      {
+        "coupling_phi0_degrees": 10.0,
+        "coupling_rho": 0.3,
+        "iq_gain": 1.1,
+        "iq_phase_degrees": 5.0,
+        "name": "combined_high",
+        "sigma_phi_degrees": 3.0
+      }
+    ],
+    "seed": 20260624,
+    "snr_db": 20.0,
+    "tensor_shape": "128x16x32"
+  },
+  "notes": [
+    "Combined-impairment pre-smoke checks whether A5 remains valuable after phase-noise-only stress was weak.",
+    "Profiles apply phase noise, IQ imbalance, and physical mutual coupling directly to the measured tensor.",
+    "Oracle-retuned alpha per profile is diagnostic only; it is not a robust-training result."
+  ],
+  "run_id": "stage3_a5_combined_impairment_presmoke_20260624"
+}

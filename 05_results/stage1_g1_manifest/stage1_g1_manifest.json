@@ -1,0 +1,228 @@
+{
+  "gate_rows": [
+    {
+      "evidence": "stage1_g1_smoke",
+      "gate_item": "Set A -> Tensor-OMP -> metrics -> manifest wiring",
+      "metric": "support recall at 30 dB = 1.0; mean NMSE at 30 dB = -56.8796 dB",
+      "status": "pass"
+    },
+    {
+      "evidence": "paper_scale_tensor_omp_g1",
+      "gate_item": "Paper-scale on-grid Tensor-OMP scan",
+      "metric": "shape 128x16x32; L={2,4,8,16,32,64}; min support recall = 1.0",
+      "status": "pass"
+    },
+    {
+      "evidence": "paper_scale_offgrid_stress_g1",
+      "gate_item": "Paper-scale off-grid bounded refinement stress",
+      "metric": "mean refinement gain = 7.5368 dB; minimum L-cell gain = 6.9946 dB",
+      "status": "pass"
+    },
+    {
+      "evidence": "crlb_5l_fim_validation",
+      "gate_item": "5L analytic FIM/CRLB implementation validation",
+      "metric": "max analytic-vs-finite-difference FIM relative error = 5.7304e-10",
+      "status": "pass"
+    },
+    {
+      "evidence": "stage1_dependency_audit",
+      "gate_item": "Standards-aligned CDL/DeepMIMO wrapper validation",
+      "metric": "not a V2.3R G1 blocker; 5G Toolbox license = false; DeepMIMO dataset files = 0",
+      "status": "tracked-for-g3"
+    },
+    {
+      "evidence": "crlb_5l_monte_carlo",
+      "gate_item": "Final estimator-efficiency Monte Carlo against 5L CRLB",
+      "metric": "30 dB mean RMSE/CRLB ratio = 1.0067; angle RMSE drops 9.928x from 10 to 30 dB",
+      "status": "pilot-pass"
+    }
+  ],
+  "runs": {
+    "crlb_5l_fim_validation": {
+      "command": "python 04_experiments/eval/run_5l_crlb_fim_validation.py",
+      "config": {
+        "params": [
+          37.25,
+          5.4,
+          11.7,
+          0.9,
+          -0.35
+        ],
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "snr_db": [
+          0,
+          10,
+          20,
+          30
+        ]
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "angle_std_drop_0db_to_30db": 31.622776601683757,
+        "max_relative_fim_error": 5.730369293417129e-10,
+        "mean_relative_fim_error": 5.730369081316953e-10,
+        "snr_points": "0,10,20,30",
+        "tensor_shape": "128x16x32"
+      },
+      "notes": [
+        "5L parameter vector is [angle_bin, delay_bin, doppler_bin, gain_real, gain_imag].",
+        "Complex Gaussian FIM uses 2/sigma^2 Re{dmu_i^H dmu_j}.",
+        "This validates analytic derivatives against central finite differences; it is the Stage-1 FIM/CRLB implementation gate, not a Monte Carlo estimator-efficiency claim."
+      ],
+      "run_id": "crlb_5l_fim_validation_20260624"
+    },
+    "crlb_5l_monte_carlo": {
+      "command": "python 04_experiments/eval/run_5l_crlb_monte_carlo.py",
+      "config": {
+        "n_trials": 8,
+        "seed": 20260624,
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "true_bins": [
+          37.25,
+          5.4,
+          11.7
+        ],
+        "true_gain": [
+          0.9,
+          -0.35
+        ]
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "angle_rmse_drop_10db_to_30db": 9.928001680717081,
+        "max_ratio_at_30db": 1.5008733999068284,
+        "mean_ratio_at_30db": 1.0066960113952728,
+        "n_trials_per_snr": 8,
+        "snr_points": "10,20,30",
+        "tensor_shape": "128x16x32"
+      },
+      "notes": [
+        "Monte Carlo uses a single off-grid target and ML-style multiresolution local search initialized by FFT Tensor-OMP.",
+        "The run checks estimator RMSE scaling against the analytic 5L CRLB; it is a pilot, not yet a large-sample efficiency proof.",
+        "Ratios above 1 are expected because the search grid is finite and n_trials is intentionally small for Stage-1 turnaround."
+      ],
+      "run_id": "crlb_5l_monte_carlo_20260624"
+    },
+    "paper_scale_offgrid_stress_g1": {
+      "command": "python 04_experiments/eval/run_paper_scale_offgrid_stress_g1.py",
+      "config": {
+        "n_trials": 4,
+        "offset_radius": 0.35,
+        "search_points": 5,
+        "search_radius": 0.45,
+        "seed": 20260624,
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "snr_db": 20.0
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "mean_grid_nmse_db": -5.4307969373355816,
+        "mean_refined_nmse_db": -12.967620892742936,
+        "mean_refinement_gain_db": 7.536823955407354,
+        "min_refinement_gain_db": 6.994642855689063,
+        "n_trials_per_l": 4,
+        "offset_radius_bins": 0.35,
+        "snr_db": 20.0,
+        "tensor_shape": "128x16x32",
+        "wall_seconds": 9.5936261
+      },
+      "notes": [
+        "Paper-scale off-grid stress uses continuous angle-delay-Doppler bins on shape 128x16x32.",
+        "Metric is measurement-domain NMSE against the noiseless off-grid tensor, so it is not a sparse-grid coefficient NMSE.",
+        "Bounded local refinement is a deterministic oracle-free search around Tensor-OMP grid picks and supports the v2.3R off-grid mechanism gate."
+      ],
+      "run_id": "paper_scale_offgrid_stress_g1_20260624"
+    },
+    "paper_scale_tensor_omp_g1": {
+      "command": "python 04_experiments/eval/run_paper_scale_tensor_omp_g1.py",
+      "config": {
+        "n_trials": 12,
+        "seed": 20260624,
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "snr_db": 20.0
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "mean_abs_nmse_crlb_gap_db": 0.3212664819567977,
+        "mean_nmse_db_all": -57.848162954738314,
+        "min_support_recall": 1.0,
+        "n_trials_per_l": 12,
+        "snr_db": 20.0,
+        "tensor_shape": "128x16x32",
+        "wall_seconds": 0.7397191
+      },
+      "notes": [
+        "Paper-scale scan follows the v2.3R Stage-1 target shape 128x16x32 and L in {2,4,8,16,32,64}.",
+        "The unitary FFT tensor contract is equivalent to a normalized on-grid DFT dictionary and avoids materializing a 65536x65536 matrix.",
+        "This remains an on-grid baseline scan; off-grid and final 5L CRLB validation are still pending."
+      ],
+      "run_id": "paper_scale_tensor_omp_g1_20260624"
+    },
+    "stage1_g1_smoke": {
+      "command": "python 04_experiments/eval/run_stage1_g1_smoke.py",
+      "config": {
+        "grid": {
+          "angle_bins": 16,
+          "delay_bins": 8,
+          "doppler_bins": 8
+        },
+        "max_iters": null,
+        "n_targets": 3,
+        "n_trials": 40,
+        "seed": 20260624,
+        "snr_db": 20.0
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "max_delay_rmse_bins_snr30": 0.0,
+        "mean_nmse_db_all": -47.43867772827424,
+        "mean_nmse_db_snr30": -56.879645457681114,
+        "mean_nmse_minus_crlb_proxy_db_snr30": -0.6969500881352673,
+        "mean_support_recall_all": 0.9990740740740741,
+        "mean_support_recall_snr30": 1.0
+      },
+      "notes": [
+        "Stage-1 smoke uses an orthonormal tensor DFT dictionary to verify the Set A -> Tensor-OMP -> metric path.",
+        "The CRLB value is a coefficient-recovery proxy, not the final 5L joint ISAC CRLB required by the paper.",
+        "This run supports G1 wiring and comparability checks; full paper-scale G1 remains pending."
+      ],
+      "run_id": "stage1_g1_smoke_20260624"
+    }
+  }
+}

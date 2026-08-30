@@ -1,0 +1,41 @@
+paper_symbol,value,source_csv,producer,notes
+det_minus_grid_gain_db,7.3,05_results/tensor_nomp3d_matched_paper_5seed/matched_accuracy_summary.csv,python matched campaign,mean_gain_vs_grid 7.3046
+learned_minus_det_db,0.07,05_results/matlab_taes_supplement/learning_marginal_summary.csv,exp1_learning_marginal.m,ALL_learned_minus_deterministic 0.0671
+learned_minus_det_ci,[-0.12 0.25],05_results/matlab_taes_supplement/learning_marginal_summary.csv,exp1_learning_marginal.m,ci95 0.1877
+oracle_headroom_db,0.6,05_results/matlab_taes_supplement/learning_marginal_summary.csv,exp1_learning_marginal.m,ALL_oracle_minus_deterministic -0.6267
+matlab_grid_nmse_db,-5.5,05_results/matlab_taes_supplement/learning_marginal_rows.csv,exp1,mean -5.474
+matlab_det_nmse_db,-12.7,05_results/matlab_taes_supplement/learning_marginal_rows.csv,exp1,mean -12.713
+matlab_learned_nmse_db,-12.6,05_results/matlab_taes_supplement/learning_marginal_rows.csv,exp1,mean -12.645
+matlab_oracle_nmse_db,-13.3,05_results/matlab_taes_supplement/learning_marginal_rows.csv,exp1,mean -13.339
+alpha_hat_range,[0.85 1.05],05_results/matlab_taes_supplement/learning_marginal_alpha.csv,exp1,15 cells
+frozen_scalar_vs_det_db,-1.5,05_results/tensor_nomp3d_matched_paper_5seed/matched_accuracy_summary.csv,python campaign,-12.735 vs -11.215
+nomp_nmse_db,-53.4,05_results/tensor_nomp3d_matched_paper_5seed/matched_accuracy_summary.csv,python campaign,-53.390
+nomp_advantage_db,42.2,05_results/tensor_nomp3d_matched_paper_5seed/matched_accuracy_summary.csv,python campaign,42.1756
+parafac_nmse_db,-16.9,05_results/e12_matched_accuracy_comparators/matched_accuracy_summary.csv,python campaign,-16.855
+wallclock_ratio,8.1x,05_results/tensor_nomp3d_matched_paper_5seed/matched_accuracy_summary.csv,python campaign,8.106
+flop_ratio_nomp_vs_det,7.1x,05_results/matlab_taes_supplement/flops_paper_pareto.csv,fix_figA.py + flops_model.m,2.873e8/4.045e7
+flop_ratio_det_vs_grid,1.8x,05_results/matlab_taes_supplement/flops_paper_pareto.csv,flops_model.m,4.045e7/2.237e7
+flop_ratio_det_vs_nomp,0.14x,05_results/matlab_taes_supplement/flops_paper_pareto.csv,flops_model.m,inverse of 7.1
+controller_inference_flops,384,05_results/matlab_taes_supplement/complexity_model.md,flops_model.m,2*(10*16+16*2)
+wordlength_local3d_bits,14,05_results/matlab_taes_supplement/fixedpoint_summary.csv,exp3,delta 0.155 dB
+wordlength_local3d_w12_db,1.8,05_results/matlab_taes_supplement/fixedpoint_summary.csv,exp3,delta 1.787 dB
+wordlength_cdl2d_bits,10,05_results/matlab_taes_supplement/fixedpoint_summary.csv,exp3,delta 0.137 dB
+wordlength_cdl2d_w12_db,0.001,05_results/matlab_taes_supplement/fixedpoint_summary.csv,exp3,bit-transparent
+oracle_axis_pair_gain_db,1.8,05_results/matlab_taes_supplement/geometry2d_rows.csv,exp5,-15.59 vs -13.80
+crlb_ratio_range,[0.98 1.23],05_results/matlab_taes_supplement/crlb_check.csv,exp4,SNR 10-30 dB
+cdl_smoke_det_gain_db,2.37,05_results/sionna_cdl_env_smoke_20260703/summary.json,cdl_smoke (sionna 1.1.0),3 seeds CDL-A
+dsp_estimate,16-19,07_ops/fpga/vivado_xc7k325t/fpga_estimate.md,packing rules,ESTIMATE pending synthesis
+rtl_bitexact,3/3 PASS,07_ops/fpga/vivado_xc7k325t/tb/vectors/,iverilog tb_refine_kernel,gains+residual zero tolerance
+nomp2d_validation_advantage_db,23.3,05_results/nomp2d_validation/summary.json,run_nomp2d_validation.py,gate >15 dB PASS
+nomp2d_single_target_p95_bins,0.012,05_results/nomp2d_validation/summary.json,run_nomp2d_validation.py,gate <0.05 PASS
+cdl_ac_nomp2d_nmse_db,-16.0,05_results/cdl_matched_baselines_sandbox/cdl_matched_baselines_rows.csv,run_cdl_matched_baselines_sandbox.py,mean -15.98
+cdl_ac_controller_nmse_db,-10.1,05_results/cdl_matched_baselines_sandbox/cdl_matched_baselines_rows.csv,run_cdl_matched_baselines_sandbox.py,mean -10.12
+cdl_ac_deterministic_nmse_db,-10.2,05_results/cdl_matched_baselines_sandbox/cdl_matched_baselines_rows.csv,run_cdl_matched_baselines_sandbox.py,mean -10.17
+cdl_nomp2d_runtime_ratio,13x,05_results/cdl_matched_baselines_sandbox/cdl_matched_baselines_rows.csv,run_cdl_matched_baselines_sandbox.py,36.6/2.85 median ms
+cdl_campaign_evaluations,2592,05_results/cdl_matched_baselines_sandbox/cdl_matched_baselines_rows.csv,run_cdl_matched_baselines_sandbox.py,rows
+cdl_d_det_vs_grid_db,-0.9,05_results/cdl_matched_baselines_sandbox/cdl_matched_baselines_rows.csv,run_cdl_matched_baselines_sandbox.py,degradation +0.87
+cdl_d_controller_vs_grid_db,-0.7,05_results/cdl_matched_baselines_sandbox/cdl_matched_baselines_rows.csv,run_cdl_matched_baselines_sandbox.py,degradation +0.67
+shift_rms_delay_spread_smd,-6.0,05_results/cdl_d_feature_shift/cdl_d_shift.csv,run_cdl_d_feature_shift.py,-5.95 KS 1.00
+shift_grid_residual_smd,-3.1,05_results/cdl_d_feature_shift/cdl_d_shift.csv,run_cdl_d_feature_shift.py,KS 1.00
+shift_topk_energy_smd,+3.1,05_results/cdl_d_feature_shift/cdl_d_shift.csv,run_cdl_d_feature_shift.py,KS 1.00
+t41_regression_tests,4/4 pass,tests/test_bounded_interpolation.py,pytest,unified module pinned to legacy outputs

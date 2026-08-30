@@ -1,0 +1,2 @@
+feature,direction,threshold,validation_hybrid_gain_db,validation_gain_over_candan_db,validation_fallback_rate
+candan_residual_reduction_fraction,low,-0.00484024766476437,5.016618526290747,0.031573242541162116,0.07

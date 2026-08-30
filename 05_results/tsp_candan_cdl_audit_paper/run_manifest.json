@@ -1,0 +1,52 @@
+{
+  "command": "python 04_experiments/eval/run_tsp_candan_cdl_audit.py",
+  "config": {
+    "carrier_frequency_hz": 60000000000.0,
+    "delay_spread_s": 1e-07,
+    "device": "cpu",
+    "elapsed_seconds": 6.41394710005261,
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "num_subcarriers": 64,
+    "num_tx_antennas": 4,
+    "output_dir_name": "tsp_candan_cdl_audit_paper",
+    "profiles": [
+      "A",
+      "C",
+      "D"
+    ],
+    "samples_per_profile_seed": 50,
+    "scene_count": 9000,
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "spatial_truth_oversampling": 4096,
+    "subcarrier_spacing_hz": 120000.0,
+    "test_seeds": [
+      20260628,
+      20260629,
+      20260630,
+      20260701,
+      20260702
+    ]
+  },
+  "environment": {
+    "git_commit": "c50a603",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "scene_count": 9000
+  },
+  "notes": [
+    "Candan and grid use the same FFT top-L support, noisy tensors, periodic coordinates, Nyquist alias lock, and final joint LS convention.",
+    "The Candan update uses the published complex three-DFT-sample ratio with the finite-length correction on each axis."
+  ],
+  "run_id": "tsp_candan_cdl_audit_20260829"
+}

@@ -1,0 +1,73 @@
+{
+  "checks": [
+    {
+      "bytes": 35851224,
+      "label": "O1_60 delay ray file",
+      "path": "D:\\E\\OFDM-MIMO_Radar_Estimation\\90_archive\\2025_thesis_materials\\参考\\DeepMIMO-5GNR\\DeepMIMO_dataset\\o1_60\\delay_t003_tx000_r000.mat",
+      "reader": "scipy",
+      "status": "ok",
+      "variables": [
+        {
+          "class": "single",
+          "name": "delay",
+          "shape": "497931x18"
+        }
+      ]
+    },
+    {
+      "bytes": 35851224,
+      "label": "O1_60 power ray file",
+      "path": "D:\\E\\OFDM-MIMO_Radar_Estimation\\90_archive\\2025_thesis_materials\\参考\\DeepMIMO-5GNR\\DeepMIMO_dataset\\o1_60\\power_t003_tx000_r000.mat",
+      "reader": "scipy",
+      "status": "ok",
+      "variables": [
+        {
+          "class": "single",
+          "name": "power",
+          "shape": "497931x18"
+        }
+      ]
+    },
+    {
+      "bytes": 35851224,
+      "label": "O1_60 phase ray file",
+      "path": "D:\\E\\OFDM-MIMO_Radar_Estimation\\90_archive\\2025_thesis_materials\\参考\\DeepMIMO-5GNR\\DeepMIMO_dataset\\o1_60\\phase_t003_tx000_r000.mat",
+      "reader": "scipy",
+      "status": "ok",
+      "variables": [
+        {
+          "class": "single",
+          "name": "phase",
+          "shape": "497931x18"
+        }
+      ]
+    },
+    {
+      "bytes": 18412953,
+      "label": "I3_60 CIR file",
+      "path": "D:\\E\\OFDM-MIMO_Radar_Estimation\\90_archive\\2025_thesis_materials\\参考\\DeepMIMO-5GNR\\DeepMIMO_dataset\\I3_60_v1\\I3_60.1.CIR.mat",
+      "reader": "scipy",
+      "status": "ok",
+      "variables": [
+        {
+          "class": "single",
+          "name": "CIR_array_full",
+          "shape": "1x6458767"
+        }
+      ]
+    }
+  ],
+  "dataset_root": "D:\\E\\OFDM-MIMO_Radar_Estimation\\90_archive\\2025_thesis_materials\\参考\\DeepMIMO-5GNR\\DeepMIMO_dataset",
+  "notes": [
+    "This smoke validates local O1_60 ray files and I3_60 CIR MAT entry points for the E2/E3 loader path.",
+    "Install 04_experiments/requirements_sensors.txt before expecting scipy/h5py/DeepMIMO reads to pass."
+  ],
+  "package_status": {
+    "DeepMIMO": false,
+    "DeepMIMOv3": true,
+    "deepmimo": true,
+    "h5py": true,
+    "scipy": true
+  },
+  "status": "ok"
+}

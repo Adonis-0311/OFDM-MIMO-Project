@@ -1,0 +1,56 @@
+\section{Experiments and Analysis}
+
+The experiments ask three separate questions: whether a learned scalar improves a deterministic local candidate, whether a frozen feature controller improves channel and physical parameters under standards-aligned CDL channels, and whether deterministic repeated refinement can be shortened without an unrestricted adaptive-depth claim.
+
+\subsection{Evaluation Protocol}
+
+The local experiments use tensor shape $128\times16\times32$. G2 evaluates $L\in\{2,4,8\}$ at SNR = 20 dB against grid Tensor-OMP on matched held-out samples, using five seeds with two training and 30 test scenes per $L$ and seed. The matched continuous-recovery campaign uses the same shape, $L\in\{2,4,8\}$, SNR $\in\{0,10,20,30\}$ dB, five seeds, and 20 paired scenes per cell. The CDL experiment uses 64 subcarriers and a four-element ULA over the same SNR set and $L\in\{4,8,16\}$. The controller is trained on CDL-A/C with separate validation seeds and frozen before evaluation on five new seeds with 50 samples per profile and seed, for 6000 held-out A/C sample rows. CDL-D is reserved for zero-shot profile-shift evaluation.
+
+The primary reconstruction metric is measurement-domain NMSE in dB. For A4, depth is used as the FLOPs proxy because each deterministic refinement step performs the same local-search kernel. A cell is treated as positive only when the mean depth saving reaches the planned 25\% level and the NMSE gap to fixed $K=8$ remains within the 0.5 dB tolerance.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{v2_3r_evidence_summary.pdf}
+  \caption{Local evidence and depth boundary. (a) Open circles show the five seed means for each target count; diamonds show their means. All cells exceed the 3 dB gain gate. (b) Cross-$L$ depth saving versus the maximum NMSE gap at 20 dB; the shaded region marks the prespecified $\geq25\%$ saving and $\leq0.5$ dB gap criteria. (c) The same trade-off across SNR at $L=32$; no SNR cell satisfies both criteria.}
+  \label{fig:evidence_summary}
+\end{figure*}
+
+\subsection{Main Result: Bounded Off-Grid Refinement}
+
+Figure~\ref{fig:evidence_summary}a shows that the learned scalar improves over grid Tensor-OMP across all evaluated target counts and seeds. The mean $L$-cell gain is 5.8956 dB, the smallest $L$-cell gain is 5.3863 dB, and the seed-mean 95\% CI is $[5.7830,6.0083]$ dB. The 30 scenes per $L$ and seed strengthen the population estimate while preserving the local synthetic scope.
+
+This result supports the central local mechanism claim. Standards-aligned external evidence is reported separately below.
+
+\subsection{Matched Continuous-Recovery Comparison}
+
+The matched campaign compares grid, deterministic local refinement, the frozen source-trained scalar, a known-order 3-D NOMP-inspired path, and fixed-sweep PARAFAC-ALS on 1200 paired scenes. Figure~\ref{fig:pareto} makes the intended conclusion explicit: NOMP-inspired refinement is the accuracy-oriented method, with mean NMSE $-53.390$ dB and a 42.1756 dB mean advantage over the learned scalar, while requiring an 8.106$\times$ larger median runtime. The learned scalar is therefore a bounded amortized alternative, not an accuracy winner. PARAFAC-ALS reaches $-16.855$ dB mean NMSE; separable FB-ESPRIT remains timing-only because its marginal axis estimates lack cross-axis component pairing.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{v2_3r_pareto_compute_accuracy.pdf}
+  \caption{Matched compute--accuracy evidence over five seeds, four SNRs, three target counts, and 20 scenes per cell. (a) Measurement NMSE with seed-mean 95\% confidence intervals. (b) All-axis half-bin hit rate. Dashed lines connect non-dominated methods. The learned scalar is cheaper than NOMP but is not Pareto-optimal under end-to-end wall-clock; the NOMP-inspired path dominates matched-synthetic accuracy at higher runtime.}
+  \label{fig:pareto}
+\end{figure*}
+
+This comparison assumes known target count, dense tensor measurements, and the matched sinusoidal generator. It is a 3-D mechanism adaptation rather than a reproduction of sparse-resource NOMP-OFDM-ISAC with CFAR stopping. Table~\ref{tab:matched_accuracy} retains the full aggregate values and the ESPRIT availability boundary.
+
+\subsection{Standards-Aligned CDL Evaluation}
+
+On held-out CDL-A/C seeds, the frozen controller improves all three aggregate metrics over grid Tensor-OMP. Across five seeds and 50 samples per profile and seed, the channel-NMSE gain is 6.2286 dB (95\% seed-level CI $[6.1018,6.3553]$), the physical-delay RMSE reduction is 10.1241 ns ($[8.6931,11.5551]$), and the projected broadside-angle RMSE reduction is $0.5277^\circ$ ($[0.3122,0.7432]$).
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{v2_3r_cdl_profile_evidence.pdf}
+  \caption{Scaled CDL physical evaluation versus grid Tensor-OMP. Open circles are seed-level means over SNR and target count; diamonds are profile means. CDL-A/C improve channel NMSE by 8.1690/4.2881 dB, delay RMSE by 4.4421/15.8061 ns, and projected-angle RMSE by $0.6518^\circ$/$0.4036^\circ$. Zero-shot CDL-D degrades channel NMSE and delay despite improving projected angle.}
+  \label{fig:cdl_external}
+\end{figure*}
+
+The positive statement is aggregate and profile-scoped. At $L=16$, mean delay reduction is $-0.8112$ ns, and some individual cells have negative angle deltas. Zero-shot CDL-D improves projected angle but degrades channel NMSE and delay, preventing a profile-universal claim.
+
+\subsection{Efficiency Trade-Off and SNR Boundary}
+
+Figure~\ref{fig:evidence_summary}b evaluates the plateau gate over $L\in\{16,32,64\}$ at SNR = 20 dB. The high-load cells, $L=32$ and $L=64$, satisfy the narrowed early-stop criterion: the minimum mean saving over $L\geq32$ is 26.5000\%, and the maximum seed-cell mean NMSE gap is 0.4957 dB. $L=16$ is boundary evidence because its mean saving is only 20.5000\%. This diagnostic uses five seeds with two training and five test curves per cell; it strengthens the distributional evidence but remains a local computation--quality mechanism rather than a deployment guarantee.
+
+Figure~\ref{fig:evidence_summary}c shows the boundary of the early-stop result; the complete sensitivity table remains in the supplementary display artifacts. At $L=32$ over $\mathrm{SNR}\in\{10,20,30\}$ dB, the scalar plateau gate is inconclusive as a mechanism across SNR. The minimum SNR-cell mean saving drops to 21.8750\%, below the 25\% target, while the maximum SNR-cell gap reaches 0.6834 dB, above the 0.5 dB tolerance.
+
+A follow-up threshold-frontier diagnostic tests whether this failure is only a coarse-calibration artifact. It compares the train-selected scalar rule with a guarded train rule and a test-oracle threshold frontier. The result remains negative for a broad scalar-threshold claim: the standard train-selected policy has a minimum SNR mean saving of 15.6250\% and a maximum SNR mean gap of 0.6691 dB, while even the diagnostic test-oracle frontier has a minimum SNR mean saving of 0.0000\%. This separates a useful 20 dB high-load trade-off from a general SNR-axis depth policy. A stronger learned gate with explicit SNR or uncertainty features would be needed before A4 could be presented as stable across SNR.

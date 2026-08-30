@@ -1,0 +1,7 @@
+experiment,outline_section,status,runtime_s,summary_path
+Oversampling/off-grid ablation,"Section 6.5.13(a)",ok,9.9279693,05_results/oversampling_offgrid_ablation/summary.md
+Kruskal identifiability ablation,"Section 6.5.13(b,c)",ok,3.1182583,05_results/kruskal_identifiability_ablation/summary.md
+Off-grid mismatch lemma validation,"Section 5.1.1 / Phase 3",ok,2.797542,05_results/offgrid_mismatch_lemma/summary.md
+CDL profile generalization smoke,"Section 6.2 Set B-D",ok,2.3399485,05_results/cdl_profile_generalization_smoke/summary.md
+CRLB delay asymptotic smoke,"Section 5.2 / Section 6.5.5",ok,7.0108405,05_results/crlb_delay_asymptotic_smoke/summary.md
+DeepMIMO Set E access audit,"Section 6.2 Set E",ok,0.2411405,05_results/deepmimo_set_e_access_audit/summary.md

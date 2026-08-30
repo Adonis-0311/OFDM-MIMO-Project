@@ -1,0 +1,107 @@
+{
+  "config": {
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "test_seeds": [
+      20260630,
+      20260701,
+      20260702,
+      20260703,
+      20260704
+    ],
+    "samples_per_cell_seed": 20,
+    "offset_radius": 0.35,
+    "warmup_runs": 1,
+    "timed_repeats": 3,
+    "identity_scenes": 60,
+    "protocol_summary": "D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\05_results\\tsp_candan_gate_protocol_seventh_round\\summary.json",
+    "output_dir_name": "tsp_projection_gate_runtime_seventh_round",
+    "gate_threshold": -0.020959882599625883,
+    "stage1_rule": {
+      "minimum_zeta": -Infinity,
+      "maximum_clipping_rate": 0.84375
+    },
+    "thread_count": 1,
+    "dtype": "complex128",
+    "scene_count": 1200,
+    "elapsed_seconds": 340.8798630000092
+  },
+  "projection_identity": {
+    "scene_count": 60,
+    "maximum_explicit_projection_abs_error": 5.440092820663267e-15,
+    "maximum_prediction_qr_abs_energy_error": 6.128431095930864e-14,
+    "maximum_projection_qr_abs_error": 1.0894063429134349e-14
+  },
+  "methods": [
+    {
+      "method": "axiswise_candan_joint_ls",
+      "scene_count": 1200,
+      "mean_measurement_nmse_db": -29.690332867301848,
+      "mean_per_component_half_bin_hit": 0.7959375,
+      "gate_pass_rate": 1.0,
+      "candan_ls_skip_rate": 0.0,
+      "median_fft_support_ms": 1.9176,
+      "median_local_update_ms": 1.9202499999999998,
+      "median_grid_path_ms": 0.0,
+      "median_candan_ls_ms": 7.1958,
+      "median_gate_decision_ms": 0.0,
+      "median_wall_clock_ms": 11.0689
+    },
+    {
+      "method": "legacy_explicit_residual_gate",
+      "scene_count": 1200,
+      "mean_measurement_nmse_db": -29.690332867301848,
+      "mean_per_component_half_bin_hit": 0.7959375,
+      "gate_pass_rate": 1.0,
+      "candan_ls_skip_rate": 0.0,
+      "median_fft_support_ms": 1.9969000000000001,
+      "median_local_update_ms": 1.9194499999999999,
+      "median_grid_path_ms": 7.21695,
+      "median_candan_ls_ms": 7.14535,
+      "median_gate_decision_ms": 0.703,
+      "median_wall_clock_ms": 18.976300000000002
+    },
+    {
+      "method": "projection_energy_gate",
+      "scene_count": 1200,
+      "mean_measurement_nmse_db": -29.690332867301848,
+      "mean_per_component_half_bin_hit": 0.7959375,
+      "gate_pass_rate": 1.0,
+      "candan_ls_skip_rate": 0.0,
+      "median_fft_support_ms": 1.9301,
+      "median_local_update_ms": 1.9317,
+      "median_grid_path_ms": 0.0,
+      "median_candan_ls_ms": 7.2171,
+      "median_gate_decision_ms": 0.1432,
+      "median_wall_clock_ms": 11.2429
+    },
+    {
+      "method": "stage1_projection_energy_gate",
+      "scene_count": 1200,
+      "mean_measurement_nmse_db": -29.690332867301848,
+      "mean_per_component_half_bin_hit": 0.7959375,
+      "gate_pass_rate": 1.0,
+      "candan_ls_skip_rate": 0.0,
+      "median_fft_support_ms": 1.9302,
+      "median_local_update_ms": 1.9311,
+      "median_grid_path_ms": 0.0,
+      "median_candan_ls_ms": 7.1809,
+      "median_gate_decision_ms": 0.14265,
+      "median_wall_clock_ms": 11.236049999999999
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+scene_count,mean_grid_nmse_db,mean_candan_nmse_db,mean_candan_gain_db,gain_ci95_low_db,gain_ci95_high_db,harmful_update_rate,mean_minimum_denominator_stability,mean_clipping_rate
+1200,-5.37225146981201,-28.7337920124202,23.3615405426082,22.6664957810672,24.0565853041492,0,0.814628548611724,0.0589236111111111

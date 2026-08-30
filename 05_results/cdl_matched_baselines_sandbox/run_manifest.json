@@ -1,0 +1,33 @@
+{
+  "config": {
+    "fc": 60000000000.0,
+    "ds": 1e-07,
+    "scs": 120000.0,
+    "profiles": [
+      "A",
+      "C",
+      "D"
+    ],
+    "seeds": [
+      3101,
+      3102,
+      3103
+    ],
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "samples": 6
+  },
+  "checkpoint": "05_results/cdl_ac_alias_lock_3seed/selected_controller_checkpoint.pt",
+  "note": "sandbox torch-free campaign; channel NMSE + FLOPs only; physical RMSE contract stays with repo torch evaluator",
+  "sionna": "1.1.0",
+  "tensorflow": "2.15.1(cpu)"
+}

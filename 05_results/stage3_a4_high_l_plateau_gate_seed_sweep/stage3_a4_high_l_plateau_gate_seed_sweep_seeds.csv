@@ -1,0 +1,4 @@
+seed,selected_threshold_db,train_mean_depth_savings_percent,train_mean_nmse_gap_db,test_mean_depth,test_mean_depth_savings_percent,test_min_depth_savings_percent,test_mean_nmse_gap_db
+20260624.0,0.75,31.25,0.3697281710450442,5.75,28.125,12.5,0.3577774086164567
+20260625.0,0.5,21.875,0.2065671329842229,6.25,21.875,12.5,0.2936321660034382
+20260626.0,0.75,31.25,0.3983407017891851,5.75,28.125,25.0,0.35026460300846773

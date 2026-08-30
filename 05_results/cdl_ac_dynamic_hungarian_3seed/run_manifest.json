@@ -1,0 +1,76 @@
+{
+  "command": "D:\\Python\\python.exe 04_experiments\\eval\\run_cdl_a_controller_training.py --train-profiles A C --validation-profiles A C --train-seeds 20260620 20260621 20260622 --validation-seeds 20260623 20260624 --train-samples-per-seed 8 --validation-samples-per-seed 8 --epochs 30 --parameter-weight 3.0 --output-dir-name cdl_ac_dynamic_hungarian_3seed",
+  "config": {
+    "epochs": 30,
+    "hidden_dim": 16,
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "lr": 0.02,
+    "output_dir_name": "cdl_ac_dynamic_hungarian_3seed",
+    "parameter_weight": 3.0,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "shape": [
+      64,
+      4
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "subcarrier_spacing_hz": 120000.0,
+    "train_profiles": [
+      "A",
+      "C"
+    ],
+    "train_samples_per_seed": 8,
+    "train_seeds": [
+      20260620,
+      20260621,
+      20260622
+    ],
+    "validation_profiles": [
+      "A",
+      "C"
+    ],
+    "validation_samples_per_seed": 8,
+    "validation_seeds": [
+      20260623,
+      20260624
+    ]
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "angle_noninferiority_margin_bins": 0.01,
+    "claim_update": "cdl-profile-heldout-supported-angle-noninferior",
+    "elapsed_seconds": 80.18783909999911,
+    "mean_angle_alpha": 0.17169555819403115,
+    "mean_angle_rmse_reduction_bins": 0.006494088068008321,
+    "mean_delay_alpha": 1.0820045662297904,
+    "mean_delay_rmse_reduction_bins": 0.05357139752869829,
+    "mean_local_angle_rmse_reduction_bins": -0.0034885121436730037,
+    "mean_local_delay_rmse_reduction_bins": 0.2294633276524715,
+    "mean_nmse_gain_db": 6.595201479264247,
+    "std_angle_alpha": 0.21718480531697362,
+    "std_delay_alpha": 0.10000597422655265,
+    "train_seed_count": 3.0,
+    "training_profiles": "A,C",
+    "validation_profiles": "A,C",
+    "validation_seed_count": 2.0
+  },
+  "notes": [
+    "Training profiles: ['A', 'C']; validation profiles: ['A', 'C'].",
+    "Validation seeds are disjoint from training seeds.",
+    "Any profile omitted from both training and validation remains an untouched zero-shot test profile."
+  ],
+  "run_id": "cdl_a_controller_3train_seed"
+}

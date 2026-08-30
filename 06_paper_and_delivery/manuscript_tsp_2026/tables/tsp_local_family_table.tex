@@ -1,0 +1,18 @@
+\begin{table*}[!ht]
+\centering
+\caption{Controlled local-family results on 1200 common test scenes. Intervals are Student-$t$ 95\% intervals over five seed means. Improved denotes the fraction of scenes whose clean-channel NMSE is lower than that of the grid estimate.}
+\label{tab:supp_local_family}
+\scriptsize
+\setlength{\tabcolsep}{3.0pt}
+\begin{tabular}{lcccc}
+\toprule
+Method & NMSE [95\%] (dB) & Gain (dB) & Half-bin [95\%] & Improved \\
+\midrule
+Grid FFT top-$L$ & $-5.43\,[-5.53,-5.33]$ & 0.00 & $71.9\,[69.7,74.1]\%$ & -- \\
+Quadratic power three-sample & $-6.04\,[-6.13,-5.94]$ & 0.61 & $71.9\,[69.7,74.2]\%$ & 100.0\% \\
+Candan complex three-sample & $-29.69\,[-30.33,-29.05]$ & 24.26 & $79.6\,[77.9,81.3]\%$ & 100.0\% \\
+One-step fixed-support Newton & $-7.71\,[-7.85,-7.58]$ & 2.28 & $71.7\,[69.4,74.0]\%$ & 99.4\% \\
+Cartesian local & $-12.73\,[-12.81,-12.65]$ & 7.30 & $79.6\,[77.9,81.3]\%$ & 100.0\% \\
+\bottomrule
+\end{tabular}
+\end{table*}

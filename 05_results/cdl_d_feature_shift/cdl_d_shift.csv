@@ -1,0 +1,13 @@
+feature,mean_ac,mean_d,smd,ks
+support_fraction,0.03125,0.03125,0.0000,0.0000
+topk_energy_fraction,0.851239,0.975648,3.1086,1.0000
+grid_residual_fraction,0.148761,0.0243523,-3.1086,1.0000
+mean_abs_delay_step,0.764063,0.584375,-1.6948,0.5667
+mean_abs_angle_step,0.609896,0.626042,0.1378,0.1167
+std_abs_delay_step,0.290648,0.448251,2.2702,0.8667
+std_abs_angle_step,0.358092,0.428334,0.9633,0.4417
+unique_delay_fraction,0.505208,0.508333,0.0328,0.1167
+unique_angle_fraction,0.441667,0.4625,0.3285,0.1417
+log10_design_condition,5.03057e-16,5.51274e-16,0.1986,0.1250
+rms_delay_spread_bins,14.2735,4.59365,-5.9520,1.0000
+angle_spectrum_concentration,0.573542,0.924693,3.0751,0.9167

@@ -1,0 +1,326 @@
+{
+  "config": {
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "validation_seeds": [
+      20260808,
+      20260809
+    ],
+    "test_seeds": [
+      20260630,
+      20260701,
+      20260702,
+      20260703,
+      20260704
+    ],
+    "samples_per_cell_seed": 20,
+    "offset_radius": 0.49,
+    "search_radii": [
+      0.25,
+      0.35,
+      0.45,
+      0.5,
+      0.55
+    ],
+    "primary_search_radius": 0.45,
+    "search_points": 5,
+    "minimum_validation_positive_recall": 0.9,
+    "output_dir_name": "tsp_full_offset_sweep_paper",
+    "gate_threshold": 0.03006794943974425,
+    "validation_scene_count": 480,
+    "test_scene_count": 1200,
+    "elapsed_seconds": 254.23892889998388
+  },
+  "gate": {
+    "threshold": 0.03006794943974425,
+    "validation_positive_recall": 1.0,
+    "validation_negative_rejection": NaN,
+    "validation_gated_gain_db": 6.727913371075664,
+    "validation_pass_rate": 1.0
+  },
+  "method_summary": [
+    {
+      "method": "grid_fft_topL_joint_ls",
+      "scene_count": 1200,
+      "mean_measurement_nmse_db": -3.599627652181919,
+      "measurement_nmse_ci95_low_db": -3.693098261818521,
+      "measurement_nmse_ci95_high_db": -3.506157042545317,
+      "mean_per_component_half_bin_hit": 0.5196875000000001,
+      "hit_ci95_low": 0.5067260444094064,
+      "hit_ci95_high": 0.5326489555905938,
+      "mean_gain_vs_grid_db": 0.0
+    },
+    {
+      "method": "axiswise_quadratic_peak_joint_ls",
+      "scene_count": 1200,
+      "mean_measurement_nmse_db": -5.028791827616177,
+      "measurement_nmse_ci95_low_db": -5.118798035772984,
+      "measurement_nmse_ci95_high_db": -4.938785619459371,
+      "mean_per_component_half_bin_hit": 0.5817708333333332,
+      "hit_ci95_low": 0.574760772389745,
+      "hit_ci95_high": 0.5887808942769215,
+      "mean_gain_vs_grid_db": 1.4291641754342577
+    },
+    {
+      "method": "axiswise_candan_joint_ls",
+      "scene_count": 1200,
+      "mean_measurement_nmse_db": -18.04527296883785,
+      "measurement_nmse_ci95_low_db": -18.591108340708274,
+      "measurement_nmse_ci95_high_db": -17.499437596967425,
+      "mean_per_component_half_bin_hit": 0.6521874999999999,
+      "hit_ci95_low": 0.6442354563390883,
+      "hit_ci95_high": 0.6601395436609115,
+      "mean_gain_vs_grid_db": 14.445645316655925
+    },
+    {
+      "method": "one_step_fixed_support_newton_joint_ls",
+      "scene_count": 1200,
+      "mean_measurement_nmse_db": -4.243295404977987,
+      "measurement_nmse_ci95_low_db": -4.366684669552421,
+      "measurement_nmse_ci95_high_db": -4.119906140403553,
+      "mean_per_component_half_bin_hit": 0.5211458333333334,
+      "hit_ci95_low": 0.5083696205574468,
+      "hit_ci95_high": 0.53392204610922,
+      "mean_gain_vs_grid_db": 0.6436677527960672
+    },
+    {
+      "method": "cartesian_local_joint_ls",
+      "scene_count": 1200,
+      "mean_measurement_nmse_db": -10.223156909488058,
+      "measurement_nmse_ci95_low_db": -10.48996459977342,
+      "measurement_nmse_ci95_high_db": -9.956349219202695,
+      "mean_per_component_half_bin_hit": 0.6525000000000001,
+      "hit_ci95_low": 0.6436046421005638,
+      "hit_ci95_high": 0.6613953578994364,
+      "mean_gain_vs_grid_db": 6.623529257306136
+    },
+    {
+      "method": "residual_gated_cartesian_local_joint_ls",
+      "scene_count": 1200,
+      "mean_measurement_nmse_db": -10.220172023228878,
+      "measurement_nmse_ci95_low_db": -10.486780249139422,
+      "measurement_nmse_ci95_high_db": -9.953563797318335,
+      "mean_per_component_half_bin_hit": 0.6525000000000001,
+      "hit_ci95_low": 0.6436046421005638,
+      "hit_ci95_high": 0.6613953578994364,
+      "mean_gain_vs_grid_db": 6.620544371046958
+    }
+  ],
+  "radius_summary": [
+    {
+      "search_radius": 0.25,
+      "scene_count": 1200,
+      "mean_gain_vs_grid_db": 6.212952068253012,
+      "mean_per_component_half_bin_hit": 0.6475,
+      "harmful_update_rate": 0.0,
+      "mean_candidate_axis_correctness": 0.7114930555555556,
+      "mean_boundary_saturation_rate": 0.6140972222222223
+    },
+    {
+      "search_radius": 0.35,
+      "scene_count": 1200,
+      "mean_gain_vs_grid_db": 7.159994018895574,
+      "mean_per_component_half_bin_hit": 0.6517708333333333,
+      "harmful_update_rate": 0.0,
+      "mean_candidate_axis_correctness": 0.6899652777777778,
+      "mean_boundary_saturation_rate": 0.4643402777777778
+    },
+    {
+      "search_radius": 0.45,
+      "scene_count": 1200,
+      "mean_gain_vs_grid_db": 6.623529257306136,
+      "mean_per_component_half_bin_hit": 0.6525,
+      "harmful_update_rate": 0.0,
+      "mean_candidate_axis_correctness": 0.670451388888889,
+      "mean_boundary_saturation_rate": 0.32666666666666666
+    },
+    {
+      "search_radius": 0.5,
+      "scene_count": 1200,
+      "mean_gain_vs_grid_db": 5.992705636136512,
+      "mean_per_component_half_bin_hit": 0.6527083333333333,
+      "harmful_update_rate": 0.0,
+      "mean_candidate_axis_correctness": 0.6647916666666667,
+      "mean_boundary_saturation_rate": 0.26538194444444446
+    },
+    {
+      "search_radius": 0.55,
+      "scene_count": 1200,
+      "mean_gain_vs_grid_db": 5.817180061972695,
+      "mean_per_component_half_bin_hit": 0.651875,
+      "harmful_update_rate": 0.0,
+      "mean_candidate_axis_correctness": 0.6613888888888888,
+      "mean_boundary_saturation_rate": 0.20930555555555555
+    }
+  ],
+  "support_quality_summary": [
+    {
+      "stratum_type": "coarse_support_quality",
+      "stratum": "q_sup=0.000",
+      "scene_count": 145,
+      "mean_q_sup": 0.0,
+      "mean_local_gain_vs_grid_db": 5.051813081685717,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 5.051813081685717,
+      "gate_pass_rate": 1.0,
+      "mean_local_per_component_hit": 0.4603448275862069
+    },
+    {
+      "stratum_type": "coarse_support_quality",
+      "stratum": "q_sup=0.125",
+      "scene_count": 16,
+      "mean_q_sup": 0.125,
+      "mean_local_gain_vs_grid_db": 5.116236229164307,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 5.116236229164307,
+      "gate_pass_rate": 1.0,
+      "mean_local_per_component_hit": 0.3984375
+    },
+    {
+      "stratum_type": "coarse_support_quality",
+      "stratum": "q_sup=0.250",
+      "scene_count": 161,
+      "mean_q_sup": 0.25,
+      "mean_local_gain_vs_grid_db": 5.104345464002441,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 5.104345464002441,
+      "gate_pass_rate": 1.0,
+      "mean_local_per_component_hit": 0.4673913043478261
+    },
+    {
+      "stratum_type": "coarse_support_quality",
+      "stratum": "q_sup=0.375",
+      "scene_count": 86,
+      "mean_q_sup": 0.375,
+      "mean_local_gain_vs_grid_db": 5.401867991896568,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 5.401867991896568,
+      "gate_pass_rate": 1.0,
+      "mean_local_per_component_hit": 0.5334302325581395
+    },
+    {
+      "stratum_type": "coarse_support_quality",
+      "stratum": "q_sup=0.500",
+      "scene_count": 372,
+      "mean_q_sup": 0.5,
+      "mean_local_gain_vs_grid_db": 5.807467730534499,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 5.807467730534499,
+      "gate_pass_rate": 1.0,
+      "mean_local_per_component_hit": 0.5971102150537635
+    },
+    {
+      "stratum_type": "coarse_support_quality",
+      "stratum": "q_sup=0.625",
+      "scene_count": 58,
+      "mean_q_sup": 0.625,
+      "mean_local_gain_vs_grid_db": 5.989974733665498,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 5.989974733665498,
+      "gate_pass_rate": 1.0,
+      "mean_local_per_component_hit": 0.6853448275862069
+    },
+    {
+      "stratum_type": "coarse_support_quality",
+      "stratum": "q_sup=0.750",
+      "scene_count": 135,
+      "mean_q_sup": 0.75,
+      "mean_local_gain_vs_grid_db": 6.5718582727452475,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 6.5718582727452475,
+      "gate_pass_rate": 1.0,
+      "mean_local_per_component_hit": 0.75
+    },
+    {
+      "stratum_type": "coarse_support_quality",
+      "stratum": "q_sup=0.875",
+      "scene_count": 11,
+      "mean_q_sup": 0.875,
+      "mean_local_gain_vs_grid_db": 7.845196555962755,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 7.845196555962755,
+      "gate_pass_rate": 1.0,
+      "mean_local_per_component_hit": 0.875
+    },
+    {
+      "stratum_type": "coarse_support_quality",
+      "stratum": "q_sup=1.000",
+      "scene_count": 216,
+      "mean_q_sup": 1.0,
+      "mean_local_gain_vs_grid_db": 10.954664842598048,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 10.938082141158166,
+      "gate_pass_rate": 0.9907407407407407,
+      "mean_local_per_component_hit": 1.0
+    },
+    {
+      "stratum_type": "duplicate_neighborhood",
+      "stratum": "none",
+      "scene_count": 216,
+      "mean_q_sup": 1.0,
+      "mean_local_gain_vs_grid_db": 10.954664842598048,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 10.938082141158166,
+      "gate_pass_rate": 0.9907407407407407,
+      "mean_local_per_component_hit": 1.0
+    },
+    {
+      "stratum_type": "duplicate_neighborhood",
+      "stratum": "present",
+      "scene_count": 984,
+      "mean_q_sup": 0.4142530487804878,
+      "mean_local_gain_vs_grid_db": 5.672792177607913,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 5.672792177607913,
+      "gate_pass_rate": 1.0,
+      "mean_local_per_component_hit": 0.5762195121951219
+    },
+    {
+      "stratum_type": "coarse_condition_quartile",
+      "stratum": "Q1",
+      "scene_count": 711,
+      "mean_q_sup": 0.5457102672292545,
+      "mean_local_gain_vs_grid_db": 7.042592520114647,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 7.037554737398732,
+      "gate_pass_rate": 0.9971870604781997,
+      "mean_local_per_component_hit": 0.679676511954993
+    },
+    {
+      "stratum_type": "coarse_condition_quartile",
+      "stratum": "Q3",
+      "scene_count": 234,
+      "mean_q_sup": 0.4877136752136752,
+      "mean_local_gain_vs_grid_db": 6.056458228920539,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 6.056458228920539,
+      "gate_pass_rate": 1.0,
+      "mean_local_per_component_hit": 0.6201923076923077
+    },
+    {
+      "stratum_type": "coarse_condition_quartile",
+      "stratum": "Q4",
+      "scene_count": 255,
+      "mean_q_sup": 0.4764705882352941,
+      "mean_local_gain_vs_grid_db": 5.97545333881743,
+      "local_harmful_update_rate": 0.0,
+      "mean_gated_gain_vs_grid_db": 5.97545333881743,
+      "gate_pass_rate": 1.0,
+      "mean_local_per_component_hit": 0.6063725490196078
+    }
+  ]
+}

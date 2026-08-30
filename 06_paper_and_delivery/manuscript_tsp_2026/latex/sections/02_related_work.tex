@@ -1,0 +1,29 @@
+\section{Related Work}
+
+\emph{FFT support and local interpolation:} Matching pursuit, orthogonal matching pursuit (OMP), and multiple-measurement-vector recovery produce explicit supports through correlation and coefficient updates \cite{mallat1993matching,pati1993omp,tropp2007omp,cotter2005mmv}. An FFT top-$L$ front end is shorter: it selects distinct spectral peaks once and then performs a joint fit. Classical Fourier-coefficient interpolation includes Quinn's estimator, while Candan provides the finite-length-corrected three-sample update executed here \cite{quinn1994fourier_interpolation,candan2011three_dft}. We apply that update independently along every tensor axis and add a fitted-subspace decision after joint LS.
+
+\emph{Continuous sparse estimation:} Off-grid SBL perturbs dictionary parameters, Newtonized OMP repeatedly refines detected components, and gridless covariance or atomic-norm methods recover continuous spectra through structured optimization \cite{yang2013ogsbi,mamandipoor2016nomp,stoica2011spice,wagner2021gridless_nua,wu2023gridless_multifrequency,pote2023ml_gridless,wu2024nonuniform_gridless,wu2024coffee}. Recent routes include inversion-free, light-weight sequential, and fast variational SBL \cite{song2024inversion_free_sbl,pote2025lws_sbl,moderl2025fast_bsbl}. Efficient off-grid Bayesian estimation also exploits Kronecker-structured signals directly \cite{he2025offgrid_kronecker}. These algorithms revise a global support or latent model, whereas the proposed estimator provides a fixed-cost closed-form refinement when an FFT neighborhood list is already available.
+
+\emph{Tensor and structured channel estimation:} Tensor methods exploit multilinear coupling, Vandermonde factors, and identifiable low-rank structure in massive MIMO, multicarrier estimation, MIMO radar, and RIS channels \cite{qian2018tensor_dual_polarized,kofidis2020tensor_multicarrier,xu2022tensor_mimo_radar,gong2023esprit_tensor_train,du2023ris_tensor_phase_noise,wang2024irs_nlos_ofdm}. Recent TSP work uses structured tensor decomposition for RIS and FDD channel estimation, including off-grid near-field Tucker models \cite{dealmeida2025bdris_tensor,chen2025structured_tensor_fdd,cao2026offgrid_tucker}. Our tensor structure enters at a different point: Proposition~1 shows that separability lets one multidimensional FFT supply exact scalar Candan triplets, after which one joint design matrix refits the selected components.
+
+\begin{table*}[t]
+\centering
+\caption{Estimator contracts near the proposed operating point. ``Fixed'' denotes work independent of a convergence tolerance.}
+\label{tab:closest_work}
+\scriptsize
+\setlength{\tabcolsep}{2.8pt}
+\begin{tabular}{p{0.20\linewidth}ccp{0.18\linewidth}p{0.18\linewidth}p{0.20\linewidth}}
+\toprule
+Route & Support changed? & Fixed work? & Local update & Coefficient fit & Return rule \\
+\midrule
+FFT top-$L$ & No & Yes & none & one grid LS & grid estimate \\
+Quadratic power interpolation & No & Yes & $3DL$ power samples & one final LS & local estimate \\
+Candan \cite{candan2011three_dft} & No & Yes & $3DL$ complex samples & one final LS & local estimate \\
+Cartesian local search & No & Yes & prescribed $5^D L$ scores & one final LS & local estimate \\
+One-step fixed-support Newton & No & Yes & one derivative step & one final LS & local estimate \\
+NOMP \cite{mamandipoor2016nomp} & Yes & No & repeated Newton updates & repeated & convergence/CFAR estimate \\
+Gridless/SBL \cite{wu2023gridless_multifrequency,pote2025lws_sbl} & Global/adaptive & No & iterative structured solver & iterative & continuous estimate \\
+Proposed & No & Yes & $3DL$ complex samples & joint LS; FFT grid energy & higher-energy fitted subspace \\
+\bottomrule
+\end{tabular}
+\end{table*}

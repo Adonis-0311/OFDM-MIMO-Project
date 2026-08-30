@@ -1,0 +1,86 @@
+{
+  "command": "D:\\Python\\python.exe 04_experiments\\eval\\run_sionna_cdl_trained_refinement.py --profiles A C D --snrs 0 10 20 30 --l-values 4 8 16 --seeds 20260626 20260627 --samples-per-profile-seed 4 --controller-checkpoint 05_results\\feature_controller_source_5seed\\controller_checkpoint.pt --output-dir-name sionna_cdl_feature_controller_dev",
+  "config": {
+    "angle_alpha": 0.6419195571509573,
+    "carrier_frequency_hz": 60000000000.0,
+    "controller_checkpoint": "05_results\\feature_controller_source_5seed\\controller_checkpoint.pt",
+    "controller_ensemble_size": 5,
+    "delay_alpha": 0.6419195571509573,
+    "delay_spread_s": 1e-07,
+    "device": "cpu",
+    "estimator_mode": "source-trained-feature-controller",
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "num_subcarriers": 64,
+    "num_tx_antennas": 4,
+    "profiles": [
+      "A",
+      "C",
+      "D"
+    ],
+    "samples_per_profile_seed": 4,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "seeds": [
+      20260626,
+      20260627
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "source_alpha": 0.6419195571509573,
+    "source_alpha_source": "05_results\\stage2_torch_locked_scale_g2_seed_sweep\\stage2_torch_locked_scale_g2_seed_sweep_seeds.csv",
+    "spatial_truth_oversampling": 4096,
+    "subcarrier_spacing_hz": 120000.0
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "angle_alpha": 0.7393227687526915,
+    "claim_update": "trained-refinement-physical-transfer-mixed",
+    "controller_checkpoint": "05_results\\feature_controller_source_5seed\\controller_checkpoint.pt",
+    "controller_ensemble_size": 5.0,
+    "delay_alpha": 0.6857678093940144,
+    "delay_resolution_ns": 130.20833333333334,
+    "elapsed_seconds": 2.252254199998788,
+    "estimator_mode": "source-trained-feature-controller",
+    "l_values": "4,8,16",
+    "mean_grid_channel_nmse_db": -12.814483519095178,
+    "mean_grid_physical_delay_rmse_ns": 461.1377345774112,
+    "mean_grid_projected_broadside_angle_rmse_deg": 30.007684339668206,
+    "mean_physical_delay_rmse_reduction_vs_grid_ns": 5.8550362796201405,
+    "mean_projected_angle_rmse_reduction_vs_grid_deg": -5.721227363168618,
+    "mean_trained_refinement_channel_nmse_db": -16.539517265209863,
+    "mean_trained_refinement_gain_vs_grid_db": 3.7250337461146867,
+    "mean_trained_refinement_physical_delay_rmse_ns": 455.28269829779106,
+    "mean_trained_refinement_projected_broadside_angle_rmse_deg": 35.728911702836825,
+    "min_cell_physical_delay_rmse_reduction_vs_grid_ns": -18.995505163138134,
+    "min_cell_projected_angle_rmse_reduction_vs_grid_deg": -28.023856475203914,
+    "min_cell_trained_refinement_gain_vs_grid_db": -1.698614170724003,
+    "profiles": "A,C,D",
+    "row_count": 72.0,
+    "sample_row_count": 288.0,
+    "samples_per_profile_seed": 4.0,
+    "seed_count": 2.0,
+    "snrs_db": "0.0,10.0,20.0,30.0",
+    "source_alpha": 0.6419195571509573,
+    "source_alpha_source": "05_results\\stage2_torch_locked_scale_g2_seed_sweep\\stage2_torch_locked_scale_g2_seed_sweep_seeds.csv"
+  },
+  "notes": [
+    "Grid and trained refinement are paired on identical Sionna CDL samples.",
+    "The transferred estimator is frozen before this run; no external test-truth tuning is performed.",
+    "Delay truth comes from Sionna tau; angle is the identifiable projected ULA broadside quantity.",
+    "This dev result must not be described as a deeper full T-OMP-Net evaluation.",
+    "Any axis override is a diagnostic ablation only and must not be promoted as a trained estimator."
+  ],
+  "run_id": "sionna_cdl_trained_refinement_2x4"
+}

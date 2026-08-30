@@ -1,0 +1,28 @@
+{
+  "command": "python 04_experiments/eval/run_tsp_candan_gate_protocol_audit.py",
+  "config": {
+    "feature_normalization": "none",
+    "output_dir_name": "tsp_candan_gate_protocol_seventh_round",
+    "primary_calibration_profiles": [
+      "A",
+      "C"
+    ],
+    "source_csv": "D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\05_results\\tsp_candan_route_audit_paper\\per_scene.csv",
+    "source_sha256": "85726d36de6b68bfd5c00461c422325034727db5c0276b3a02e5ceaaaee4b6e9"
+  },
+  "environment": {
+    "git_commit": "c50a603",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "source_rows": 14400,
+    "test_rows": 9000
+  },
+  "notes": [
+    "Primary threshold uses validation CDL-A/C only; CDL-D is zero-shot.",
+    "No feature normalization is applied, so CDL-D cannot enter normalization.",
+    "All intervals are paired across the five test seeds."
+  ],
+  "run_id": "tsp_candan_gate_protocol_seventh_round_20260829"
+}

@@ -1,0 +1,11 @@
+\section{Discussion}
+
+The results identify a consistent operating point between an integer-grid FFT estimator and iterative continuous recovery. Candan uses the complex peak triplets already exposed by the FFT and reaches 24.26 dB gain on the common tensor model and 14.45 dB over the complete fractional-bin interval. The optimized projection-selected implementation takes 11.24 ms, and the independent MATLAB implementation reproduces the same accuracy scale.
+
+The theory characterizes the triplet perturbations after FFT neighborhood selection. Proposition~1 removes the non-updated tensor axes from every isolated quotient exactly. Proposition~2 then exposes how separation, dynamic range, sparsity, aperture, and SNR perturb that scalar problem, while Corollary~1 propagates coordinate error to joint LS. The controlled separation--near--far campaign complements this analysis by varying the main interference terms and retaining positive Candan gain in every tested cell.
+
+The controlled-pair campaign shows that reconstruction gains persist across the tested separation and near--far conditions. Its one-shot FFT top-$L$ interface refines the selected neighborhoods as a group, so reconstruction NMSE and strict distinct-pair recovery describe complementary aspects of performance when leakage peaks share a physical component.
+
+Projection selection adds a scene-level reliability layer after all coordinates and amplitudes have interacted. The fitted-energy rule preserves the large A/C gains and improves the D profile, yielding a statistically resolved 0.141 dB aggregate increment. This division of labor is simple: the complex ratio supplies a closed-form local coordinate, joint LS reconciles the selected components, and fitted energy decides which complete reconstruction is returned.
+
+The fitted-energy decision directly targets received-subspace reconstruction, while the physical replay evaluates the returned components. Lower aggregate delay RMSE and more than doubled tenth- and quarter-bin joint hit rates show that projection selection preserves the parameter benefit of Candan refinement while strengthening channel reconstruction.

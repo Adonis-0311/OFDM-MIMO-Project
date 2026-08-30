@@ -1,0 +1,560 @@
+{
+  "gate_rows": [
+    {
+      "evidence": "stage3_a4_high_l_plateau_gate",
+      "gate_item": "A4 IA-AUD FLOPs/depth reduction",
+      "metric": "held-out L=32 gate savings = 33.33%; NMSE gap = 0.3643 dB",
+      "status": "restricted-high-l-pass / global-claim-not-supported"
+    },
+    {
+      "evidence": "stage3_a5_combined_impairment_presmoke",
+      "gate_item": "A5 HIR-JL robustness value",
+      "metric": "nominal combined degradation = 4.4395 dB; high-stress degradation = 6.6036 dB",
+      "status": "main-gate-downgrade / appendix-high-stress-only"
+    },
+    {
+      "evidence": "stage3_paper_scale_kruskal_proxy",
+      "gate_item": "Paper-scale Kruskal identifiability sanity",
+      "metric": "Kruskal proxy bound = 87; max L/Lmax = 0.7356; min support recall = 1.0",
+      "status": "on-grid-proxy-pass"
+    },
+    {
+      "evidence": "stage3_synthetic_cross_scene_generalization",
+      "gate_item": "Synthetic cross-scene generalization fallback",
+      "metric": "min target gain vs grid = 5.8504 dB; max gap vs target oracle = 0.4077 dB",
+      "status": "local-synthetic-pass / not-deepmimo"
+    },
+    {
+      "evidence": "stage3_crlb_asymptotic_tightness",
+      "gate_item": "5L CRLB asymptotic tightness",
+      "metric": "max FIM relative error = 5.7304e-10; 30 dB mean RMSE/CRLB ratio = 1.0067; mean slope error = 0.0067",
+      "status": "supported-pilot / single-target-pilot"
+    },
+    {
+      "evidence": "deepmimo_source_alpha_seed_campaign",
+      "gate_item": "DeepMIMO Set E external validation",
+      "metric": "readiness = ready_open_source; dataset files = 4188; O1 five-seed gain = 1.3235 dB; I3 five-seed gain = 6.7014 dB; I3 min cell = -0.2412 dB",
+      "status": "access-ready / o1-weak / i3-partial"
+    }
+  ],
+  "runs": {
+    "deepmimo_set_e_access_audit": {
+      "dataset_files": 4188,
+      "dataset_root": "D:\\E\\OFDM-MIMO_Radar_Estimation\\90_archive\\2025_thesis_materials\\\u53c2\u8003\\DeepMIMO-5GNR\\DeepMIMO_dataset",
+      "i3_60_files": 27,
+      "o1_60_files": 4161,
+      "packages": {
+        "deepmimo": true,
+        "h5py": true,
+        "scipy": true,
+        "sionna": true
+      },
+      "readiness": "ready_open_source",
+      "reference_root": "D:\\E\\OFDM-MIMO_Radar_Estimation\\90_archive\\2025_thesis_materials\\\u53c2\u8003"
+    },
+    "deepmimo_source_alpha_seed_campaign": {
+      "command": "D:\\Python\\python.exe 04_experiments\\eval\\aggregate_deepmimo_source_alpha_seed_campaign.py",
+      "config": {
+        "confidence_interval": "two-sided Student-t 95% CI over seed means",
+        "fixed_contract": "SNR/L cells, channel construction, grid baseline, Stage-2 source alpha, refinement search, and metrics",
+        "n_users_per_seed": 100,
+        "seeds": [
+          20260626,
+          20260627,
+          20260628,
+          20260629,
+          20260630
+        ],
+        "source_manifests": [
+          "05_results\\deepmimo_o1_60_source_alpha_n100_seed_20260626\\run_manifest.json",
+          "05_results\\deepmimo_o1_60_source_alpha_n100_seed_20260627\\run_manifest.json",
+          "05_results\\deepmimo_o1_60_source_alpha_n100_seed_20260628\\run_manifest.json",
+          "05_results\\deepmimo_o1_60_source_alpha_n100_seed_20260629\\run_manifest.json",
+          "05_results\\deepmimo_o1_60_source_alpha_n100_seed_20260630\\run_manifest.json",
+          "05_results\\deepmimo_i3_60_source_alpha_n100_seed_20260626\\run_manifest.json",
+          "05_results\\deepmimo_i3_60_source_alpha_n100_seed_20260627\\run_manifest.json",
+          "05_results\\deepmimo_i3_60_source_alpha_n100_seed_20260628\\run_manifest.json",
+          "05_results\\deepmimo_i3_60_source_alpha_n100_seed_20260629\\run_manifest.json",
+          "05_results\\deepmimo_i3_60_source_alpha_n100_seed_20260630\\run_manifest.json"
+        ]
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "python": "3.12.10"
+      },
+      "metrics": {
+        "claim_update": "scaled-deepmimo-source-alpha-campaign-recorded",
+        "i3_60_campaign_classification": "partial",
+        "i3_60_ci95_source_alpha_gain_vs_grid_db_high": 6.936846169407491,
+        "i3_60_ci95_source_alpha_gain_vs_grid_db_low": 6.466016039428738,
+        "i3_60_mean_grid_channel_nmse_db": -13.980867521257442,
+        "i3_60_mean_source_alpha_channel_nmse_db": -20.68229862567556,
+        "i3_60_mean_source_alpha_gain_vs_grid_db": 6.7014311044181145,
+        "i3_60_mean_source_alpha_gap_vs_oracle_db": 0.9972642876430553,
+        "i3_60_min_cell_source_alpha_gain_vs_grid_db": -0.24115118541562042,
+        "i3_60_min_mean_support_recall": 0.30625,
+        "i3_60_min_seed_mean_source_alpha_gain_vs_grid_db": 6.409724295404705,
+        "n_datasets": 2,
+        "n_seed_runs": 10,
+        "n_seeds": 5,
+        "n_users_per_seed": 100,
+        "o1_60_campaign_classification": "weak",
+        "o1_60_ci95_source_alpha_gain_vs_grid_db_high": 1.3930616554612305,
+        "o1_60_ci95_source_alpha_gain_vs_grid_db_low": 1.2538469589533805,
+        "o1_60_mean_grid_channel_nmse_db": -4.6224814706707615,
+        "o1_60_mean_source_alpha_channel_nmse_db": -5.945935777878067,
+        "o1_60_mean_source_alpha_gain_vs_grid_db": 1.3234543072073055,
+        "o1_60_mean_source_alpha_gap_vs_oracle_db": 0.21197435440869353,
+        "o1_60_min_cell_source_alpha_gain_vs_grid_db": 0.8554463670332608,
+        "o1_60_min_mean_support_recall": 0.825,
+        "o1_60_min_seed_mean_source_alpha_gain_vs_grid_db": 1.2250421494588433
+      },
+      "notes": [
+        "Writing-facing E2/E3 robustness campaign for claim C4.",
+        "Only the random user sample and AWGN realization vary across seeds.",
+        "Negative and partial classifications are retained in seed_metrics.csv.",
+        "Scalar source-alpha proxy only; not final trained G2/T-OMP-Net evidence."
+      ],
+      "run_id": "deepmimo_source_alpha_seed_campaign_5x100"
+    },
+    "stage3_a4_high_l_plateau_gate": {
+      "command": "python 04_experiments/eval/run_stage3_a4_high_l_plateau_gate.py",
+      "config": {
+        "fixed_depth": 8,
+        "min_depth": 3,
+        "n_targets": 32,
+        "n_test": 6,
+        "n_train": 6,
+        "nmse_tolerance_db": 0.5,
+        "offset_radius": 0.35,
+        "radii": [
+          0.45,
+          0.28,
+          0.18,
+          0.11,
+          0.07,
+          0.045,
+          0.03,
+          0.02
+        ],
+        "search_points": 3,
+        "seed": 20260624,
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "snr_db": 20.0,
+        "threshold_candidates_db": [
+          0.05,
+          0.1,
+          0.2,
+          0.35,
+          0.5,
+          0.75,
+          1.0
+        ]
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "elapsed_seconds": 65.8615446,
+        "fixed_depth": 8,
+        "min_depth": 3,
+        "n_targets": 32,
+        "n_test": 6,
+        "n_train": 6,
+        "nmse_tolerance_db": 0.5,
+        "radii": [
+          0.45,
+          0.28,
+          0.18,
+          0.11,
+          0.07,
+          0.045,
+          0.03,
+          0.02
+        ],
+        "search_points": 3,
+        "seed": 20260624,
+        "selected_threshold_db": 0.75,
+        "snr_db": 20.0,
+        "tensor_shape": "128x16x32",
+        "test_metrics": {
+          "max_depth_savings_percent": 37.5,
+          "mean_depth": 5.333333333333333,
+          "mean_depth_savings_percent": 33.333333333333336,
+          "mean_nmse_gap_db": 0.3643202083828558,
+          "min_depth_savings_percent": 25.0
+        },
+        "threshold_candidates_db": [
+          0.05,
+          0.1,
+          0.2,
+          0.35,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "train_metrics": {
+          "max_depth_savings_percent": 37.5,
+          "mean_depth": 5.833333333333333,
+          "mean_depth_savings_percent": 27.083333333333332,
+          "mean_nmse_gap_db": 0.37201306988396016,
+          "min_depth_savings_percent": 12.5
+        }
+      },
+      "notes": [
+        "This is a narrowed high-L A4 gate test, not a global IA-AUD claim.",
+        "The gate stops when the incremental NMSE improvement falls below a trained scalar threshold after a minimum depth.",
+        "Depth is used as the FLOPs proxy because each refinement layer performs the same local-search kernel."
+      ],
+      "run_id": "stage3_a4_high_l_plateau_gate_20260624"
+    },
+    "stage3_a5_combined_impairment_presmoke": {
+      "command": "python 04_experiments/eval/run_stage3_a5_combined_impairment_presmoke.py",
+      "config": {
+        "candidate_alphas": [
+          0.0,
+          0.19999999999999998,
+          0.39999999999999997,
+          0.6,
+          0.7999999999999999,
+          0.9999999999999999,
+          1.2
+        ],
+        "n_targets": 8,
+        "n_test": 5,
+        "n_train": 4,
+        "offset_radius": 0.35,
+        "profiles": [
+          {
+            "coupling_phi0_degrees": 0.0,
+            "coupling_rho": 0.0,
+            "iq_gain": 1.0,
+            "iq_phase_degrees": 0.0,
+            "name": "clean",
+            "sigma_phi_degrees": 0.0
+          },
+          {
+            "coupling_phi0_degrees": 0.0,
+            "coupling_rho": 0.0,
+            "iq_gain": 1.0,
+            "iq_phase_degrees": 0.0,
+            "name": "phase_only_2deg",
+            "sigma_phi_degrees": 2.0
+          },
+          {
+            "coupling_phi0_degrees": 5.0,
+            "coupling_rho": 0.2,
+            "iq_gain": 1.05,
+            "iq_phase_degrees": 3.0,
+            "name": "iq_coupling_medium",
+            "sigma_phi_degrees": 0.0
+          },
+          {
+            "coupling_phi0_degrees": 5.0,
+            "coupling_rho": 0.2,
+            "iq_gain": 1.05,
+            "iq_phase_degrees": 3.0,
+            "name": "combined_v23r",
+            "sigma_phi_degrees": 2.0
+          },
+          {
+            "coupling_phi0_degrees": 10.0,
+            "coupling_rho": 0.3,
+            "iq_gain": 1.1,
+            "iq_phase_degrees": 5.0,
+            "name": "combined_high",
+            "sigma_phi_degrees": 3.0
+          }
+        ],
+        "search_points": 5,
+        "search_radius": 0.45,
+        "seed": 20260624,
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "snr_db": 20.0
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "candidate_alphas": [
+          0.0,
+          0.19999999999999998,
+          0.39999999999999997,
+          0.6,
+          0.7999999999999999,
+          0.9999999999999999,
+          1.2
+        ],
+        "clean_train_nmse_db": -13.312861027941777,
+        "clean_trained_alpha": 0.7999999999999999,
+        "degradation_by_profile_db": {
+          "clean": 0.0,
+          "combined_high": 6.60364902305442,
+          "combined_v23r": 4.439537092767866,
+          "iq_coupling_medium": 4.443735345160793,
+          "phase_only_2deg": 3.619806600596576e-05
+        },
+        "elapsed_seconds": 28.1613157,
+        "n_targets": 8,
+        "n_test": 5,
+        "n_train": 4,
+        "oracle_alpha_by_profile": {
+          "clean": 0.7999999999999999,
+          "combined_high": 0.7999999999999999,
+          "combined_v23r": 0.7999999999999999,
+          "iq_coupling_medium": 0.7999999999999999,
+          "phase_only_2deg": 0.7999999999999999
+        },
+        "oracle_recovery_by_profile_db": {
+          "clean": 0.0,
+          "combined_high": 0.0,
+          "combined_v23r": 0.0,
+          "iq_coupling_medium": 0.0,
+          "phase_only_2deg": 0.0
+        },
+        "profiles": [
+          {
+            "coupling_phi0_degrees": 0.0,
+            "coupling_rho": 0.0,
+            "iq_gain": 1.0,
+            "iq_phase_degrees": 0.0,
+            "name": "clean",
+            "sigma_phi_degrees": 0.0
+          },
+          {
+            "coupling_phi0_degrees": 0.0,
+            "coupling_rho": 0.0,
+            "iq_gain": 1.0,
+            "iq_phase_degrees": 0.0,
+            "name": "phase_only_2deg",
+            "sigma_phi_degrees": 2.0
+          },
+          {
+            "coupling_phi0_degrees": 5.0,
+            "coupling_rho": 0.2,
+            "iq_gain": 1.05,
+            "iq_phase_degrees": 3.0,
+            "name": "iq_coupling_medium",
+            "sigma_phi_degrees": 0.0
+          },
+          {
+            "coupling_phi0_degrees": 5.0,
+            "coupling_rho": 0.2,
+            "iq_gain": 1.05,
+            "iq_phase_degrees": 3.0,
+            "name": "combined_v23r",
+            "sigma_phi_degrees": 2.0
+          },
+          {
+            "coupling_phi0_degrees": 10.0,
+            "coupling_rho": 0.3,
+            "iq_gain": 1.1,
+            "iq_phase_degrees": 5.0,
+            "name": "combined_high",
+            "sigma_phi_degrees": 3.0
+          }
+        ],
+        "seed": 20260624,
+        "snr_db": 20.0,
+        "tensor_shape": "128x16x32"
+      },
+      "notes": [
+        "Combined-impairment pre-smoke checks whether A5 remains valuable after phase-noise-only stress was weak.",
+        "Profiles apply phase noise, IQ imbalance, and physical mutual coupling directly to the measured tensor.",
+        "Oracle-retuned alpha per profile is diagnostic only; it is not a robust-training result."
+      ],
+      "run_id": "stage3_a5_combined_impairment_presmoke_20260624"
+    },
+    "stage3_crlb_asymptotic_tightness": {
+      "command": "python 04_experiments/eval/run_stage3_crlb_asymptotic_tightness.py",
+      "config": {
+        "acceptance": {
+          "max_ratio_at_30db": "<= 1.75",
+          "max_relative_fim_error": "< 1e-6",
+          "mean_abs_rmse_slope_error": "<= 0.02",
+          "mean_ratio_at_30db": "0.75..1.25"
+        },
+        "expected_log10_slope_per_db": -0.05,
+        "fim_csv": "05_results\\crlb_5l_fim_validation\\crlb_5l_fim_validation.csv",
+        "monte_carlo_csv": "05_results\\crlb_5l_monte_carlo\\crlb_5l_monte_carlo.csv",
+        "parameters": [
+          "angle",
+          "delay",
+          "doppler",
+          "gain_re",
+          "gain_im"
+        ]
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "claim_update": "supported-pilot",
+        "elapsed_seconds": 0.0011460000000000081,
+        "expected_log10_slope_per_db": -0.05,
+        "max_ratio_at_30db": 1.5008733999068284,
+        "max_relative_fim_error": 5.730369293417129e-10,
+        "mean_abs_crlb_slope_error_vs_expected": 2.6367796834847467e-17,
+        "mean_abs_rmse_slope_error_vs_expected": 0.006720464617442518,
+        "mean_ratio_at_30db": 1.0066960113952728,
+        "source_fim_csv": "05_results\\crlb_5l_fim_validation\\crlb_5l_fim_validation.csv",
+        "source_monte_carlo_csv": "05_results\\crlb_5l_monte_carlo\\crlb_5l_monte_carlo.csv"
+      },
+      "notes": [
+        "This is a Stage-3 audit of existing 5L CRLB evidence, not a fresh large-sample Monte Carlo.",
+        "The evidence supports single-target high-SNR trend consistency and analytic derivative correctness.",
+        "Small-sample ratios below 1 at lower SNR are treated as a pilot limitation, not as a CRLB violation claim."
+      ],
+      "run_id": "stage3_crlb_asymptotic_tightness_20260624"
+    },
+    "stage3_paper_scale_kruskal_proxy": {
+      "command": "python 04_experiments/eval/run_stage3_paper_scale_kruskal_proxy.py",
+      "config": {
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "source_csv": "05_results\\paper_scale_tensor_omp_g1\\paper_scale_tensor_omp_g1.csv"
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "l_values": [
+          2,
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "max_bound_ratio": 0.735632183908046,
+        "max_kruskal_risk_factor": 7.742911152445797,
+        "mean_nmse_db_all": -57.848162954738314,
+        "min_kruskal_margin": 23.0,
+        "min_support_recall": 1.0,
+        "nmse_slope_vs_bound_ratio": 19.733638065986813,
+        "paper_kruskal_bound": 87,
+        "runtime_slope_vs_bound_ratio": -0.000600086673773979,
+        "tensor_shape": "128x16x32"
+      },
+      "notes": [
+        "Derived from the existing paper_scale_tensor_omp_g1 run; no new recovery samples are generated.",
+        "Kruskal proxy bound uses floor((Nv + K + M - 2) / 2) for the paper-scale 128x16x32 tensor.",
+        "This is on-grid FFT Tensor-OMP sanity evidence and must not be presented as off-grid or DeepMIMO validation."
+      ],
+      "run_id": "stage3_paper_scale_kruskal_proxy_20260624"
+    },
+    "stage3_synthetic_cross_scene_generalization": {
+      "command": "python 04_experiments/eval/run_stage3_synthetic_cross_scene_generalization.py",
+      "config": {
+        "candidate_alphas": [
+          0.0,
+          0.19999999999999998,
+          0.39999999999999997,
+          0.6,
+          0.7999999999999999,
+          0.9999999999999999,
+          1.2
+        ],
+        "scenes": [
+          {
+            "n_oracle_train": 3,
+            "n_targets": 8,
+            "n_test": 3,
+            "name": "source_l8_snr20_offset035",
+            "offset_radius": 0.35,
+            "seed_offset": 100,
+            "snr_db": 20.0
+          },
+          {
+            "n_oracle_train": 3,
+            "n_targets": 8,
+            "n_test": 3,
+            "name": "target_l8_snr10_offset035",
+            "offset_radius": 0.35,
+            "seed_offset": 200,
+            "snr_db": 10.0
+          },
+          {
+            "n_oracle_train": 3,
+            "n_targets": 8,
+            "n_test": 3,
+            "name": "target_l8_snr20_offset045",
+            "offset_radius": 0.45,
+            "seed_offset": 300,
+            "snr_db": 20.0
+          },
+          {
+            "n_oracle_train": 2,
+            "n_targets": 16,
+            "n_test": 3,
+            "name": "target_l16_snr20_offset035",
+            "offset_radius": 0.35,
+            "seed_offset": 400,
+            "snr_db": 20.0
+          }
+        ],
+        "search_points": 5,
+        "search_radius": 0.45,
+        "seed": 20260624,
+        "shape": [
+          128,
+          16,
+          32
+        ],
+        "source_train_count": 3
+      },
+      "environment": {
+        "git_commit": "04273d4",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.9.13"
+      },
+      "metrics": {
+        "candidate_alphas": [
+          0.0,
+          0.19999999999999998,
+          0.39999999999999997,
+          0.6,
+          0.7999999999999999,
+          0.9999999999999999,
+          1.2
+        ],
+        "claim_update": "local-synthetic-pass",
+        "elapsed_seconds": 28.309090100000002,
+        "max_target_gap_vs_oracle_db": 0.4077002585556766,
+        "min_target_gain_vs_grid_db": 5.850359745018387,
+        "seed": 20260624,
+        "source_alpha": 0.7999999999999999,
+        "source_scene": "source_l8_snr20_offset035",
+        "source_train_count": 3,
+        "source_train_nmse_db": -12.090943419819704,
+        "tensor_shape": "128x16x32"
+      },
+      "notes": [
+        "Local synthetic cross-scene fallback only; not DeepMIMO or ray-traced channel evidence.",
+        "Source alpha is fitted once on the source scene and reused unchanged on all target scenes.",
+        "Target-oracle alpha is retuned on target train samples and reported only as a diagnostic upper bound."
+      ],
+      "run_id": "stage3_synthetic_cross_scene_generalization_20260624"
+    }
+  }
+}

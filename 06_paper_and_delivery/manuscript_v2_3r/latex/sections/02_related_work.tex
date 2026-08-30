@@ -1,0 +1,44 @@
+\section{Related Work}
+
+\paragraph{Sparse and tensor-based estimation in ISAC.}
+High-frequency communication and sensing channels are often represented by a small number of dominant propagation or target components, which makes sparse recovery a natural baseline for mmWave MIMO-OFDM estimation. Matching pursuit and orthogonal matching pursuit established greedy sparse approximation as an interpretable alternative to dense inversion \cite{mallat1993matching,pati1993omp,tropp2007omp}, while multiple-measurement-vector sparse recovery formalized the value of shared support across related observations \cite{cotter2005mmv}. These classical references explain why a Tensor-OMP scaffold is a natural starting point, but they do not by themselves address off-grid physical parameters or trainable target supervision.
+
+Tensor formulations add another important prior: angle, delay, Doppler, antenna, subcarrier, and snapshot dimensions can be kept separable instead of being collapsed into a single vectorized dictionary. Tensor factorization and uniqueness results provide the broader mathematical background for such separable representations \cite{sidiropoulos2000parallel,sidiropoulos2000unique,kolda2009tensor}. Recent ISAC neighbors include unified massive-MIMO tensor estimation \cite{zhang2024unified_tensor_isac}, the scalable decoupled-and-fused PLAIN architecture \cite{tahir2025plain}, and structured angle--delay--Doppler CP decomposition for mixed near-/far-field AFDM sensing \cite{luo2025angle_delay_doppler_afdm}. Deep-learning-aided CP-ALS further illustrates how learning can accelerate classical tensor decomposition \cite{gong2024dl_cpals}. Our implementation instead retains greedy Tensor-OMP support selection and learns only a bounded interpolation after a local candidate has been constructed.
+
+Sparse mmWave channel-estimation and hybrid-precoding work provides a second classical neighborhood. Channel-estimation and sparse-precoding formulations for millimeter-wave MIMO \cite{alkhateeb2014channel,ayach2014spatially} and broader surveys \cite{heath2016overview,rangan2014mmwave} motivate physically structured channel descriptions. The present manuscript adds held-out CDL-A/C evaluation while keeping unseen CDL-D as a failure boundary.
+
+\paragraph{Deep unfolding for wireless and JCAS.}
+Deep unfolding converts iterative optimization or sparse-recovery procedures into trainable networks whose layers retain an algorithmic interpretation \cite{monga2021algorithm_unrolling,shlezinger2023model_based_deep_learning}. Recent surveys consolidate wireless applications and design trade-offs \cite{deka2025deep_unfolding_review,shlezinger2025deep_unfolding_guidelines}. In joint communication and sensing, \cite{nguyen2024jcas_deep_unfolding_hbf} unfolds a hybrid-beamforming optimizer, while learned trimmed-ridge recovery targets sparse mmWave channel estimation \cite{wu2024learned_trimmed_ridge}. DDA-Net \cite{ma2026ddanet} unfolds ADMM for multi-snapshot channel reconstruction, uses a Doppler-domain denoiser and delay oversampling, and reports QuaDRiGa-to-CDL generalization. AirFM-DDA extends the same physical domain toward foundation-model channel tasks \cite{bian2026airfm_dda}. These are deeper trainable inference paths than the present post-support controller; our current evidence does not establish a comparable end-to-end unfolding network.
+
+\paragraph{Off-grid sparse recovery and model-driven refinement.}
+Discretized sparse estimators are sensitive to grid mismatch: a target or path between atoms can be represented by a biased or spread support. Off-grid sparse Bayesian inference \cite{yang2013ogsbi} and its recent AFDM-ISAC specialization \cite{luo2025offgrid_sbl_afdm} treat physical offsets as inference variables. Newtonized OMP provides the closest non-learning mechanism: it alternates sparse support detection with continuous Newton refinements for sparse OFDM-ISAC target estimation and includes measurement validation \cite{shah2024nomp_isac}. Our learned interpolation is bounded and support-conditioned, but the present experiments do not provide a matched-accuracy comparison against Newtonized OMP or off-grid SBL.
+
+\paragraph{Learning objectives for ISAC target estimation.}
+Learning-based ISAC estimators must balance communication-channel reconstruction with sensing-oriented target accuracy. OFDM radar-communication fusion and ISAC surveys establish the dual-functional signal-processing context \cite{sturm2011waveform,liu2022isac}; newer reviews organize deep-learning ISAC tasks and high-resolution parametric/neural sensing methods \cite{temiz2025deep_learning_isac_survey,naoumi2025high_resolution_isac,vaezi2025ai_empowered_isac_tutorial}. OFDM/OTFS comparisons show that waveform choice can materially affect joint performance \cite{gaudio2019ofdm_otfs}. A closer channel-estimation neighbor is \cite{yang2026radar_cenet}, which uses radar-derived angle information inside a deep-unfolded sparse channel-estimation network.
+
+The CDL controller operates in an FDMA virtual-array setting with an explicit multi-target parameter objective. Because the same target set can be listed in different orders, its training loss uses assignment-based matching to make the target-parameter term permutation-invariant. This use is algorithmic rather than a novelty claim: the Hungarian method and later assignment formulations are classical optimization tools \cite{kuhn1955hungarian,munkres1957assignment}. The manuscript also treats CRLB and impairment sensitivity as bounded analysis surfaces: standard estimation theory anchors the high-SNR CRLB check \cite{kay1993fundamentals}, while non-ideal massive-MIMO hardware analysis motivates keeping hardware impairment robustness as a future-work boundary rather than an established claim \cite{bjornson2014nonideal}.
+
+\paragraph{External benchmark context.}
+DeepMIMO provides a widely used ray-tracing benchmark context for mmWave and massive-MIMO research \cite{alkhateeb2019deepmimo,deepmimo2026toolchain}. Sionna supplies the standards-aligned link-level implementation used for the reported CDL evaluation \cite{hoydis2023sionna,3gpp38901}; QuaDRiGa is an established spatially consistent channel simulator and the source-domain benchmark used by DDA-Net \cite{jaeckel2014quadriga,ma2026ddanet}. The current DeepMIMO runs remain scalar-transfer proxies, so the trained physical external claim is carried by CDL rather than ray tracing.
+
+\paragraph{Closest-work boundary.}
+Table~\ref{tab:closest_work} makes the closest-work boundary explicit. The contribution is the evidence-backed combination of greedy tensor support selection, learned bounded local interpolation, permutation-invariant multi-target supervision, and visible failure boundaries, rather than novelty in any one ingredient.
+
+\begin{table*}[t]
+\centering
+\caption{Nearest-neighbor positioning. ``External evidence'' records each work's reported validation scope, not a head-to-head result.}
+\label{tab:closest_work}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.12\linewidth}p{0.17\linewidth}p{0.14\linewidth}p{0.16\linewidth}p{0.26\linewidth}}
+\toprule
+Method & Core inference & Off-grid mechanism & Learned component & External evidence / boundary \\
+\midrule
+NOMP-OFDM-ISAC \cite{shah2024nomp_isac} & greedy OMP target detection & continuous Newton refinement & none & simulated and semi-anechoic V2X sensing; range/velocity rather than learned 3-D tensor recovery \\
+Unified tensor ISAC \cite{zhang2024unified_tensor_isac} & classical tensor decomposition & parametric tensor factors & none & joint channel/target tensor anchor; no unfolded bounded-refinement controller \\
+PLAIN \cite{tahir2025plain} & decoupled subspace/CS estimation plus fusion & super-resolution estimators & none & scalable multi-dimensional architecture; no learned sparse-recovery path \\
+DDA-Net \cite{ma2026ddanet} & ADMM unfolding in DDA domain & delay oversampling & Doppler denoiser & QuaDRiGa training and CDL-B zero-shot channel NMSE; not ISAC multi-target supervision \\
+Learned Tensor-OMP refinement (ours) & greedy support selection plus LS & bounded interpolation toward a deterministic local candidate & one scalar locally; separate 210-parameter CDL controller & matched NOMP-inspired accuracy/runtime comparison; held-out CDL-A/C physical metrics; zero-shot CDL-D failure retained \\
+\bottomrule
+\end{tabular}
+\end{table*}

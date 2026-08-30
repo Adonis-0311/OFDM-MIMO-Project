@@ -1,0 +1,70 @@
+{
+  "config": {
+    "profiles": [
+      "A",
+      "C",
+      "D"
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "test_seeds": [
+      20260628,
+      20260629,
+      20260630,
+      20260701,
+      20260702
+    ],
+    "samples_per_profile_seed": 50,
+    "num_subcarriers": 64,
+    "num_tx_antennas": 4,
+    "spatial_truth_oversampling": 4096,
+    "subcarrier_spacing_hz": 120000.0,
+    "carrier_frequency_hz": 60000000000.0,
+    "delay_spread_s": 1e-07,
+    "device": "cpu",
+    "output_dir_name": "tsp_candan_cdl_audit_paper",
+    "scene_count": 9000,
+    "elapsed_seconds": 6.41394710005261
+  },
+  "profile_summary": [
+    {
+      "profile": "A",
+      "scene_count": 3000,
+      "mean_grid_channel_nmse_db": -9.648185073017785,
+      "mean_candan_channel_nmse_db": -19.871562592489042,
+      "mean_candan_gain_vs_grid_db": 10.223377519471256,
+      "gain_ci95_low_db": 10.045892047873734,
+      "gain_ci95_high_db": 10.400862991068779,
+      "harmful_update_rate": 0.0
+    },
+    {
+      "profile": "C",
+      "scene_count": 3000,
+      "mean_grid_channel_nmse_db": -9.968690013164693,
+      "mean_candan_channel_nmse_db": -14.876075844933085,
+      "mean_candan_gain_vs_grid_db": 4.90738583176839,
+      "gain_ci95_low_db": 4.5802308596140815,
+      "gain_ci95_high_db": 5.234540803922698,
+      "harmful_update_rate": 0.034666666666666665
+    },
+    {
+      "profile": "D",
+      "scene_count": 3000,
+      "mean_grid_channel_nmse_db": -18.286399376579293,
+      "mean_candan_channel_nmse_db": -18.570599197659465,
+      "mean_candan_gain_vs_grid_db": 0.28419982108017355,
+      "gain_ci95_low_db": 0.023044948176471458,
+      "gain_ci95_high_db": 0.5453546939838756,
+      "harmful_update_rate": 0.44433333333333336
+    }
+  ]
+}

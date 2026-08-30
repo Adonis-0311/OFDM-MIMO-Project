@@ -1,0 +1,87 @@
+{
+  "version": 2,
+  "generated_at": "2026-06-30",
+  "paper_line": "v2.3R",
+  "central_thesis": "Learned bounded interpolation after Tensor-OMP support selection is a lower-compute amortized refinement with separate CDL robustness evidence; matched NOMP-inspired recovery dominates accuracy, and the scalar, CDL-controller, and depth-diagnostic paths remain distinct.",
+  "claims": [
+    {
+      "claim_id": "C1",
+      "claim": "Joint channel and target estimation is represented as sparse angle-delay-Doppler tensor recovery in the evaluated FDMA virtual-array regime.",
+      "scope": "System formulation only.",
+      "evidence": ["../../01_design_and_plan/ISAC_DeepUnfolding_TechnicalDesign_v2.3R.md"],
+      "status": "design-supported",
+      "must_not_claim": ["The formulation alone proves identifiability or external performance."]
+    },
+    {
+      "claim_id": "C2",
+      "claim": "A one-parameter bounded interpolation scale improves local measurement-domain NMSE over grid Tensor-OMP.",
+      "scope": "Synthetic 128x16x32 tensor, SNR=20 dB, L={2,4,8}, five seeds, two train and 30 test scenes per L and seed.",
+      "evidence": ["../../05_results/stage2_torch_locked_scale_g2_seed_sweep_paper_30test/"],
+      "status": "supported-local-strengthened",
+      "primary_metrics": {
+        "mean_l_cell_gain_vs_grid_db": 5.8956,
+        "min_l_cell_gain_vs_grid_db": 5.3863,
+        "seed_mean_gain_ci95_low_db": 5.7830,
+        "seed_mean_gain_ci95_high_db": 6.0083
+      },
+      "must_not_claim": ["Deep multi-stage T-OMP-Net", "population-scale precision", "external physical validation"]
+    },
+    {
+      "claim_id": "C3",
+      "claim": "A separate 210-parameter feature-conditioned controller improves aggregate channel, delay, and projected-angle metrics on held-out CDL-A/C seeds.",
+      "scope": "CDL-A/C, 64x4 observation, SNR={0,10,20,30} dB, L={4,8,16}, five held-out seeds, 50 samples per profile and seed; CDL-D is zero-shot boundary evidence.",
+      "evidence": [
+        "../../05_results/sionna_cdl_ac_alias_lock_selected_scaled/",
+        "../../05_results/sionna_cdl_d_alias_lock_selected_zero_shot_scaled/"
+      ],
+      "status": "supported-held-out-ac-profile-scoped",
+      "primary_metrics": {
+        "ac_channel_nmse_gain_db": 6.2286,
+        "ac_delay_rmse_reduction_ns": 10.1241,
+        "ac_projected_angle_rmse_reduction_deg": 0.5277,
+        "d_channel_nmse_gain_db": -1.4862,
+        "d_delay_rmse_reduction_ns": -14.5820
+      },
+      "must_not_claim": ["Unseen-profile generalization", "CDL-D robustness", "deeper full T-OMP-Net evaluation"]
+    },
+    {
+      "claim_id": "C4",
+      "claim": "A deterministic plateau gate provides a restricted high-load depth-saving trade-off at 20 dB, but the same statistic is not stable across SNR.",
+      "scope": "Synthetic 128x16x32 tensor; positive claim only for L>=32 at 20 dB; five seeds and five test scenes per cell.",
+      "evidence": [
+        "../../05_results/stage3_a4_cross_l_plateau_gate_seed_sweep_strengthened/",
+        "../../05_results/stage3_a4_snr_plateau_gate_seed_sweep/",
+        "../../05_results/stage3_a4_snr_threshold_frontier/"
+      ],
+      "status": "supported-restricted; cross-snr-refuted",
+      "primary_metrics": {
+        "high_l_min_mean_depth_savings_percent": 26.5,
+        "high_l_max_nmse_gap_db": 0.4957,
+        "snr_min_mean_depth_savings_percent": 21.875,
+        "snr_max_nmse_gap_db": 0.6834
+      },
+      "must_not_claim": ["Network depth", "global adaptive-depth policy", "deployment guarantee"]
+    },
+    {
+      "claim_id": "C5",
+      "claim": "A paper-scale matched comparison places NOMP-inspired recovery at the accuracy-oriented end and the learned scalar at a lower-compute point.",
+      "scope": "Known-order dense sinusoidal tensors, SNR={0,10,20,30} dB, L={2,4,8}, five seeds, 20 paired scenes per cell.",
+      "evidence": [
+        "../../05_results/tensor_nomp3d_matched_paper_5seed/",
+        "../../05_results/e12_matched_accuracy_comparators/"
+      ],
+      "status": "trusted-with-caveats",
+      "primary_metrics": {
+        "nomp_advantage_vs_scalar_db": 42.1756,
+        "nomp_to_scalar_runtime_ratio": 8.1064,
+        "parafac_mean_nmse_db": -16.8550
+      },
+      "must_not_claim": ["Universal NOMP reproduction", "Learned-scalar accuracy superiority", "Matched ESPRIT accuracy"]
+    }
+  ],
+  "writing_blockers": [
+    "A unified executable multi-stage learned estimator is absent; retain the post-support-refinement title and identity until E11 is complete.",
+    "Author names, affiliations, funding acknowledgments, and the final target-journal metadata remain placeholders.",
+    "Trained DeepMIMO physical delay/angle evaluation and instrumented-receiver validation remain open."
+  ]
+}

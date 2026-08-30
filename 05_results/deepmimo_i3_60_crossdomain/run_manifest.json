@@ -1,0 +1,106 @@
+{
+  "command": "python 04_experiments/eval/run_deepmimo_i3_60_crossdomain.py",
+  "config": {
+    "bs_indices": [
+      1,
+      2
+    ],
+    "candidate_alphas": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0,
+      1.2
+    ],
+    "dataset_root": "D:\\E\\OFDM-MIMO_Radar_Estimation\\90_archive\\2025_thesis_materials\\\u53c2\u8003\\DeepMIMO-5GNR\\DeepMIMO_dataset\\I3_60_v1",
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "n_users": 16,
+    "num_subcarriers": 64,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "seed": 20260626,
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "source_alpha": 0.6419195571509573,
+    "source_alpha_source": "05_results\\stage2_torch_locked_scale_g2_seed_sweep\\stage2_torch_locked_scale_g2_seed_sweep_seeds.csv",
+    "subcarrier_spacing_hz": 120000.0,
+    "user_indices": [
+      7552,
+      15105,
+      33988,
+      41540,
+      45317,
+      54758,
+      66087,
+      69864,
+      81193,
+      88746,
+      96299,
+      98187,
+      101964,
+      107628,
+      109516,
+      111405
+    ]
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "bs_indices": "1,2",
+    "candidate_alphas": "0.0,0.2,0.4,0.6,0.8,1.0,1.2",
+    "claim_update": "partial-source-alpha-transfer",
+    "dataset": "DeepMIMO I3_60_v1 CIR files",
+    "elapsed_seconds": 5.697207599999729,
+    "finite_delay_truth_fraction": 1.0,
+    "finite_power_truth_fraction": 1.0,
+    "l_values": "4,8,16",
+    "max_path_count": 19.0,
+    "mean_bounded_gain_vs_grid_db": 6.298595106477035,
+    "mean_bounded_refine_channel_nmse_db_all": -20.21005605728914,
+    "mean_dominant_energy_recall_all": 0.9707795434147936,
+    "mean_grid_channel_nmse_db_all": -13.911460950812108,
+    "mean_oracle_alpha": 0.78125,
+    "mean_oracle_alpha_channel_nmse_db_all": -21.74740027873312,
+    "mean_oracle_alpha_gain_vs_grid_db": 7.835939327921014,
+    "mean_path_count": 14.4375,
+    "mean_source_alpha_channel_nmse_db_all": -20.686779075273257,
+    "mean_source_alpha_gain_vs_grid_db": 6.7753181244611485,
+    "mean_source_alpha_gap_vs_oracle_db": 1.0606212034598645,
+    "min_bounded_gain_vs_grid_db": -0.26157725243642127,
+    "min_mean_support_recall": 0.33203125,
+    "min_path_count": 10.0,
+    "min_source_alpha_gain_vs_grid_db": -0.14694240739696274,
+    "n_bs": 2.0,
+    "n_users": 16.0,
+    "num_subcarriers": 64.0,
+    "row_count": 12.0,
+    "rx_x_span_m": 8.914600372314453,
+    "rx_y_span_m": 6.7619805335998535,
+    "sample_row_count": 192.0,
+    "snrs_db": "0.0,10.0,20.0,30.0",
+    "source_alpha": 0.6419195571509573,
+    "source_alpha_source": "05_results\\stage2_torch_locked_scale_g2_seed_sweep\\stage2_torch_locked_scale_g2_seed_sweep_seeds.csv",
+    "transfer_proxy_classification": "partial"
+  },
+  "notes": [
+    "Auxiliary/dev E3 run: raw DeepMIMO I3_60 CIR MAT files are converted to normalized OFDM frequency-response tensors.",
+    "The deployment comparator is the Stage-2 source-trained scalar alpha applied directly to I3_60; full bounded refinement and oracle-alpha are diagnostic comparators.",
+    "I3_60 CIR parser treats each path payload as path_id, phase_deg, delay_s, power_db based on block-boundary validation and DeepMIMO CIR value ranges.",
+    "Delay/TX metrics are dominant-bin proxy RMSE values and must not be presented as final physical angle/delay RMSE.",
+    "This is still not a full trained cross-domain G2/T-OMP-Net evaluation because only the scalar alpha path transfers across domains."
+  ],
+  "run_id": "deepmimo_i3_60_crossdomain_dev_20260626"
+}

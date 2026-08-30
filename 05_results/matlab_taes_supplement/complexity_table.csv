@@ -1,0 +1,16 @@
+L,method,flops,mean_nmse_db,median_wall_ms
+2,grid,8.389e+06,-5.3566,10.569
+2,deterministic,1.194e+07,-13.3757,21.238
+2,learned_scalar,1.509e+07,-13.4774,26.271
+2,nomp_inspired,5.969e+07,-56.7701,80.377
+2,parafac_als,3.337e+07,-33.8822,14.764
+4,grid,1.573e+07,-5.4841,16.270
+4,deterministic,2.703e+07,-13.0513,37.651
+4,learned_scalar,3.752e+07,-13.1990,47.417
+4,nomp_inspired,1.752e+08,-53.2363,282.779
+4,parafac_als,6.686e+07,-16.9009,18.842
+8,grid,4.299e+07,-5.3476,31.719
+8,deterministic,8.238e+07,-12.3213,83.900
+8,learned_scalar,1.201e+08,-12.3934,111.460
+8,nomp_inspired,9.319e+08,-50.2893,1381.533
+8,parafac_als,1.343e+08,-12.9858,26.377

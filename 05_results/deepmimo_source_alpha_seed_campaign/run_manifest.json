@@ -1,0 +1,66 @@
+{
+  "command": "D:\\Python\\python.exe 04_experiments\\eval\\aggregate_deepmimo_source_alpha_seed_campaign.py",
+  "config": {
+    "confidence_interval": "two-sided Student-t 95% CI over seed means",
+    "fixed_contract": "SNR/L cells, channel construction, grid baseline, Stage-2 source alpha, refinement search, and metrics",
+    "n_users_per_seed": 100,
+    "seeds": [
+      20260626,
+      20260627,
+      20260628,
+      20260629,
+      20260630
+    ],
+    "source_manifests": [
+      "05_results\\deepmimo_o1_60_source_alpha_n100_seed_20260626\\run_manifest.json",
+      "05_results\\deepmimo_o1_60_source_alpha_n100_seed_20260627\\run_manifest.json",
+      "05_results\\deepmimo_o1_60_source_alpha_n100_seed_20260628\\run_manifest.json",
+      "05_results\\deepmimo_o1_60_source_alpha_n100_seed_20260629\\run_manifest.json",
+      "05_results\\deepmimo_o1_60_source_alpha_n100_seed_20260630\\run_manifest.json",
+      "05_results\\deepmimo_i3_60_source_alpha_n100_seed_20260626\\run_manifest.json",
+      "05_results\\deepmimo_i3_60_source_alpha_n100_seed_20260627\\run_manifest.json",
+      "05_results\\deepmimo_i3_60_source_alpha_n100_seed_20260628\\run_manifest.json",
+      "05_results\\deepmimo_i3_60_source_alpha_n100_seed_20260629\\run_manifest.json",
+      "05_results\\deepmimo_i3_60_source_alpha_n100_seed_20260630\\run_manifest.json"
+    ]
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "claim_update": "scaled-deepmimo-source-alpha-campaign-recorded",
+    "i3_60_campaign_classification": "partial",
+    "i3_60_ci95_source_alpha_gain_vs_grid_db_high": 6.936846169407491,
+    "i3_60_ci95_source_alpha_gain_vs_grid_db_low": 6.466016039428738,
+    "i3_60_mean_grid_channel_nmse_db": -13.980867521257442,
+    "i3_60_mean_source_alpha_channel_nmse_db": -20.68229862567556,
+    "i3_60_mean_source_alpha_gain_vs_grid_db": 6.7014311044181145,
+    "i3_60_mean_source_alpha_gap_vs_oracle_db": 0.9972642876430553,
+    "i3_60_min_cell_source_alpha_gain_vs_grid_db": -0.24115118541562042,
+    "i3_60_min_mean_support_recall": 0.30625,
+    "i3_60_min_seed_mean_source_alpha_gain_vs_grid_db": 6.409724295404705,
+    "n_datasets": 2,
+    "n_seed_runs": 10,
+    "n_seeds": 5,
+    "n_users_per_seed": 100,
+    "o1_60_campaign_classification": "weak",
+    "o1_60_ci95_source_alpha_gain_vs_grid_db_high": 1.3930616554612305,
+    "o1_60_ci95_source_alpha_gain_vs_grid_db_low": 1.2538469589533805,
+    "o1_60_mean_grid_channel_nmse_db": -4.6224814706707615,
+    "o1_60_mean_source_alpha_channel_nmse_db": -5.945935777878067,
+    "o1_60_mean_source_alpha_gain_vs_grid_db": 1.3234543072073055,
+    "o1_60_mean_source_alpha_gap_vs_oracle_db": 0.21197435440869353,
+    "o1_60_min_cell_source_alpha_gain_vs_grid_db": 0.8554463670332608,
+    "o1_60_min_mean_support_recall": 0.825,
+    "o1_60_min_seed_mean_source_alpha_gain_vs_grid_db": 1.2250421494588433
+  },
+  "notes": [
+    "Writing-facing E2/E3 robustness campaign for claim C4.",
+    "Only the random user sample and AWGN realization vary across seeds.",
+    "Negative and partial classifications are retained in seed_metrics.csv.",
+    "Scalar source-alpha proxy only; not final trained G2/T-OMP-Net evidence."
+  ],
+  "run_id": "deepmimo_source_alpha_seed_campaign_5x100"
+}

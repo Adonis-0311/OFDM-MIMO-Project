@@ -1,0 +1,93 @@
+{
+  "command": "python 04_experiments/eval/run_stage3_a5_hirjl_presmoke.py",
+  "config": {
+    "candidate_alphas": [
+      0.0,
+      0.19999999999999998,
+      0.39999999999999997,
+      0.6,
+      0.7999999999999999,
+      0.9999999999999999,
+      1.2
+    ],
+    "n_targets": 8,
+    "n_test": 5,
+    "n_train": 4,
+    "offset_radius": 0.35,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "seed": 20260624,
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "sigma_phi_degrees": [
+      0.0,
+      0.5,
+      1.0,
+      2.0,
+      3.0
+    ],
+    "snr_db": 20.0
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.9.13"
+  },
+  "metrics": {
+    "candidate_alphas": [
+      0.0,
+      0.19999999999999998,
+      0.39999999999999997,
+      0.6,
+      0.7999999999999999,
+      0.9999999999999999,
+      1.2
+    ],
+    "clean_train_nmse_db": -13.312861027941777,
+    "clean_trained_alpha": 0.7999999999999999,
+    "degradation_by_sigma_db": {
+      "0.0": 0.0,
+      "0.5": -1.9049101585011385e-06,
+      "1.0": 3.7041473124332924e-06,
+      "2.0": 1.1683922428673554e-05,
+      "3.0": 0.000171920386792479
+    },
+    "elapsed_seconds": 27.8398827,
+    "n_targets": 8,
+    "n_test": 5,
+    "n_train": 4,
+    "oracle_alpha_by_sigma": {
+      "0.0": 0.7999999999999999,
+      "0.5": 0.7999999999999999,
+      "1.0": 0.7999999999999999,
+      "2.0": 0.7999999999999999,
+      "3.0": 0.7999999999999999
+    },
+    "oracle_recovery_by_sigma_db": {
+      "0.0": 0.0,
+      "0.5": 0.0,
+      "1.0": 0.0,
+      "2.0": 0.0,
+      "3.0": 0.0
+    },
+    "seed": 20260624,
+    "sigma_phi_degrees": [
+      0.0,
+      0.5,
+      1.0,
+      2.0,
+      3.0
+    ],
+    "snr_db": 20.0,
+    "tensor_shape": "128x16x32"
+  },
+  "notes": [
+    "A5 pre-smoke isolates phase-noise stress before full HIR-JL robust training.",
+    "Clean-trained alpha is fitted only at sigma_phi=0 and reused under all phase-noise levels.",
+    "Oracle-retuned alpha per sigma is reported as a diagnostic; it is not a deployable robust-training result."
+  ],
+  "run_id": "stage3_a5_hirjl_presmoke_20260624"
+}

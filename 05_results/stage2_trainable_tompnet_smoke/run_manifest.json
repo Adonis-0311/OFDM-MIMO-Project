@@ -1,0 +1,50 @@
+{
+  "command": "python 04_experiments/eval/run_stage2_trainable_tompnet_smoke.py",
+  "config": {
+    "candidate_alphas": [
+      0.0,
+      0.09999999999999999,
+      0.19999999999999998,
+      0.3,
+      0.39999999999999997,
+      0.49999999999999994,
+      0.6,
+      0.7,
+      0.7999999999999999,
+      0.8999999999999999,
+      0.9999999999999999,
+      1.0999999999999999,
+      1.2
+    ],
+    "n_test": 6,
+    "n_train": 5,
+    "offset_radius": 0.35,
+    "seed": 20260624,
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snr_db": 20.0
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.9.13"
+  },
+  "metrics": {
+    "mean_abs_gap_vs_full_refine_db": 0.3287591618242818,
+    "mean_test_gain_vs_grid_db": 6.92932641428601,
+    "min_test_gain_vs_grid_db": 5.8604960854388475,
+    "n_test_per_l": 6,
+    "n_train_per_l": 5,
+    "snr_db": 20.0,
+    "tensor_shape": "128x16x32"
+  },
+  "notes": [
+    "NumPy trainable smoke learns a bounded off-grid interpolation alpha over curriculum L values.",
+    "This is a parameterized/training-path proof of wiring because PyTorch is unavailable in the current environment.",
+    "Full G2 still requires the planned trainable T-OMP-Net layer/curriculum implementation once PyTorch is installed."
+  ],
+  "run_id": "stage2_trainable_tompnet_smoke_20260624"
+}

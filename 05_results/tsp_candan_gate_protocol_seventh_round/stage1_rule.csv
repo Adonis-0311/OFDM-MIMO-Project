@@ -1,0 +1,2 @@
+minimum_zeta,maximum_clipping_rate,stage2_threshold,validation_gated_gain_db,validation_pass_rate,validation_ls_skip_rate,test_supported
+-inf,0.84375,0.0,7.483828822810058,0.9644444444444444,0.0,False

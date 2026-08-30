@@ -1,0 +1,67 @@
+{
+  "summary_rows": [
+    {
+      "method": "grid_fft_topk_plus_ls",
+      "sample_count": 18,
+      "mean_measurement_nmse_db": -5.7380488034784065,
+      "mean_gain_vs_grid_db": 0.0,
+      "mean_angle_bin_rmse": 1.651998815237602,
+      "mean_delay_bin_rmse": 0.7800525277626861,
+      "mean_doppler_bin_rmse": 2.200656230689392,
+      "mean_normalized_joint_bin_rmse": 0.1855532373026953,
+      "mean_matched_fraction_within_half_bin": 0.6388888888888888,
+      "median_wall_clock_ms": 0.7636000004822563
+    },
+    {
+      "method": "deterministic_cartesian_local_refinement_plus_ls",
+      "sample_count": 18,
+      "mean_measurement_nmse_db": -12.324695982320735,
+      "mean_gain_vs_grid_db": 6.586647178842328,
+      "mean_angle_bin_rmse": 1.8432111039550112,
+      "mean_delay_bin_rmse": 0.7537174432436746,
+      "mean_doppler_bin_rmse": 2.172681916811927,
+      "mean_normalized_joint_bin_rmse": 0.18235070386166052,
+      "mean_matched_fraction_within_half_bin": 0.7361111111111112,
+      "median_wall_clock_ms": 13.894449999952485
+    },
+    {
+      "method": "fixed_source_trained_scalar_interpolation_plus_ls",
+      "sample_count": 18,
+      "mean_measurement_nmse_db": -10.977870573835974,
+      "mean_gain_vs_grid_db": 5.239821770357565,
+      "mean_angle_bin_rmse": 1.6424886358591047,
+      "mean_delay_bin_rmse": 0.7383059187012884,
+      "mean_doppler_bin_rmse": 2.196598470202037,
+      "mean_normalized_joint_bin_rmse": 0.18082609629091867,
+      "mean_matched_fraction_within_half_bin": 0.7222222222222222,
+      "median_wall_clock_ms": 14.04080000020258
+    },
+    {
+      "method": "tensor_nomp3d_known_order_v1",
+      "sample_count": 18,
+      "mean_measurement_nmse_db": -21.489512807734073,
+      "mean_gain_vs_grid_db": 15.751464004255663,
+      "mean_angle_bin_rmse": 1.1488713680013551,
+      "mean_delay_bin_rmse": 0.5138016920803825,
+      "mean_doppler_bin_rmse": 1.1945291411840548,
+      "mean_normalized_joint_bin_rmse": 0.1139050665083465,
+      "mean_matched_fraction_within_half_bin": 0.8333333333333334,
+      "median_wall_clock_ms": 29.871499999899243
+    }
+  ],
+  "metrics": {
+    "row_count": 72,
+    "sample_count_per_method": 18,
+    "nomp_mean_gain_vs_grid_db": 15.751464004255663,
+    "nomp_mean_measurement_nmse_db": -21.489512807734073,
+    "nomp_mean_normalized_joint_bin_rmse": 0.1139050665083465,
+    "nomp_mean_matched_fraction_within_half_bin": 0.8333333333333334,
+    "nomp_median_wall_clock_ms": 29.871499999899243,
+    "scalar_mean_gain_vs_grid_db": 5.239821770357565,
+    "scalar_mean_measurement_nmse_db": -10.977870573835974,
+    "scalar_mean_normalized_joint_bin_rmse": 0.18082609629091867,
+    "scalar_median_wall_clock_ms": 14.04080000020258,
+    "nomp_nmse_delta_vs_scalar_db": 10.5116422338981,
+    "claim_update": "comparison-ready-pilot-pending-verification"
+  }
+}

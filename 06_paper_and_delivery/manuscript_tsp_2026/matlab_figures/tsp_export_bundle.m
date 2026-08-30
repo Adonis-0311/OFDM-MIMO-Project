@@ -1,0 +1,13 @@
+function tsp_export_bundle(fig, outDir, stem)
+%TSP_EXPORT_BUNDLE Vector paper formats plus high-resolution companions.
+drawnow;
+exportgraphics(fig, fullfile(outDir, stem + ".pdf"), ...
+    'ContentType', 'vector', 'BackgroundColor', 'white');
+exportgraphics(fig, fullfile(outDir, stem + ".svg"), ...
+    'ContentType', 'vector', 'BackgroundColor', 'white');
+exportgraphics(fig, fullfile(outDir, stem + ".png"), ...
+    'Resolution', 300, 'BackgroundColor', 'white');
+exportgraphics(fig, fullfile(outDir, stem + ".tiff"), ...
+    'Resolution', 600, 'BackgroundColor', 'white');
+close(fig);
+end

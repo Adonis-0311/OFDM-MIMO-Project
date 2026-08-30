@@ -1,0 +1,22 @@
+{
+  "command": "python 04_experiments/eval/run_tsp_support_quality_stratification.py",
+  "config": {
+    "output_dir_name": "tsp_support_quality_stratification_paper",
+    "source_dir_name": "tsp_full_offset_sweep_paper",
+    "test_scene_count": 1200
+  },
+  "environment": {
+    "git_commit": "c50a603",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "stratum_count": 18,
+    "test_scene_count": 1200
+  },
+  "notes": [
+    "Balanced rank quartiles preserve all tied conditioning values while keeping equal scene counts.",
+    "Support coverage, duplicate neighborhoods, conditioning, and minimum separation are reported on the same full-offset scenes."
+  ],
+  "run_id": "tsp_support_quality_stratification_paper_20260829"
+}

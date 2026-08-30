@@ -1,0 +1,20 @@
+{
+  "deepmimo": {
+    "dataset_files": 0,
+    "deepmimo_5gnr_exists": true,
+    "deepmimo_legacy_exists": true,
+    "i3_asset_hits": 0,
+    "o1_asset_hits": 0,
+    "reference_root_exists": true
+  },
+  "existing_smokes": {
+    "cdl_profile_generalization_smoke": true,
+    "deepmimo_set_e_access_audit": true
+  },
+  "matlab": {
+    "fiveg_toolbox_license": false,
+    "matlab_found": true,
+    "raw_output": "HAS_5G_TOOLBOX=0"
+  },
+  "readiness": "partial_external_dependency"
+}

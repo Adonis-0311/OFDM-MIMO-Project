@@ -1,0 +1,107 @@
+{
+  "command": "python 04_experiments/eval/run_stage3_a4_snr_threshold_frontier.py",
+  "config": {
+    "fixed_depth": 8,
+    "guarded_train_tolerance_db": 0.35,
+    "min_depth": 3,
+    "n_targets": 32,
+    "n_test": 2,
+    "n_train": 2,
+    "nmse_tolerance_db": 0.5,
+    "offset_radius": 0.35,
+    "radii": [
+      0.45,
+      0.28,
+      0.18,
+      0.11,
+      0.07,
+      0.045,
+      0.03,
+      0.02
+    ],
+    "search_points": 3,
+    "seeds": [
+      20260624,
+      20260625
+    ],
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snr_values_db": [
+      10.0,
+      20.0,
+      30.0
+    ],
+    "threshold_candidates_db": [
+      0.005,
+      0.01,
+      0.02,
+      0.035,
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.35,
+      0.5,
+      0.75,
+      1.0
+    ]
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.9.13"
+  },
+  "metrics": {
+    "elapsed_seconds": 146.695464,
+    "fixed_depth": 8,
+    "guarded_max_snr_nmse_gap_db": 0.3442196774444728,
+    "guarded_min_snr_mean_depth_savings_percent": 9.375,
+    "guarded_train_tolerance_db": 0.35,
+    "min_depth": 3,
+    "n_targets": 32,
+    "n_test": 2,
+    "n_train": 2,
+    "nmse_tolerance_db": 0.5,
+    "oracle_max_snr_nmse_gap_db": 0.45544848325961595,
+    "oracle_min_snr_mean_depth_savings_percent": 0.0,
+    "seeds": [
+      20260624,
+      20260625
+    ],
+    "snr_values_db": [
+      10.0,
+      20.0,
+      30.0
+    ],
+    "standard_max_snr_nmse_gap_db": 0.6691004690661329,
+    "standard_min_snr_mean_depth_savings_percent": 15.625,
+    "tensor_shape": "128x16x32",
+    "threshold_candidates_db": [
+      0.005,
+      0.01,
+      0.02,
+      0.035,
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.35,
+      0.5,
+      0.75,
+      1.0
+    ]
+  },
+  "notes": [
+    "Diagnostic frontier for the A4 SNR boundary; test-oracle rows are not deployable evidence.",
+    "Standard-train selection maximizes train savings under the 0.5 dB mean-gap tolerance.",
+    "Guarded-train selection uses a stricter 0.35 dB train mean-gap guard."
+  ],
+  "run_id": "stage3_a4_snr_threshold_frontier_20260625"
+}

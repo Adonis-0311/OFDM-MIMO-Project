@@ -1,0 +1,3 @@
+method,feature,direction,threshold,validation_gated_gain_db,validation_pass_rate
+candan,candan_residual_reduction_fraction,high,4.9859075510778475e-05,5.172082612766914,0.8
+hybrid,hybrid_residual_reduction_fraction,high,2.5168146645672873e-05,5.189467255448723,0.83

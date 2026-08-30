@@ -1,0 +1,100 @@
+\section{Signal Model and Estimation Objective}
+
+For tensor dimensions $N_a\times N_\tau\times N_\nu$, the synthetic observation is
+\begin{equation}
+ \mathcal{Y}=\mathcal{Y}_0+\mathcal{W}
+ =\sum_{\ell=1}^{L}\beta_\ell\,
+ \mathbf{a}_{N_a}(b_{a,\ell})\circ
+ \mathbf{a}_{N_\tau}(b_{\tau,\ell})\circ
+ \mathbf{a}_{N_\nu}(b_{\nu,\ell})+\mathcal{W},
+ \label{eq:observation_model}
+\end{equation}
+where $\beta_\ell\in\mathbb{C}$, $\circ$ is the outer product, and
+\begin{equation}
+ [\mathbf{a}_{N}(b)]_n=N^{-1/2}\exp\!\left(j2\pi nb/N\right),
+ \quad n=0,\ldots,N-1.
+ \label{eq:steering_atom}
+\end{equation}
+Each coordinate is $b_{d,\ell}=k_{d,\ell}+\delta_{d,\ell}$, where $k_{d,\ell}$ is the nearest periodic dictionary index and $\delta_{d,\ell}\in[-1/2,1/2)$ is its fractional offset. The executed front end forms the orthonormal multidimensional FFT
+\begin{equation}
+ \mathcal{Z}=\mathcal{F}_{N_a,N_\tau,N_\nu}\{\mathcal{Y}\},
+ \qquad
+ \mathcal{S}_0=\operatorname{Top}_{L}\{|\mathcal{Z}[\mathbf{k}]|\},
+ \label{eq:fft_top_l}
+\end{equation}
+where $\operatorname{Top}_{L}$ returns $L$ distinct bins in descending magnitude. A single pass selects the known number $L$ of periodic neighborhoods, within which the estimator refines the coordinates and amplitudes.
+
+Define the normalized complex Dirichlet kernel
+\begin{equation}
+ g_N(x)=\frac{1}{N}\sum_{n=0}^{N-1}e^{j2\pi nx/N}
+ =e^{j\pi(N-1)x/N}\frac{\sin(\pi x)}{N\sin(\pi x/N)},
+ \label{eq:complex_dirichlet}
+\end{equation}
+with its continuous value at integer multiples of $N$, and let
+$\mu_N(x)=|g_N(x)|$. Under the unitary FFT convention, a normalized separable
+atom contributes
+\begin{equation}
+ \left\langle\bigotimes_{r=1}^{D}\mathbf a_{N_r}(k_r),
+ \bigotimes_{r=1}^{D}\mathbf a_{N_r}(b_r)\right\rangle
+ =\prod_{r=1}^{D}g_{N_r}(b_r-k_r).
+ \label{eq:tensor_fft_factor}
+\end{equation}
+Coordinate differences are interpreted periodically.
+
+Figure~\ref{fig:system_model} places this separable model in the complete estimator. The same orthonormal FFT supplies both the top-$L$ neighborhoods and the axis triplets; the final fitted-energy comparison returns one set of coordinates, gains, and reconstruction.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.96\textwidth]{tsp_estimator_overview.pdf}
+  \caption{End-to-end projection-selected tensor estimator. The separable observation is transformed once; top-$L$ FFT neighborhoods provide $3DL$ center/neighbor samples for axis-wise Candan correction, joint LS estimates the gains, and the higher fitted-subspace energy returns either the refined or grid coordinates with the corresponding reconstruction.}
+  \label{fig:system_model}
+\end{figure*}
+
+The CDL experiment is generated separately from a 3GPP channel impulse response (CIR) using Sionna \cite{3gpp38901,hoydis2023sionna}. Let $h_{m,p}$ and $\tau_p$ be the complex response at base-station ULA element $m$ and delay of CIR component $p$. After channel normalization, the frequency--array observation is
+\begin{equation}
+ \begin{aligned}
+ H[n,m]&=c\sum_{p=1}^{L_{\rm CIR}}h_{m,p}
+ \exp(-j2\pi f_n\tau_p),\\
+ Y_{\rm CDL}[n,m]&=H[n,m]+W[n,m],
+ \end{aligned}
+ \label{eq:cdl_observation}
+\end{equation}
+where $f_n$ is the baseband subcarrier frequency and $c$ is the normalization applied by the channel generator. The array dimension is the four-element base-station transmit ULA observed by one user-terminal receive element. Complex AWGN is added after CIR-to-OFDM conversion, and the resulting dense $64\times4$ channel tensor is the estimator input, giving a direct channel-domain test of parameter estimation.
+
+The main reconstruction metric is measurement-domain normalized mean-square error (NMSE),
+\begin{equation}
+ \operatorname{NMSE}_{\mathrm{dB}}=10\log_{10}
+ \frac{\|\widehat{\mathcal{Y}}-\mathcal{Y}_0\|_F^2}
+ {\|\mathcal{Y}_0\|_F^2}.
+ \label{eq:nmse_metric}
+\end{equation}
+For method $m$, the reported reconstruction gain is $G_m=\operatorname{NMSE}_{\rm grid,dB}-\operatorname{NMSE}_{m,\rm dB}$, so a positive value favors $m$. Parameter errors use minimum-cost Hungarian assignment and circular distance on every active FFT axis. The all-axis $q$-bin accuracy is the fraction of matched components whose absolute circular error is at most $q$ bin on every active axis; we report $q\in\{0.1,0.25,0.5\}$ as tenth-, quarter-, and half-bin accuracy.
+
+For CDL physical metrics, the reference set retains the $\min(L,L_{\rm CIR})$ CIR components with largest summed array power as individual paths. Delay truth is $\tau_p$. A half-wavelength one-dimensional ULA identifies projected spatial frequency, whose reference is the peak of a 4096-point FFT of each clean per-component array response. Estimated bins are converted to delay and projected spatial frequency, then assigned by squared errors normalized to the delay and spatial bin resolutions. The reported projected-angle error is the minimum broadside-angle error over valid ULA aliases. This fixes reference selection, weighting, assignment, and alias handling before evaluation.
+
+Table~\ref{tab:system_params} collects the synthetic and CDL settings used by every reported comparison.
+
+\begin{table}[t]
+\centering
+\caption{Scene-generation and channel-observation protocol.}
+\label{tab:system_params}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{0.36\columnwidth}p{0.56\columnwidth}@{}}
+\toprule
+Item & Executed setting \\
+\midrule
+Synthetic tensor & $128\times16\times32$; $L\in\{2,4,8\}$ \\
+Coarse support & uniform distinct flat indices; unconstrained separation \\
+Offsets / gains & matched scenes: $\mathcal{U}[-0.35,0.35]$; full-offset: $\mathcal{U}[-0.49,0.49]$ bin per axis; $\mathcal{CN}(0,1)$ \\
+Synthetic AWGN & $\sigma^2=P_{\mathcal{Y}_0}10^{-\mathrm{SNR}/10}$; SNR $\in\{0,10,20,30\}$ dB \\
+Scene accounting & every generated scene retained in aggregate metrics \\
+\midrule
+CDL carrier / spacing & 60 GHz; 64 subcarriers at 120 kHz \\
+CDL spatial aperture & four-element BS transmit ULA, $\lambda/2$; one UT receive element \\
+Profiles / delay spread & 3GPP CDL-A/C/D; 100 ns; static terminal \\
+CDL counts / SNR & $L\in\{4,8,16\}$; $\{0,10,20,30\}$ dB \\
+CDL test split & 5 seeds; 50 channels/profile/seed; higher fitted-energy return rule \\
+\bottomrule
+\end{tabular}
+\end{table}

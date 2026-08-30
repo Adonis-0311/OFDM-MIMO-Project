@@ -1,0 +1,20 @@
+\section{Introduction}
+
+Millimeter-wave MIMO-OFDM systems offer the bandwidth and aperture needed for high-resolution sensing while simultaneously supporting communication links. In integrated sensing and communication (ISAC), the same received waveform can carry information about both propagation channels and physical targets. This shared geometry is attractive, but it also makes estimation harder: channel taps, target angles, delays, and Doppler shifts must be recovered from a high-dimensional observation while remaining interpretable enough for both communication and sensing tasks.
+
+A useful abstraction is to view the problem as sparse recovery over an angle-delay-Doppler tensor. Dominant paths or targets occupy only a small number of tensor atoms, so Tensor-OMP provides a natural model-driven baseline. A purely grid-based estimator, however, loses accuracy when physical parameters fall between dictionary bins. This off-grid mismatch is especially important when the recovered support should remain physically meaningful rather than merely reduce a black-box loss.
+
+This work studies learned bounded refinement after Tensor-OMP support selection. The central operation interpolates between a coarse grid support and a deterministic local candidate, then recomputes the least-squares reconstruction. Two learned implementations are evaluated rather than conflated: a one-parameter scalar interpolator for the local three-dimensional experiment and a separate 210-parameter feature controller for delay--angle CDL measurements. The latter uses permutation-invariant, alias-aware physical supervision. The contribution is therefore a constrained post-support learning mechanism, not a completed multi-layer Tensor-OMP network.
+
+The empirical story has four deliberately separate layers. Local synthetic data isolate scalar interpolation, yielding a mean 5.8956 dB gain for $L\in\{2,4,8\}$ over 450 held-out scenes. A matched multi-SNR comparison places the NOMP-inspired method at the accuracy-oriented end of the Pareto display and the learned scalar at a lower-compute, lower-accuracy point; this explicitly rules out an accuracy-supremacy claim. Scaled held-out CDL-A/C evaluation tests the distinct feature controller and improves channel NMSE by 6.2286 dB, delay RMSE by 10.1241 ns, and projected-angle RMSE by $0.5277^\circ$ on average, while zero-shot CDL-D exposes the profile-shift boundary. Finally, a deterministic repeated-refinement study evaluates a plateau gate at high load and 20 dB; its SNR sweep prevents a broader adaptive-depth claim.
+
+The paper makes five scoped contributions:
+\begin{enumerate}
+  \item It formulates joint channel and target parameter estimation as sparse recovery over an angle-delay-Doppler tensor for mmWave MIMO-OFDM ISAC.
+  \item It introduces bounded post-support interpolation and instantiates it as a one-parameter local model and a separate feature-conditioned delay--angle controller with permutation-invariant supervision.
+  \item It provides controlled local evidence and scaled held-out CDL-A/C physical evaluation, together with a zero-shot CDL-D failure boundary.
+  \item It reports a matched NMSE--runtime Pareto comparison that discloses NOMP-inspired accuracy dominance in the matched synthetic regime and frames learning as compute amortization plus external robustness.
+  \item It characterizes a restricted deterministic high-load early-stop diagnostic and reports the SNR sensitivity that prevents a broader adaptive-depth claim.
+\end{enumerate}
+
+The manuscript remains conservative. A unified multi-stage learned estimator, trained DeepMIMO physical evaluation, instrumented-receiver validation, robust hardware-impairment training, and full multi-target CRLB tightness remain open. The matched NOMP-inspired result is restricted to known-order dense tensors from the sinusoidal generator, and the overall result is standards-aligned but not profile-universal.

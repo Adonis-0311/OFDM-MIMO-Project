@@ -1,0 +1,41 @@
+{
+  "command": "python 04_experiments/eval/run_stage3_paper_scale_kruskal_proxy.py",
+  "config": {
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "source_csv": "05_results\\paper_scale_tensor_omp_g1\\paper_scale_tensor_omp_g1.csv"
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.9.13"
+  },
+  "metrics": {
+    "l_values": [
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "max_bound_ratio": 0.735632183908046,
+    "max_kruskal_risk_factor": 7.742911152445797,
+    "mean_nmse_db_all": -57.848162954738314,
+    "min_kruskal_margin": 23.0,
+    "min_support_recall": 1.0,
+    "nmse_slope_vs_bound_ratio": 19.733638065986813,
+    "paper_kruskal_bound": 87,
+    "runtime_slope_vs_bound_ratio": -0.000600086673773979,
+    "tensor_shape": "128x16x32"
+  },
+  "notes": [
+    "Derived from the existing paper_scale_tensor_omp_g1 run; no new recovery samples are generated.",
+    "Kruskal proxy bound uses floor((Nv + K + M - 2) / 2) for the paper-scale 128x16x32 tensor.",
+    "This is on-grid FFT Tensor-OMP sanity evidence and must not be presented as off-grid or DeepMIMO validation."
+  ],
+  "run_id": "stage3_paper_scale_kruskal_proxy_20260624"
+}

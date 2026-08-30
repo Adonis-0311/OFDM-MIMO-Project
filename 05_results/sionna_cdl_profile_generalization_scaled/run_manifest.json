@@ -1,0 +1,69 @@
+{
+  "command": "D:\\Python\\python.exe 04_experiments\\eval\\run_sionna_cdl_profile_generalization.py --profiles A C D --snrs 0 10 20 30 --l-values 4 8 16 --seeds 20260626 20260627 20260628 20260629 20260630 --samples-per-profile-seed 50 --num-subcarriers 128 --num-tx-antennas 16 --output-dir-name sionna_cdl_profile_generalization_scaled",
+  "config": {
+    "carrier_frequency_hz": 60000000000.0,
+    "delay_spread_s": 1e-07,
+    "device": "cpu",
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "num_subcarriers": 128,
+    "num_tx_antennas": 16,
+    "profiles": [
+      "A",
+      "C",
+      "D"
+    ],
+    "samples_per_profile_seed": 50,
+    "seeds": [
+      20260626,
+      20260627,
+      20260628,
+      20260629,
+      20260630
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "subcarrier_spacing_hz": 120000.0
+  },
+  "environment": {
+    "git_commit": "04273d4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "best_mean_channel_nmse_db": -22.072800520840495,
+    "claim_update": "energy-supported-exact-bin-weak",
+    "elapsed_seconds": 4.859063200000492,
+    "l_values": "4,8,16",
+    "mean_channel_nmse_db_all": -11.439923861785559,
+    "mean_dominant_energy_recall_all": 0.8801727597234507,
+    "mean_effective_support_95_all": 20.104,
+    "mean_effective_support_99_all": 86.88266666666667,
+    "mean_topk_energy_efficiency_all": 0.9987857713200994,
+    "min_mean_angle_support_recall": 0.6225,
+    "min_mean_delay_support_recall": 0.45125,
+    "min_mean_support_recall": 0.41875,
+    "min_mean_topk_energy_efficiency": 0.9885541932208239,
+    "profiles": "A,C,D",
+    "row_count": 180.0,
+    "sample_row_count": 9000.0,
+    "samples_per_profile_seed": 50.0,
+    "seed_count": 5.0,
+    "snrs_db": "0.0,10.0,20.0,30.0",
+    "worst_mean_channel_nmse_db": -5.2730047655044805
+  },
+  "notes": [
+    "Auxiliary/dev E1 run: validates Sionna CDL-A/C/D -> noisy frequency response -> FFT top-k Tensor-OMP proxy metrics.",
+    "Delay/angle metrics are grid-bin proxy RMSE values from dominant FFT bins, not final physical path RMSE.",
+    "Exact support recall is retained; top-k energy efficiency and axis-specific recall diagnose over-budgeted or unresolved support cells without replacing the canonical metric.",
+    "The manifest records whether the selected seed/sample configuration reaches the planned five-seed x 50-sample E1 scale."
+  ],
+  "run_id": "sionna_cdl_profile_generalization_dev_5x50_n128_m16"
+}
