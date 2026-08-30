@@ -1,0 +1,42 @@
+{
+  "profiles": [
+    "A",
+    "C",
+    "D"
+  ],
+  "snrs": [
+    0.0,
+    10.0,
+    20.0,
+    30.0
+  ],
+  "l_values": [
+    4,
+    8,
+    16
+  ],
+  "validation_seeds": [
+    20260625,
+    20260626,
+    20260627
+  ],
+  "test_seeds": [
+    20260628,
+    20260629,
+    20260630,
+    20260701,
+    20260702
+  ],
+  "samples_per_profile_seed": 50,
+  "num_subcarriers": 64,
+  "num_tx_antennas": 4,
+  "spatial_truth_oversampling": 4096,
+  "subcarrier_spacing_hz": 120000.0,
+  "carrier_frequency_hz": 60000000000.0,
+  "delay_spread_s": 1e-07,
+  "search_radius": 0.45,
+  "search_points": 5,
+  "route_win_epsilon_db": 0.1,
+  "device": "cpu",
+  "output_dir_name": "tsp_candan_route_audit_paper"
+}

@@ -1,0 +1,223 @@
+{
+  "config": {
+    "profiles": [
+      "A",
+      "C",
+      "D"
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "validation_seeds": [
+      20260625,
+      20260626,
+      20260627
+    ],
+    "test_seeds": [
+      20260628,
+      20260629,
+      20260630,
+      20260701,
+      20260702
+    ],
+    "samples_per_profile_seed": 50,
+    "num_subcarriers": 64,
+    "num_tx_antennas": 4,
+    "spatial_truth_oversampling": 4096,
+    "subcarrier_spacing_hz": 120000.0,
+    "carrier_frequency_hz": 60000000000.0,
+    "delay_spread_s": 1e-07,
+    "search_radius": 0.45,
+    "search_points": 5,
+    "route_win_epsilon_db": 0.1,
+    "device": "cpu",
+    "output_dir_name": "tsp_candan_route_audit_paper"
+  },
+  "route": {
+    "feature": "candan_residual_reduction_fraction",
+    "direction": "low",
+    "threshold": -0.00484024766476437,
+    "validation_hybrid_gain_db": 5.016618526290747,
+    "validation_gain_over_candan_db": 0.031573242541162116,
+    "validation_fallback_rate": 0.07
+  },
+  "candan_gate": {
+    "feature": "candan_residual_reduction_fraction",
+    "direction": "high",
+    "threshold": 4.9859075510778475e-05,
+    "validation_gated_gain_db": 5.172082612766914,
+    "validation_pass_rate": 0.8
+  },
+  "hybrid_gate": {
+    "feature": "hybrid_residual_reduction_fraction",
+    "direction": "high",
+    "threshold": 2.5168146645672873e-05,
+    "validation_gated_gain_db": 5.189467255448723,
+    "validation_pass_rate": 0.83
+  },
+  "route_classification": {
+    "validation": {
+      "row_count": 5400,
+      "positive_count": 1388,
+      "fallback_rate": 0.07,
+      "positive_recall": 0.1361671469740634,
+      "negative_rejection": 0.9528913260219342,
+      "auroc": 0.5761634405141923,
+      "average_precision": 0.35507261439088433
+    },
+    "test": {
+      "row_count": 9000,
+      "positive_count": 2327,
+      "fallback_rate": 0.058888888888888886,
+      "positive_recall": 0.09798023205844435,
+      "negative_rejection": 0.9547429941555522,
+      "auroc": 0.5332290147308059,
+      "average_precision": 0.30304102580101566
+    }
+  },
+  "gate_classification": {
+    "candan_test": {
+      "row_count": 9000,
+      "positive_count": 7563,
+      "negative_count": 1437,
+      "pass_rate": 0.8173333333333334,
+      "positive_recall": 0.9275419806954912,
+      "negative_rejection": 0.7627000695894224
+    },
+    "hybrid_test": {
+      "row_count": 9000,
+      "positive_count": 7560,
+      "negative_count": 1440,
+      "pass_rate": 0.8443333333333334,
+      "positive_recall": 0.9443121693121693,
+      "negative_rejection": 0.6805555555555556
+    }
+  },
+  "test_profile_summary": [
+    {
+      "profile": "A",
+      "scene_count": 3000,
+      "candan_gain_db": 10.223377519471256,
+      "candan_gain_ci95_low_db": 10.045892047873734,
+      "candan_gain_ci95_high_db": 10.400862991068779,
+      "gated_candan_gain_db": 10.219904951660066,
+      "gated_candan_gain_ci95_low_db": 10.038858360226461,
+      "gated_candan_gain_ci95_high_db": 10.40095154309367,
+      "cartesian_gain_db": 9.332739182998697,
+      "cartesian_gain_ci95_low_db": 8.936908241425407,
+      "cartesian_gain_ci95_high_db": 9.728570124571988,
+      "hybrid_gain_db": 10.222984839189598,
+      "hybrid_gain_ci95_low_db": 10.044918837299686,
+      "hybrid_gain_ci95_high_db": 10.40105084107951,
+      "gated_hybrid_gain_db": 10.221033123516705,
+      "gated_hybrid_gain_ci95_low_db": 10.041689294859356,
+      "gated_hybrid_gain_ci95_high_db": 10.400376952174053,
+      "oracle_gain_db": 10.626064980148715,
+      "oracle_gain_ci95_low_db": 10.42064338122251,
+      "oracle_gain_ci95_high_db": 10.831486579074921,
+      "hybrid_fallback_rate": 0.001,
+      "gated_candan_pass_rate": 0.998,
+      "gated_hybrid_pass_rate": 0.999,
+      "candan_delay_rmse_ns": 307.7734924062928,
+      "gated_candan_delay_rmse_ns": 307.76477484008035,
+      "candan_angle_rmse_deg": 28.32740644312363,
+      "gated_candan_angle_rmse_deg": 28.323523653365196
+    },
+    {
+      "profile": "C",
+      "scene_count": 3000,
+      "candan_gain_db": 4.90738583176839,
+      "candan_gain_ci95_low_db": 4.5802308596140815,
+      "candan_gain_ci95_high_db": 5.234540803922698,
+      "gated_candan_gain_db": 4.907001388478469,
+      "gated_candan_gain_ci95_low_db": 4.578556094302624,
+      "gated_candan_gain_ci95_high_db": 5.235446682654314,
+      "cartesian_gain_db": 4.091622236842654,
+      "cartesian_gain_ci95_low_db": 3.612320135243589,
+      "cartesian_gain_ci95_high_db": 4.570924338441719,
+      "hybrid_gain_db": 4.975833539024306,
+      "hybrid_gain_ci95_low_db": 4.693598845718188,
+      "hybrid_gain_ci95_high_db": 5.258068232330424,
+      "gated_hybrid_gain_db": 4.967576454925863,
+      "gated_hybrid_gain_ci95_low_db": 4.675180359460448,
+      "gated_hybrid_gain_ci95_high_db": 5.259972550391279,
+      "oracle_gain_db": 5.627679035465529,
+      "oracle_gain_ci95_low_db": 5.265528729082138,
+      "oracle_gain_ci95_high_db": 5.989829341848919,
+      "hybrid_fallback_rate": 0.042666666666666665,
+      "gated_candan_pass_rate": 0.9386666666666666,
+      "gated_hybrid_pass_rate": 0.9683333333333334,
+      "candan_delay_rmse_ns": 275.30376147769925,
+      "gated_candan_delay_rmse_ns": 276.1563248869963,
+      "candan_angle_rmse_deg": 29.727806924262463,
+      "gated_candan_angle_rmse_deg": 29.630164261864717
+    },
+    {
+      "profile": "D",
+      "scene_count": 3000,
+      "candan_gain_db": 0.28419982108017355,
+      "candan_gain_ci95_low_db": 0.023044948176471458,
+      "candan_gain_ci95_high_db": 0.5453546939838756,
+      "gated_candan_gain_db": 0.7107667905446072,
+      "gated_candan_gain_ci95_low_db": 0.5180572898861416,
+      "gated_candan_gain_ci95_high_db": 0.9034762912030728,
+      "cartesian_gain_db": -1.1037336407138036,
+      "cartesian_gain_ci95_low_db": -1.4070040840684241,
+      "cartesian_gain_ci95_high_db": -0.8004631973591831,
+      "hybrid_gain_db": 0.3032625386342362,
+      "hybrid_gain_ci95_low_db": 0.015581765238429024,
+      "hybrid_gain_ci95_high_db": 0.5909433120300434,
+      "gated_hybrid_gain_db": 0.7037618247237647,
+      "gated_hybrid_gain_ci95_low_db": 0.4975835172363537,
+      "gated_hybrid_gain_ci95_high_db": 0.9099401322111758,
+      "oracle_gain_db": 0.9312934200782648,
+      "oracle_gain_ci95_low_db": 0.7262852100611834,
+      "oracle_gain_ci95_high_db": 1.1363016300953461,
+      "hybrid_fallback_rate": 0.133,
+      "gated_candan_pass_rate": 0.5153333333333333,
+      "gated_hybrid_pass_rate": 0.5656666666666667,
+      "candan_delay_rmse_ns": 659.316290166969,
+      "gated_candan_delay_rmse_ns": 656.6527682750822,
+      "candan_angle_rmse_deg": 32.31443552757681,
+      "gated_candan_angle_rmse_deg": 32.67114701482123
+    },
+    {
+      "profile": "All",
+      "scene_count": 9000,
+      "candan_gain_db": 5.13832105743994,
+      "candan_gain_ci95_low_db": 4.9215872154268085,
+      "candan_gain_ci95_high_db": 5.355054899453072,
+      "gated_candan_gain_db": 5.279224376894382,
+      "gated_candan_gain_ci95_low_db": 5.0660137974362085,
+      "gated_candan_gain_ci95_high_db": 5.492434956352555,
+      "cartesian_gain_db": 4.1068759263758485,
+      "cartesian_gain_ci95_low_db": 3.747852260806917,
+      "cartesian_gain_ci95_high_db": 4.46589959194478,
+      "hybrid_gain_db": 5.1673603056160475,
+      "hybrid_gain_ci95_low_db": 4.954257509883111,
+      "hybrid_gain_ci95_high_db": 5.380463101348984,
+      "gated_hybrid_gain_db": 5.297457134388776,
+      "gated_hybrid_gain_ci95_low_db": 5.0919046722778285,
+      "gated_hybrid_gain_ci95_high_db": 5.503009596499724,
+      "oracle_gain_db": 5.728345811897503,
+      "oracle_gain_ci95_low_db": 5.483473442894574,
+      "oracle_gain_ci95_high_db": 5.973218180900432,
+      "hybrid_fallback_rate": 0.058888888888888886,
+      "gated_candan_pass_rate": 0.8173333333333334,
+      "gated_hybrid_pass_rate": 0.8443333333333334,
+      "candan_delay_rmse_ns": 414.13118135032033,
+      "gated_candan_delay_rmse_ns": 413.5246226673863,
+      "candan_angle_rmse_deg": 30.123216298320965,
+      "gated_candan_angle_rmse_deg": 30.208278310017047
+    }
+  ],
+  "elapsed_seconds": 71.0034976999741
+}

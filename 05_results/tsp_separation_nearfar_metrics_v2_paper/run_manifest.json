@@ -1,0 +1,72 @@
+{
+  "command": "python 04_experiments/eval/run_tsp_separation_nearfar_stress.py",
+  "config": {
+    "dynamic_ranges_db": [
+      0.0,
+      10.0,
+      20.0
+    ],
+    "minimum_validation_positive_recall": 0.9,
+    "n_targets": 4,
+    "output_dir_name": "tsp_separation_nearfar_metrics_v2_paper",
+    "radius_sensitivity_samples_per_seed": 10,
+    "radius_values": [
+      0.25,
+      0.35,
+      0.45,
+      0.5,
+      0.55
+    ],
+    "samples_per_cell_seed": 5,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "separations": [
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "test_seeds": [
+      20260822,
+      20260823,
+      20260824,
+      20260825,
+      20260826
+    ],
+    "validation_seeds": [
+      20260820,
+      20260821
+    ]
+  },
+  "environment": {
+    "git_commit": "c50a603",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "gate_threshold": 0.017491963296016766,
+    "test_scene_count": 1200,
+    "validation_scene_count": 480,
+    "worst_cell_gated_gain_db": 5.317940532660184
+  },
+  "notes": [
+    "Each scene contains one controlled close pair; the pair axis cycles across angle, delay, and Doppler.",
+    "The second member of the pair sets the requested amplitude dynamic range; nuisance components are placed at least four Euclidean circular bins away.",
+    "The residual threshold is calibrated only on two validation seeds and frozen on five independent test seeds.",
+    "All generated scenes contribute to the support, component-hit, conditioning, and reconstruction summaries.",
+    "The score-gap envelope uses eta=0.05 and 125 candidates per neighborhood; component and all-component scene counts are stored explicitly.",
+    "Distinct-pair recovery jointly requires truth-assigned coordinate accuracy and separation fidelity; separation error is also reported continuously."
+  ],
+  "run_id": "tsp_separation_nearfar_metrics_v2_paper_20260829"
+}

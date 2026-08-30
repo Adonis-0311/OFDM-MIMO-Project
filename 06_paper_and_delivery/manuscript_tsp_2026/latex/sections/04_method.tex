@@ -1,0 +1,83 @@
+\section{Projection-Selected Multidimensional Candan Refinement}
+
+The proposed estimator preserves the $L$ neighborhoods selected by \eqref{eq:fft_top_l}. It applies a closed-form complex three-sample correction along every active axis, forms one joint-LS reconstruction, and selects between the grid and Candan fitted subspaces. Figure~\ref{fig:architecture} summarizes the executed path.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.96\textwidth]{tsp_method_flow.pdf}
+  \caption{Projection-selected multidimensional Candan refinement. One FFT supplies $3DL$ triplet samples. The grid energy comes directly from the selected orthonormal FFT coefficients, while the refined energy is obtained from the Candan design QR factor.}
+  \label{fig:architecture}
+\end{figure*}
+
+\subsection{Axis-Wise Complex Three-Sample Update}
+
+Let $\mathbf{k}_\ell=(k_{1,\ell},\ldots,k_{D,\ell})$ be a selected FFT bin. For axis $d$, denote the center coefficient and its two periodic neighbors by
+\begin{equation}
+ Z_{d,0}=\mathcal{Z}[\mathbf{k}_\ell],\quad
+ Z_{d,-}=\mathcal{Z}[\mathbf{k}_\ell-\mathbf{e}_d],\quad
+ Z_{d,+}=\mathcal{Z}[\mathbf{k}_\ell+\mathbf{e}_d],
+ \label{eq:candan_triplet}
+\end{equation}
+where all non-$d$ coordinates remain fixed and indexing wraps modulo $N_d$. Candan's finite-length-corrected update is
+\begin{equation}
+ \widetilde{\delta}_{d,\ell}=
+ \frac{\tan(\pi/N_d)}{\pi/N_d}
+ \operatorname{Re}\!\left\{
+ \frac{Z_{d,-}-Z_{d,+}}
+ {2Z_{d,0}-Z_{d,-}-Z_{d,+}}
+ \right\}.
+ \label{eq:candan_update}
+\end{equation}
+The deployed coordinate is
+\begin{equation}
+ \widehat b_{d,\ell}=
+ \operatorname{mod}_{N_d}\!\left(
+ k_{d,\ell}+\operatorname{clip}(\widetilde{\delta}_{d,\ell},-1/2,1/2)
+ \right).
+ \label{eq:candan_clip}
+\end{equation}
+For the four-element CDL array, the same Nyquist-alias convention is applied to the grid and refined coordinates before evaluation.
+
+The normalized denominator statistic used in the analysis is
+\begin{equation}
+ \zeta_{d,\ell}=
+ \frac{|2Z_{d,0}-Z_{d,-}-Z_{d,+}|}
+ {|Z_{d,-}|+2|Z_{d,0}|+|Z_{d,+}|+\varepsilon}.
+ \label{eq:candan_stability}
+\end{equation}
+where $\varepsilon$ is machine precision. This statistic lies in $[0,1]$, is computed directly from the received triplet, and scales the quotient perturbation bound in Section~\ref{sec:analysis}. The final return decision uses the scene-level fitted-energy statistic below.
+
+\subsection{Joint LS and Calibration-Free Projection Selection}
+
+Let $\mathbf y=\operatorname{vec}(\mathcal Y)$ and let $\mathbf B=[\mathbf b_1,\ldots,\mathbf b_L]\in\mathbb R^{D\times L}$ collect component coordinates. Define $\mathbf a(\mathbf b_\ell)=\bigotimes_{d=1}^{D}\mathbf a_{N_d}(b_{d,\ell})$ and $\mathbf A(\mathbf B)=[\mathbf a(\mathbf b_1),\ldots,\mathbf a(\mathbf b_L)]$. The matrices $\mathbf B_0$ and $\mathbf B_{\rm C}$ contain the selected grid and Candan coordinates. The refined amplitudes and reconstruction are
+\begin{equation}
+ \widehat{\boldsymbol{\beta}}_{\rm C}
+ =\arg\min_{\boldsymbol{\beta}}
+ \|\mathbf{y}-\mathbf{A}(\mathbf{B}_{\rm C})\boldsymbol{\beta}\|_2^2,
+ \qquad
+ \widehat{\mathbf{y}}_{\rm C}=\mathbf{A}(\mathbf{B}_{\rm C})
+ \widehat{\boldsymbol{\beta}}_{\rm C}.
+ \label{eq:ls_reconstruction}
+\end{equation}
+Let $\mathbf P_s=\mathbf A(\mathbf B_s)\mathbf A(\mathbf B_s)^\dagger$ for $s\in\{0,{\rm C}\}$ denote the grid and refined orthogonal projectors. The normalized residual reduction is equivalently the fitted-energy difference
+\begin{equation}
+ \Delta\rho=\frac{\|\mathbf P_{\rm C}\mathbf y\|_2^2-
+ \|\mathbf P_0\mathbf y\|_2^2}{\|\mathbf y\|_2^2}.
+ \label{eq:observable_residual}
+\end{equation}
+The selected integer-bin atoms are distinct columns of the unitary DFT basis, so
+$\|\mathbf P_0\mathbf y\|_2^2=\sum_{\mathbf k\in\mathcal S_0}|\mathcal Z[\mathbf k]|^2$.
+If $\mathbf A(\mathbf B_{\rm C})=\mathbf Q_{\rm C}\mathbf R_{\rm C}$ is the QR factorization already used for the refined LS, then
+$\|\mathbf P_{\rm C}\mathbf y\|_2^2=\|\mathbf Q_{\rm C}^H\mathbf y\|_2^2$.
+Thus the existing FFT coefficients and refined QR factor supply both fitted energies. The returned result is
+\begin{equation}
+ (\widehat{\mathbf{B}},\widehat{\mathbf{y}})=
+ \begin{cases}
+ (\mathbf{B}_{\rm C},\widehat{\mathbf{y}}_{\rm C}),&\Delta\rho\geq0,\\
+ (\mathbf{B}_0,\mathbf P_0\mathbf y),&\Delta\rho<0.
+ \end{cases}
+ \label{eq:residual_gate}
+\end{equation}
+The decision point $\Delta\rho=0$ follows directly from returning the fitted subspace that explains more of the received tensor. Across 60 numerical identity checks, the projection and explicit-residual decisions agree within $5.44\times10^{-15}$, and QR- and reconstruction-based projection energies agree within $1.09\times10^{-14}$ after normalization.
+
+The update reads exactly $3DL$ complex FFT samples. The complete path adds the refined joint LS and one scalar fitted-energy comparison to the common FFT top-$L$ front end.

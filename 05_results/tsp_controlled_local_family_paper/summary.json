@@ -1,0 +1,159 @@
+{
+  "config": {
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "validation_seeds": [
+      20260808,
+      20260809
+    ],
+    "test_seeds": [
+      20260630,
+      20260701,
+      20260702,
+      20260703,
+      20260704
+    ],
+    "samples_per_cell_seed": 20,
+    "offset_radius": 0.35,
+    "search_radius": 0.45,
+    "search_points": 5,
+    "minimum_validation_positive_recall": 0.9,
+    "output_dir_name": "tsp_controlled_local_family_paper"
+  },
+  "gate": {
+    "threshold": 0.017562690684875093,
+    "validation_positive_recall": 1.0,
+    "validation_negative_rejection": NaN,
+    "validation_gated_gain_db": 7.431282989753615,
+    "validation_pass_rate": 1.0
+  },
+  "validation_scene_count": 480,
+  "test_scene_count": 1200,
+  "test_row_count": 7200,
+  "summary_rows": [
+    {
+      "method": "grid_fft_topL_joint_ls",
+      "sample_count": 1200,
+      "mean_measurement_nmse_db": -5.430005760122908,
+      "measurement_nmse_ci95_low_db": -5.527407904567842,
+      "measurement_nmse_ci95_high_db": -5.332603615677974,
+      "mean_gain_vs_grid_db": 0.0,
+      "harmful_update_rate": 0.0,
+      "mean_all_axis_half_bin_hit": 0.7190624999999999,
+      "half_bin_hit_ci95_low": 0.6971862534516917,
+      "half_bin_hit_ci95_high": 0.7409387465483082,
+      "mean_angle_bin_rmse": 9.9545398993219,
+      "mean_delay_bin_rmse": 1.2098132896157683,
+      "mean_doppler_bin_rmse": 2.5297194288848903,
+      "median_wall_clock_ms": 8.916999999200925,
+      "work_contract": "one 3-D FFT; 0 local scores; one joint LS"
+    },
+    {
+      "method": "axiswise_quadratic_peak_joint_ls",
+      "sample_count": 1200,
+      "mean_measurement_nmse_db": -6.039476897573163,
+      "measurement_nmse_ci95_low_db": -6.134260392564366,
+      "measurement_nmse_ci95_high_db": -5.94469340258196,
+      "mean_gain_vs_grid_db": 0.6094711374502544,
+      "harmful_update_rate": 0.0,
+      "mean_all_axis_half_bin_hit": 0.719375,
+      "half_bin_hit_ci95_low": 0.6968915930455271,
+      "half_bin_hit_ci95_high": 0.7418584069544729,
+      "mean_angle_bin_rmse": 9.946608370796561,
+      "mean_delay_bin_rmse": 1.2047160096284,
+      "mean_doppler_bin_rmse": 2.523332646701558,
+      "median_wall_clock_ms": 10.58889998239465,
+      "work_contract": "one 3-D FFT; 3DL power samples; one joint LS"
+    },
+    {
+      "method": "axiswise_candan_joint_ls",
+      "sample_count": 1200,
+      "mean_measurement_nmse_db": -29.69033286730185,
+      "measurement_nmse_ci95_low_db": -30.326415323967467,
+      "measurement_nmse_ci95_high_db": -29.054250410636236,
+      "mean_gain_vs_grid_db": 24.26032710717894,
+      "harmful_update_rate": 0.0,
+      "mean_all_axis_half_bin_hit": 0.7959375000000001,
+      "half_bin_hit_ci95_low": 0.7792518880643386,
+      "half_bin_hit_ci95_high": 0.8126231119356615,
+      "mean_angle_bin_rmse": 9.904015541463693,
+      "mean_delay_bin_rmse": 1.1575974863915188,
+      "mean_doppler_bin_rmse": 2.4857314547535494,
+      "median_wall_clock_ms": 10.517200047615916,
+      "work_contract": "one 3-D FFT; 3DL complex samples; one joint LS"
+    },
+    {
+      "method": "one_step_fixed_support_newton_joint_ls",
+      "sample_count": 1200,
+      "mean_measurement_nmse_db": -7.7134216778785,
+      "measurement_nmse_ci95_low_db": -7.851182132286364,
+      "measurement_nmse_ci95_high_db": -7.575661223470637,
+      "mean_gain_vs_grid_db": 2.2834159177555913,
+      "harmful_update_rate": 0.005833333333333334,
+      "mean_all_axis_half_bin_hit": 0.7169791666666667,
+      "half_bin_hit_ci95_low": 0.693758223707413,
+      "half_bin_hit_ci95_high": 0.7402001096259204,
+      "mean_angle_bin_rmse": 9.925193759948636,
+      "mean_delay_bin_rmse": 1.195111998448842,
+      "mean_doppler_bin_rmse": 2.5300901385530974,
+      "median_wall_clock_ms": 37.68030001083389,
+      "work_contract": "one 3-D FFT; L gradient/Hessian evaluations; <=5L trial scores; one joint LS"
+    },
+    {
+      "method": "cartesian_local_joint_ls",
+      "sample_count": 1200,
+      "mean_measurement_nmse_db": -12.734643996867675,
+      "measurement_nmse_ci95_low_db": -12.814428116163128,
+      "measurement_nmse_ci95_high_db": -12.654859877572221,
+      "mean_gain_vs_grid_db": 7.3046382367447675,
+      "harmful_update_rate": 0.0,
+      "mean_all_axis_half_bin_hit": 0.79625,
+      "half_bin_hit_ci95_low": 0.7792293769307698,
+      "half_bin_hit_ci95_high": 0.8132706230692303,
+      "mean_angle_bin_rmse": 9.917868342191962,
+      "mean_delay_bin_rmse": 1.1808518291286825,
+      "mean_doppler_bin_rmse": 2.506068498366047,
+      "median_wall_clock_ms": 10.197299969149753,
+      "work_contract": "one 3-D FFT; 125L full-observation scores; one joint LS"
+    },
+    {
+      "method": "residual_gated_cartesian_local_joint_ls",
+      "sample_count": 1200,
+      "mean_measurement_nmse_db": -12.730151507400112,
+      "measurement_nmse_ci95_low_db": -12.810227339107984,
+      "measurement_nmse_ci95_high_db": -12.650075675692241,
+      "mean_gain_vs_grid_db": 7.300145747277203,
+      "harmful_update_rate": 0.0,
+      "mean_all_axis_half_bin_hit": 0.79625,
+      "half_bin_hit_ci95_low": 0.7792293769307698,
+      "half_bin_hit_ci95_high": 0.8132706230692303,
+      "mean_angle_bin_rmse": 9.918000589343391,
+      "mean_delay_bin_rmse": 1.1810668840836804,
+      "mean_doppler_bin_rmse": 2.50600749524398,
+      "median_wall_clock_ms": 18.74314999440685,
+      "work_contract": "one 3-D FFT; 125L scores; grid and local joint LS; one residual comparison"
+    }
+  ],
+  "elapsed_seconds": 160.10438759997487,
+  "notes": [
+    "All local-family methods share each noisy tensor, known L, FFT top-L support, periodic boundaries, and one final joint-LS convention.",
+    "The residual threshold is calibrated only on independent validation seeds and is frozen before the five test seeds are summarized.",
+    "Reference CPU times reuse the common FFT-support stage measured once per scene; stage-wise columns expose implementation boundaries.",
+    "The Newton comparator uses one gradient/Hessian direction per selected peak with deterministic backtracking and no residual deflation or cyclic update.",
+    "The Candan comparator applies the published finite-length correction to complex three-DFT-sample ratios independently on each axis."
+  ]
+}

@@ -1,0 +1,5 @@
+method,scene_count,mean_measurement_nmse_db,mean_per_component_half_bin_hit,gate_pass_rate,candan_ls_skip_rate,median_fft_support_ms,median_local_update_ms,median_grid_path_ms,median_candan_ls_ms,median_gate_decision_ms,median_wall_clock_ms
+axiswise_candan_joint_ls,1200,-29.690332867301848,0.7959375,1.0,0.0,1.9176,1.9202499999999998,0.0,7.1958,0.0,11.0689
+legacy_explicit_residual_gate,1200,-29.690332867301848,0.7959375,1.0,0.0,1.9969000000000001,1.9194499999999999,7.21695,7.14535,0.703,18.976300000000002
+projection_energy_gate,1200,-29.690332867301848,0.7959375,1.0,0.0,1.9301,1.9317,0.0,7.2171,0.1432,11.2429
+stage1_projection_energy_gate,1200,-29.690332867301848,0.7959375,1.0,0.0,1.9302,1.9311,0.0,7.1809,0.14265,11.236049999999999

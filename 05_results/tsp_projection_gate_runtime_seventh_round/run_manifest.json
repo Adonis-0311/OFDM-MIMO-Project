@@ -1,0 +1,61 @@
+{
+  "command": "python 04_experiments/eval/run_tsp_projection_gate_runtime.py",
+  "config": {
+    "dtype": "complex128",
+    "elapsed_seconds": 340.8798630000092,
+    "gate_threshold": -0.020959882599625883,
+    "identity_scenes": 60,
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "offset_radius": 0.35,
+    "output_dir_name": "tsp_projection_gate_runtime_seventh_round",
+    "protocol_summary": "D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\05_results\\tsp_candan_gate_protocol_seventh_round\\summary.json",
+    "samples_per_cell_seed": 20,
+    "scene_count": 1200,
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "stage1_rule": {
+      "maximum_clipping_rate": 0.84375,
+      "minimum_zeta": -Infinity
+    },
+    "test_seeds": [
+      20260630,
+      20260701,
+      20260702,
+      20260703,
+      20260704
+    ],
+    "thread_count": 1,
+    "timed_repeats": 3,
+    "warmup_runs": 1
+  },
+  "environment": {
+    "git_commit": "c50a603",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "maximum_explicit_projection_abs_error": 5.440092820663267e-15,
+    "maximum_prediction_qr_abs_energy_error": 6.128431095930864e-14,
+    "maximum_projection_qr_abs_error": 1.0894063429134349e-14,
+    "scene_count": 60
+  },
+  "notes": [
+    "All methods start from the noisy tensor under a one-thread complex128 protocol.",
+    "Projection gating uses FFT support energy and the norm of the Candan LS projection; it never forms two residual tensors.",
+    "The Stage-1 rule is frozen from CDL-A/C validation before this synthetic runtime campaign."
+  ],
+  "run_id": "tsp_projection_gate_runtime_seventh_round_20260829"
+}

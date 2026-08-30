@@ -1,0 +1,64 @@
+{
+  "command": "python 04_experiments/eval/run_tsp_full_offset_sweep.py",
+  "config": {
+    "elapsed_seconds": 254.23892889998388,
+    "gate_threshold": 0.03006794943974425,
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "minimum_validation_positive_recall": 0.9,
+    "offset_radius": 0.49,
+    "output_dir_name": "tsp_full_offset_sweep_paper",
+    "primary_search_radius": 0.45,
+    "samples_per_cell_seed": 20,
+    "search_points": 5,
+    "search_radii": [
+      0.25,
+      0.35,
+      0.45,
+      0.5,
+      0.55
+    ],
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "test_scene_count": 1200,
+    "test_seeds": [
+      20260630,
+      20260701,
+      20260702,
+      20260703,
+      20260704
+    ],
+    "validation_scene_count": 480,
+    "validation_seeds": [
+      20260808,
+      20260809
+    ]
+  },
+  "environment": {
+    "git_commit": "c50a603",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "gate_threshold": 0.03006794943974425,
+    "offset_radius": 0.49,
+    "test_scene_count": 1200
+  },
+  "notes": [
+    "The test spans the complete fractional-bin interval and reports edge-offset performance by axis.",
+    "The same scenes support method, radius, support-quality, and conditioning comparisons."
+  ],
+  "run_id": "tsp_full_offset_sweep_paper_20260829"
+}

@@ -1,0 +1,116 @@
+\section{Separable Triplet Reduction and Probabilistic Error Propagation}
+\label{sec:analysis}
+
+The tensor structure reduces each isolated multidimensional triplet exactly to the scalar Candan problem. Interference and noise then enter as explicit perturbations controlled by Fourier coherence, dynamic range, and SNR.
+
+\textbf{Proposition 1 (isolated separable triplet reduction):}
+For component $\ell$, let $b_{r,\ell}=k_{r,\ell}+\delta_{r,\ell}$ with $\delta_{r,\ell}\in[-1/2,1/2]$. Without other components or noise, for axis $d$ and $q\in\{-1,0,1\}$,
+\begin{equation}
+\begin{aligned}
+ Z^{(\ell)}[\mathbf k_\ell+q\mathbf e_d]
+ &=C_{-d,\ell}g_{N_d}(\delta_{d,\ell}-q),\\
+ C_{-d,\ell}&=\beta_\ell\prod_{r\ne d}g_{N_r}(\delta_{r,\ell}).
+\end{aligned}
+ \label{eq:isolated_triplet_factorization}
+\end{equation}
+The common complex factor cancels from the quotient, giving
+\begin{equation}
+ \frac{Z_{d,-}^{(\ell)}-Z_{d,+}^{(\ell)}}
+ {2Z_{d,0}^{(\ell)}-Z_{d,-}^{(\ell)}-Z_{d,+}^{(\ell)}}
+ =\frac{\tan(\pi\delta_{d,\ell}/N_d)}{\tan(\pi/N_d)}.
+ \label{eq:isolated_candan_ratio}
+\end{equation}
+Hence the unclipped update is
+\begin{equation}
+ \phi_{N_d}(\delta_{d,\ell})
+ =\frac{\tan(\pi\delta_{d,\ell}/N_d)}{\pi/N_d}.
+ \label{eq:candan_finite_map}
+\end{equation}
+\emph{Proof:} Equation~\eqref{eq:tensor_fft_factor} gives the product in \eqref{eq:isolated_triplet_factorization}; changing only axis $d$ leaves all other factors unchanged. Substitution of \eqref{eq:complex_dirichlet} and the angle-addition identities yields \eqref{eq:isolated_candan_ratio}. \hfill$\square$
+
+Thus separability removes every non-updated axis from the isolated quotient. The finite-length map retains the small bias
+\begin{equation}
+ b_N(\delta)=|\phi_N(\delta)-\delta|=O(N^{-2}).
+ \label{eq:candan_finite_bias}
+\end{equation}
+
+\textbf{Proposition 2 (multi-component Gaussian quotient bound):}
+Assume $N_d\geq3$, independent tensor noise $\mathcal{CN}(0,\sigma^2)$, and a fixed selected-bin/component association. Write
+\begin{equation}
+ Z_{d,q}=C_{-d,\ell}g_{N_d}(\delta_{d,\ell}-q)+u_{d,q}+w_{d,q},
+ \label{eq:triplet_signal_interference_noise}
+\end{equation}
+where
+\begin{equation}
+ u_{d,q}=\sum_{j\ne\ell}\beta_j\prod_{r=1}^{D}g_{N_r}
+ (b_{r,j}-k_{r,\ell}-q\mathbf 1_{\{r=d\}}).
+\end{equation}
+Define
+\begin{equation}
+ I_{d,q,\ell}=\sum_{j\ne\ell}|\beta_j|\prod_{r=1}^{D}\mu_{N_r}
+ (b_{r,j}-k_{r,\ell}-q\mathbf 1_{\{r=d\}}),
+ \label{eq:interference_envelope}
+\end{equation}
+and the target numerator, denominator, and quotient
+\begin{align}
+ n_{d,\ell}&=C_{-d,\ell}\{g_{N_d}(\delta+1)-g_{N_d}(\delta-1)\},\nonumber\\
+ d_{d,\ell}&=C_{-d,\ell}\{2g_{N_d}(\delta)-g_{N_d}(\delta+1)-g_{N_d}(\delta-1)\},\nonumber\\
+ \gamma_{d,\ell}&=n_{d,\ell}/d_{d,\ell}
+ =\tan(\pi\delta/N_d)/\tan(\pi/N_d),
+ \label{eq:target_num_den}
+\end{align}
+where $\delta=\delta_{d,\ell}$. For $\eta\in(0,1)$ let
+\begin{align}
+ B_{n,d,\ell}&=I_{d,-1,\ell}+I_{d,+1,\ell}
+ +\sigma\sqrt{2\log(2/\eta)},\nonumber\\
+ B_{d,d,\ell}&=2I_{d,0,\ell}+I_{d,-1,\ell}+I_{d,+1,\ell}
+ +\sigma\sqrt{6\log(2/\eta)}.
+ \label{eq:explicit_bn_bd}
+\end{align}
+If $B_{d,d,\ell}<|d_{d,\ell}|$, then with probability at least $1-\eta$,
+\begin{equation}
+\begin{aligned}
+ |\widehat\delta_{d,\ell}-\delta_{d,\ell}|
+ &\le b_{N_d}(\delta_{d,\ell})\\
+ &\quad+c_{N_d}\frac{B_{n,d,\ell}+|\gamma_{d,\ell}|B_{d,d,\ell}}
+ {|d_{d,\ell}|-B_{d,d,\ell}},\\[-1mm]
+ c_N&=\frac{\tan(\pi/N)}{\pi/N}.
+\end{aligned}
+ \label{eq:coordinate_error_bound}
+\end{equation}
+\emph{Proof:} The unitary FFT preserves the noise law. Numerator noise is $\mathcal{CN}(0,2\sigma^2)$ and denominator noise is $\mathcal{CN}(0,6\sigma^2)$. Complex-Gaussian tails and a union bound give \eqref{eq:explicit_bn_bd}. The quotient identity
+\begin{equation*}
+ \left|\frac{n+e_n}{d+e_d}-\frac nd\right|
+ \le\frac{|e_n|+|n/d||e_d|}{|d|-|e_d|}
+\end{equation*}
+followed by the finite-length factor and nonexpansive clipping proves \eqref{eq:coordinate_error_bound}. \hfill$\square$
+
+The dependence is explicit. If $\Gamma_\ell=\max_{j\ne\ell}|\beta_j|/|\beta_\ell|$ and $\bar\mu_{d,q,\ell}$ is the largest coherence product in \eqref{eq:interference_envelope}, then
+\begin{equation}
+ I_{d,q,\ell}\le |\beta_\ell|(L-1)\Gamma_\ell\bar\mu_{d,q,\ell}.
+ \label{eq:dynamic_range_interference}
+\end{equation}
+Under the executed SNR convention, $\sigma=\sqrt{P_{\mathcal Y_0}}10^{-\mathrm{SNR}/20}$. A simultaneous statement for all $DL$ triplets replaces $\eta$ by $\eta/(DL)$. The observable statistic $\zeta$ in \eqref{eq:candan_stability} is the measured counterpart of the denominator margin; empirically, its Spearman association with clipping is $-0.525$, $-0.508$, and $-0.506$ on CDL-A/C/D.
+
+\textbf{Corollary 1 (propagation to the joint fit):}
+Let $\mathbf A_0$ and $\widehat{\mathbf A}$ contain normalized atoms at the true and refined coordinates. If $|\widehat b_{d,\ell}-b_{d,\ell}|\le\epsilon_{d,\ell}$ periodically, define
+\begin{equation}
+\begin{aligned}
+ \Lambda_N&=\frac{2\pi}{N}\sqrt{\frac{(N-1)(2N-1)}{6}},\\
+ E_A&=\left[\sum_{\ell=1}^{L}\left(\sum_{d=1}^{D}
+ \Lambda_{N_d}\epsilon_{d,\ell}\right)^2\right]^{1/2}.
+\end{aligned}
+ \label{eq:dictionary_lipschitz}
+\end{equation}
+Then $\|\mathbf A_0-\widehat{\mathbf A}\|_2\le E_A$. If $\widehat{\mathbf A}$ has full column rank,
+\begin{align}
+ \|\widehat{\boldsymbol\beta}-\boldsymbol\beta\|_2
+ &\le\frac{E_A\|\boldsymbol\beta\|_2+\|\mathbf w\|_2}
+ {\sigma_{\min}(\widehat{\mathbf A})},\nonumber\\
+ \|\widehat{\mathbf y}-\mathbf y_0\|_2
+ &\le E_A\|\boldsymbol\beta\|_2+\|\mathbf w\|_2.
+ \label{eq:coordinate_to_ls_bound}
+\end{align}
+\emph{Proof:} The derivative norm of \eqref{eq:steering_atom} is $\Lambda_N$. A path integral bounds each separable atom perturbation by $\sum_d\Lambda_{N_d}\epsilon_{d,\ell}$; the Frobenius bound gives $E_A$, followed by the standard joint-LS perturbation identities. \hfill$\square$
+
+Finally, \eqref{eq:observable_residual} is exactly the received-energy difference between two fitted subspaces by the Pythagorean identity. This identity connects the triplet-level refinement to the scene-level return rule.

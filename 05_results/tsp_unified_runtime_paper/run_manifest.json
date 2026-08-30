@@ -1,0 +1,54 @@
+{
+  "command": "python 04_experiments/eval/run_tsp_unified_runtime_benchmark.py",
+  "config": {
+    "dtype": "complex128",
+    "elapsed_seconds": 657.1449993000133,
+    "gate_threshold": 4.9859075510778475e-05,
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "offset_radius": 0.35,
+    "output_dir_name": "tsp_unified_runtime_paper",
+    "samples_per_cell_seed": 20,
+    "scene_count": 1200,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "test_seeds": [
+      20260630,
+      20260701,
+      20260702,
+      20260703,
+      20260704
+    ],
+    "thread_count": 1,
+    "timed_repeats": 3,
+    "warmup_runs": 1
+  },
+  "environment": {
+    "git_commit": "c50a603",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "scene_count": 1200,
+    "timed_repeats": 3
+  },
+  "notes": [
+    "Every method starts from the noisy tensor and includes FFT support selection and final joint LS.",
+    "Reported stage and total times are per-scene medians over repeated steady-state executions."
+  ],
+  "run_id": "tsp_unified_runtime_paper_20260829"
+}

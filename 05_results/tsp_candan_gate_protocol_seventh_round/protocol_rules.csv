@@ -1,0 +1,4 @@
+protocol,calibration_profiles,normalization,threshold,validation_gated_gain_db,validation_increment_db,validation_pass_rate
+primary_ac_only_zero_shot_d,A/C,none,-0.020959882599625883,7.489660868657109,0.013545137792606354,0.99
+secondary_acd_pooled,A/C/D,none,0.0,5.172462887872397,0.18741760412281216,0.8027777777777778
+theory_fixed_tau_zero_no_calibration,none,none,0.0,not_applicable,not_applicable,not_applicable

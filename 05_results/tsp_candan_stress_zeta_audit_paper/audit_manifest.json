@@ -1,0 +1,84 @@
+{
+  "run_id": "tsp_candan_stress_zeta_audit_20260830",
+  "command": "python 04_experiments/eval/run_tsp_candan_stress_zeta_audit.py",
+  "cwd": "D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation",
+  "config": {
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "n_targets": 4,
+    "separations": [
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "dynamic_ranges_db": [
+      0.0,
+      10.0,
+      20.0
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "validation_seeds": [
+      20260820,
+      20260821
+    ],
+    "test_seeds": [
+      20260822,
+      20260823,
+      20260824,
+      20260825,
+      20260826
+    ],
+    "samples_per_cell_seed": 5,
+    "zeta_bins": 10,
+    "output_dir_name": "tsp_candan_stress_zeta_audit_paper"
+  },
+  "metrics": {
+    "validation_scene_count": 480,
+    "test_scene_count": 1200,
+    "cell_count": 48,
+    "gate": {
+      "threshold": 0.025316819715892225,
+      "validation_gated_gain_db": 11.160104096391713,
+      "validation_pass_rate": 1.0
+    },
+    "mean_candan_gain_db": 10.459236988696594,
+    "mean_gated_candan_gain_db": 10.459236988696594,
+    "minimum_cell_candan_gain_db": 6.292906495972589,
+    "minimum_cell_gated_candan_gain_db": 6.292906495972589,
+    "gate_pass_rate": 1.0,
+    "minimum_zeta_quantiles": {
+      "0.01": 0.37239705932660455,
+      "0.05": 0.5569929041019615,
+      "0.25": 0.7837557007690824,
+      "0.5": 0.7986938323738951,
+      "0.75": 0.8022828711951632,
+      "0.95": 0.8142993164272401,
+      "0.99": 0.8280324556983731
+    },
+    "clipping_rate": 0.12090277777777776,
+    "elapsed_seconds": 49.48880769999232
+  },
+  "software": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "numpy": "2.5.0",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "code_sha256": {
+    "04_experiments\\eval\\run_tsp_candan_stress_zeta_audit.py": "f4db353317aa2c163526e6de7d35366f6007ba49dc8077127604ca9f97a3b6c8"
+  },
+  "git_commit": "c50a6033c77651f1af0581679f9d16e39c236fb6",
+  "notes": [
+    "The scalar residual threshold is selected only on the two controlled-stress validation seeds.",
+    "Every reported interval is a Student-t interval over the five test-seed means.",
+    "All coordinate metrics use Hungarian truth assignment with periodic bin distances."
+  ]
+}

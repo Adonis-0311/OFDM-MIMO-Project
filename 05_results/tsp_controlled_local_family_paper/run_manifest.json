@@ -1,0 +1,56 @@
+{
+  "command": "python 04_experiments/eval/run_tsp_controlled_local_family_baselines.py",
+  "config": {
+    "l_values": [
+      2,
+      4,
+      8
+    ],
+    "minimum_validation_positive_recall": 0.9,
+    "offset_radius": 0.35,
+    "output_dir_name": "tsp_controlled_local_family_paper",
+    "samples_per_cell_seed": 20,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "shape": [
+      128,
+      16,
+      32
+    ],
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "test_seeds": [
+      20260630,
+      20260701,
+      20260702,
+      20260703,
+      20260704
+    ],
+    "validation_seeds": [
+      20260808,
+      20260809
+    ]
+  },
+  "environment": {
+    "git_commit": "c50a603",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "gate_threshold": 0.017562690684875093,
+    "test_scene_count": 1200,
+    "validation_scene_count": 480
+  },
+  "notes": [
+    "All local-family methods share each noisy tensor, known L, FFT top-L support, periodic boundaries, and one final joint-LS convention.",
+    "The residual threshold is calibrated only on independent validation seeds and is frozen before the five test seeds are summarized.",
+    "Reference CPU times reuse the common FFT-support stage measured once per scene; stage-wise columns expose implementation boundaries.",
+    "The Newton comparator uses one gradient/Hessian direction per selected peak with deterministic backtracking and no residual deflation or cyclic update.",
+    "The Candan comparator applies the published finite-length correction to complex three-DFT-sample ratios independently on each axis."
+  ],
+  "run_id": "tsp_controlled_local_family_paper_20260829"
+}

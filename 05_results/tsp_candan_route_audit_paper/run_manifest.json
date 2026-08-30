@@ -1,0 +1,60 @@
+{
+  "command": "python 04_experiments/eval/run_tsp_candan_route_audit.py",
+  "config": {
+    "carrier_frequency_hz": 60000000000.0,
+    "delay_spread_s": 1e-07,
+    "device": "cpu",
+    "l_values": [
+      4,
+      8,
+      16
+    ],
+    "num_subcarriers": 64,
+    "num_tx_antennas": 4,
+    "output_dir_name": "tsp_candan_route_audit_paper",
+    "profiles": [
+      "A",
+      "C",
+      "D"
+    ],
+    "route_win_epsilon_db": 0.1,
+    "samples_per_profile_seed": 50,
+    "search_points": 5,
+    "search_radius": 0.45,
+    "snrs": [
+      0.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "spatial_truth_oversampling": 4096,
+    "subcarrier_spacing_hz": 120000.0,
+    "test_seeds": [
+      20260628,
+      20260629,
+      20260630,
+      20260701,
+      20260702
+    ],
+    "validation_seeds": [
+      20260625,
+      20260626,
+      20260627
+    ]
+  },
+  "environment": {
+    "git_commit": "c50a603",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "metrics": {
+    "test_scene_count": 9000,
+    "validation_scene_count": 5400
+  },
+  "notes": [
+    "Route and residual thresholds are selected on validation seeds only.",
+    "Route features use only the noisy tensor, coarse support, and Candan update.",
+    "The oracle is reported only as a specialization ceiling and is not an executable method."
+  ],
+  "run_id": "tsp_candan_route_audit_20260829"
+}

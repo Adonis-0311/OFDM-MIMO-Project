@@ -6,4 +6,5 @@ exp2_flops_pareto(inf);
 exp3_fixedpoint_sweep(inf);
 exp4_crlb_check(inf);
 exp5_cdl_geometry_2d(inf);
+exp6_candan_independent_audit(inf);
 disp('ALL MATLAB EXPERIMENTS DONE');

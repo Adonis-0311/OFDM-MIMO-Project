@@ -1,0 +1,15 @@
+\begin{table}[!ht]
+\centering
+\footnotesize
+\caption{Unified 1200-scene runtime audit (one thread, complex128, median of three repetitions).}
+\label{tab:supp_projection_runtime}
+\begin{tabular}{lrrr}
+\toprule
+Method & Update (ms) & Decision (ms) & End to end (ms) \\
+\midrule
+Candan & 1.92 & 0.00 & 11.07 \\
+Explicit two-residual implementation & 1.92 & 0.70 & 18.98 \\
+Projection-selected Candan & 1.93 & 0.14 & 11.24 \\
+\bottomrule
+\end{tabular}
+\end{table}

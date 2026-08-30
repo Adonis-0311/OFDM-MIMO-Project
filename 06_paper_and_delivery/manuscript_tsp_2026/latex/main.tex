@@ -1,0 +1,48 @@
+\documentclass[journal]{IEEEtran}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xurl}
+
+\graphicspath{{../figures/}{../../manuscript_v2_3r/displays/figures/}}
+\emergencystretch=2em
+
+\title{Projection-Selected Multidimensional Candan Refinement after FFT Tensor Support Selection}
+
+\author{Yuhui Liu and Hangcheng Han%
+\thanks{Yuhui Liu and Hangcheng Han are with the School of Integrated Circuits and Electronics, Beijing Institute of Technology, Beijing, China (e-mail: adonis3583@gmail.com; hanhangcheng@bit.edu.cn).}%
+\thanks{Corresponding author: Hangcheng Han.}%
+}
+
+\begin{document}
+\maketitle
+\bstctlcite{BSTcontrol}
+
+\begin{abstract}
+A multidimensional fast Fourier transform (FFT) followed by top-$L$ selection gives explicit coarse neighborhoods for sparse MIMO-OFDM estimation, while physical coordinates remain off grid. We develop a non-iterative refinement that applies Candan's finite-length-corrected complex three-sample update along every active tensor axis and refits all amplitudes jointly. A calibration-free projection rule returns the refined result whenever its fitted subspace captures at least as much received energy as the grid subspace. The update reads exactly $3DL$ complex FFT samples for $D$ axes and $L$ neighborhoods. We prove that separability reduces every isolated axis triplet exactly to the one-dimensional Candan quotient, then bound multi-component interference and Gaussian noise through explicit Dirichlet-coherence, dynamic-range, SNR, and joint-fit terms. On 1200 common three-dimensional scenes, the local Candan stage improves measurement normalized mean-square error by 24.26 dB at 11.07 ms; the complete projection-selected estimator costs 11.24 ms, only 1.57\% more. The local gain remains 14.45 dB over the complete $[-0.49,0.49]$ fractional-bin interval and is positive in all 48 controlled separation--near--far cells. On 9000 clustered-delay-line tests, projection selection raises aggregate gain from 5.14 to 5.28 dB and CDL-D gain from 0.28 to 0.71 dB. Aggregate delay RMSE falls from 428.45 to 413.52 ns and joint quarter-bin accuracy rises from 7.46\% to 18.84\%.
+\end{abstract}
+
+\begin{IEEEkeywords}
+MIMO-OFDM, off-grid estimation, DFT interpolation, projection selection, FFT tensor estimation, channel estimation.
+\end{IEEEkeywords}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_signal_model}
+\input{sections/04_method}
+\input{sections/05_analysis}
+\input{sections/06_experiments}
+\input{sections/07_discussion}
+\input{sections/08_conclusion}
+
+\section*{Reproducible Research}
+The generators, evaluation scripts, aggregate tables, independent MATLAB implementation, and MATLAB figure sources are available at \url{https://github.com/Adonis-0311/OFDM-MIMO-Project}.
+
+\section*{Acknowledgment}
+This work received no external funding. AI-assisted tools were used solely for language polishing. The authors independently developed and verified all technical content, numerical results, figures, and conclusions and take full responsibility for the article.
+
+\bibliographystyle{IEEEtran}
+\bibliography{../../../02_literature_and_refs/v2_3r_references,tsp_additions}
+
+\end{document}

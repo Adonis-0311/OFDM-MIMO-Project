@@ -192,6 +192,9 @@ def physical_path_metrics_from_bins(
     delay_errors_s = circular_distance(
         selected_delays[row_indices], estimated_delays[column_indices], delay_period_s
     )
+    spatial_errors = circular_distance(
+        selected_spatial[row_indices], estimated_spatial[column_indices], 1.0
+    )
     angle_errors_deg = np.asarray(
         [
             broadside_angle_error_deg(
@@ -205,6 +208,15 @@ def physical_path_metrics_from_bins(
     return {
         "matched_physical_paths": float(len(row_indices)),
         "physical_delay_rmse_ns": float(np.sqrt(np.mean(delay_errors_s**2)) * 1e9),
+        "physical_delay_rmse_bins": float(
+            np.sqrt(np.mean((delay_errors_s / delay_resolution_s) ** 2))
+        ),
+        "projected_spatial_frequency_rmse": float(
+            np.sqrt(np.mean(spatial_errors**2))
+        ),
+        "projected_spatial_frequency_rmse_bins": float(
+            np.sqrt(np.mean((spatial_errors / spatial_resolution) ** 2))
+        ),
         "projected_broadside_angle_rmse_deg": float(np.sqrt(np.mean(angle_errors_deg**2))),
     }
 

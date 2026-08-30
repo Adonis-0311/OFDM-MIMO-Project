@@ -1,0 +1,28 @@
+{
+  "run_id": "tsp_candan_zeta_closed_loop_20260830",
+  "command": "python 04_experiments/eval/summarize_tsp_candan_zeta_closed_loop.py",
+  "cwd": "D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation",
+  "metrics": {
+    "stress_test_scenes": 1200,
+    "cdl_test_scenes": 9000,
+    "association_rows": 15,
+    "binned_rows": 50,
+    "input_sha256": {
+      "05_results\\tsp_candan_stress_zeta_audit_paper\\per_scene.csv": "bfb1c6dbbcb2d5134b4057895a02c357f59e55f767e25b563ea451117be69b5b",
+      "05_results\\tsp_candan_physical_zeta_audit_paper\\per_scene_physical_zeta.csv": "fa5616b2bbcb4e516a402edb73c62a8204ed153aebf4a2931c2a85dc465c16a8"
+    }
+  },
+  "code_sha256": {
+    "04_experiments\\eval\\summarize_tsp_candan_zeta_closed_loop.py": "44a78d7efe762a18ba17019d0887bdba840105b287b7888206db6aca6e45eafd"
+  },
+  "software": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "numpy": "2.5.0",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "git_commit": "c50a6033c77651f1af0581679f9d16e39c236fb6",
+  "notes": [
+    "All associations are descriptive two-sided Spearman statistics over frozen test scenes.",
+    "Quantile bins are formed independently within each reported domain/profile and use no clean truth for estimator decisions."
+  ]
+}

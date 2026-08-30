@@ -12,6 +12,11 @@ across MATLAB and Octave and every number is reproducible from a scene seed.
 | `exp3_fixedpoint_sweep.m` | §VI-F fixed-point feasibility (T3.1) + RTL vectors | `fixedpoint_sweep.csv`, `tb/vectors/tv_*.txt` |
 | `exp4_crlb_check.m` | §V-C CRLB cross-check | `crlb_check.csv` |
 | `exp5_cdl_geometry_2d.m` | §VI-D axis-coupling mechanism side-evidence | `geometry2d_rows.csv` |
+| `exp6_candan_independent_audit.m` | Independent Candan replication | `candan_independent_rows.csv`, `candan_independent_summary.csv` |
 
 Run everything: `run_all_experiments` (all scripts are resumable/idempotent).
 Outputs land in `05_results/matlab_taes_supplement/`.
+
+Experiment 6 is a separately written implementation of the complex
+three-sample update under the common 3-D FFT, fixed-support, and joint-LS
+contract.  Its default campaign contains 1200 scenes.

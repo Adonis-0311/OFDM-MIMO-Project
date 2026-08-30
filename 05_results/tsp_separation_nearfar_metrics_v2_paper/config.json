@@ -1,0 +1,49 @@
+{
+  "shape": [
+    128,
+    16,
+    32
+  ],
+  "n_targets": 4,
+  "separations": [
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "dynamic_ranges_db": [
+    0.0,
+    10.0,
+    20.0
+  ],
+  "snrs": [
+    0.0,
+    10.0,
+    20.0,
+    30.0
+  ],
+  "validation_seeds": [
+    20260820,
+    20260821
+  ],
+  "test_seeds": [
+    20260822,
+    20260823,
+    20260824,
+    20260825,
+    20260826
+  ],
+  "samples_per_cell_seed": 5,
+  "search_radius": 0.45,
+  "search_points": 5,
+  "minimum_validation_positive_recall": 0.9,
+  "radius_values": [
+    0.25,
+    0.35,
+    0.45,
+    0.5,
+    0.55
+  ],
+  "radius_sensitivity_samples_per_seed": 10,
+  "output_dir_name": "tsp_separation_nearfar_metrics_v2_paper"
+}

@@ -1,0 +1,10 @@
+{
+  "source_csv": "D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\05_results\\tsp_candan_route_audit_paper\\per_scene.csv",
+  "source_sha256": "85726d36de6b68bfd5c00461c422325034727db5c0276b3a02e5ceaaaee4b6e9",
+  "output_dir_name": "tsp_candan_gate_protocol_seventh_round",
+  "primary_calibration_profiles": [
+    "A",
+    "C"
+  ],
+  "feature_normalization": "none"
+}
