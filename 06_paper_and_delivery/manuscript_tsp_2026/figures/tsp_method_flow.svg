@@ -2,14 +2,14 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- 由 Microsoft Visio, SVG Export 生成 tsp_method_flow.svg Projection-selected Candan flow -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
-		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="10in" height="2.75in" viewBox="0 0 720 198"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="10in" height="2.55in" viewBox="0 0 720 183.6"
 		xml:space="preserve" color-interpolation-filters="sRGB" class="st24">
 	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
 	<![CDATA[
 		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st2 {fill:#172033;font-family:Arial;font-size:0.708344em;font-weight:bold}
+		.st2 {fill:#172033;font-family:Arial;font-size:0.683327em;font-weight:bold}
 		.st3 {fill:#e8f0f8;stroke:#172033;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.9}
 		.st4 {fill:#172033;font-family:Arial;font-size:0.708344em}
 		.st5 {font-size:1em}
@@ -56,122 +56,122 @@
 		<title>Projection-selected Candan flow</title>
 		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
 				v:shadowOffsetY="-8.50394"/>
-		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(162,-172.08)">
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(162,-146.88)">
 			<title>工作表.1</title>
 			<desc>Closed-form complex three-sample correction on each active axis</desc>
 			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5197"/>
-			<v:textRect cx="189" cy="187.92" width="378" height="20.16"/>
-			<rect x="0" y="177.84" width="378" height="20.16" class="st1"/>
-			<text x="56.02" y="190.47" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Closed-form complex three-sample correction on each active axis</text>		</g>
+			<v:textRect cx="189" cy="174.96" width="378" height="17.28"/>
+			<rect x="0" y="166.32" width="378" height="17.28" class="st1"/>
+			<text x="60.72" y="177.42" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Closed-form complex three-sample correction on each active axis</text>		</g>
 		<g id="shape2-4" v:mID="2" v:groupContext="shape" transform="translate(12.96,-68.4)">
 			<title>工作表.2</title>
 			<desc>Dense observation y</desc>
 			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
-			<v:textRect cx="41.76" cy="163.08" width="83.52" height="69.84"/>
-			<rect x="0" y="128.16" width="83.52" height="69.84" class="st3"/>
-			<text x="6.32" y="160.53" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Dense observation<v:newlineChar/><tspan
+			<v:textRect cx="41.76" cy="148.68" width="83.52" height="69.84"/>
+			<rect x="0" y="113.76" width="83.52" height="69.84" class="st3"/>
+			<text x="6.32" y="146.13" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Dense observation<v:newlineChar/><tspan
 						x="39.64" dy="1.2em" class="st5">y</tspan></text>		</g>
 		<g id="shape3-8" v:mID="3" v:groupContext="shape" transform="translate(122.4,-68.4)">
 			<title>工作表.3</title>
 			<desc>FFT top-L coarse support</desc>
 			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
-			<v:textRect cx="46.8" cy="163.08" width="93.6" height="69.84"/>
-			<rect x="0" y="128.16" width="93.6" height="69.84" class="st3"/>
-			<text x="28.14" y="160.53" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>FFT top-L<v:newlineChar/><tspan
+			<v:textRect cx="46.8" cy="148.68" width="93.6" height="69.84"/>
+			<rect x="0" y="113.76" width="93.6" height="69.84" class="st3"/>
+			<text x="28.14" y="146.13" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>FFT top-L<v:newlineChar/><tspan
 						x="18.69" dy="1.2em" class="st5">coarse support</tspan></text>		</g>
 		<g id="shape4-12" v:mID="4" v:groupContext="shape" transform="translate(241.92,-68.4)">
 			<title>工作表.4</title>
 			<desc>Axis-wise Candan 3DL complex samples</desc>
 			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
-			<v:textRect cx="61.2" cy="163.08" width="122.4" height="69.84"/>
-			<rect x="0" y="128.16" width="122.4" height="69.84" class="st3"/>
-			<text x="27.99" y="160.59" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Axis-wise Candan<v:newlineChar/><tspan
+			<v:textRect cx="61.2" cy="148.68" width="122.4" height="69.84"/>
+			<rect x="0" y="113.76" width="122.4" height="69.84" class="st3"/>
+			<text x="27.99" y="146.19" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Axis-wise Candan<v:newlineChar/><tspan
 						x="20.38" dy="1.2em" class="st5">3DL complex samples</tspan></text>		</g>
 		<g id="shape5-16" v:mID="5" v:groupContext="shape" transform="translate(390.24,-68.4)">
 			<title>工作表.5</title>
 			<desc>Joint LS Candan estimate</desc>
 			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
-			<v:textRect cx="45.36" cy="163.08" width="90.72" height="69.84"/>
-			<rect x="0" y="128.16" width="90.72" height="69.84" class="st7"/>
-			<text x="30" y="160.53" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Joint LS<v:newlineChar/><tspan
+			<v:textRect cx="45.36" cy="148.68" width="90.72" height="69.84"/>
+			<rect x="0" y="113.76" width="90.72" height="69.84" class="st7"/>
+			<text x="30" y="146.13" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Joint LS<v:newlineChar/><tspan
 						x="13.23" dy="1.2em" class="st5">Candan estimate</tspan></text>		</g>
 		<g id="shape6-20" v:mID="6" v:groupContext="shape" transform="translate(506.88,-68.4)">
 			<title>工作表.6</title>
 			<desc>Projection selection Δρ ≥ 0?</desc>
 			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
-			<v:textRect cx="45.36" cy="163.08" width="90.72" height="69.84"/>
-			<rect x="0" y="128.16" width="90.72" height="69.84" class="st8"/>
-			<text x="8.51" y="160.1" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Projection selection<v:newlineChar/><tspan
+			<v:textRect cx="45.36" cy="148.68" width="90.72" height="69.84"/>
+			<rect x="0" y="113.76" width="90.72" height="69.84" class="st8"/>
+			<text x="8.51" y="145.7" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Projection selection<v:newlineChar/><tspan
 						x="25.52" dy="1.275em" class="st9">Δρ</tspan> <tspan class="st9">≥</tspan> 0?</text>		</g>
 		<g id="shape7-25" v:mID="7" v:groupContext="shape" transform="translate(637.92,-123.84)">
 			<title>工作表.7</title>
 			<desc>Return local coordinates</desc>
 			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
-			<v:textRect cx="35.28" cy="175.68" width="70.56" height="44.64"/>
-			<rect x="0" y="153.36" width="70.56" height="44.64" class="st7"/>
-			<text x="13.4" y="173.22" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Return local<v:newlineChar/><tspan
+			<v:textRect cx="35.28" cy="161.28" width="70.56" height="44.64"/>
+			<rect x="0" y="138.96" width="70.56" height="44.64" class="st7"/>
+			<text x="13.4" y="158.82" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Return local<v:newlineChar/><tspan
 						x="14.08" dy="1.2em" class="st5">coordinates</tspan></text>		</g>
 		<g id="shape8-29" v:mID="8" v:groupContext="shape" transform="translate(637.92,-37.44)">
 			<title>工作表.8</title>
 			<desc>Return grid coordinates</desc>
 			<v:textBlock v:margins="rect(2.16,4.32,2.16,4.32)" v:tabSpace="42.5197"/>
-			<v:textRect cx="35.28" cy="175.68" width="70.56" height="44.64"/>
-			<rect x="0" y="153.36" width="70.56" height="44.64" class="st11"/>
-			<text x="15" y="173.22" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Return grid<v:newlineChar/><tspan
+			<v:textRect cx="35.28" cy="161.28" width="70.56" height="44.64"/>
+			<rect x="0" y="138.96" width="70.56" height="44.64" class="st11"/>
+			<text x="15" y="158.82" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Return grid<v:newlineChar/><tspan
 						x="14.08" dy="1.2em" class="st5">coordinates</tspan></text>		</g>
 		<g id="shape9-33" v:mID="9" v:groupContext="shape" transform="translate(96.48,-103.68)">
 			<title>工作表.9</title>
-			<path d="M0 198 L18.88 198" class="st12"/>
+			<path d="M0 183.6 L18.88 183.6" class="st12"/>
 		</g>
 		<g id="shape10-39" v:mID="10" v:groupContext="shape" transform="translate(216,-103.68)">
 			<title>工作表.10</title>
-			<path d="M0 198 L18.88 198" class="st12"/>
+			<path d="M0 183.6 L18.88 183.6" class="st12"/>
 		</g>
 		<g id="shape11-44" v:mID="11" v:groupContext="shape" transform="translate(364.32,-103.68)">
 			<title>工作表.11</title>
-			<path d="M0 198 L18.88 198" class="st12"/>
+			<path d="M0 183.6 L18.88 183.6" class="st12"/>
 		</g>
 		<g id="shape12-49" v:mID="12" v:groupContext="shape" transform="translate(480.96,-103.68)">
 			<title>工作表.12</title>
-			<path d="M0 198 L18.88 198" class="st12"/>
+			<path d="M0 183.6 L18.88 183.6" class="st12"/>
 		</g>
-		<g id="shape13-54" v:mID="13" v:groupContext="shape" transform="translate(424.707,-13.6985) rotate(-60.8324)">
+		<g id="shape13-54" v:mID="13" v:groupContext="shape" transform="translate(437.281,-21.0804) rotate(-60.8324)">
 			<title>工作表.13</title>
-			<path d="M0 198 L35.46 198" class="st14"/>
+			<path d="M0 183.6 L35.46 183.6" class="st14"/>
 		</g>
 		<g id="shape14-57" v:mID="14" v:groupContext="shape" transform="translate(614.88,-146.16)">
 			<title>工作表.14</title>
-			<path d="M0 198 L15.8 198" class="st15"/>
+			<path d="M0 183.6 L15.8 183.6" class="st15"/>
 		</g>
 		<g id="shape15-63" v:mID="15" v:groupContext="shape" transform="translate(598.32,-150.48)">
 			<title>工作表.15</title>
 			<desc>yes</desc>
 			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5197"/>
-			<v:textRect cx="10.44" cy="190.08" width="20.88" height="15.84"/>
-			<rect x="0" y="182.16" width="20.88" height="15.84" class="st1"/>
-			<text x="3.93" y="192.42" class="st17" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>yes</text>		</g>
-		<g id="shape16-66" v:mID="16" v:groupContext="shape" transform="translate(772.306,12.6635) rotate(61.9275)">
+			<v:textRect cx="10.44" cy="175.68" width="20.88" height="15.84"/>
+			<rect x="0" y="167.76" width="20.88" height="15.84" class="st1"/>
+			<text x="3.93" y="178.02" class="st17" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>yes</text>		</g>
+		<g id="shape16-66" v:mID="16" v:groupContext="shape" transform="translate(759.6,5.04) rotate(61.9275)">
 			<title>工作表.16</title>
-			<path d="M0 198 L36.72 198" class="st18"/>
+			<path d="M0 183.6 L36.72 183.6" class="st18"/>
 		</g>
 		<g id="shape17-69" v:mID="17" v:groupContext="shape" transform="translate(614.88,-59.76)">
 			<title>工作表.17</title>
-			<path d="M0 198 L15.8 198" class="st19"/>
+			<path d="M0 183.6 L15.8 183.6" class="st19"/>
 		</g>
 		<g id="shape18-75" v:mID="18" v:groupContext="shape" transform="translate(598.32,-39.6)">
 			<title>工作表.18</title>
 			<desc>no</desc>
 			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5197"/>
-			<v:textRect cx="10.44" cy="190.08" width="20.88" height="15.84"/>
-			<rect x="0" y="182.16" width="20.88" height="15.84" class="st1"/>
-			<text x="5.68" y="192.42" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>no</text>		</g>
+			<v:textRect cx="10.44" cy="175.68" width="20.88" height="15.84"/>
+			<rect x="0" y="167.76" width="20.88" height="15.84" class="st1"/>
+			<text x="5.68" y="178.02" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>no</text>		</g>
 		<g id="shape19-78" v:mID="19" v:groupContext="shape" transform="translate(122.4,-10.08)">
 			<title>工作表.19</title>
 			<desc>Projection score: normalized fitted-subspace energy gain (ref...</desc>
 			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5197"/>
-			<v:textRect cx="237.6" cy="188.64" width="475.2" height="18.72"/>
-			<rect x="0" y="179.28" width="475.2" height="18.72" class="st1"/>
-			<text x="108.99" y="191.04" class="st22" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Projection score: normalized fitted-subspace energy gain (refined <tspan
+			<v:textRect cx="237.6" cy="174.24" width="475.2" height="18.72"/>
+			<rect x="0" y="164.88" width="475.2" height="18.72" class="st1"/>
+			<text x="108.99" y="176.64" class="st22" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Projection score: normalized fitted-subspace energy gain (refined <tspan
 						class="st23">−</tspan> grid)</text>		</g>
 	</g>
 </svg>

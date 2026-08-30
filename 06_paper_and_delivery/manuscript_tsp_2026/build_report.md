@@ -4,7 +4,7 @@ Date: 2026-08-30
 
 ## Deliverables
 
-- Main manuscript: `latex/main.pdf` (8 pages, 633237 bytes).
+- Main manuscript: `latex/main.pdf` (8 pages, 633330 bytes).
 - Supplementary material: `latex/supplement_tsp.pdf` (6 pages, 249156 bytes).
 - Formal upload package: `../submission_tsp_2026-08-30/`.
 - Self-contained source archive: `../submission_tsp_2026-08-30/TSP_source.zip`.
@@ -35,3 +35,4 @@ Date: 2026-08-30
 - Reordered the experiment narrative and retained four nonredundant figures in the main paper; all figures now appear before the references.
 - Moved the profile visualization to the supplementary material while preserving the exact profile table in the self-contained main paper.
 - Rebalanced the system-model output block and rerouted the projection-selection branches in Visio; final-size page inspection shows no text overflow or connector-label overlap.
+- Reduced and lowered both workflow-diagram titles, trimmed excess top canvas, and balanced the final reference page at references [20]--[31].

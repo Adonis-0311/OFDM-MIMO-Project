@@ -107,7 +107,7 @@ function Build-SystemModel {
     try {
         $page = $doc.Pages.Item(1)
         $page.Name = 'Tensor estimation interface'
-        Set-PageSize $page 10.0 3.25
+        Set-PageSize $page 10.0 3.00
 
         $text = 'RGB(23,32,51)'
         $blue = 'RGB(11,92,173)'
@@ -118,7 +118,7 @@ function Build-SystemModel {
         $lightGold = 'RGB(252,243,217)'
         $outputFill = 'RGB(249,241,224)'
 
-        Add-Text $page 1.72 2.88 9.82 3.18 'Rank-L separable observation model' $text 8.5 'Arial' 1 | Out-Null
+        Add-Text $page 2.40 2.30 9.30 2.54 'Rank-L separable observation model' $text 8.2 'Arial' 1 | Out-Null
 
         Add-Box $page 0.18 2.18 1.42 2.72 "Spatial ULA`nN_a" $lightBlue $blue 8.5 | Out-Null
         Add-Box $page 0.18 1.40 1.42 1.94 "Frequency`nN_τ" $lightGreen $green 8.5 | Out-Null
@@ -153,7 +153,7 @@ function Build-MethodFlow {
     try {
         $page = $doc.Pages.Item(1)
         $page.Name = 'Projection-selected Candan flow'
-        Set-PageSize $page 10.0 2.75
+        Set-PageSize $page 10.0 2.55
 
         $text = 'RGB(23,32,51)'
         $green = 'RGB(0,145,102)'
@@ -163,7 +163,7 @@ function Build-MethodFlow {
         $lightGold = 'RGB(252,243,217)'
         $lightOrange = 'RGB(250,235,224)'
 
-        Add-Text $page 2.25 2.39 7.50 2.67 'Closed-form complex three-sample correction on each active axis' $text 8.5 'Arial' 1 | Out-Null
+        Add-Text $page 2.25 2.04 7.50 2.28 'Closed-form complex three-sample correction on each active axis' $text 8.2 'Arial' 1 | Out-Null
 
         Add-Box $page 0.18 0.95 1.34 1.92 "Dense observation`ny" $lightBlue $text 8.5 | Out-Null
         Add-Box $page 1.70 0.95 3.00 1.92 "FFT top-L`ncoarse support" $lightBlue $text 8.5 | Out-Null
