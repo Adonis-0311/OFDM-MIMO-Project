@@ -1,0 +1,62 @@
+[
+  {
+    "entry": "run_tsp_controlled_local_family_baselines",
+    "exit_code": 0,
+    "stderr": "",
+    "isolated_from_editable_package": true
+  },
+  {
+    "entry": "run_tsp_unified_runtime_benchmark",
+    "exit_code": 0,
+    "stderr": "",
+    "isolated_from_editable_package": true
+  },
+  {
+    "entry": "run_tsp_full_offset_sweep",
+    "exit_code": 0,
+    "stderr": "",
+    "isolated_from_editable_package": true
+  },
+  {
+    "entry": "run_tsp_candan_stress_zeta_audit",
+    "exit_code": 0,
+    "stderr": "",
+    "isolated_from_editable_package": true
+  },
+  {
+    "entry": "run_tsp_candan_gate_protocol_audit",
+    "exit_code": 0,
+    "stderr": "",
+    "isolated_from_editable_package": true
+  },
+  {
+    "entry": "run_tsp_projection_gate_runtime",
+    "exit_code": 0,
+    "stderr": "",
+    "isolated_from_editable_package": true
+  },
+  {
+    "entry": "run_tsp_candan_physical_zeta_audit",
+    "exit_code": 0,
+    "stderr": "W1006 19:19:00.073000 42740 site-packages\\torch\\utils\\flop_counter.py:29] triton not found; flop counting will not work for triton kernels\n",
+    "isolated_from_editable_package": true
+  },
+  {
+    "entry": "run_tsp_candan_cdl_audit",
+    "exit_code": 0,
+    "stderr": "W1006 19:19:06.205000 12556 site-packages\\torch\\utils\\flop_counter.py:29] triton not found; flop counting will not work for triton kernels\n",
+    "isolated_from_editable_package": true
+  },
+  {
+    "entry": "run_tsp_candan_route_audit",
+    "exit_code": 0,
+    "stderr": "W1006 19:19:12.728000 34620 site-packages\\torch\\utils\\flop_counter.py:29] triton not found; flop counting will not work for triton kernels\n",
+    "isolated_from_editable_package": true
+  },
+  {
+    "entry": "run_tsp_support_quality_stratification",
+    "exit_code": 0,
+    "stderr": "",
+    "isolated_from_editable_package": true
+  }
+]

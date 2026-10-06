@@ -1,0 +1,925 @@
+{
+  "refs": {
+    "main_before": "04273d4c883ef073d20654ee1d9c5ecba303cdaa",
+    "submission": "8429794ebbdf72eb7c01570d6362137731041a38"
+  },
+  "file_counts": {
+    "main_before": 136,
+    "submission": 1029
+  },
+  "matrix_rows": 229,
+  "present_submission_absent_main": 225,
+  "missing_both": [
+    "03_active_modules/data/__init__.py",
+    "03_active_modules/data/impairments.py",
+    "03_active_modules/data/offgrid_tensor.py",
+    "03_active_modules/data/set_a_generator.py"
+  ],
+  "result_directories": {
+    "matlab_taes_supplement": {
+      "files": [
+        "candan_independent_rows.csv",
+        "candan_independent_summary.csv",
+        "complexity_model.md",
+        "complexity_table.csv",
+        "crlb_check.csv",
+        "fixedpoint_summary.csv",
+        "fixedpoint_sweep.csv",
+        "flops_paper_pareto.csv",
+        "geometry2d_done.csv",
+        "geometry2d_rows.csv",
+        "learning_marginal_alpha.csv",
+        "learning_marginal_rows.csv",
+        "learning_marginal_summary.csv",
+        "pareto_done.csv",
+        "pareto_rows.csv",
+        "runtime_paper_comparison.csv",
+        "traceability_matlab_supplement.csv"
+      ],
+      "missing_standard_release_metadata": [
+        "command.txt",
+        "config.json",
+        "environment.txt",
+        "git_commit.txt",
+        "seeds.csv"
+      ],
+      "manifests": []
+    },
+    "tsp_candan_cdl_audit_paper": {
+      "files": [
+        "command.txt",
+        "config.json",
+        "environment.txt",
+        "git_commit.txt",
+        "per_scene.csv",
+        "profile_summary.csv",
+        "run_manifest.json",
+        "seeds.csv",
+        "summary.json"
+      ],
+      "missing_standard_release_metadata": [],
+      "manifests": [
+        "run_manifest.json"
+      ],
+      "run_manifest.json": {
+        "command": "python 04_experiments/eval/run_tsp_candan_cdl_audit.py",
+        "config": {
+          "carrier_frequency_hz": 60000000000.0,
+          "delay_spread_s": 1e-07,
+          "device": "cpu",
+          "elapsed_seconds": 6.41394710005261,
+          "l_values": [
+            4,
+            8,
+            16
+          ],
+          "num_subcarriers": 64,
+          "num_tx_antennas": 4,
+          "output_dir_name": "tsp_candan_cdl_audit_paper",
+          "profiles": [
+            "A",
+            "C",
+            "D"
+          ],
+          "samples_per_profile_seed": 50,
+          "scene_count": 9000,
+          "snrs": [
+            0.0,
+            10.0,
+            20.0,
+            30.0
+          ],
+          "spatial_truth_oversampling": 4096,
+          "subcarrier_spacing_hz": 120000.0,
+          "test_seeds": [
+            20260628,
+            20260629,
+            20260630,
+            20260701,
+            20260702
+          ]
+        },
+        "environment": {
+          "git_commit": "c50a603",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.10"
+        },
+        "metrics": {
+          "scene_count": 9000
+        },
+        "notes": [
+          "Candan and grid use the same FFT top-L support, noisy tensors, periodic coordinates, Nyquist alias lock, and final joint LS convention.",
+          "The Candan update uses the published complex three-DFT-sample ratio with the finite-length correction on each axis."
+        ],
+        "run_id": "tsp_candan_cdl_audit_20260829"
+      }
+    },
+    "tsp_candan_gate_protocol_seventh_round": {
+      "files": [
+        "README.md",
+        "command.txt",
+        "config.json",
+        "environment.txt",
+        "git_commit.txt",
+        "leave_one_profile_out.csv",
+        "leave_one_validation_seed_out.csv",
+        "protocol_rules.csv",
+        "run_manifest.json",
+        "seeds.csv",
+        "stage1_rule.csv",
+        "summary.json",
+        "test_incremental_metrics.csv",
+        "threshold_sensitivity.csv"
+      ],
+      "missing_standard_release_metadata": [],
+      "manifests": [
+        "run_manifest.json"
+      ],
+      "run_manifest.json": {
+        "command": "python 04_experiments/eval/run_tsp_candan_gate_protocol_audit.py",
+        "config": {
+          "feature_normalization": "none",
+          "output_dir_name": "tsp_candan_gate_protocol_seventh_round",
+          "primary_calibration_profiles": [
+            "A",
+            "C"
+          ],
+          "source_csv": "D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\05_results\\tsp_candan_route_audit_paper\\per_scene.csv",
+          "source_sha256": "85726d36de6b68bfd5c00461c422325034727db5c0276b3a02e5ceaaaee4b6e9"
+        },
+        "environment": {
+          "git_commit": "c50a603",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.10"
+        },
+        "metrics": {
+          "source_rows": 14400,
+          "test_rows": 9000
+        },
+        "notes": [
+          "Primary threshold uses validation CDL-A/C only; CDL-D is zero-shot.",
+          "No feature normalization is applied, so CDL-D cannot enter normalization.",
+          "All intervals are paired across the five test seeds."
+        ],
+        "run_id": "tsp_candan_gate_protocol_seventh_round_20260829"
+      }
+    },
+    "tsp_candan_physical_zeta_audit_paper": {
+      "files": [
+        "audit_manifest.json",
+        "command.txt",
+        "config.json",
+        "environment.txt",
+        "git_commit.txt",
+        "per_component_physical_errors.csv",
+        "per_scene_physical_zeta.csv",
+        "profile_physical_metrics.csv",
+        "profile_scene_physical_metrics.csv",
+        "seeds.csv",
+        "summary.json",
+        "zeta_binned_evidence.csv"
+      ],
+      "missing_standard_release_metadata": [],
+      "manifests": [
+        "audit_manifest.json"
+      ],
+      "audit_manifest.json": {
+        "run_id": "tsp_candan_physical_zeta_audit_20260830",
+        "command": "python 04_experiments/eval/run_tsp_candan_physical_zeta_audit.py",
+        "cwd": "D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation",
+        "config": {
+          "profiles": [
+            "A",
+            "C",
+            "D"
+          ],
+          "snrs": [
+            0.0,
+            10.0,
+            20.0,
+            30.0
+          ],
+          "l_values": [
+            4,
+            8,
+            16
+          ],
+          "test_seeds": [
+            20260628,
+            20260629,
+            20260630,
+            20260701,
+            20260702
+          ],
+          "samples_per_profile_seed": 50,
+          "generator_batch_size": 50,
+          "num_subcarriers": 64,
+          "num_tx_antennas": 4,
+          "spatial_truth_oversampling": 4096,
+          "subcarrier_spacing_hz": 120000.0,
+          "carrier_frequency_hz": 60000000000.0,
+          "delay_spread_s": 1e-07,
+          "device": "cpu",
+          "route_artifact_dir": "tsp_candan_route_audit_paper",
+          "zeta_bins": 10,
+          "verification_tolerance_db": 1e-09,
+          "output_dir_name": "tsp_candan_physical_zeta_audit_paper"
+        },
+        "metrics": {
+          "scene_count": 9000,
+          "maximum_route_replay_error_db": 0.0
+        },
+        "inputs_sha256": {
+          "05_results\\tsp_candan_route_audit_paper\\per_scene.csv": "85726d36de6b68bfd5c00461c422325034727db5c0276b3a02e5ceaaaee4b6e9",
+          "05_results\\tsp_candan_route_audit_paper\\residual_gates.csv": "4db8ba29fa7457de5e124d46afd675be67dbf2d2e098396dc2bcc0c441950592"
+        },
+        "code_sha256": {
+          "04_experiments\\eval\\run_tsp_candan_physical_zeta_audit.py": "e1b7003bfe3e52c2fa7f206f52c6b76d516fd64d875e801432af2c5402fe70a1"
+        },
+        "software": {
+          "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+          "numpy": "2.5.0",
+          "platform": "Windows-11-10.0.26200-SP0"
+        },
+        "git_commit": "c50a6033c77651f1af0581679f9d16e39c236fb6",
+        "notes": [
+          "The five frozen test seeds, Sionna CDL generator, AWGN order, top-L supports, alias lock, and residual threshold exactly replay the route audit.",
+          "The maximum row-wise NMSE discrepancy against the frozen route artifact is checked before release.",
+          "Physical-path assignment uses the strongest min(L, path_count) CIR paths and a joint periodic delay/projected-spatial Hungarian cost."
+        ]
+      }
+    },
+    "tsp_candan_route_audit_paper": {
+      "files": [
+        "command.txt",
+        "config.json",
+        "environment.txt",
+        "git_commit.txt",
+        "per_scene.csv",
+        "residual_gates.csv",
+        "route_rule.csv",
+        "run_manifest.json",
+        "seeds.csv",
+        "summary.json",
+        "test_profile_summary.csv"
+      ],
+      "missing_standard_release_metadata": [],
+      "manifests": [
+        "run_manifest.json"
+      ],
+      "run_manifest.json": {
+        "command": "python 04_experiments/eval/run_tsp_candan_route_audit.py",
+        "config": {
+          "carrier_frequency_hz": 60000000000.0,
+          "delay_spread_s": 1e-07,
+          "device": "cpu",
+          "l_values": [
+            4,
+            8,
+            16
+          ],
+          "num_subcarriers": 64,
+          "num_tx_antennas": 4,
+          "output_dir_name": "tsp_candan_route_audit_paper",
+          "profiles": [
+            "A",
+            "C",
+            "D"
+          ],
+          "route_win_epsilon_db": 0.1,
+          "samples_per_profile_seed": 50,
+          "search_points": 5,
+          "search_radius": 0.45,
+          "snrs": [
+            0.0,
+            10.0,
+            20.0,
+            30.0
+          ],
+          "spatial_truth_oversampling": 4096,
+          "subcarrier_spacing_hz": 120000.0,
+          "test_seeds": [
+            20260628,
+            20260629,
+            20260630,
+            20260701,
+            20260702
+          ],
+          "validation_seeds": [
+            20260625,
+            20260626,
+            20260627
+          ]
+        },
+        "environment": {
+          "git_commit": "c50a603",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.10"
+        },
+        "metrics": {
+          "test_scene_count": 9000,
+          "validation_scene_count": 5400
+        },
+        "notes": [
+          "Route and residual thresholds are selected on validation seeds only.",
+          "Route features use only the noisy tensor, coarse support, and Candan update.",
+          "The oracle is reported only as a specialization ceiling and is not an executable method."
+        ],
+        "run_id": "tsp_candan_route_audit_20260829"
+      }
+    },
+    "tsp_candan_stress_zeta_audit_paper": {
+      "files": [
+        "audit_manifest.json",
+        "candan_48cell_summary.csv",
+        "command.txt",
+        "config.json",
+        "environment.txt",
+        "git_commit.txt",
+        "per_scene.csv",
+        "seeds.csv",
+        "summary.json",
+        "zeta_binned_evidence.csv"
+      ],
+      "missing_standard_release_metadata": [],
+      "manifests": [
+        "audit_manifest.json"
+      ],
+      "audit_manifest.json": {
+        "run_id": "tsp_candan_stress_zeta_audit_20260830",
+        "command": "python 04_experiments/eval/run_tsp_candan_stress_zeta_audit.py",
+        "cwd": "D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation",
+        "config": {
+          "shape": [
+            128,
+            16,
+            32
+          ],
+          "n_targets": 4,
+          "separations": [
+            0.25,
+            0.5,
+            1.0,
+            2.0
+          ],
+          "dynamic_ranges_db": [
+            0.0,
+            10.0,
+            20.0
+          ],
+          "snrs": [
+            0.0,
+            10.0,
+            20.0,
+            30.0
+          ],
+          "validation_seeds": [
+            20260820,
+            20260821
+          ],
+          "test_seeds": [
+            20260822,
+            20260823,
+            20260824,
+            20260825,
+            20260826
+          ],
+          "samples_per_cell_seed": 5,
+          "zeta_bins": 10,
+          "output_dir_name": "tsp_candan_stress_zeta_audit_paper"
+        },
+        "metrics": {
+          "validation_scene_count": 480,
+          "test_scene_count": 1200,
+          "cell_count": 48,
+          "gate": {
+            "threshold": 0.025316819715892225,
+            "validation_gated_gain_db": 11.160104096391713,
+            "validation_pass_rate": 1.0
+          },
+          "mean_candan_gain_db": 10.459236988696594,
+          "mean_gated_candan_gain_db": 10.459236988696594,
+          "minimum_cell_candan_gain_db": 6.292906495972589,
+          "minimum_cell_gated_candan_gain_db": 6.292906495972589,
+          "gate_pass_rate": 1.0,
+          "minimum_zeta_quantiles": {
+            "0.01": 0.37239705932660455,
+            "0.05": 0.5569929041019615,
+            "0.25": 0.7837557007690824,
+            "0.5": 0.7986938323738951,
+            "0.75": 0.8022828711951632,
+            "0.95": 0.8142993164272401,
+            "0.99": 0.8280324556983731
+          },
+          "clipping_rate": 0.12090277777777776,
+          "elapsed_seconds": 49.48880769999232
+        },
+        "software": {
+          "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+          "numpy": "2.5.0",
+          "platform": "Windows-11-10.0.26200-SP0"
+        },
+        "code_sha256": {
+          "04_experiments\\eval\\run_tsp_candan_stress_zeta_audit.py": "f4db353317aa2c163526e6de7d35366f6007ba49dc8077127604ca9f97a3b6c8"
+        },
+        "git_commit": "c50a6033c77651f1af0581679f9d16e39c236fb6",
+        "notes": [
+          "The scalar residual threshold is selected only on the two controlled-stress validation seeds.",
+          "Every reported interval is a Student-t interval over the five test-seed means.",
+          "All coordinate metrics use Hungarian truth assignment with periodic bin distances."
+        ]
+      }
+    },
+    "tsp_candan_zeta_closed_loop_paper": {
+      "files": [
+        "audit_manifest.json",
+        "command.txt",
+        "summary.json",
+        "zeta_associations.csv",
+        "zeta_beneficial_clipping_bins.csv",
+        "zeta_profile_distributions.csv"
+      ],
+      "missing_standard_release_metadata": [
+        "config.json",
+        "environment.txt",
+        "git_commit.txt",
+        "seeds.csv"
+      ],
+      "manifests": [
+        "audit_manifest.json"
+      ],
+      "audit_manifest.json": {
+        "run_id": "tsp_candan_zeta_closed_loop_20260830",
+        "command": "python 04_experiments/eval/summarize_tsp_candan_zeta_closed_loop.py",
+        "cwd": "D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation",
+        "metrics": {
+          "stress_test_scenes": 1200,
+          "cdl_test_scenes": 9000,
+          "association_rows": 15,
+          "binned_rows": 50,
+          "input_sha256": {
+            "05_results\\tsp_candan_stress_zeta_audit_paper\\per_scene.csv": "bfb1c6dbbcb2d5134b4057895a02c357f59e55f767e25b563ea451117be69b5b",
+            "05_results\\tsp_candan_physical_zeta_audit_paper\\per_scene_physical_zeta.csv": "fa5616b2bbcb4e516a402edb73c62a8204ed153aebf4a2931c2a85dc465c16a8"
+          }
+        },
+        "code_sha256": {
+          "04_experiments\\eval\\summarize_tsp_candan_zeta_closed_loop.py": "44a78d7efe762a18ba17019d0887bdba840105b287b7888206db6aca6e45eafd"
+        },
+        "software": {
+          "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+          "numpy": "2.5.0",
+          "platform": "Windows-11-10.0.26200-SP0"
+        },
+        "git_commit": "c50a6033c77651f1af0581679f9d16e39c236fb6",
+        "notes": [
+          "All associations are descriptive two-sided Spearman statistics over frozen test scenes.",
+          "Quantile bins are formed independently within each reported domain/profile and use no clean truth for estimator decisions."
+        ]
+      }
+    },
+    "tsp_controlled_local_family_paper": {
+      "files": [
+        "gate_calibration_rows.csv",
+        "local_family_rows.csv",
+        "local_family_summary.csv",
+        "run_manifest.json",
+        "summary.json"
+      ],
+      "missing_standard_release_metadata": [
+        "command.txt",
+        "config.json",
+        "environment.txt",
+        "git_commit.txt",
+        "seeds.csv"
+      ],
+      "manifests": [
+        "run_manifest.json"
+      ],
+      "run_manifest.json": {
+        "command": "python 04_experiments/eval/run_tsp_controlled_local_family_baselines.py",
+        "config": {
+          "l_values": [
+            2,
+            4,
+            8
+          ],
+          "minimum_validation_positive_recall": 0.9,
+          "offset_radius": 0.35,
+          "output_dir_name": "tsp_controlled_local_family_paper",
+          "samples_per_cell_seed": 20,
+          "search_points": 5,
+          "search_radius": 0.45,
+          "shape": [
+            128,
+            16,
+            32
+          ],
+          "snrs": [
+            0.0,
+            10.0,
+            20.0,
+            30.0
+          ],
+          "test_seeds": [
+            20260630,
+            20260701,
+            20260702,
+            20260703,
+            20260704
+          ],
+          "validation_seeds": [
+            20260808,
+            20260809
+          ]
+        },
+        "environment": {
+          "git_commit": "c50a603",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.10"
+        },
+        "metrics": {
+          "gate_threshold": 0.017562690684875093,
+          "test_scene_count": 1200,
+          "validation_scene_count": 480
+        },
+        "notes": [
+          "All local-family methods share each noisy tensor, known L, FFT top-L support, periodic boundaries, and one final joint-LS convention.",
+          "The residual threshold is calibrated only on independent validation seeds and is frozen before the five test seeds are summarized.",
+          "Reference CPU times reuse the common FFT-support stage measured once per scene; stage-wise columns expose implementation boundaries.",
+          "The Newton comparator uses one gradient/Hessian direction per selected peak with deterministic backtracking and no residual deflation or cyclic update.",
+          "The Candan comparator applies the published finite-length correction to complex three-DFT-sample ratios independently on each axis."
+        ],
+        "run_id": "tsp_controlled_local_family_paper_20260829"
+      }
+    },
+    "tsp_full_offset_sweep_paper": {
+      "files": [
+        "command.txt",
+        "config.json",
+        "edge_offset_summary.csv",
+        "environment.txt",
+        "git_commit.txt",
+        "method_summary.csv",
+        "per_axis.csv",
+        "per_scene.csv",
+        "radius_per_scene.csv",
+        "radius_summary.csv",
+        "run_manifest.json",
+        "seeds.csv",
+        "summary.json",
+        "support_quality_summary.csv"
+      ],
+      "missing_standard_release_metadata": [],
+      "manifests": [
+        "run_manifest.json"
+      ],
+      "run_manifest.json": {
+        "command": "python 04_experiments/eval/run_tsp_full_offset_sweep.py",
+        "config": {
+          "elapsed_seconds": 254.23892889998388,
+          "gate_threshold": 0.03006794943974425,
+          "l_values": [
+            2,
+            4,
+            8
+          ],
+          "minimum_validation_positive_recall": 0.9,
+          "offset_radius": 0.49,
+          "output_dir_name": "tsp_full_offset_sweep_paper",
+          "primary_search_radius": 0.45,
+          "samples_per_cell_seed": 20,
+          "search_points": 5,
+          "search_radii": [
+            0.25,
+            0.35,
+            0.45,
+            0.5,
+            0.55
+          ],
+          "shape": [
+            128,
+            16,
+            32
+          ],
+          "snrs": [
+            0.0,
+            10.0,
+            20.0,
+            30.0
+          ],
+          "test_scene_count": 1200,
+          "test_seeds": [
+            20260630,
+            20260701,
+            20260702,
+            20260703,
+            20260704
+          ],
+          "validation_scene_count": 480,
+          "validation_seeds": [
+            20260808,
+            20260809
+          ]
+        },
+        "environment": {
+          "git_commit": "c50a603",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.10"
+        },
+        "metrics": {
+          "gate_threshold": 0.03006794943974425,
+          "offset_radius": 0.49,
+          "test_scene_count": 1200
+        },
+        "notes": [
+          "The test spans the complete fractional-bin interval and reports edge-offset performance by axis.",
+          "The same scenes support method, radius, support-quality, and conditioning comparisons."
+        ],
+        "run_id": "tsp_full_offset_sweep_paper_20260829"
+      }
+    },
+    "tsp_projection_gate_runtime_seventh_round": {
+      "files": [
+        "command.txt",
+        "config.json",
+        "environment.txt",
+        "git_commit.txt",
+        "per_scene.csv",
+        "projection_identity.csv",
+        "run_manifest.json",
+        "seeds.csv",
+        "summary.csv",
+        "summary.json"
+      ],
+      "missing_standard_release_metadata": [],
+      "manifests": [
+        "run_manifest.json"
+      ],
+      "run_manifest.json": {
+        "command": "python 04_experiments/eval/run_tsp_projection_gate_runtime.py",
+        "config": {
+          "dtype": "complex128",
+          "elapsed_seconds": 340.8798630000092,
+          "gate_threshold": -0.020959882599625883,
+          "identity_scenes": 60,
+          "l_values": [
+            2,
+            4,
+            8
+          ],
+          "offset_radius": 0.35,
+          "output_dir_name": "tsp_projection_gate_runtime_seventh_round",
+          "protocol_summary": "D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\05_results\\tsp_candan_gate_protocol_seventh_round\\summary.json",
+          "samples_per_cell_seed": 20,
+          "scene_count": 1200,
+          "shape": [
+            128,
+            16,
+            32
+          ],
+          "snrs": [
+            0.0,
+            10.0,
+            20.0,
+            30.0
+          ],
+          "stage1_rule": {
+            "maximum_clipping_rate": 0.84375,
+            "minimum_zeta": -Infinity
+          },
+          "test_seeds": [
+            20260630,
+            20260701,
+            20260702,
+            20260703,
+            20260704
+          ],
+          "thread_count": 1,
+          "timed_repeats": 3,
+          "warmup_runs": 1
+        },
+        "environment": {
+          "git_commit": "c50a603",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.10"
+        },
+        "metrics": {
+          "maximum_explicit_projection_abs_error": 5.440092820663267e-15,
+          "maximum_prediction_qr_abs_energy_error": 6.128431095930864e-14,
+          "maximum_projection_qr_abs_error": 1.0894063429134349e-14,
+          "scene_count": 60
+        },
+        "notes": [
+          "All methods start from the noisy tensor under a one-thread complex128 protocol.",
+          "Projection gating uses FFT support energy and the norm of the Candan LS projection; it never forms two residual tensors.",
+          "The Stage-1 rule is frozen from CDL-A/C validation before this synthetic runtime campaign."
+        ],
+        "run_id": "tsp_projection_gate_runtime_seventh_round_20260829"
+      }
+    },
+    "tsp_separation_nearfar_metrics_v2_paper": {
+      "files": [
+        "command.txt",
+        "config.json",
+        "environment.txt",
+        "git_commit.txt",
+        "radius_sensitivity_rows.csv",
+        "radius_sensitivity_summary.csv",
+        "run_manifest.json",
+        "seeds.csv",
+        "stress_component_rows.csv",
+        "stress_rows.csv",
+        "stress_test_cell_summary.csv",
+        "summary.json",
+        "theory_component_summary.csv",
+        "theory_scene_summary.csv"
+      ],
+      "missing_standard_release_metadata": [],
+      "manifests": [
+        "run_manifest.json"
+      ],
+      "run_manifest.json": {
+        "command": "python 04_experiments/eval/run_tsp_separation_nearfar_stress.py",
+        "config": {
+          "dynamic_ranges_db": [
+            0.0,
+            10.0,
+            20.0
+          ],
+          "minimum_validation_positive_recall": 0.9,
+          "n_targets": 4,
+          "output_dir_name": "tsp_separation_nearfar_metrics_v2_paper",
+          "radius_sensitivity_samples_per_seed": 10,
+          "radius_values": [
+            0.25,
+            0.35,
+            0.45,
+            0.5,
+            0.55
+          ],
+          "samples_per_cell_seed": 5,
+          "search_points": 5,
+          "search_radius": 0.45,
+          "separations": [
+            0.25,
+            0.5,
+            1.0,
+            2.0
+          ],
+          "shape": [
+            128,
+            16,
+            32
+          ],
+          "snrs": [
+            0.0,
+            10.0,
+            20.0,
+            30.0
+          ],
+          "test_seeds": [
+            20260822,
+            20260823,
+            20260824,
+            20260825,
+            20260826
+          ],
+          "validation_seeds": [
+            20260820,
+            20260821
+          ]
+        },
+        "environment": {
+          "git_commit": "c50a603",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.10"
+        },
+        "metrics": {
+          "gate_threshold": 0.017491963296016766,
+          "test_scene_count": 1200,
+          "validation_scene_count": 480,
+          "worst_cell_gated_gain_db": 5.317940532660184
+        },
+        "notes": [
+          "Each scene contains one controlled close pair; the pair axis cycles across angle, delay, and Doppler.",
+          "The second member of the pair sets the requested amplitude dynamic range; nuisance components are placed at least four Euclidean circular bins away.",
+          "The residual threshold is calibrated only on two validation seeds and frozen on five independent test seeds.",
+          "All generated scenes contribute to the support, component-hit, conditioning, and reconstruction summaries.",
+          "The score-gap envelope uses eta=0.05 and 125 candidates per neighborhood; component and all-component scene counts are stored explicitly.",
+          "Distinct-pair recovery jointly requires truth-assigned coordinate accuracy and separation fidelity; separation error is also reported continuously."
+        ],
+        "run_id": "tsp_separation_nearfar_metrics_v2_paper_20260829"
+      }
+    },
+    "tsp_support_quality_stratification_paper": {
+      "files": [
+        "command.txt",
+        "config.json",
+        "environment.txt",
+        "git_commit.txt",
+        "run_manifest.json",
+        "seeds.csv",
+        "summary.json",
+        "support_quality_strata.csv"
+      ],
+      "missing_standard_release_metadata": [],
+      "manifests": [
+        "run_manifest.json"
+      ],
+      "run_manifest.json": {
+        "command": "python 04_experiments/eval/run_tsp_support_quality_stratification.py",
+        "config": {
+          "output_dir_name": "tsp_support_quality_stratification_paper",
+          "source_dir_name": "tsp_full_offset_sweep_paper",
+          "test_scene_count": 1200
+        },
+        "environment": {
+          "git_commit": "c50a603",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.10"
+        },
+        "metrics": {
+          "stratum_count": 18,
+          "test_scene_count": 1200
+        },
+        "notes": [
+          "Balanced rank quartiles preserve all tied conditioning values while keeping equal scene counts.",
+          "Support coverage, duplicate neighborhoods, conditioning, and minimum separation are reported on the same full-offset scenes."
+        ],
+        "run_id": "tsp_support_quality_stratification_paper_20260829"
+      }
+    },
+    "tsp_unified_runtime_paper": {
+      "files": [
+        "command.txt",
+        "config.json",
+        "environment.txt",
+        "git_commit.txt",
+        "per_scene.csv",
+        "per_seed.csv",
+        "run_manifest.json",
+        "seeds.csv",
+        "summary.csv",
+        "summary.json"
+      ],
+      "missing_standard_release_metadata": [],
+      "manifests": [
+        "run_manifest.json"
+      ],
+      "run_manifest.json": {
+        "command": "python 04_experiments/eval/run_tsp_unified_runtime_benchmark.py",
+        "config": {
+          "dtype": "complex128",
+          "elapsed_seconds": 657.1449993000133,
+          "gate_threshold": 4.9859075510778475e-05,
+          "l_values": [
+            2,
+            4,
+            8
+          ],
+          "offset_radius": 0.35,
+          "output_dir_name": "tsp_unified_runtime_paper",
+          "samples_per_cell_seed": 20,
+          "scene_count": 1200,
+          "search_points": 5,
+          "search_radius": 0.45,
+          "shape": [
+            128,
+            16,
+            32
+          ],
+          "snrs": [
+            0.0,
+            10.0,
+            20.0,
+            30.0
+          ],
+          "test_seeds": [
+            20260630,
+            20260701,
+            20260702,
+            20260703,
+            20260704
+          ],
+          "thread_count": 1,
+          "timed_repeats": 3,
+          "warmup_runs": 1
+        },
+        "environment": {
+          "git_commit": "c50a603",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.10"
+        },
+        "metrics": {
+          "scene_count": 1200,
+          "timed_repeats": 3
+        },
+        "notes": [
+          "Every method starts from the noisy tensor and includes FFT support selection and final joint LS.",
+          "Reported stage and total times are per-scene medians over repeated steady-state executions."
+        ],
+        "run_id": "tsp_unified_runtime_paper_20260829"
+      }
+    }
+  }
+}

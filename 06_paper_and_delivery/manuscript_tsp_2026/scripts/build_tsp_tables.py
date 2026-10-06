@@ -42,7 +42,7 @@ def pct(value: str, digits: int = 1) -> str:
 
 def write(name: str, lines: list[str]) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / name).write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (OUT / name).write_text("\n".join(line.rstrip() for line in lines) + "\n", encoding="utf-8")
 
 
 def local_family() -> None:
@@ -512,22 +512,26 @@ def candan_cdl() -> None:
 
 
 def candan_gate_profiles() -> None:
-    rows = read_rows(ROUTE_DIR / "test_profile_summary.csv")
+    rows = [row for row in read_rows(PROTOCOL_DIR / "test_incremental_metrics.csv")
+            if row["protocol"] == "theory_fixed_tau_zero_no_calibration"]
+    if [row["profile"] for row in rows] != ["A", "C", "D", "All"]:
+        raise ValueError("Expected A/C/D/All rows for the calibration-free protocol")
     lines = [
         r"\begin{table}[!t]", r"\centering",
-        r"\caption{Residual-gated Candan on frozen CDL tests. Intervals use five seed means.}",
-        r"\label{tab:candan_gate_profiles}", r"\footnotesize",
-        r"\setlength{\tabcolsep}{3.1pt}",
-        r"\begin{tabular}{lccc}", r"\toprule",
-        r"Profile & Candan gain & Gated gain & Pass \\",
-        r" & (dB) & (dB) & (\%) \\", r"\midrule",
+        r"\caption{Gain relative to grid for calibration-free projection selection on five CDL test seeds. Intervals are paired over seed means.}",
+        r"\label{tab:candan_gate_profiles}", r"\scriptsize",
+        r"\setlength{\tabcolsep}{2.5pt}",
+        r"\begin{tabular}{lrrrr}", r"\toprule",
+        r"Profile & Candan & Proj.-selected & Increment [95\%] & Return \\",
+        r" & (dB) & (dB) & (dB) & (\%) \\", r"\midrule",
     ]
     for row in rows:
         label = "All" if row["profile"] == "All" else f"CDL-{row['profile']}"
         lines.append(
-            f"{label} & {float(row['candan_gain_db']):.2f} & "
-            f"${float(row['gated_candan_gain_db']):.2f}\\,[{float(row['gated_candan_gain_ci95_low_db']):.2f},{float(row['gated_candan_gain_ci95_high_db']):.2f}]$ & "
-            f"{pct(row['gated_candan_pass_rate'])} \\\\"
+            f"{label} & {float(row['ungated_gain_db']):.3f} & "
+            f"{float(row['gated_gain_db']):.3f} & "
+            f"${float(row['paired_increment_db']):.3f}\\,[{float(row['paired_increment_ci95_low_db']):.3f},{float(row['paired_increment_ci95_high_db']):.3f}]$ & "
+            f"{pct(row['pass_rate'])} \\\\"
         )
     lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{table}"])
     write("tsp_candan_gate_profiles_table.tex", lines)
@@ -572,18 +576,14 @@ def boundary_audits() -> None:
 
 
 def main() -> None:
+    # Build exactly the eight tables consumed by the 2026-08-30 submission.
+    # Historical builders remain available for provenance; their
+    # exploratory inputs are not part of the public submission snapshot.
     local_family()
-    gate_cells()
-    gate_loso()
     stress_cells_long()
-    stress_pair_summary()
-    support_quality()
-    theory_condition()
     full_offset()
-    gate_transfer()
-    cluster_bootstrap()
     candan_cdl()
-    boundary_audits()
+    candan_gate_profiles()
     seventh_round_audits()
 
 

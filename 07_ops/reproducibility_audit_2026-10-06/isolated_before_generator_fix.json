@@ -1,0 +1,52 @@
+[
+  {
+    "entry": "run_tsp_controlled_local_family_baselines",
+    "exit_code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"04_experiments/eval/run_tsp_controlled_local_family_baselines.py\", line 3, in <module>\n    from run_tsp_cost_matched_local_baselines import calibrate_residual_threshold, main\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\04_experiments\\eval\\run_tsp_cost_matched_local_baselines.py\", line 18, in <module>\n    from baseline.local_refinement import (  # noqa: E402\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\__init__.py\", line 3, in <module>\n    from .tensor_nomp import TensorNOMPResult, tensor_nomp_known_order\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\tensor_nomp.py\", line 9, in <module>\n    from data.offgrid_tensor import tensor_atom\nModuleNotFoundError: No module named 'data'\n"
+  },
+  {
+    "entry": "run_tsp_unified_runtime_benchmark",
+    "exit_code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"04_experiments/eval/run_tsp_unified_runtime_benchmark.py\", line 24, in <module>\n    from baseline.local_refinement import (  # noqa: E402\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\__init__.py\", line 3, in <module>\n    from .tensor_nomp import TensorNOMPResult, tensor_nomp_known_order\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\tensor_nomp.py\", line 9, in <module>\n    from data.offgrid_tensor import tensor_atom\nModuleNotFoundError: No module named 'data'\n"
+  },
+  {
+    "entry": "run_tsp_full_offset_sweep",
+    "exit_code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"04_experiments/eval/run_tsp_full_offset_sweep.py\", line 19, in <module>\n    from baseline.local_refinement import (  # noqa: E402\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\__init__.py\", line 3, in <module>\n    from .tensor_nomp import TensorNOMPResult, tensor_nomp_known_order\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\tensor_nomp.py\", line 9, in <module>\n    from data.offgrid_tensor import tensor_atom\nModuleNotFoundError: No module named 'data'\n"
+  },
+  {
+    "entry": "run_tsp_candan_stress_zeta_audit",
+    "exit_code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"04_experiments/eval/run_tsp_candan_stress_zeta_audit.py\", line 23, in <module>\n    from baseline.local_refinement import axiswise_candan_diagnostics  # noqa: E402\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\__init__.py\", line 3, in <module>\n    from .tensor_nomp import TensorNOMPResult, tensor_nomp_known_order\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\tensor_nomp.py\", line 9, in <module>\n    from data.offgrid_tensor import tensor_atom\nModuleNotFoundError: No module named 'data'\n"
+  },
+  {
+    "entry": "run_tsp_candan_gate_protocol_audit",
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "entry": "run_tsp_projection_gate_runtime",
+    "exit_code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"04_experiments/eval/run_tsp_projection_gate_runtime.py\", line 23, in <module>\n    from baseline.local_refinement import axiswise_candan_diagnostics  # noqa: E402\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\__init__.py\", line 3, in <module>\n    from .tensor_nomp import TensorNOMPResult, tensor_nomp_known_order\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\tensor_nomp.py\", line 9, in <module>\n    from data.offgrid_tensor import tensor_atom\nModuleNotFoundError: No module named 'data'\n"
+  },
+  {
+    "entry": "run_tsp_candan_physical_zeta_audit",
+    "exit_code": 1,
+    "stderr": "W1006 19:18:29.522000 32812 site-packages\\torch\\utils\\flop_counter.py:29] triton not found; flop counting will not work for triton kernels\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"04_experiments/eval/run_tsp_candan_physical_zeta_audit.py\", line 25, in <module>\n    from baseline.local_refinement import axiswise_candan_diagnostics  # noqa: E402\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\__init__.py\", line 3, in <module>\n    from .tensor_nomp import TensorNOMPResult, tensor_nomp_known_order\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\tensor_nomp.py\", line 9, in <module>\n    from data.offgrid_tensor import tensor_atom\nModuleNotFoundError: No module named 'data'\n"
+  },
+  {
+    "entry": "run_tsp_candan_cdl_audit",
+    "exit_code": 1,
+    "stderr": "W1006 19:18:34.430000 51352 site-packages\\torch\\utils\\flop_counter.py:29] triton not found; flop counting will not work for triton kernels\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"04_experiments/eval/run_tsp_candan_cdl_audit.py\", line 20, in <module>\n    from baseline.local_refinement import axiswise_candan_bins  # noqa: E402\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\__init__.py\", line 3, in <module>\n    from .tensor_nomp import TensorNOMPResult, tensor_nomp_known_order\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\tensor_nomp.py\", line 9, in <module>\n    from data.offgrid_tensor import tensor_atom\nModuleNotFoundError: No module named 'data'\n"
+  },
+  {
+    "entry": "run_tsp_candan_route_audit",
+    "exit_code": 1,
+    "stderr": "W1006 19:18:40.345000 27876 site-packages\\torch\\utils\\flop_counter.py:29] triton not found; flop counting will not work for triton kernels\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"04_experiments/eval/run_tsp_candan_route_audit.py\", line 28, in <module>\n    from baseline.local_refinement import (  # noqa: E402\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\__init__.py\", line 3, in <module>\n    from .tensor_nomp import TensorNOMPResult, tensor_nomp_known_order\n  File \"D:\\Prepare\\LYH\\OFDM-MIMO_Radar_Estimation\\output\\tsp-public-main-sync\\03_active_modules\\baseline\\tensor_nomp.py\", line 9, in <module>\n    from data.offgrid_tensor import tensor_atom\nModuleNotFoundError: No module named 'data'\n"
+  },
+  {
+    "entry": "run_tsp_support_quality_stratification",
+    "exit_code": 0,
+    "stderr": ""
+  }
+]

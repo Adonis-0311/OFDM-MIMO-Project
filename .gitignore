@@ -8,7 +8,7 @@ slprj/
 codegen/
 
 # Local experiment outputs that can be regenerated
-Data/
+/Data/
 Models/
 05_results/**/*.mat
 

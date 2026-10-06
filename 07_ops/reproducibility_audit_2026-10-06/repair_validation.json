@@ -1,0 +1,13 @@
+{
+  "documentation_links": "passed",
+  "table_rebuild": "8 tables byte-identical",
+  "isolated_primary_entry_help": "10 passed",
+  "targeted_existing_tests": "25 passed",
+  "full_suite": "collection blocked by missing historical crossfit script",
+  "generator_sources": {
+    "03_active_modules/data/impairments.py": "1af3ab254275c770efb4bc9f7d4271cfa1a6352e678924366a583950b51b8ee1",
+    "03_active_modules/data/offgrid_tensor.py": "40af88e60324ed16ba3ffab806b87c6bf1a4c063c1fe3a34152efb3ef882bd23",
+    "03_active_modules/data/set_a_generator.py": "7f5acb13fb74589b3a3be2ca44fc047f32b5c9961b4e930042d847ed89f9e70f",
+    "03_active_modules/data/__init__.py": "4acc2f969357fcc3886d5ddcf09f1d11f9f91e428e4e4a2955f59874f7c62a7d"
+  }
+}

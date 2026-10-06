@@ -1,0 +1,172 @@
+{
+  "latex_inputs": [
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\main.tex",
+      "input": "sections/01_introduction",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\main.tex",
+      "input": "sections/02_related_work",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\main.tex",
+      "input": "sections/03_signal_model",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\main.tex",
+      "input": "sections/04_method",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\main.tex",
+      "input": "sections/05_analysis",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\main.tex",
+      "input": "sections/06_experiments",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\main.tex",
+      "input": "sections/07_discussion",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\main.tex",
+      "input": "sections/08_conclusion",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\supplement_tsp.tex",
+      "input": "../tables/tsp_local_family_table",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\supplement_tsp.tex",
+      "input": "../tables/tsp_projection_runtime_table",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\supplement_tsp.tex",
+      "input": "../tables/tsp_full_offset_table",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\supplement_tsp.tex",
+      "input": "../tables/tsp_candan_cdl_table",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\supplement_tsp.tex",
+      "input": "../tables/tsp_candan_gate_profiles_table",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\supplement_tsp.tex",
+      "input": "../tables/tsp_projection_protocol_table",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\supplement_tsp.tex",
+      "input": "../tables/tsp_physical_table",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\supplement_tsp.tex",
+      "input": "../tables/tsp_stress_cells_table",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\sections\\06_experiments.tex",
+      "input": "../tables/tsp_candan_gate_profiles_table",
+      "exists": true
+    }
+  ],
+  "figure_inputs": [
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\supplement_tsp.tex",
+      "figure": "tsp_candan_gate_profiles.pdf",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\sections\\03_signal_model.tex",
+      "figure": "tsp_estimator_overview.pdf",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\sections\\05_analysis.tex",
+      "figure": "tsp_triplet_mechanism.pdf",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\sections\\06_experiments.tex",
+      "figure": "tsp_local_family.pdf",
+      "exists": true
+    },
+    {
+      "source": "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\sections\\06_experiments.tex",
+      "figure": "tsp_stress_mechanism.pdf",
+      "exists": true
+    }
+  ],
+  "csv_rows": {
+    "tsp_controlled_local_family_paper/local_family_rows.csv": {
+      "rows": 7200,
+      "sha256": "68679e9efd7ba3aff5c58d6a4885d22d41108d40ba9e86d1545803c8966249bf"
+    },
+    "tsp_controlled_local_family_paper/gate_calibration_rows.csv": {
+      "rows": 480,
+      "sha256": "004d3b3143983f75ea900b8020060d4e6c4551b990e7f0c5c074c3c24b8feacc"
+    },
+    "tsp_full_offset_sweep_paper/per_scene.csv": {
+      "rows": 1680,
+      "sha256": "9f3220437338a5851f457796805e88c44e2fc247a92ec018d3cff2d3e86be133"
+    },
+    "tsp_candan_route_audit_paper/per_scene.csv": {
+      "rows": 14400,
+      "sha256": "85726d36de6b68bfd5c00461c422325034727db5c0276b3a02e5ceaaaee4b6e9"
+    },
+    "tsp_candan_physical_zeta_audit_paper/per_scene_physical_zeta.csv": {
+      "rows": 9000,
+      "sha256": "fa5616b2bbcb4e516a402edb73c62a8204ed153aebf4a2931c2a85dc465c16a8"
+    },
+    "matlab_taes_supplement/candan_independent_rows.csv": {
+      "rows": 1200,
+      "sha256": "19f12e9d64a6e0a21c91b7493f5e3ace5c9e5251e9b3b3014f19f42ba8d41a5d"
+    }
+  },
+  "python_first_party_dependencies": [
+    "03_active_modules/baseline/local_refinement.py",
+    "03_active_modules/baseline/tensor_nomp.py",
+    "03_active_modules/common/manifest.py",
+    "03_active_modules/common/seed.py",
+    "03_active_modules/common/tsp_revision_metrics.py",
+    "03_active_modules/data/offgrid_tensor.py",
+    "03_active_modules/tompnet/feature_controller.py",
+    "04_experiments/eval/run_e12_tensor_nomp_matched_pilot.py",
+    "04_experiments/eval/run_sionna_cdl_profile_generalization.py",
+    "04_experiments/eval/run_sionna_cdl_trained_refinement.py",
+    "04_experiments/eval/run_tsp_candan_cdl_audit.py",
+    "04_experiments/eval/run_tsp_candan_gate_protocol_audit.py",
+    "04_experiments/eval/run_tsp_candan_physical_zeta_audit.py",
+    "04_experiments/eval/run_tsp_candan_route_audit.py",
+    "04_experiments/eval/run_tsp_candan_stress_zeta_audit.py",
+    "04_experiments/eval/run_tsp_controlled_local_family_baselines.py",
+    "04_experiments/eval/run_tsp_cost_matched_local_baselines.py",
+    "04_experiments/eval/run_tsp_full_offset_sweep.py",
+    "04_experiments/eval/run_tsp_projection_gate_runtime.py",
+    "04_experiments/eval/run_tsp_reliability_gate.py",
+    "04_experiments/eval/run_tsp_separation_nearfar_stress.py",
+    "04_experiments/eval/run_tsp_support_quality_stratification.py",
+    "04_experiments/eval/run_tsp_unified_runtime_benchmark.py"
+  ],
+  "snapshot_differences": [
+    "06_paper_and_delivery\\manuscript_tsp_2026\\latex\\main.tex"
+  ],
+  "protocol_source_hash_matches": true,
+  "missing_first_party_imports_after_repair": []
+}
